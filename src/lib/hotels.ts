@@ -1,5 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { enrichHotelFromWeb, parseGalleryImages } from "@/lib/hotel-enrichment";
+import { resolveHotelCoverImage } from "@/lib/hotel-cover-image";
+import { estimateHotelPrices } from "@/lib/hotel-pricing";
 import { resolveOfficialUrl } from "@/lib/hotel-official-url";
 
 export const hotelInclude = {
@@ -30,6 +32,8 @@ export async function ensureHotelEnriched(hotel: HotelWithBrand): Promise<HotelW
     brandSlug: hotel.brand.slug,
     name: hotel.name,
     city: hotel.city,
+    country: hotel.country,
+    countryCode: hotel.countryCode,
   });
   if (!websiteUrl) return hotel;
 
@@ -38,6 +42,8 @@ export async function ensureHotelEnriched(hotel: HotelWithBrand): Promise<HotelW
     brandSlug: hotel.brand.slug,
     name: hotel.name,
     city: hotel.city,
+    country: hotel.country,
+    countryCode: hotel.countryCode,
     websiteUrl,
   });
   if (!enriched) {
@@ -51,22 +57,56 @@ export async function ensureHotelEnriched(hotel: HotelWithBrand): Promise<HotelW
     return hotel;
   }
 
+  const gallery =
+    enriched.galleryImages.length > 0
+      ? enriched.galleryImages
+      : parseGalleryImages(hotel.galleryImages);
+  const cover = resolveHotelCoverImage(enriched.heroImage ?? hotel.heroImage, gallery);
+
+  const pricePatch =
+    enriched.avgBasePrice != null
+      ? estimateHotelPrices({
+          brandSlug: hotel.brand.slug,
+          region: hotel.region,
+          countryCode: hotel.countryCode,
+          cityZh: hotel.cityZh,
+          scrapedBasePrice: enriched.avgBasePrice,
+          scrapedSuitePrice: enriched.avgSuitePrice,
+        })
+      : null;
+
   return prisma.hotel.update({
     where: { id: hotel.id },
     data: {
       websiteUrl: enriched.websiteUrl,
       description: enriched.description ?? hotel.description,
       descriptionZh: enriched.descriptionZh ?? hotel.descriptionZh,
-      heroImage: enriched.heroImage ?? hotel.heroImage,
-      galleryImages: JSON.stringify(
-        enriched.galleryImages.length > 0
-          ? enriched.galleryImages
-          : parseGalleryImages(hotel.galleryImages)
-      ),
+      heroImage: cover ?? undefined,
+      galleryImages: JSON.stringify(gallery),
       enrichedAt: new Date(),
+      ...(pricePatch
+        ? {
+            avgBasePrice: pricePatch.avgBasePrice,
+            avgSuitePrice: pricePatch.avgSuitePrice,
+            priceCurrency: pricePatch.priceCurrency,
+          }
+        : {}),
     },
     include: hotelInclude,
   });
+}
+
+/** Serialize hotel for list cards with resolved cover image */
+export function serializeHotelForList<T extends {
+  heroImage: string | null;
+  galleryImages: string;
+}>(hotel: T) {
+  const gallery = parseGalleryImages(hotel.galleryImages);
+  return {
+    ...hotel,
+    heroImage: resolveHotelCoverImage(hotel.heroImage, gallery),
+    galleryImages: gallery,
+  };
 }
 
 export async function getGroupBySlug(slug: string) {

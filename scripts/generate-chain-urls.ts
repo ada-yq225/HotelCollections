@@ -1,0 +1,58 @@
+/**
+ * Append known Hilton / Marriott property URLs to hotel-url-discovered.json
+ */
+import { writeFileSync, readFileSync, existsSync } from "fs";
+import { join } from "path";
+
+const OUT = join(__dirname, "../src/data/hotel-url-discovered.json");
+
+/** slug → exact official property URL (hotel code paths) */
+const CHAIN_URLS: Record<string, string> = {
+  "st-regis-singapore": "https://www.marriott.com/en-us/hotels/sinxr-the-st-regis-singapore/overview/",
+  "st-regis-bangkok": "https://www.marriott.com/en-us/hotels/bkkxr-the-st-regis-bangkok/overview/",
+  "st-regis-osaka": "https://www.marriott.com/en-us/hotels/osaxr-the-st-regis-osaka/overview/",
+  "st-regis-london": "https://www.marriott.com/en-us/hotels/lonxr-the-st-regis-london/overview/",
+  "st-regis-new-york": "https://www.marriott.com/en-us/hotels/nycxr-the-st-regis-new-york/overview/",
+  "st-regis-dubai": "https://www.marriott.com/en-us/hotels/dxbis-the-st-regis-dubai-the-palm/overview/",
+  "st-regis-bali": "https://www.marriott.com/en-us/hotels/dpsxr-the-st-regis-bali-resort/overview/",
+  "w-bangkok": "https://www.marriott.com/en-us/hotels/bkkwi-w-bangkok/overview/",
+  "w-singapore-sentosa": "https://www.marriott.com/en-us/hotels/sinwh-w-singapore-sentosa-cove/overview/",
+  "w-bali-seminyak": "https://www.marriott.com/en-us/hotels/dpswh-w-bali-seminyak/overview/",
+  "w-barcelona": "https://www.marriott.com/en-us/hotels/bcnwh-w-barcelona/overview/",
+  "w-amsterdam": "https://www.marriott.com/en-us/hotels/amswh-w-amsterdam/overview/",
+  "jw-marriott-bangkok": "https://www.marriott.com/en-us/hotels/bkkdt-jw-marriott-hotel-bangkok/overview/",
+  "jw-marriott-singapore": "https://www.marriott.com/en-us/hotels/sindt-jw-marriott-hotel-singapore-south-beach/overview/",
+  "jw-marriott-seoul": "https://www.marriott.com/en-us/hotels/selfi-jw-marriott-hotel-seoul/overview/",
+  "edition-barcelona": "https://www.marriott.com/en-us/hotels/bcnaz-the-barcelona-edition/overview/",
+  "edition-london": "https://www.marriott.com/en-us/hotels/lonaz-the-london-edition/overview/",
+  "edition-miami": "https://www.marriott.com/en-us/hotels/miaaz-edition-miami/overview/",
+  "conrad-tokyo": "https://www.hilton.com/en/hotels/tyocici-conrad-tokyo/",
+  "conrad-bangkok": "https://www.hilton.com/en/hotels/bkkcici-conrad-bangkok/",
+  "conrad-singapore": "https://www.hilton.com/en/hotels/sincici-conrad-singapore-orchard/",
+  "conrad-seoul": "https://www.hilton.com/en/hotels/selcici-conrad-seoul/",
+  "conrad-hong-kong": "https://www.hilton.com/en/hotels/hkgcici-conrad-hong-kong/",
+  "conrad-bali": "https://www.hilton.com/en/hotels/dpscici-conrad-bali/",
+  "conrad-dubai": "https://www.hilton.com/en/hotels/dxbcdci-conrad-dubai/",
+  "waldorf-astoria-singapore": "https://www.hilton.com/en/hotels/sinwawa-waldorf-astoria-singapore/",
+  "waldorf-astoria-bangkok": "https://www.hilton.com/en/hotels/bkkwald-waldorf-astoria-bangkok/",
+  "waldorf-astoria-dubai": "https://www.hilton.com/en/hotels/dxbwawa-waldorf-astoria-dubai-palm-jumeirah/",
+  "waldorf-astoria-amsterdam": "https://www.hilton.com/en/hotels/amswawa-waldorf-astoria-amsterdam/",
+  "park-hyatt-tokyo": "https://www.hyatt.com/en-US/hotel/japan/tokyo/park-hyatt-tokyo/tyoph",
+  "park-hyatt-seoul": "https://www.hyatt.com/en-US/hotel/south-korea/seoul/park-hyatt-seoul/seoph",
+  "park-hyatt-bangkok": "https://www.hyatt.com/en-US/hotel/thailand/bangkok/park-hyatt-bangkok/bkkph",
+  "park-hyatt-sydney": "https://www.hyatt.com/en-US/hotel/australia/sydney/park-hyatt-sydney/sydph",
+  "andaz-tokyo": "https://www.hyatt.com/en-US/hotel/japan/tokyo/andaz-tokyo-toranomon-hills/tyoaz",
+  "andaz-singapore": "https://www.hyatt.com/en-US/hotel/singapore/singapore/andaz-singapore/sinaz",
+  "intercontinental-singapore": "https://www.ihg.com/intercontinental/hotels/gb/en/singapore/sinhb-intercontinental-singapore/hoteldetail",
+  "intercontinental-bangkok": "https://www.ihg.com/intercontinental/hotels/gb/en/bangkok/bkkhb-intercontinental-bangkok/hoteldetail",
+  "intercontinental-london-park-lane": "https://www.ihg.com/intercontinental/hotels/gb/en/london/lonpl-intercontinental-london-park-lane/hoteldetail",
+  "intercontinental-tokyo": "https://www.ihg.com/intercontinental/hotels/gb/en/tokyo/tyoic-intercontinental-tokyo-bay/hoteldetail",
+};
+
+const existing = existsSync(OUT)
+  ? (JSON.parse(readFileSync(OUT, "utf8")) as Record<string, string>)
+  : {};
+
+const merged = { ...existing, ...CHAIN_URLS };
+writeFileSync(OUT, JSON.stringify(merged, null, 2));
+console.log(`Wrote ${Object.keys(merged).length} chain URLs`);

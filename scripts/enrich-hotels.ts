@@ -1,20 +1,16 @@
 /**
- * Batch-fetch hotel intros & images from official websites.
+ * Batch-fetch hotel intros, images & reference prices from official websites.
  * Output: src/data/hotel-enrichment.json (consumed by seed)
- *
- * Usage:
- *   npx tsx scripts/enrich-hotels.ts [--limit=50] [--brand=four-seasons]
- *   npx tsx scripts/enrich-hotels.ts --images-only   # retry entries missing heroImage
- *   npx tsx scripts/enrich-hotels.ts --force         # re-fetch all (within limit)
  */
 import { writeFileSync, readFileSync, existsSync } from "fs";
 import { join } from "path";
 import { ALL_HOTELS } from "../src/data/hotels";
 import { resolveOfficialUrl } from "../src/lib/hotel-official-url";
 import { enrichHotelFromWeb } from "../src/lib/hotel-enrichment";
+import { isBadImageUrl } from "../src/lib/hotel-cover-image";
 
 const OUT_PATH = join(__dirname, "../src/data/hotel-enrichment.json");
-const DELAY_MS = 800;
+const DELAY_MS = 600;
 
 type CachedEnrichment = {
   websiteUrl: string;
@@ -22,10 +18,19 @@ type CachedEnrichment = {
   descriptionZh?: string;
   heroImage?: string;
   galleryImages?: string[];
+  avgBasePrice?: number;
+  avgSuitePrice?: number;
+  priceSource?: "scraped" | "estimated";
 };
 
 function sleep(ms: number) {
   return new Promise((r) => setTimeout(r, ms));
+}
+
+function hasValidImage(entry?: CachedEnrichment): boolean {
+  if (!entry) return false;
+  if (entry.heroImage && !isBadImageUrl(entry.heroImage)) return true;
+  return (entry.galleryImages ?? []).some((u) => !isBadImageUrl(u));
 }
 
 function mergeEnrichment(
@@ -43,6 +48,9 @@ function mergeEnrichment(
       result.galleryImages && result.galleryImages.length > 0
         ? result.galleryImages
         : prev?.galleryImages,
+    avgBasePrice: result.avgBasePrice ?? prev?.avgBasePrice,
+    avgSuitePrice: result.avgSuitePrice ?? prev?.avgSuitePrice,
+    priceSource: result.priceSource ?? prev?.priceSource,
   };
 }
 
@@ -53,7 +61,7 @@ async function main() {
   const limit = limitArg ? parseInt(limitArg.split("=")[1], 10) : Infinity;
   const brandFilter = brandArg?.split("=")[1];
   const force = args.includes("--force");
-  const imagesOnly = args.includes("--images-only");
+  const imagesOnly = args.includes("--images-only") || args.includes("--retry-bad");
 
   let existing: Record<string, CachedEnrichment> = {};
   if (existsSync(OUT_PATH)) {
@@ -72,35 +80,54 @@ async function main() {
     const prev = existing[hotel.slug];
     if (!force) {
       if (imagesOnly) {
-        if (prev?.heroImage) continue;
-      } else if (prev?.description && prev?.heroImage) {
+        if (hasValidImage(prev)) continue;
+      } else if (prev?.description && hasValidImage(prev) && prev?.avgBasePrice) {
         continue;
       }
     }
 
-    const websiteUrl = hotel.websiteUrl ?? resolveOfficialUrl(hotel);
+    const websiteUrl = hotel.websiteUrl ?? resolveOfficialUrl({
+      slug: hotel.slug,
+      brandSlug: hotel.brandSlug,
+      name: hotel.name,
+      city: hotel.city,
+      countryCode: hotel.countryCode,
+      country: hotel.country,
+    });
     if (!websiteUrl) continue;
 
     process.stdout.write(`  ${hotel.slug} ... `);
     const result = await enrichHotelFromWeb({ ...hotel, websiteUrl });
 
-    const merged = mergeEnrichment(prev, result ? {
-      websiteUrl: result.websiteUrl,
-      description: result.description,
-      descriptionZh: result.descriptionZh,
-      heroImage: result.heroImage,
-      galleryImages: result.galleryImages,
-    } : null, websiteUrl);
+    const merged = mergeEnrichment(
+      prev,
+      result
+        ? {
+            websiteUrl: result.websiteUrl,
+            description: result.description,
+            descriptionZh: result.descriptionZh,
+            heroImage: result.heroImage,
+            galleryImages: result.galleryImages,
+            avgBasePrice: result.avgBasePrice,
+            avgSuitePrice: result.avgSuitePrice,
+            priceSource: result.priceSource,
+          }
+        : null,
+      websiteUrl
+    );
 
     existing[hotel.slug] = merged;
 
-    if (result?.description || result?.heroImage) {
+    if (result?.heroImage || result?.avgBasePrice) {
       enriched++;
-      console.log(merged.heroImage ? "ok+img" : "ok");
-    } else if (merged.heroImage || merged.description) {
+      const parts = [];
+      if (result.heroImage) parts.push("img");
+      if (result.avgBasePrice) parts.push(`¥${result.avgBasePrice}`);
+      console.log(parts.join("+") || "ok");
+    } else if (hasValidImage(merged)) {
       console.log("kept cache");
     } else {
-      console.log("url only");
+      console.log("skip");
     }
 
     processed++;

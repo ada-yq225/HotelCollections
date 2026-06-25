@@ -6,6 +6,7 @@ import { BADGES } from "../src/data/badges";
 import { HOTEL_ENRICHMENT } from "../src/data/hotel-enrichment";
 import { resolveOfficialUrl } from "../src/lib/hotel-official-url";
 import { estimateHotelPrices } from "../src/lib/hotel-pricing";
+import { resolveHotelCoverImage } from "../src/lib/hotel-cover-image";
 import { estimateTravelerRating } from "../src/lib/hotel-ratings";
 
 const prisma = new PrismaClient();
@@ -97,7 +98,15 @@ async function main() {
     const websiteUrl =
       h.websiteUrl ?? cached?.websiteUrl ?? resolveOfficialUrl(h) ?? undefined;
     const gallery = h.galleryImages ?? cached?.galleryImages ?? [];
-    const prices = estimateHotelPrices(h);
+    const coverImage = resolveHotelCoverImage(
+      h.heroImage ?? cached?.heroImage,
+      gallery
+    );
+    const prices = estimateHotelPrices({
+      ...h,
+      scrapedBasePrice: cached?.avgBasePrice,
+      scrapedSuitePrice: cached?.avgSuitePrice,
+    });
     const ratings = estimateTravelerRating(h);
 
     const created = await prisma.hotel.create({
@@ -119,7 +128,7 @@ async function main() {
         websiteUrl,
         description: h.description ?? cached?.description,
         descriptionZh: h.descriptionZh ?? cached?.descriptionZh,
-        heroImage: h.heroImage ?? cached?.heroImage,
+        heroImage: coverImage ?? undefined,
         galleryImages: JSON.stringify(gallery),
         enrichedAt: cached?.description || cached?.heroImage ? new Date() : undefined,
         avgBasePrice: prices.avgBasePrice,

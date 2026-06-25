@@ -1,4 +1,7 @@
 import type { HotelEntry } from "@/data/hotels/types";
+import discoveredUrlsData from "@/data/hotel-url-discovered.json";
+
+const discoveredUrls = discoveredUrlsData as Record<string, string>;
 
 /** Slug → official property path overrides (brand sites use non-obvious URLs) */
 const FOUR_SEASONS_PATHS: Record<string, string> = {
@@ -91,6 +94,182 @@ const MANDARIN_ORIENTAL_PATHS: Record<string, string> = {
   "mandarin-oriental-riyadh": "riyadh/al-faisaliah",
 };
 
+const SHANGRI_LA_PATHS: Record<string, string> = {
+  "shangri-la-singapore": "singapore/shangrila",
+  "shangri-la-tokyo": "tokyo/shangrila",
+  "shangri-la-bangkok": "bangkok/shangrila",
+  "shangri-la-hong-kong": "hongkong/shangrila",
+  "shangri-la-kerry-hong-kong": "hongkong/kerry",
+  "shangri-la-beijing": "beijing/shangrila",
+  "shangri-la-china-world-beijing": "beijing/chinaworld",
+  "shangri-la-shanghai": "shanghai/shangrila",
+  "shangri-la-pudong-shanghai": "shanghai/pudongshangrila",
+  "shangri-la-guangzhou": "guangzhou/shangrila",
+  "shangri-la-shenzhen": "shenzhen/shangrila",
+  "shangri-la-chengdu": "chengdu/shangrila",
+  "shangri-la-hangzhou": "hangzhou/shangrila",
+  "shangri-la-sanya": "sanya/shangrila",
+  "shangri-la-paris": "paris/shangrila",
+  "shangri-la-london": "london/shangrila",
+  "shangri-la-sydney": "sydney/shangrila",
+  "shangri-la-dubai": "dubai/shangrila",
+  "shangri-la-abu-dhabi": "abudhabi/shangrila",
+  "shangri-la-boracay": "boracay/shangrila",
+  "shangri-la-mactan": "cebu/shangrila",
+  "shangri-la-borneo": "kotakinabalu/shangrila",
+};
+
+const PENINSULA_PATHS: Record<string, string> = {
+  "peninsula-hong-kong": "hong-kong/5-star-luxury-hotel-kowloon",
+  "peninsula-shanghai": "shanghai/5-star-luxury-hotel-bund",
+  "peninsula-beijing": "beijing/5-star-luxury-hotel-wangfujing",
+  "peninsula-tokyo": "tokyo/5-star-luxury-hotel-ginza",
+  "peninsula-bangkok": "bangkok/5-star-luxury-hotel-riverside",
+  "peninsula-manila": "manila/5-star-luxury-hotel-makati",
+  "peninsula-chicago": "chicago/5-star-luxury-hotel-magnificent-mile",
+  "peninsula-new-york": "new-york/5-star-luxury-hotel-fifth-avenue",
+  "peninsula-london": "london/5-star-luxury-hotel-belgravia",
+  "peninsula-paris": "paris/5-star-luxury-hotel-16th-arrondissement",
+};
+
+const HOTEL_URL_OVERRIDES: Record<string, string> = {
+  "bulgari-beijing": "https://www.bulgarihotels.com/en_US/beijing",
+  "bulgari-shanghai": "https://www.bulgarihotels.com/en_US/shanghai",
+  "bulgari-milan": "https://www.bulgarihotels.com/en_US/milan",
+  "bulgari-london": "https://www.bulgarihotels.com/en_US/london",
+  "bulgari-dubai": "https://www.bulgarihotels.com/en_US/dubai",
+  "bulgari-bali": "https://www.bulgarihotels.com/en_US/bali",
+  "bulgari-paris": "https://www.bulgarihotels.com/en_US/paris",
+  "bulgari-tokyo": "https://www.bulgarihotels.com/en_US/tokyo",
+  "bulgari-rome": "https://www.bulgarihotels.com/en_US/rome",
+  "middle-house-shanghai": "https://www.thehousecollective.com/en/shanghai/the-middle-house/",
+  "upper-house-hong-kong": "https://www.upperhouse.com/en/",
+  "murray-hong-kong": "https://www.niccolohotels.com/en/hongkong/themurray",
+  "niccolo-chengdu": "https://www.niccolohotels.com/en/chengdu",
+  "niccolo-changsha": "https://www.niccolohotels.com/en/changsha",
+  "niccolo-suzhou": "https://www.niccolohotels.com/en/suzhou",
+  "niccolo-chongqing": "https://www.niccolohotels.com/en/chongqing",
+  "opposite-house-beijing": "https://www.thehousecollective.com/en/beijing/the-opposite-house/",
+  "east-beijing": "https://www.thehousecollective.com/en/beijing/east-beijing/",
+  "j-hotel-shanghai": "https://www.jhotel-shanghai.com/en/",
+  "hotel-des-arts-saigon": "https://www.hoteldesartssaigon.com/",
+  "conservatorium-amsterdam": "https://www.conservatoriumhotel.com/",
+  "ciragan-palace-istanbul": "https://www.kempinski.com/en/istanbul/ciragan-palace-kempinski-istanbul",
+  "grand-hotel-stockholm": "https://www.grandhotel.se/en/",
+  "nimb-hotel-copenhagen": "https://www.dangleterre.com/",
+  "sommerro-oslo": "https://www.sommerrohouse.com/",
+  "shangri-la-santa-monica": "https://www.hotelcasadelmar.com/",
+  "proper-san-francisco": "https://www.properhotel.com/san-francisco/",
+  "faena-miami-beach": "https://www.faena.com/miami-beach",
+  "jefferson-washington-dc": "https://www.jeffersondc.com/",
+  "encore-las-vegas": "https://www.wynnlasvegas.com/encore",
+  "chable-maroma": "https://chablemaroma.com/",
+  "jade-mountain-st-lucia": "https://jademountain.com/",
+  "alvear-palace-buenos-aires": "https://www.alvearpalace.com/en/",
+  "fasano-rio": "https://www.fasano.com.br/en/hotels/fasano-rio-de-janeiro/",
+  "halekulani-waikiki": "https://www.halekulani.com/",
+  "vomo-island-fiji": "https://www.vomo.com/",
+  "lizard-island-resort": "https://www.lizardisland.com.au/",
+  "southern-ocean-lodge": "https://www.southernoceanlodge.com.au/",
+  "cape-fahn-samui": "https://www.capefahn.com/",
+  "new-world-phu-quoc": "https://www.newworldhotels.com/en/hotels/phu-quoc",
+  "sri-panwa-phuket": "https://www.sripanwa.com/",
+  "keemala-phuket": "https://www.keemala.com/",
+  "mulia-bali": "https://www.themulia.com/",
+  "paresa-phuket": "https://www.paresaresorts.com/",
+  "the-shore-phuket": "https://www.theshorephuket.com/",
+  "gili-lankanfushi": "https://www.gili-lankanfushi.com/",
+  "huvafen-fushi": "https://www.huvafenfushi.com/",
+  "velaa-private-island": "https://www.velaaprivateisland.com/",
+  "niyama-private-islands": "https://www.niyama.com/",
+  "nautilus-maldives": "https://www.thenautilusmaldives.com/",
+  "baglioni-maldives": "https://www.baglionihotels.com/maldives",
+  "kudadoo-maldives": "https://www.kudadoo.com/",
+  "hurawalhi-maldives": "https://www.hurawalhi.com/",
+  "milaidhoo-island": "https://www.milaidhoo.com/",
+  "baros-maldives": "https://www.baros.com/",
+  "vakkaru-maldives": "https://vakkarumaldives.com/",
+  "amilla-maldives": "https://www.amilla.com/",
+  "ayada-maldives": "https://www.ayadamaldives.com/",
+  "the-brando-tetiaroa": "https://thebrando.com/",
+  "le-tahaa-island-resort": "https://www.letahaa.com/",
+  "north-island-seychelles": "https://www.north-island.com/",
+  "likuliku-lagoon-fiji": "https://www.likulikulagoon.com/",
+  "qualia-hamilton-island": "https://www.qualia.com.au/",
+  "singita-sabi-sand-boulders": "https://singita.com/lodge/singita-boulders-lodge/",
+  "singita-kruger-lebombo": "https://singita.com/lodge/singita-lebombo-lodge/",
+  "singita-grumeti-sasakwa": "https://singita.com/lodge/singita-sasakwa-lodge/",
+  "the-datai-langkawi": "https://www.thedatai.com/",
+  "miraval-austin": "https://www.miravalresorts.com/austin",
+  "intercontinental-bora-bora": "https://thalasso.intercontinental.com/",
+  "intercontinental-bora-bora-thalasso": "https://thalasso.intercontinental.com/",
+  "intercontinental-bora-bora-le-moana": "https://moana.intercontinental.com/",
+  "intercontinental-phuket": "https://www.intercontinentalphuket.com/",
+  "intercontinental-bali": "https://bali.intercontinental.com/",
+  "intercontinental-maldives-maamunagau": "https://maldives.intercontinental.com/",
+  "intercontinental-tahiti-resort": "https://www.ihg.com/intercontinental/hotels/us/en/papeete/pptih-intercontinental-resort-tahiti",
+};
+
+const COUNTRY_SLUG: Record<string, string> = {
+  JP: "japan",
+  US: "united-states",
+  GB: "united-kingdom",
+  FR: "france",
+  IT: "italy",
+  DE: "germany",
+  AU: "australia",
+  SG: "singapore",
+  TH: "thailand",
+  KR: "south-korea",
+  AE: "united-arab-emirates",
+  CN: "china",
+  HK: "hong-kong",
+  ID: "indonesia",
+  ES: "spain",
+  AT: "austria",
+  CH: "switzerland",
+  NL: "netherlands",
+  CR: "costa-rica",
+  AR: "argentina",
+  KN: "saint-kitts-and-nevis",
+  MX: "mexico",
+  CA: "canada",
+  TR: "turkey",
+  EG: "egypt",
+  VN: "vietnam",
+  IN: "india",
+  MC: "monaco",
+  CO: "colombia",
+  PA: "panama",
+  KH: "cambodia",
+  SC: "seychelles",
+  IL: "israel",
+  SA: "saudi-arabia",
+  PT: "portugal",
+  GR: "greece",
+  FJ: "fiji",
+  MY: "malaysia",
+  PH: "philippines",
+  TW: "taiwan",
+  MO: "macau",
+  QA: "qatar",
+  MA: "morocco",
+  RU: "russia",
+  PR: "puerto-rico",
+};
+
+const BANYAN_TREE_COUNTRY: Record<string, string> = {
+  bangkok: "thailand",
+  phuket: "thailand",
+  samui: "thailand",
+  "lang-co": "vietnam",
+  seychelles: "seychelles",
+  dubai: "united-arab-emirates",
+  mayakoba: "mexico",
+  santorini: "greece",
+  yangshuo: "china",
+};
+
 const CHEVAL_BLANC_PATHS: Record<string, string> = {
   "cheval-blanc-paris": "paris",
   "cheval-blanc-randheli": "randheli",
@@ -110,51 +289,122 @@ const ROSEWOOD_PATHS: Record<string, string> = {
   "rosewood-phuket": "phuket",
 };
 
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[.'']/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9-]/g, "");
+}
+
 function fourSeasonsPath(slug: string): string {
   if (FOUR_SEASONS_PATHS[slug]) return FOUR_SEASONS_PATHS[slug];
   return slug.replace(/^four-seasons-/, "").replace(/-/g, "");
 }
 
-function mandarinPath(slug: string): string | null {
-  return MANDARIN_ORIENTAL_PATHS[slug] ?? null;
+function hyattHotelUrl(
+  hotel: Pick<HotelEntry, "slug" | "brandSlug" | "countryCode" | "city" | "country">
+): string {
+  const country = COUNTRY_SLUG[hotel.countryCode] ?? slugify(hotel.country);
+  const city = slugify(hotel.city);
+  return `https://www.hyatt.com/en-US/hotel/${country}/${city}/${hotel.slug}`;
 }
 
-function chevalBlancPath(slug: string): string | null {
-  return CHEVAL_BLANC_PATHS[slug] ?? null;
+function fairmontUrl(hotel: Pick<HotelEntry, "slug" | "city">): string {
+  const property = hotel.slug.replace(/^fairmont-/, "");
+  const region = slugify(hotel.city);
+  return `https://www.fairmont.com/en/hotels/${region}/${property}.html`;
 }
 
-function amanPath(slug: string): string | null {
-  return AMAN_PATHS[slug] ?? slug.replace(/^aman-/, "").replace(/-/g, "");
+function rafflesUrl(hotel: Pick<HotelEntry, "slug" | "city">): string {
+  const city = slugify(hotel.city);
+  return `https://www.raffles.com/${city}/`;
 }
 
-function rosewoodPath(slug: string): string | null {
-  return ROSEWOOD_PATHS[slug] ?? slug.replace(/^rosewood-/, "");
+function sofitelLegendUrl(
+  hotel: Pick<HotelEntry, "slug" | "city" | "countryCode" | "country">
+): string {
+  const property = hotel.slug.replace(/^sofitel-legend-/, "");
+  const country = COUNTRY_SLUG[hotel.countryCode] ?? slugify(hotel.country);
+  const city = slugify(hotel.city);
+  return `https://www.sofitel-legend.com/en/${country}/${city}/${property}/`;
+}
+
+function ihgBrandUrl(
+  brand: string,
+  hotel: Pick<HotelEntry, "slug" | "name" | "city">
+): string {
+  const city = slugify(hotel.city);
+  return `https://www.ihg.com/${brand}/hotels/us/en/${city}/${hotel.slug}?brandCode=${brand === "intercontinental" ? "IC" : brand === "regent" ? "REG" : "SX"}`;
+}
+
+function hiltonPropertyUrl(hotel: Pick<HotelEntry, "slug" | "name">): string {
+  return `https://www.hilton.com/en/hotels/${hotel.slug}/`;
+}
+
+function marriottPropertyUrl(hotel: Pick<HotelEntry, "slug" | "name">): string {
+  return `https://www.marriott.com/en-us/hotels/${hotel.slug}/overview/`;
+}
+
+function belmondUrl(hotel: Pick<HotelEntry, "slug" | "name">): string {
+  const loc = hotel.slug.replace(/^belmond-/, "");
+  return `https://www.belmond.com/hotels/${loc.replace(/-/g, "/")}`;
+}
+
+function anantaraUrl(
+  hotel: Pick<HotelEntry, "slug" | "city" | "countryCode" | "country">
+): string {
+  const loc = hotel.slug.replace(/^anantara-/, "");
+  const country = COUNTRY_SLUG[hotel.countryCode] ?? "worldwide";
+  return `https://www.anantara.com/en/${country}/${loc}`;
+}
+
+function oneAndOnlyUrl(hotel: Pick<HotelEntry, "slug">): string {
+  const loc = hotel.slug.replace(/^one-and-only-/, "");
+  return `https://www.oneandonlyresorts.com/${loc.replace(/-/g, "-")}`;
+}
+
+function kempinskiUrl(hotel: Pick<HotelEntry, "slug" | "city">): string {
+  const property = hotel.slug.replace(/^kempinski-/, "");
+  const city = slugify(hotel.city);
+  return `https://www.kempinski.com/en/${city}/${property}`;
+}
+
+function oberoiUrl(hotel: Pick<HotelEntry, "slug" | "city">): string {
+  const property = hotel.slug.replace(/^oberoi-/, "");
+  return `https://www.oberoihotels.com/hotels-in-${slugify(hotel.city)}/${property}/`;
 }
 
 /** Resolve the best-guess official property URL for a hotel */
-export function resolveOfficialUrl(hotel: Pick<HotelEntry, "slug" | "brandSlug" | "name" | "city">): string | null {
+export function resolveOfficialUrl(
+  hotel: Pick<HotelEntry, "slug" | "brandSlug" | "name" | "city" | "countryCode" | "country">
+): string | null {
+  if (discoveredUrls[hotel.slug]) return discoveredUrls[hotel.slug];
+  if (HOTEL_URL_OVERRIDES[hotel.slug]) return HOTEL_URL_OVERRIDES[hotel.slug];
+
   if (hotel.slug.startsWith("four-seasons-")) {
     return `https://www.fourseasons.com/${fourSeasonsPath(hotel.slug)}/`;
   }
   if (hotel.slug.startsWith("mandarin-oriental-")) {
-    const path = mandarinPath(hotel.slug);
+    const path = MANDARIN_ORIENTAL_PATHS[hotel.slug];
     if (path) return `https://www.mandarinoriental.com/en/${path}`;
   }
   if (hotel.slug.startsWith("cheval-blanc-")) {
-    const path = chevalBlancPath(hotel.slug);
+    const path = CHEVAL_BLANC_PATHS[hotel.slug];
     if (path) return `https://www.chevalblanc.com/en/maison/${path}`;
   }
   if (hotel.brandSlug === "aman" || hotel.slug.startsWith("aman")) {
-    const path = amanPath(hotel.slug);
-    if (path) return `https://www.aman.com/resorts/${path}`;
+    const path = AMAN_PATHS[hotel.slug] ?? hotel.slug.replace(/^aman-/, "").replace(/-/g, "");
+    return `https://www.aman.com/resorts/${path}`;
   }
   if (hotel.brandSlug === "rosewood" || hotel.slug.startsWith("rosewood-")) {
-    const path = rosewoodPath(hotel.slug);
-    if (path) return `https://www.rosewoodhotels.com/en/${path}`;
+    const path = ROSEWOOD_PATHS[hotel.slug] ?? hotel.slug.replace(/^rosewood-/, "");
+    return `https://www.rosewoodhotels.com/en/${path}`;
   }
   if (hotel.brandSlug === "banyan-tree") {
     const loc = hotel.slug.replace(/^banyan-tree-/, "");
-    return `https://www.banyantree.com/en/thailand/${loc}`;
+    const country = BANYAN_TREE_COUNTRY[loc] ?? "thailand";
+    return `https://www.banyantree.com/en/${country}/${loc}`;
   }
   if (hotel.brandSlug === "six-senses") {
     const loc = hotel.slug.replace(/^six-senses-/, "");
@@ -164,28 +414,79 @@ export function resolveOfficialUrl(hotel: Pick<HotelEntry, "slug" | "brandSlug" 
     const loc = hotel.slug.replace(/^(como-|trisara-)/, "");
     return `https://www.comohotels.com/${loc.replace(/-/g, "/")}`;
   }
-  if (hotel.brandSlug === "regent") {
-    return `https://www.ihg.com/regent/hotels/us/en/${hotel.city.toLowerCase().replace(/\s+/g, "-")}/${hotel.slug}`;
-  }
   if (hotel.brandSlug === "ritz-carlton" || hotel.brandSlug === "ritz-carlton-reserve") {
     const loc = hotel.slug.replace(/^ritz-carlton-/, "").replace(/-reserve$/, "");
     return `https://www.ritzcarlton.com/en/hotels/${loc}`;
   }
-  if (hotel.brandSlug === "st-regis") {
-    return `https://www.marriott.com/en-us/hotels/search?query=${encodeURIComponent(hotel.name)}`;
+  if (hotel.brandSlug === "st-regis" || hotel.brandSlug === "jw-marriott" || hotel.brandSlug === "w-hotels" || hotel.brandSlug === "edition" || hotel.brandSlug === "luxury-collection") {
+    return marriottPropertyUrl(hotel);
+  }
+  if (hotel.brandSlug === "park-hyatt" || hotel.brandSlug === "andaz" || hotel.brandSlug === "alila") {
+    return hyattHotelUrl(hotel);
+  }
+  if (hotel.brandSlug === "intercontinental") {
+    return ihgBrandUrl("intercontinental", hotel);
+  }
+  if (hotel.brandSlug === "regent") {
+    return ihgBrandUrl("regent", hotel);
+  }
+  if (hotel.brandSlug === "waldorf-astoria" || hotel.brandSlug === "conrad" || hotel.brandSlug === "lxr") {
+    return hiltonPropertyUrl(hotel);
+  }
+  if (hotel.brandSlug === "fairmont") {
+    return fairmontUrl(hotel);
+  }
+  if (hotel.brandSlug === "raffles") {
+    return rafflesUrl(hotel);
+  }
+  if (hotel.brandSlug === "sofitel-legend") {
+    return sofitelLegendUrl(hotel);
+  }
+  if (hotel.brandSlug === "shangri-la") {
+    const path = SHANGRI_LA_PATHS[hotel.slug];
+    if (path) return `https://www.shangri-la.com/${path}/`;
+    const tail = hotel.slug.replace(/^shangri-la-/, "");
+    return `https://www.shangri-la.com/${slugify(hotel.city)}/${tail}/`;
   }
   if (hotel.brandSlug === "peninsula") {
-    return `https://www.peninsula.com/en/${hotel.city.toLowerCase().replace(/\s+/g, "-")}`;
+    const path = PENINSULA_PATHS[hotel.slug];
+    if (path) return `https://www.peninsula.com/en/${path}`;
+    return `https://www.peninsula.com/en/${slugify(hotel.city)}`;
   }
   if (hotel.brandSlug === "capella") {
     const loc = hotel.slug.replace(/^capella-/, "");
     return `https://capellahotels.com/en/capella-hotels-and-resorts/${loc}`;
   }
-  if (hotel.brandSlug === "bulgari" || hotel.slug.startsWith("bulgari-")) {
-    return `https://www.bulgarihotels.com/en_US/${hotel.city.toLowerCase()}`;
+  if (hotel.brandSlug === "belmond") {
+    return belmondUrl(hotel);
+  }
+  if (hotel.brandSlug === "anantara") {
+    return anantaraUrl(hotel);
+  }
+  if (hotel.brandSlug === "one-and-only") {
+    return oneAndOnlyUrl(hotel);
+  }
+  if (hotel.brandSlug === "kempinski") {
+    return kempinskiUrl(hotel);
+  }
+  if (hotel.brandSlug === "oberoi") {
+    return oberoiUrl(hotel);
+  }
+  if (hotel.brandSlug === "patina") {
+    const loc = hotel.slug.replace(/^patina-/, "");
+    return `https://patinahotels.com/en/${loc}`;
+  }
+  if (hotel.brandSlug === "soneva") {
+    const loc = hotel.slug.replace(/^soneva-/, "");
+    return `https://soneva.com/resorts/${loc}/`;
+  }
+  if (hotel.brandSlug === "joali") {
+    const loc = hotel.slug.replace(/^joali-/, "");
+    return `https://www.joali.com/${loc}`;
   }
   if (hotel.slug.startsWith("bulgari-")) {
-    return `https://www.bulgarihotels.com/en_US/bali`;
+    const city = hotel.slug.replace(/^bulgari-/, "");
+    return `https://www.bulgarihotels.com/en_US/${city}`;
   }
 
   return null;
@@ -201,6 +502,12 @@ export function resolveOfficialUrlZh(websiteUrl: string): string | null {
   }
   if (websiteUrl.includes("aman.com/resorts/")) {
     return websiteUrl.replace("aman.com/resorts/", "aman.com/zh-cn/resorts/");
+  }
+  if (websiteUrl.includes("hyatt.com")) {
+    return websiteUrl.replace("/en-US/", "/zh-CN/");
+  }
+  if (websiteUrl.includes("shangri-la.com")) {
+    return websiteUrl.replace("www.shangri-la.com", "www.shangri-la.com/cn");
   }
   return null;
 }

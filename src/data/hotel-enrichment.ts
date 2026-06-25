@@ -6,6 +6,9 @@ export type HotelEnrichmentRecord = {
   descriptionZh?: string;
   heroImage?: string;
   galleryImages?: string[];
+  avgBasePrice?: number;
+  avgSuitePrice?: number;
+  priceSource?: "scraped" | "estimated";
 };
 
 export const HOTEL_ENRICHMENT: Record<string, HotelEnrichmentRecord> =

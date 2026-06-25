@@ -166,24 +166,35 @@ export function getSuiteLabel(hotel: Pick<HotelEntry, "region" | "countryCode">)
   return "特色套房";
 }
 
-/** Estimate average nightly rates (CNY) from brand tier + destination */
-export function estimateHotelPrices(
-  hotel: Pick<
-    HotelEntry,
-    "brandSlug" | "region" | "countryCode" | "cityZh" | "avgBasePrice" | "avgSuitePrice"
-  >
-): HotelPriceEstimate {
+export type PriceInput = Pick<
+  HotelEntry,
+  "brandSlug" | "region" | "countryCode" | "cityZh" | "avgBasePrice" | "avgSuitePrice"
+> & {
+  /** Official-site scraped reference price (CNY/night) */
+  scrapedBasePrice?: number;
+  scrapedSuitePrice?: number;
+};
+
+/** Estimate average nightly rates (CNY) — prefers scraped official rates */
+export function estimateHotelPrices(hotel: PriceInput): HotelPriceEstimate {
   const brandBase = BRAND_BASE_CNY[hotel.brandSlug] ?? 2000;
   const regionMult = getRegionMultiplier(hotel);
   const computedBase = roundPrice(brandBase * regionMult);
-  const avgBasePrice = hotel.avgBasePrice ?? computedBase;
+
+  const avgBasePrice =
+    hotel.avgBasePrice ??
+    hotel.scrapedBasePrice ??
+    computedBase;
+
   const suiteMult = getSuiteMultiplier(hotel, avgBasePrice);
   const computedSuite = roundPrice(avgBasePrice * suiteMult);
 
   return {
     avgBasePrice,
     avgSuitePrice:
-      hotel.avgSuitePrice ?? Math.max(computedSuite, avgBasePrice + 800),
+      hotel.avgSuitePrice ??
+      hotel.scrapedSuitePrice ??
+      Math.max(computedSuite, avgBasePrice + 800),
     priceCurrency: "CNY",
     suiteLabel: getSuiteLabel(hotel),
     isResort: isResortContext(hotel),

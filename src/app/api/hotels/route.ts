@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getDestinationWhere } from "@/data/destinations";
+import { serializeHotelForList } from "@/lib/hotels";
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
@@ -49,5 +50,7 @@ export async function GET(req: Request) {
     orderBy: [{ country: "asc" }, { city: "asc" }, { name: "asc" }],
   });
 
-  return NextResponse.json({ hotels, total: hotels.length });
+  const serialized = hotels.map(serializeHotelForList);
+
+  return NextResponse.json({ hotels: serialized, total: serialized.length });
 }

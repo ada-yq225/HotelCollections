@@ -50,7 +50,7 @@ export function HotelPriceDisplay({
         <p className="mt-1 text-xs text-[#6b7280]">套房、别墅、泳池别墅等高端房型</p>
       </div>
       <p className="col-span-full text-[11px] leading-relaxed text-[#9ca3af]">
-        价格为全年平均参考价（人民币），实际受季节、汇率与房态影响，仅供参考。
+        价格优先取自酒店官网公开起价，并结合品牌与目的地市场数据校准（人民币/晚），实际以预订时房态为准。
       </p>
     </div>
   );
