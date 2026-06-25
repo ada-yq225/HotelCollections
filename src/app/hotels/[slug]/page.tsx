@@ -2,9 +2,18 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MapPin, Calendar, ArrowLeft } from "lucide-react";
 import { getHotelBySlug, ensureHotelEnriched } from "@/lib/hotels";
+import { prisma } from "@/lib/prisma";
+import { HotelTravelerRating } from "@/components/hotels/HotelTravelerRating";
+
 import { parseGalleryImages } from "@/lib/hotel-enrichment";
 import { SIGNATURE_GROUPS } from "@/data/destinations";
 import { HotelProfile } from "@/components/hotels/HotelProfile";
+import { getSuiteLabel } from "@/lib/hotel-pricing";
+import { BrandLogo } from "@/components/hotels/BrandLogo";
+import {
+  HotelDetailTravel,
+  HotelDetailActions,
+} from "@/components/hotels/HotelDetailTravel";
 
 export default async function HotelDetailPage({
   params,
@@ -15,7 +24,24 @@ export default async function HotelDetailPage({
   const raw = await getHotelBySlug(slug);
   if (!raw || !raw.isActive) notFound();
 
-  const hotel = await ensureHotelEnriched(raw);
+  const [hotel, communityReviews] = await Promise.all([
+    ensureHotelEnriched(raw),
+    prisma.post.findMany({
+      where: { hotelId: raw.id, isPublished: true },
+      orderBy: { createdAt: "desc" },
+      take: 3,
+      select: {
+        id: true,
+        title: true,
+        content: true,
+        createdAt: true,
+        loungeDining: true,
+        amenities: true,
+        service: true,
+        user: { select: { name: true, isPlus: true } },
+      },
+    }),
+  ]);
   const galleryImages = parseGalleryImages(hotel.galleryImages);
 
   const groupSlug = hotel.brand.group.slug;
@@ -35,23 +61,28 @@ export default async function HotelDetailPage({
 
       <div className="hc-card overflow-hidden">
         <div className="p-8 pb-0">
-          <div className="mb-4 flex items-center gap-2">
-            <span
-              className="h-2.5 w-2.5 rounded-full"
-              style={{ backgroundColor: hotel.brand.group.logoColor ?? "#b8956b" }}
+          <div className="mb-5 flex items-start gap-4">
+            <BrandLogo
+              brandSlug={hotel.brand.slug}
+              brandNameZh={hotel.brand.nameZh}
+              groupColor={hotel.brand.group.logoColor ?? "#b8956b"}
+              size="md"
             />
-            {isSignature ? (
-              <Link
-                href={`/groups/${groupSlug}`}
-                className="text-sm text-[#b8956b] hover:underline"
-              >
-                {hotel.brand.group.nameZh}
-              </Link>
-            ) : (
-              <span className="text-sm text-[#6b7280]">{hotel.brand.group.nameZh}</span>
-            )}
-            <span className="text-[#d4d4d4]">·</span>
-            <span className="text-sm text-[#6b7280]">{hotel.brand.nameZh}</span>
+            <div className="min-w-0 flex-1">
+              {isSignature ? (
+                <Link
+                  href={`/groups/${groupSlug}`}
+                  className="text-xs font-medium tracking-wide text-[#b8956b] hover:underline uppercase"
+                >
+                  {hotel.brand.group.nameZh}
+                </Link>
+              ) : (
+                <p className="text-xs font-medium tracking-wide text-[#9ca3af] uppercase">
+                  {hotel.brand.group.nameZh}
+                </p>
+              )}
+              <p className="mt-0.5 text-sm font-medium text-[#374151]">{hotel.brand.nameZh}</p>
+            </div>
           </div>
 
           <h1 className="font-serif text-3xl font-semibold leading-tight md:text-4xl">
@@ -72,6 +103,28 @@ export default async function HotelDetailPage({
                 {hotel.openedYear} 年开业
               </span>
             )}
+            {hotel.travelerScore != null && hotel.travelerRatingCount != null && (
+              <HotelTravelerRating
+                travelerScore={hotel.travelerScore}
+                travelerRatingCount={hotel.travelerRatingCount}
+                scoreLocation={hotel.scoreLocation ?? 0}
+                scoreDesign={hotel.scoreDesign ?? 0}
+                scoreService={hotel.scoreService ?? 0}
+                scoreDining={hotel.scoreDining ?? 0}
+                scoreHardware={hotel.scoreHardware ?? 0}
+                compact
+              />
+            )}
+            <HotelDetailTravel
+              hotel={{
+                nameZh: hotel.nameZh,
+                name: hotel.name,
+                cityZh: hotel.cityZh,
+                countryCode: hotel.countryCode,
+                latitude: hotel.latitude,
+                longitude: hotel.longitude,
+              }}
+            />
           </div>
         </div>
 
@@ -85,27 +138,34 @@ export default async function HotelDetailPage({
             heroImage={hotel.heroImage}
             galleryImages={galleryImages}
             websiteUrl={hotel.websiteUrl}
+            avgBasePrice={hotel.avgBasePrice}
+            avgSuitePrice={hotel.avgSuitePrice}
+            suiteLabel={getSuiteLabel(hotel)}
+            travelerScore={hotel.travelerScore}
+            travelerRatingCount={hotel.travelerRatingCount}
+            travelerReviewSummary={hotel.travelerReviewSummary}
+            scoreLocation={hotel.scoreLocation}
+            scoreDesign={hotel.scoreDesign}
+            scoreService={hotel.scoreService}
+            scoreDining={hotel.scoreDining}
+            scoreHardware={hotel.scoreHardware}
+            hotelId={hotel.id}
+            communityReviews={communityReviews}
           />
         </div>
 
         <div className="border-t border-[#e8e8e8] px-8 py-6">
-          <div className="flex flex-wrap gap-3">
-            <Link href={`/checkin?hotel=${hotel.id}`} className="hc-btn-primary">
-              打卡入住
-            </Link>
-            <Link
-              href={`/book?hotel=${hotel.id}&source=detail`}
-              className="rounded-full border border-[#e8e8e8] px-5 py-2.5 text-sm transition hover:border-[#b8956b]"
-            >
-              礼遇预订
-            </Link>
-            <Link
-              href={`/map?focus=${hotel.id}`}
-              className="rounded-full border border-[#e8e8e8] px-5 py-2.5 text-sm text-[#6b7280] transition hover:border-[#b8956b]"
-            >
-              地图定位
-            </Link>
-          </div>
+          <HotelDetailActions
+            hotelId={hotel.id}
+            hotel={{
+              nameZh: hotel.nameZh,
+              name: hotel.name,
+              cityZh: hotel.cityZh,
+              countryCode: hotel.countryCode,
+              latitude: hotel.latitude,
+              longitude: hotel.longitude,
+            }}
+          />
         </div>
       </div>
     </div>

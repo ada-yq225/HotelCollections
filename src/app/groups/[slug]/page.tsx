@@ -3,6 +3,9 @@ import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { getGroupBySlug, getHotelsByGroupSlug } from "@/lib/hotels";
 import { SIGNATURE_GROUPS } from "@/data/destinations";
+import { HotelPriceDisplay } from "@/components/hotels/HotelPriceDisplay";
+import { HotelTravelerRating } from "@/components/hotels/HotelTravelerRating";
+import { getSuiteLabel } from "@/lib/hotel-pricing";
 
 export default async function GroupPage({
   params,
@@ -73,6 +76,30 @@ export default async function GroupPage({
                 <p className="mt-2 text-xs text-[#9ca3af]">
                   {h.cityZh || h.city}
                 </p>
+                {h.travelerScore != null && h.travelerRatingCount != null && (
+                  <div className="mt-2">
+                    <HotelTravelerRating
+                      travelerScore={h.travelerScore}
+                      travelerRatingCount={h.travelerRatingCount}
+                      scoreLocation={h.scoreLocation ?? 0}
+                      scoreDesign={h.scoreDesign ?? 0}
+                      scoreService={h.scoreService ?? 0}
+                      scoreDining={h.scoreDining ?? 0}
+                      scoreHardware={h.scoreHardware ?? 0}
+                      compact
+                    />
+                  </div>
+                )}
+                {h.avgBasePrice != null && h.avgSuitePrice != null && (
+                  <div className="mt-3 border-t border-[#f3f0eb] pt-3">
+                    <HotelPriceDisplay
+                      avgBasePrice={h.avgBasePrice}
+                      avgSuitePrice={h.avgSuitePrice}
+                      suiteLabel={getSuiteLabel(h)}
+                      compact
+                    />
+                  </div>
+                )}
               </Link>
             ))}
           </div>

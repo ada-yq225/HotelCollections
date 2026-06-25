@@ -24,4 +24,17 @@ export type HotelEntry = {
   descriptionZh?: string;
   heroImage?: string;
   galleryImages?: string[];
+  /** Manual override — CNY per night */
+  avgBasePrice?: number;
+  /** Manual override — suite / villa CNY per night */
+  avgSuitePrice?: number;
+  /** Manual override — H&C traveler score (0–10) */
+  travelerScore?: number;
+  travelerRatingCount?: number;
+  travelerReviewSummary?: string;
+  scoreLocation?: number;
+  scoreDesign?: number;
+  scoreService?: number;
+  scoreDining?: number;
+  scoreHardware?: number;
 };

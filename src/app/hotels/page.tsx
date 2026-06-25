@@ -32,20 +32,47 @@ export default async function HotelsPage() {
   });
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-10">
-      <div className="mb-8">
-        <h1 className="font-serif text-4xl">高端酒店库</h1>
-        <p className="mt-2 text-[#6b7280]">
-          白名单制度 · 共收录 {hotelCount} 家在营奢华酒店 · 覆盖全球主要度假胜地
-          · 数据更新至 2026 年
-        </p>
+    <div>
+      <section className="relative overflow-hidden border-b border-[#e8e8e8] bg-white">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_#faf6f0_0%,_transparent_55%)]" />
+        <div className="relative mx-auto max-w-6xl px-4 py-12 md:py-16">
+          <p className="mb-3 text-xs font-medium tracking-[0.25em] text-[#b8956b] uppercase">
+            Curated Collection
+          </p>
+          <h1 className="font-serif text-4xl font-semibold tracking-tight md:text-5xl">
+            高端酒店库
+          </h1>
+          <p className="mt-4 max-w-xl text-[#6b7280] leading-relaxed">
+            严格白名单收录 <span className="font-medium text-[#1a1a1a]">{hotelCount}</span> 家在营奢华酒店
+            · 品牌标识 · 旅客评分 · 参考均价
+          </p>
+          <div className="mt-6 flex flex-wrap gap-6 text-sm text-[#6b7280]">
+            <div>
+              <p className="font-serif text-2xl font-semibold text-[#1a1a1a]">58</p>
+              <p className="text-xs">奢华品牌</p>
+            </div>
+            <div className="h-10 w-px bg-[#e8e8e8]" />
+            <div>
+              <p className="font-serif text-2xl font-semibold text-[#1a1a1a]">9</p>
+              <p className="text-xs">酒店集团</p>
+            </div>
+            <div className="h-10 w-px bg-[#e8e8e8]" />
+            <div>
+              <p className="font-serif text-2xl font-semibold text-[#1a1a1a]">30+</p>
+              <p className="text-xs">度假目的地</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="mx-auto max-w-6xl px-4 py-8">
+        <HotelsExplorer
+          groups={JSON.parse(JSON.stringify(filters))}
+          brands={JSON.parse(JSON.stringify(allBrands))}
+          alliances={JSON.parse(JSON.stringify(alliances))}
+          destinations={FEATURED_DESTINATIONS}
+        />
       </div>
-      <HotelsExplorer
-        groups={JSON.parse(JSON.stringify(filters))}
-        brands={JSON.parse(JSON.stringify(allBrands))}
-        alliances={JSON.parse(JSON.stringify(alliances))}
-        destinations={FEATURED_DESTINATIONS}
-      />
     </div>
   );
 }

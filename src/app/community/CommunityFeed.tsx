@@ -5,18 +5,19 @@ import { PostCard } from "@/components/community/PostCard";
 
 type Post = Parameters<typeof PostCard>[0]["post"];
 
-export function CommunityFeed() {
+export function CommunityFeed({ hotelId }: { hotelId?: string }) {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
   const [cursor, setCursor] = useState<string | null>(null);
   const [hasMore, setHasMore] = useState(false);
   const [group, setGroup] = useState("");
 
-  const loadPosts = useCallback(async (groupFilter: string, nextCursor?: string | null) => {
+  const loadPosts = useCallback(async (groupFilter: string, nextCursor?: string | null, hotelFilter?: string) => {
     setLoading(true);
     const params = new URLSearchParams({ limit: "20" });
     if (nextCursor) params.set("cursor", nextCursor);
     if (groupFilter) params.set("group", groupFilter);
+    if (hotelFilter) params.set("hotelId", hotelFilter);
 
     const res = await fetch(`/api/posts?${params}`);
     const data = await res.json();
@@ -30,17 +31,17 @@ export function CommunityFeed() {
   }, []);
 
   useEffect(() => {
-    loadPosts(group).then(({ posts: items, nextCursor }) => {
+    loadPosts(group, null, hotelId).then(({ posts: items, nextCursor }) => {
       setPosts(items);
       setCursor(nextCursor);
       setHasMore(!!nextCursor);
       setLoading(false);
     });
-  }, [group, loadPosts]);
+  }, [group, hotelId, loadPosts]);
 
   async function loadMore() {
     if (!cursor) return;
-    const { posts: more, nextCursor } = await loadPosts(group, cursor);
+    const { posts: more, nextCursor } = await loadPosts(group, cursor, hotelId);
     setPosts((prev) => [...prev, ...more]);
     setCursor(nextCursor);
     setHasMore(!!nextCursor);

@@ -12,6 +12,7 @@
     "db:setup": "prisma db push && tsx prisma/seed.ts",
     "hotels:enrich": "tsx scripts/enrich-hotels.ts",
     "hotels:enrich-images": "tsx scripts/enrich-hotels.ts --images-only",
+    "logos:manifest": "node scripts/generate-brand-logo-manifest.mjs",
     "postinstall": "prisma generate"
   },
   "dependencies": {

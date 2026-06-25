@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 import { ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
+import { HotelPriceDisplay } from "./HotelPriceDisplay";
+import { HotelTravelerRating } from "./HotelTravelerRating";
+import { HotelCommunityReviews } from "./HotelCommunityReviews";
 
 type HotelProfileProps = {
   nameZh: string;
@@ -12,6 +15,28 @@ type HotelProfileProps = {
   heroImage?: string | null;
   galleryImages: string[];
   websiteUrl?: string | null;
+  avgBasePrice?: number | null;
+  avgSuitePrice?: number | null;
+  suiteLabel?: string;
+  travelerScore?: number | null;
+  travelerRatingCount?: number | null;
+  travelerReviewSummary?: string | null;
+  scoreLocation?: number | null;
+  scoreDesign?: number | null;
+  scoreService?: number | null;
+  scoreDining?: number | null;
+  scoreHardware?: number | null;
+  hotelId?: string;
+  communityReviews?: {
+    id: string;
+    title: string;
+    content: string;
+    createdAt: Date;
+    loungeDining: number | null;
+    amenities: number | null;
+    service: number | null;
+    user: { name: string; isPlus: boolean };
+  }[];
 };
 
 export function HotelProfile({
@@ -23,6 +48,19 @@ export function HotelProfile({
   heroImage,
   galleryImages,
   websiteUrl,
+  avgBasePrice,
+  avgSuitePrice,
+  suiteLabel,
+  travelerScore,
+  travelerRatingCount,
+  travelerReviewSummary,
+  scoreLocation,
+  scoreDesign,
+  scoreService,
+  scoreDining,
+  scoreHardware,
+  hotelId,
+  communityReviews = [],
 }: HotelProfileProps) {
   const images = galleryImages.length > 0 ? galleryImages : heroImage ? [heroImage] : [];
   const [active, setActive] = useState(0);
@@ -94,6 +132,41 @@ export function HotelProfile({
         </div>
       )}
 
+      {travelerScore != null &&
+        travelerRatingCount != null &&
+        scoreLocation != null &&
+        scoreDesign != null &&
+        scoreService != null &&
+        scoreDining != null &&
+        scoreHardware != null && (
+          <section>
+            <h2 className="mb-3 font-serif text-xl font-semibold">高端旅客评分</h2>
+            <div className="rounded-2xl border border-[#e8e8e8] p-5">
+              <HotelTravelerRating
+                travelerScore={travelerScore}
+                travelerRatingCount={travelerRatingCount}
+                travelerReviewSummary={travelerReviewSummary}
+                scoreLocation={scoreLocation}
+                scoreDesign={scoreDesign}
+                scoreService={scoreService}
+                scoreDining={scoreDining}
+                scoreHardware={scoreHardware}
+              />
+            </div>
+          </section>
+        )}
+
+      {avgBasePrice != null && avgSuitePrice != null && (
+        <section>
+          <h2 className="mb-3 font-serif text-xl font-semibold">参考均价</h2>
+          <HotelPriceDisplay
+            avgBasePrice={avgBasePrice}
+            avgSuitePrice={avgSuitePrice}
+            suiteLabel={suiteLabel}
+          />
+        </section>
+      )}
+
       <section>
         <div className="mb-3 flex items-center justify-between gap-4">
           <h2 className="font-serif text-xl font-semibold">酒店介绍</h2>
@@ -134,6 +207,17 @@ export function HotelProfile({
           </p>
         )}
       </section>
+
+      {hotelId && (
+        <section>
+          <h2 className="mb-3 font-serif text-xl font-semibold">社群真实点评</h2>
+          <HotelCommunityReviews
+            hotelId={hotelId}
+            hotelName={nameZh}
+            posts={communityReviews}
+          />
+        </section>
+      )}
     </div>
   );
 }

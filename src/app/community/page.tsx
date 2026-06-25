@@ -3,8 +3,13 @@ import { getCurrentUser } from "@/lib/auth";
 import { CommunityFeed } from "./CommunityFeed";
 import { PenLine } from "lucide-react";
 
-export default async function CommunityPage() {
+export default async function CommunityPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ hotel?: string }>;
+}) {
   const user = await getCurrentUser();
+  const { hotel: hotelId } = await searchParams;
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-10">
@@ -26,7 +31,7 @@ export default async function CommunityPage() {
         )}
       </div>
 
-      <CommunityFeed />
+      <CommunityFeed hotelId={hotelId} />
     </div>
   );
 }

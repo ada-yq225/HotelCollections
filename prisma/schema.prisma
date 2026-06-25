@@ -98,6 +98,20 @@ model Hotel {
   heroImage      String?
   galleryImages  String   @default("[]")
   enrichedAt     DateTime?
+  /** Average nightly rate — standard room (CNY) */
+  avgBasePrice   Int?
+  /** Average nightly rate — suite / villa (CNY) */
+  avgSuitePrice  Int?
+  priceCurrency  String   @default("CNY")
+  /** H&C traveler overall score (0–10) */
+  travelerScore         Float?
+  travelerRatingCount   Int      @default(0)
+  travelerReviewSummary String?
+  scoreLocation         Float?
+  scoreDesign           Float?
+  scoreService          Float?
+  scoreDining           Float?
+  scoreHardware         Float?
   isActive       Boolean  @default(true)
   createdAt      DateTime @default(now())
 

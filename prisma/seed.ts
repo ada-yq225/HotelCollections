@@ -5,6 +5,8 @@ import { ALL_HOTELS } from "../src/data/hotels";
 import { BADGES } from "../src/data/badges";
 import { HOTEL_ENRICHMENT } from "../src/data/hotel-enrichment";
 import { resolveOfficialUrl } from "../src/lib/hotel-official-url";
+import { estimateHotelPrices } from "../src/lib/hotel-pricing";
+import { estimateTravelerRating } from "../src/lib/hotel-ratings";
 
 const prisma = new PrismaClient();
 
@@ -95,6 +97,8 @@ async function main() {
     const websiteUrl =
       h.websiteUrl ?? cached?.websiteUrl ?? resolveOfficialUrl(h) ?? undefined;
     const gallery = h.galleryImages ?? cached?.galleryImages ?? [];
+    const prices = estimateHotelPrices(h);
+    const ratings = estimateTravelerRating(h);
 
     const created = await prisma.hotel.create({
       data: {
@@ -118,6 +122,17 @@ async function main() {
         heroImage: h.heroImage ?? cached?.heroImage,
         galleryImages: JSON.stringify(gallery),
         enrichedAt: cached?.description || cached?.heroImage ? new Date() : undefined,
+        avgBasePrice: prices.avgBasePrice,
+        avgSuitePrice: prices.avgSuitePrice,
+        priceCurrency: prices.priceCurrency,
+        travelerScore: ratings.travelerScore,
+        travelerRatingCount: ratings.travelerRatingCount,
+        travelerReviewSummary: ratings.travelerReviewSummary,
+        scoreLocation: ratings.scoreLocation,
+        scoreDesign: ratings.scoreDesign,
+        scoreService: ratings.scoreService,
+        scoreDining: ratings.scoreDining,
+        scoreHardware: ratings.scoreHardware,
         isActive: h.isActive !== false,
       },
     });
