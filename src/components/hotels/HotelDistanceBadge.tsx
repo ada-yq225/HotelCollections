@@ -26,7 +26,22 @@ export function HotelDistanceBadge({
   if (!ready) return null;
 
   if (!departure) {
-    if (compact) return null;
+    if (compact) {
+      return (
+        <button
+          type="button"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            onClick?.();
+          }}
+          className="inline-flex items-center gap-1 text-xs text-[#9ca3af] transition hover:text-[#b8956b]"
+        >
+          <Navigation className="h-3 w-3" />
+          距出发地
+        </button>
+      );
+    }
     return (
       <button
         type="button"

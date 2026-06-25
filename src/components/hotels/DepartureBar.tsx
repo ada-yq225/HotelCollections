@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import { MapPin, ChevronRight, Navigation, Plane, Search } from "lucide-react";
+import { useEffect, useState } from "react";
+import { MapPin, ChevronRight, Navigation, Plane, Search, CheckCircle2 } from "lucide-react";
+import { getAirportByIata } from "@/data/airports";
 import { useDepartureAirport } from "@/hooks/useDepartureAirport";
 import { DepartureAirportPicker } from "./DepartureAirportPicker";
 import { FlightSearchPanel } from "./FlightSearchPanel";
@@ -10,11 +11,36 @@ export function DepartureBar() {
   const { departure, ready } = useDepartureAirport();
   const [pickerOpen, setPickerOpen] = useState(false);
   const [flightSearchOpen, setFlightSearchOpen] = useState(false);
+  const [feedback, setFeedback] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!feedback) return;
+    const timer = setTimeout(() => setFeedback(null), 4000);
+    return () => clearTimeout(timer);
+  }, [feedback]);
 
   if (!ready) return null;
 
+  const handleAirportConfirmed = (iata: string) => {
+    setPickerOpen(false);
+    setFlightSearchOpen(true);
+    setFeedback(iata);
+  };
+
+  const feedbackAirport = feedback ? getAirportByIata(feedback) : null;
+
   return (
     <>
+      {feedbackAirport && (
+        <div className="flex items-center gap-2 rounded-xl border border-[#b8956b]/30 bg-[#faf6f0] px-4 py-2.5 text-sm text-[#374151]">
+          <CheckCircle2 className="h-4 w-4 shrink-0 text-[#b8956b]" />
+          <span>
+            已设置出发地 <span className="font-medium">{feedbackAirport.cityZh}</span>
+            （{feedbackAirport.iata}），酒店距离已更新，可继续搜机票
+          </span>
+        </div>
+      )}
+
       <div className="flex flex-col gap-2 sm:flex-row">
         <button
           type="button"
@@ -69,7 +95,11 @@ export function DepartureBar() {
         </button>
       </div>
 
-      <DepartureAirportPicker open={pickerOpen} onClose={() => setPickerOpen(false)} />
+      <DepartureAirportPicker
+        open={pickerOpen}
+        onClose={() => setPickerOpen(false)}
+        onConfirm={handleAirportConfirmed}
+      />
       <FlightSearchPanel open={flightSearchOpen} onClose={() => setFlightSearchOpen(false)} />
     </>
   );

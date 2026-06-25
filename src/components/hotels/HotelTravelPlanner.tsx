@@ -69,6 +69,8 @@ export function HotelTravelPlanner({ open, onClose, hotel }: HotelTravelPlannerP
     }
     if (departure) {
       setSelectedIata(departure.iata);
+      setStep("flights");
+      setPlan(null);
       fetchPlan(departure.iata);
     }
     // Only auto-load when the panel opens; airport picks call fetchPlan directly.
@@ -78,6 +80,8 @@ export function HotelTravelPlanner({ open, onClose, hotel }: HotelTravelPlannerP
   const handleSelectAirport = (iata: string) => {
     setSelectedIata(iata);
     setDeparture(iata);
+    setStep("flights");
+    setPlan(null);
     fetchPlan(iata);
   };
 
@@ -127,7 +131,7 @@ export function HotelTravelPlanner({ open, onClose, hotel }: HotelTravelPlannerP
         </div>
 
         <div className="overflow-y-auto px-5 pb-6" style={{ maxHeight: "calc(90vh - 80px)" }}>
-          {step === "departure" && (
+          {step === "departure" && !loading && (
             <div className="space-y-4 pt-4">
               <p className="text-sm text-[#6b7280]">选择您的出发机场，查看前往酒店的距离与航班方案</p>
 
@@ -187,7 +191,14 @@ export function HotelTravelPlanner({ open, onClose, hotel }: HotelTravelPlannerP
             </div>
           )}
 
-          {step === "flights" && plan && (
+          {loading && (
+            <div className="flex flex-col items-center justify-center gap-3 py-16 text-sm text-[#6b7280]">
+              <Loader2 className="h-8 w-8 animate-spin text-[#b8956b]" />
+              正在查询航班方案...
+            </div>
+          )}
+
+          {step === "flights" && plan && !loading && (
             <div className="space-y-5 pt-4">
               <div className="grid grid-cols-2 gap-3">
                 <div className="rounded-xl bg-[#fafafa] p-3">
