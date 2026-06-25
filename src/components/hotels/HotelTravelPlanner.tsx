@@ -1,20 +1,12 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import {
-  X,
-  Plane,
-  MapPin,
-  Navigation,
-  Loader2,
-  ArrowRight,
-  Clock,
-  LocateFixed,
-} from "lucide-react";
+import { X, Plane, MapPin, Navigation, Loader2, LocateFixed } from "lucide-react";
 import { DEPARTURE_AIRPORTS } from "@/data/airports";
 import { useDepartureAirport } from "@/hooks/useDepartureAirport";
-import { formatDistanceKm, formatDuration } from "@/lib/travel";
-import type { TravelPlanResult, FlightOption } from "@/lib/travel";
+import { formatDistanceKm } from "@/lib/travel";
+import type { TravelPlanResult } from "@/lib/travel";
+import { FlightOptionCard } from "./FlightOptionCard";
 
 type HotelTravelPlannerProps = {
   open: boolean;
@@ -28,62 +20,6 @@ type HotelTravelPlannerProps = {
     longitude: number;
   };
 };
-
-function FlightCard({ flight, index }: { flight: FlightOption; index: number }) {
-  const isDirect = flight.type === "direct";
-  return (
-    <div
-      className={`rounded-xl border p-4 ${
-        isDirect
-          ? "border-[#b8956b]/40 bg-gradient-to-br from-[#faf6f0] to-white"
-          : "border-[#e8e8e8] bg-white"
-      }`}
-    >
-      <div className="mb-3 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          {isDirect ? (
-            <span className="rounded-full bg-[#b8956b] px-2.5 py-0.5 text-[10px] font-medium text-white">
-              直飞
-            </span>
-          ) : (
-            <span className="rounded-full bg-[#f0f0f0] px-2.5 py-0.5 text-[10px] font-medium text-[#6b7280]">
-              转机 · {flight.hubZh}
-            </span>
-          )}
-          <span className="text-xs text-[#9ca3af]">方案 {index + 1}</span>
-        </div>
-        <span className="flex items-center gap-1 text-sm font-medium text-[#374151]">
-          <Clock className="h-3.5 w-3.5 text-[#b8956b]" />
-          {formatDuration(flight.totalDurationMin)}
-        </span>
-      </div>
-
-      <div className="space-y-2">
-        {flight.legs.map((leg, i) => (
-          <div key={i}>
-            {i > 0 && (
-              <p className="my-1.5 pl-6 text-[10px] text-[#9ca3af]">
-                中转等待约 {formatDuration(flight.layoverMin ?? 90)}
-              </p>
-            )}
-            <div className="flex items-center gap-2 text-sm">
-              <Plane className="h-3.5 w-3.5 shrink-0 text-[#b8956b]" />
-              <span className="font-medium text-[#1a1a1a]">{leg.from}</span>
-              <ArrowRight className="h-3 w-3 text-[#d4d4d4]" />
-              <span className="font-medium text-[#1a1a1a]">{leg.to}</span>
-              <span className="ml-auto text-xs text-[#9ca3af]">
-                {formatDuration(leg.durationMin)}
-              </span>
-            </div>
-            <p className="mt-0.5 pl-6 text-xs text-[#6b7280]">
-              {leg.fromZh} → {leg.toZh}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 export function HotelTravelPlanner({ open, onClose, hotel }: HotelTravelPlannerProps) {
   const { departure, setDeparture, detectLocation } = useDepartureAirport();
@@ -129,21 +65,31 @@ export function HotelTravelPlanner({ open, onClose, hotel }: HotelTravelPlannerP
     if (!open) {
       setStep("departure");
       setPlan(null);
+      return;
     }
+    if (departure) {
+      setSelectedIata(departure.iata);
+      fetchPlan(departure.iata);
+    }
+    // Only auto-load when the panel opens; airport picks call fetchPlan directly.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
+
+  const handleSelectAirport = (iata: string) => {
+    setSelectedIata(iata);
+    setDeparture(iata);
+    fetchPlan(iata);
+  };
 
   const handleConfirmDeparture = () => {
     if (!selectedIata) return;
-    setDeparture(selectedIata);
-    fetchPlan(selectedIata);
+    handleSelectAirport(selectedIata);
   };
 
   const handleGeo = async () => {
     setGeoLoading(true);
     const ap = await detectLocation();
-    if (ap) {
-      setSelectedIata(ap.iata);
-    }
+    if (ap) handleSelectAirport(ap.iata);
     setGeoLoading(false);
   };
 
@@ -211,7 +157,7 @@ export function HotelTravelPlanner({ open, onClose, hotel }: HotelTravelPlannerP
                   <button
                     key={a.iata}
                     type="button"
-                    onClick={() => setSelectedIata(a.iata)}
+                    onClick={() => handleSelectAirport(a.iata)}
                     className={`flex w-full items-center gap-3 rounded-xl border p-3 text-left transition ${
                       selectedIata === a.iata
                         ? "border-[#b8956b] bg-[#faf6f0]"
@@ -280,7 +226,7 @@ export function HotelTravelPlanner({ open, onClose, hotel }: HotelTravelPlannerP
                   </h3>
                   <div className="space-y-3">
                     {directFlights.map((f, i) => (
-                      <FlightCard key={`d-${i}`} flight={f} index={i} />
+                      <FlightOptionCard key={`d-${i}`} flight={f} index={i} />
                     ))}
                   </div>
                 </div>
@@ -294,7 +240,7 @@ export function HotelTravelPlanner({ open, onClose, hotel }: HotelTravelPlannerP
                   </h3>
                   <div className="space-y-3">
                     {connectingFlights.map((f, i) => (
-                      <FlightCard key={`c-${i}`} flight={f} index={i} />
+                      <FlightOptionCard key={`c-${i}`} flight={f} index={i} />
                     ))}
                   </div>
                 </div>

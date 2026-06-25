@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { X, Loader2, LocateFixed } from "lucide-react";
+import { X, Loader2, LocateFixed, Check } from "lucide-react";
 import { DEPARTURE_AIRPORTS } from "@/data/airports";
 import { useDepartureAirport } from "@/hooks/useDepartureAirport";
 
@@ -31,19 +31,20 @@ export function DepartureAirportPicker({
 
   useEffect(() => {
     if (!open) setSearch("");
-  }, [open]);
+    else if (departure) setSelectedIata(departure.iata);
+  }, [open, departure]);
 
-  const handleConfirm = () => {
-    if (!selectedIata) return;
-    setDeparture(selectedIata);
-    onConfirm?.(selectedIata);
+  const applyAirport = (iata: string) => {
+    setSelectedIata(iata);
+    setDeparture(iata);
+    onConfirm?.(iata);
     onClose();
   };
 
   const handleGeo = async () => {
     setGeoLoading(true);
     const ap = await detectLocation();
-    if (ap) setSelectedIata(ap.iata);
+    if (ap) applyAirport(ap.iata);
     setGeoLoading(false);
   };
 
@@ -98,38 +99,39 @@ export function DepartureAirportPicker({
           />
 
           <div className="max-h-64 space-y-1.5 overflow-y-auto">
-            {filteredAirports.map((a) => (
-              <button
-                key={a.iata}
-                type="button"
-                onClick={() => setSelectedIata(a.iata)}
-                className={`flex w-full items-center gap-3 rounded-xl border p-3 text-left transition ${
-                  selectedIata === a.iata
-                    ? "border-[#b8956b] bg-[#faf6f0]"
-                    : "border-[#e8e8e8] hover:border-[#d4d4d4]"
-                }`}
-              >
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] font-mono text-xs font-bold text-white">
-                  {a.iata}
-                </span>
-                <div>
-                  <p className="text-sm font-medium">
-                    {a.cityZh} · {a.nameZh}
-                  </p>
-                  <p className="text-xs text-[#9ca3af]">{a.name}</p>
-                </div>
-              </button>
-            ))}
+            {filteredAirports.map((a) => {
+              const selected = selectedIata === a.iata || departure?.iata === a.iata;
+              return (
+                <button
+                  key={a.iata}
+                  type="button"
+                  onClick={() => applyAirport(a.iata)}
+                  className={`flex w-full items-center gap-3 rounded-xl border p-3 text-left transition ${
+                    selected
+                      ? "border-[#b8956b] bg-[#faf6f0]"
+                      : "border-[#e8e8e8] hover:border-[#d4d4d4]"
+                  }`}
+                >
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] font-mono text-xs font-bold text-white">
+                    {a.iata}
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-sm font-medium">
+                      {a.cityZh} · {a.nameZh}
+                    </p>
+                    <p className="text-xs text-[#9ca3af]">{a.name}</p>
+                  </div>
+                  {selected && <Check className="h-4 w-4 shrink-0 text-[#b8956b]" />}
+                </button>
+              );
+            })}
           </div>
 
-          <button
-            type="button"
-            onClick={handleConfirm}
-            disabled={!selectedIata}
-            className="hc-btn-primary w-full py-3 disabled:opacity-50"
-          >
-            确认出发地
-          </button>
+          {selectedIata && (
+            <p className="text-center text-xs text-[#9ca3af]">
+              点击机场即可立即生效，距离与航班将同步更新
+            </p>
+          )}
         </div>
       </div>
     </>

@@ -122,6 +122,21 @@ export function findNearestDepartureAirport(lat: number, lng: number): Airport {
   return best;
 }
 
+export function searchFlightsBetweenAirports(
+  departureIata: string,
+  destinationIata: string
+): { departure: Airport; destination: Airport; flights: FlightOption[] } | null {
+  const departure = getAirportByIata(departureIata);
+  const destination = getAirportByIata(destinationIata);
+  if (!departure || !destination) return null;
+  if (departure.iata === destination.iata) return null;
+  return {
+    departure,
+    destination,
+    flights: findFlightOptions(departure, destination),
+  };
+}
+
 function findFlightOptions(dep: Airport, dest: Airport): FlightOption[] {
   const options: FlightOption[] = [];
 
