@@ -3,10 +3,11 @@ import { prisma } from "@/lib/prisma";
 import { Crown, Map, Shield, Sparkles } from "lucide-react";
 
 export default async function HomePage() {
-  const [hotelCount, brandCount, groupCount] = await Promise.all([
+  const [hotelCount, brandCount, groupCount, badgeCount] = await Promise.all([
     prisma.hotel.count({ where: { isActive: true } }),
     prisma.brand.count(),
     prisma.hotelGroup.count(),
+    prisma.badge.count(),
   ]);
 
   return (
@@ -20,7 +21,7 @@ export default async function HomePage() {
             <span className="text-[#b8956b]">垂直社区</span>
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-lg text-[#6b7280]">
-            严格的奢华酒店白名单 · 入住足迹点亮世界地图 · 专属荣誉称号
+            严格的奢华酒店白名单 · 每家酒店官方图集 · {badgeCount} 项荣誉称号等你解锁
             <br />
             与同圈层爱好者分享极具参考价值的入住攻略
           </p>
@@ -40,7 +41,7 @@ export default async function HomePage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-16">
-        <div className="grid grid-cols-3 gap-6 text-center">
+        <div className="grid grid-cols-2 gap-6 text-center sm:grid-cols-4">
           <div className="hc-card p-8">
             <p className="font-serif text-4xl font-semibold text-[#b8956b]">{hotelCount}</p>
             <p className="mt-2 text-sm text-[#6b7280]">白名单酒店</p>
@@ -52,6 +53,10 @@ export default async function HomePage() {
           <div className="hc-card p-8">
             <p className="font-serif text-4xl font-semibold">{groupCount}</p>
             <p className="mt-2 text-sm text-[#6b7280]">酒店集团</p>
+          </div>
+          <div className="hc-card p-8">
+            <p className="font-serif text-4xl font-semibold text-[#b8956b]">{badgeCount}</p>
+            <p className="mt-2 text-sm text-[#6b7280]">荣誉称号</p>
           </div>
         </div>
       </section>
