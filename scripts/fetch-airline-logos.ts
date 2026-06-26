@@ -12,6 +12,14 @@ const ROOT = path.join(process.cwd(), "public");
 const AIRLINE_DIR = path.join(ROOT, "airlines");
 const ALLIANCE_DIR = path.join(ROOT, "alliances");
 
+/** Curated sources when Kiwi CDN is stale (e.g. post-rebrand airlines). */
+const AIRLINE_OVERRIDES: Record<string, string> = {
+  OZ: "https://content.r9cdn.net/rimg/provider-logos/airlines/v/OZ.png?width=128&height=128",
+};
+
+/** Always re-download these — branding changes faster than Kiwi updates. */
+const FORCE_REFRESH = new Set(["OZ"]);
+
 const ALLIANCE_SOURCES: Record<string, string> = {
   "star-alliance":
     "https://upload.wikimedia.org/wikipedia/commons/d/d8/Star_Alliance_Logo.svg",
@@ -46,11 +54,14 @@ async function main() {
 
   for (const iata of iatas) {
     const out = path.join(AIRLINE_DIR, `${iata}.png`);
-    if (fs.existsSync(out) && fs.statSync(out).size > 500) {
+    if (!FORCE_REFRESH.has(iata) && fs.existsSync(out) && fs.statSync(out).size > 500) {
       airlineOk++;
       continue;
     }
-    const buf = await fetchBuffer(`https://images.kiwi.com/airlines/128/${iata}.png`);
+    const source =
+      AIRLINE_OVERRIDES[iata] ??
+      `https://images.kiwi.com/airlines/128/${iata}.png`;
+    const buf = await fetchBuffer(source);
     if (buf && buf.length > 200) {
       fs.writeFileSync(out, buf);
       airlineOk++;

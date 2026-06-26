@@ -38,6 +38,8 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "**.joali.com" },
       { protocol: "https", hostname: "**.soneva.com" },
       { protocol: "https", hostname: "images.kiwi.com" },
+      { protocol: "https", hostname: "content.r9cdn.net" },
+      { protocol: "https", hostname: "www.gstatic.com" },
       { protocol: "https", hostname: "upload.wikimedia.org" },
       { protocol: "https", hostname: "**.etihad.com" },
       { protocol: "https", hostname: "**.singaporeair.com" },

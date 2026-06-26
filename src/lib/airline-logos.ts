@@ -2,6 +2,14 @@ import type { AirlineAllianceSlug } from "@/data/airlines";
 
 const KIWI_CDN = "https://images.kiwi.com/airlines/128";
 
+/**
+ * Airlines whose Kiwi CDN marks are outdated — use curated sources instead.
+ * OZ: Kumho wing logo removed after Korean Air merger (2025); tail-stripe livery is current.
+ */
+const CDN_OVERRIDES: Record<string, string> = {
+  OZ: "https://content.r9cdn.net/rimg/provider-logos/airlines/v/OZ.png?width=128&height=128",
+};
+
 /** Local airline logo path if cached in public/airlines/ */
 export function getAirlineLogoPath(iata: string): string {
   return `/airlines/${iata}.png`;
@@ -9,7 +17,7 @@ export function getAirlineLogoPath(iata: string): string {
 
 export function getAirlineLogoUrl(iata: string, hasLocal = true): string {
   if (hasLocal) return getAirlineLogoPath(iata);
-  return `${KIWI_CDN}/${iata}.png`;
+  return CDN_OVERRIDES[iata] ?? `${KIWI_CDN}/${iata}.png`;
 }
 
 export function getAllianceLogoPath(alliance: AirlineAllianceSlug): string {
