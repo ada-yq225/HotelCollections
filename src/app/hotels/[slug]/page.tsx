@@ -130,6 +130,7 @@ export default async function HotelDetailPage({
 
         <div className="p-8">
           <HotelProfile
+            slug={hotel.slug}
             nameZh={hotel.nameZh || hotel.name}
             name={hotel.name}
             descriptionZh={hotel.descriptionZh}

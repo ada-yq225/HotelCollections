@@ -12,6 +12,10 @@ import {
   extractScrapedBasePriceCny,
   validateScrapedPriceCny,
 } from "@/lib/hotel-price-scrape";
+import {
+  isGreaterChinaHotel,
+  resolveChinaHotelImage,
+} from "@/lib/china-hotel-images";
 import type { HotelEntry } from "@/data/hotels/types";
 
 export type HotelEnrichment = {
@@ -295,8 +299,15 @@ async function enrichFromUrl(
 export async function enrichHotelFromWeb(
   hotel: Pick<
     HotelEntry,
-    "slug" | "brandSlug" | "name" | "city" | "country" | "countryCode" | "websiteUrl"
-  >
+    | "slug"
+    | "brandSlug"
+    | "name"
+    | "city"
+    | "cityZh"
+    | "country"
+    | "countryCode"
+    | "websiteUrl"
+  > & { nameZh?: string | null }
 ): Promise<HotelEnrichment | null> {
   const candidates = hotel.websiteUrl
     ? [hotel.websiteUrl, ...resolveUrlCandidates(hotel).filter((u) => u !== hotel.websiteUrl)]
@@ -348,6 +359,15 @@ export async function enrichHotelFromWeb(
     if (wikiImage) heroImage = wikiImage;
   }
 
+  let galleryImages = allImages.slice(0, 8);
+  if ((!heroImage || isBadImageUrl(heroImage)) && isGreaterChinaHotel(hotel.countryCode)) {
+    const chinaImg = await resolveChinaHotelImage(hotel);
+    if (chinaImg) {
+      heroImage = chinaImg.heroImage;
+      galleryImages = [chinaImg.heroImage, ...galleryImages.filter((u) => u !== chinaImg.heroImage)].slice(0, 8);
+    }
+  }
+
   let descriptionZh: string | undefined;
   const zhUrl = resolveOfficialUrlZh(websiteUrl);
   if (zhUrl) {
@@ -373,7 +393,7 @@ export async function enrichHotelFromWeb(
     description: parsed.description,
     descriptionZh,
     heroImage,
-    galleryImages: allImages.slice(0, 8),
+    galleryImages,
     avgBasePrice,
     avgSuitePrice,
     priceSource: avgBasePrice ? "scraped" : undefined,

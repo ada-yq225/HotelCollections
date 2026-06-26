@@ -8,6 +8,7 @@ import { formatHotelPrice, getSuiteLabel } from "@/lib/hotel-pricing";
 import { formatTravelerScore } from "@/lib/hotel-ratings";
 import { HotelDistanceBadge } from "./HotelDistanceBadge";
 import { HotelTravelPlanner } from "./HotelTravelPlanner";
+import { hotelDisplayImageUrl } from "@/lib/hotel-display-image";
 
 type HotelCardProps = {
   hotel: {
@@ -38,6 +39,7 @@ type HotelCardProps = {
 export function HotelCard({ hotel: h }: HotelCardProps) {
   const [plannerOpen, setPlannerOpen] = useState(false);
   const suiteLabel = getSuiteLabel({ region: h.region, countryCode: h.countryCode });
+  const coverImage = hotelDisplayImageUrl(h.slug, h.heroImage);
 
   return (
     <>
@@ -46,9 +48,9 @@ export function HotelCard({ hotel: h }: HotelCardProps) {
         className="group hc-card block overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
       >
         <div className="relative aspect-[4/3] overflow-hidden bg-[#f3f0eb]">
-          {h.heroImage ? (
+          {coverImage ? (
             <img
-              src={h.heroImage}
+              src={coverImage}
               alt={h.nameZh || h.name}
               className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
             />

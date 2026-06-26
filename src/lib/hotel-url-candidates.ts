@@ -1,5 +1,7 @@
 import type { HotelEntry } from "@/data/hotels/types";
-import { resolveOfficialUrl } from "@/lib/hotel-official-url";
+import { resolveOfficialUrl, resolveOfficialUrlZh } from "@/lib/hotel-official-url";
+import { MARRIOTT_CHINA_HOTEL_URLS } from "@/data/marriott-china-urls";
+import { isGreaterChinaHotel } from "@/lib/china-hotel-images";
 
 function slugify(text: string): string {
   return text
@@ -21,7 +23,22 @@ export function resolveUrlCandidates(
   };
 
   const candidates: string[] = [];
-  add(resolveOfficialUrl(hotel));
+  const primary = resolveOfficialUrl(hotel);
+  add(primary);
+  if (primary) {
+    const zh = resolveOfficialUrlZh(primary);
+    add(zh);
+  }
+
+  if (isGreaterChinaHotel(hotel.countryCode)) {
+    add(MARRIOTT_CHINA_HOTEL_URLS[hotel.slug]);
+    if (hotel.brandSlug === "shangri-la") {
+      add(`https://www.shangri-la.com/cn/${hotel.city.toLowerCase().replace(/\s+/g, "-")}/`);
+    }
+    if (hotel.brandSlug === "peninsula") {
+      add(`https://www.peninsula.com/zh-cn/${hotel.city.toLowerCase().replace(/\s+/g, "-")}`);
+    }
+  }
 
   const loc = hotel.slug.replace(/^(ritz-carlton|fairmont|raffles|waldorf-astoria|conrad|park-hyatt|andaz|st-regis|w-|jw-marriott|edition)-/, "");
 

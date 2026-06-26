@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { enrichHotelFromWeb, parseGalleryImages } from "@/lib/hotel-enrichment";
 import { resolveHotelCoverImage } from "@/lib/hotel-cover-image";
+import { hotelDisplayImageUrl, hotelGalleryDisplayUrls } from "@/lib/hotel-display-image";
 import { resolveHotelPrices } from "@/lib/hotel-pricing";
 import { resolveOfficialUrl } from "@/lib/hotel-official-url";
 
@@ -41,7 +42,9 @@ export async function ensureHotelEnriched(hotel: HotelWithBrand): Promise<HotelW
     slug: hotel.slug,
     brandSlug: hotel.brand.slug,
     name: hotel.name,
+    nameZh: hotel.nameZh,
     city: hotel.city,
+    cityZh: hotel.cityZh,
     country: hotel.country,
     countryCode: hotel.countryCode,
     websiteUrl,
@@ -100,14 +103,16 @@ export async function ensureHotelEnriched(hotel: HotelWithBrand): Promise<HotelW
 
 /** Serialize hotel for list cards with resolved cover image */
 export function serializeHotelForList<T extends {
+  slug: string;
   heroImage: string | null;
   galleryImages: string;
 }>(hotel: T) {
   const gallery = parseGalleryImages(hotel.galleryImages);
+  const cover = resolveHotelCoverImage(hotel.heroImage, gallery);
   return {
     ...hotel,
-    heroImage: resolveHotelCoverImage(hotel.heroImage, gallery),
-    galleryImages: gallery,
+    heroImage: hotelDisplayImageUrl(hotel.slug, cover),
+    galleryImages: hotelGalleryDisplayUrls(hotel.slug, gallery),
   };
 }
 

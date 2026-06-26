@@ -5,8 +5,10 @@ import { ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import { HotelPriceDisplay } from "./HotelPriceDisplay";
 import { HotelTravelerRating } from "./HotelTravelerRating";
 import { HotelCommunityReviews } from "./HotelCommunityReviews";
+import { hotelDisplayImageUrl, hotelGalleryDisplayUrls } from "@/lib/hotel-display-image";
 
 type HotelProfileProps = {
+  slug: string;
   nameZh: string;
   name: string;
   descriptionZh?: string | null;
@@ -40,6 +42,7 @@ type HotelProfileProps = {
 };
 
 export function HotelProfile({
+  slug,
   nameZh,
   name,
   descriptionZh,
@@ -62,7 +65,12 @@ export function HotelProfile({
   hotelId,
   communityReviews = [],
 }: HotelProfileProps) {
-  const images = galleryImages.length > 0 ? galleryImages : heroImage ? [heroImage] : [];
+  const rawImages = galleryImages.length > 0 ? galleryImages : heroImage ? [heroImage] : [];
+  const images = hotelGalleryDisplayUrls(slug, rawImages);
+  if (images.length === 0 && heroImage) {
+    const single = hotelDisplayImageUrl(slug, heroImage);
+    if (single) images.push(single);
+  }
   const [active, setActive] = useState(0);
   const intro = descriptionZh || description || notes;
 

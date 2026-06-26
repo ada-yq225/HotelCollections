@@ -1,5 +1,6 @@
 import type { HotelEntry } from "@/data/hotels/types";
 import discoveredUrlsData from "@/data/hotel-url-discovered.json";
+import { MARRIOTT_CHINA_HOTEL_URLS } from "@/data/marriott-china-urls";
 
 const discoveredUrls = discoveredUrlsData as Record<string, string>;
 
@@ -421,6 +422,7 @@ export function resolveOfficialUrl(
 ): string | null {
   if (discoveredUrls[hotel.slug]) return discoveredUrls[hotel.slug];
   if (HOTEL_URL_OVERRIDES[hotel.slug]) return HOTEL_URL_OVERRIDES[hotel.slug];
+  if (MARRIOTT_CHINA_HOTEL_URLS[hotel.slug]) return MARRIOTT_CHINA_HOTEL_URLS[hotel.slug];
 
   if (hotel.slug.startsWith("four-seasons-")) {
     return `https://www.fourseasons.com/${fourSeasonsPath(hotel.slug)}/`;
@@ -549,8 +551,20 @@ export function resolveOfficialUrlZh(websiteUrl: string): string | null {
   if (websiteUrl.includes("hyatt.com")) {
     return websiteUrl.replace("/en-US/", "/zh-CN/");
   }
-  if (websiteUrl.includes("shangri-la.com")) {
-    return websiteUrl.replace("www.shangri-la.com", "www.shangri-la.com/cn");
+  if (websiteUrl.includes("shangri-la.com") && !websiteUrl.includes("/cn/")) {
+    return websiteUrl.replace("www.shangri-la.com/", "www.shangri-la.com/cn/");
+  }
+  if (websiteUrl.includes("marriott.com/en-us/")) {
+    return websiteUrl.replace("/en-us/", "/zh-cn/");
+  }
+  if (websiteUrl.includes("ritzcarlton.com")) {
+    return null;
+  }
+  if (websiteUrl.includes("peninsula.com/en/")) {
+    return websiteUrl.replace("/en/", "/zh-cn/");
+  }
+  if (websiteUrl.includes("rosewoodhotels.com/en/")) {
+    return websiteUrl.replace("/en/", "/zh-hans/");
   }
   return null;
 }
