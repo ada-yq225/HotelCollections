@@ -28,6 +28,7 @@ model User {
   bookingInquiries BookingInquiry[]
   loyaltyStatuses  UserLoyaltyStatus[]
   ffpStatuses      UserFFPStatus[]
+  wishlistItems    UserWishlist[]
   priceAlerts      PriceAlert[]
 }
 
@@ -63,6 +64,20 @@ model UserFFPStatus {
   user         User      @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([userId, programSlug])
+}
+
+model UserWishlist {
+  id        String   @id @default(cuid())
+  userId    String
+  hotelId   String
+  note      String?
+  priority  String   @default("want")
+  createdAt DateTime @default(now())
+
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  hotel     Hotel    @relation(fields: [hotelId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, hotelId])
 }
 
 model PriceAlert {
@@ -170,6 +185,7 @@ model Hotel {
   posts       Post[]
   keycards    Keycard[]
   bookingInquiries BookingInquiry[]
+  wishlistItems    UserWishlist[]
 }
 
 model Stay {

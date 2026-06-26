@@ -13,6 +13,11 @@ import {
   Bell,
   GitCompare,
   Plane,
+  Heart,
+  ArrowLeftRight,
+  Calculator,
+  Calendar,
+  ShieldCheck,
 } from "lucide-react";
 import { hotelDisplayImageUrl } from "@/lib/hotel-display-image";
 
@@ -230,6 +235,36 @@ export default async function HomePage() {
                 title: "飞行会籍",
                 desc: "12 大航司常旅客计划管理，联盟互认权益、定级进度追踪",
                 href: "/club/ffp",
+              },
+              {
+                icon: Heart,
+                title: "心愿单",
+                desc: "收藏心仪酒店，规划未来旅行，标记必住目的地",
+                href: "/club/wishlist",
+              },
+              {
+                icon: ArrowLeftRight,
+                title: "酒店对比",
+                desc: "2-3 家酒店并排比较评分、价格、品牌礼遇与预订渠道",
+                href: "/club/compare",
+              },
+              {
+                icon: Calculator,
+                title: "积分计算器",
+                desc: "住宿/飞行消费积分里程实时计算，含精英加赠与信用卡推荐",
+                href: "/club/calculator",
+              },
+              {
+                icon: Calendar,
+                title: "促销日历",
+                desc: "五大集团四季促销时间线、注册入口、入住窗口",
+                href: "/club/promotions",
+              },
+              {
+                icon: ShieldCheck,
+                title: "会籍匹配指南",
+                desc: "酒店集团 & 航司 Status Match/Challenge 政策全汇总",
+                href: "/club/status-match",
               },
               {
                 icon: Bell,

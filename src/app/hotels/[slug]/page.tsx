@@ -11,6 +11,7 @@ import { HotelProfile } from "@/components/hotels/HotelProfile";
 import { getSuiteLabel } from "@/lib/hotel-pricing";
 import { BrandLogo } from "@/components/hotels/BrandLogo";
 import { ShareButton } from "@/components/hotels/ShareButton";
+import { WishlistHeartButton } from "@/components/hotels/WishlistHeartButton";
 import {
   HotelDetailTravel,
   HotelDetailActions,
@@ -148,6 +149,7 @@ export default async function HotelDetailPage({
               hotelSlug={hotel.slug}
               className="shrink-0"
             />
+            <WishlistHeartButton hotelId={hotel.id} hotelSlug={hotel.slug} size="lg" />
           </div>
 
           <div className="mt-6 flex flex-wrap gap-4 text-sm text-[#6b7280]">

@@ -1,13 +1,17 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
-import { CreditCard, Users, Crown, ArrowRight, Award, Plane } from "lucide-react";
+import { CreditCard, Users, Crown, ArrowRight, Award, Plane, Heart, ArrowLeftRight, Calculator, Calendar, ShieldCheck } from "lucide-react";
+import { getActivePromos } from "@/data/loyalty/promotions";
 
 export default async function ClubPage() {
-  const [keycardCount, discussionCount, inquiryCount] = await Promise.all([
+  const [keycardCount, discussionCount, inquiryCount, wishlistCount] = await Promise.all([
     prisma.keycard.count({ where: { status: "active" } }),
     prisma.discussion.count(),
     prisma.bookingInquiry.count(),
+    prisma.userWishlist.count().catch(() => 0),
   ]);
+
+  const activePromos = getActivePromos();
 
   const sections = [
     {
@@ -25,6 +29,46 @@ export default async function ClubPage() {
       desc: "12 大航司常旅客计划、三大联盟互认、定级里程/航段进度追踪与跨航司累积策略",
       stat: "全新上线",
       color: "#1a1a1a",
+    },
+    {
+      href: "/club/wishlist",
+      icon: Heart,
+      title: "我的心愿单",
+      desc: "收藏心仪的酒店，规划未来旅行，标记必住目的地",
+      stat: `${wishlistCount} 家收藏`,
+      color: "#e84855",
+    },
+    {
+      href: "/club/compare",
+      icon: ArrowLeftRight,
+      title: "酒店对比",
+      desc: "并排对比 2-3 家酒店的评分、价格、品牌礼遇与预订渠道",
+      stat: "全新上线",
+      color: "#4a90d9",
+    },
+    {
+      href: "/club/calculator",
+      icon: Calculator,
+      title: "积分计算器",
+      desc: "输入消费金额，实时计算各集团积分/航司里程 + 信用卡推荐",
+      stat: "全新上线",
+      color: "#8b5e3c",
+    },
+    {
+      href: "/club/promotions",
+      icon: Calendar,
+      title: "促销日历",
+      desc: "五大集团 Q1-Q4 促销时间线、注册入口、入住窗口一目了然",
+      stat: `${activePromos.length} 个活动可注册`,
+      color: "#16a34a",
+    },
+    {
+      href: "/club/status-match",
+      icon: ShieldCheck,
+      title: "会籍匹配",
+      desc: "各集团与航司 Status Match / Challenge 政策 & 申请指南",
+      stat: "全新上线",
+      color: "#e8734a",
     },
     {
       href: "/club/keycards",
@@ -55,22 +99,22 @@ export default async function ClubPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-10">
       <h1 className="font-serif text-4xl">精英俱乐部</h1>
-      <p className="mt-2 text-[#6b7280]">深度社交与交易衍生 — 第三阶段核心功能</p>
+      <p className="mt-2 text-[#6b7280]">深度社交与交易衍生 · 工具与资讯 — 为常旅客打造的决策平台</p>
 
-      <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-5">
         {sections.map(({ href, icon: Icon, title, desc, stat, color }) => (
-          <Link key={href} href={href} className="hc-card group p-8 transition hover:ring-1 hover:ring-[#b8956b]">
+          <Link key={href} href={href} className="hc-card group p-6 transition hover:ring-1 hover:ring-[#b8956b]">
             <div
-              className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl"
+              className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl"
               style={{ backgroundColor: `${color}15` }}
             >
-              <Icon className="h-6 w-6" style={{ color }} />
+              <Icon className="h-5 w-5" style={{ color }} />
             </div>
-            <h2 className="font-serif text-2xl">{title}</h2>
-            <p className="mt-3 text-sm leading-relaxed text-[#6b7280]">{desc}</p>
-            <div className="mt-6 flex items-center justify-between">
-              <span className="text-xs text-[#9ca3af]">{stat}</span>
-              <ArrowRight className="h-4 w-4 text-[#6b7280] transition group-hover:translate-x-1 group-hover:text-[#b8956b]" />
+            <h2 className="font-serif text-lg">{title}</h2>
+            <p className="mt-2 text-xs leading-relaxed text-[#6b7280]">{desc}</p>
+            <div className="mt-4 flex items-center justify-between">
+              <span className="text-[10px] text-[#9ca3af]">{stat}</span>
+              <ArrowRight className="h-3.5 w-3.5 text-[#6b7280] transition group-hover:translate-x-1 group-hover:text-[#b8956b]" />
             </div>
           </Link>
         ))}
