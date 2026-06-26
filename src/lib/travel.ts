@@ -5,6 +5,12 @@ import {
   type Airport,
 } from "@/data/airports";
 import { getDirectMinutes, ROUTING_HUBS } from "@/data/flight-routes";
+import {
+  estimateEconomyPriceCny,
+  flightNumberFor,
+  pickCarrierForLeg,
+  type AirlineInfo,
+} from "@/data/airlines";
 
 export type FlightLeg = {
   from: string;
@@ -12,6 +18,8 @@ export type FlightLeg = {
   fromZh: string;
   toZh: string;
   durationMin: number;
+  airline: AirlineInfo;
+  flightNumber: string;
 };
 
 export type FlightOption = {
@@ -22,6 +30,8 @@ export type FlightOption = {
   layoverMin?: number;
   hubIata?: string;
   hubZh?: string;
+  priceCny: number;
+  priceLabel: string;
 };
 
 export type TravelPlanResult = {
@@ -71,13 +81,41 @@ function estimateFlightMinutes(from: Airport, to: Airport): number {
   return Math.round(dist / 800 * 60) + 40;
 }
 
-function buildLeg(from: Airport, to: Airport, durationMin: number): FlightLeg {
+function buildLeg(
+  from: Airport,
+  to: Airport,
+  durationMin: number,
+  legIndex: number,
+  optionSalt: number
+): FlightLeg {
+  const airline = pickCarrierForLeg(from.countryCode, to.countryCode, to.countryCode, legIndex);
   return {
     from: from.iata,
     to: to.iata,
     fromZh: `${from.cityZh} ${from.nameZh}`,
     toZh: `${to.cityZh} ${to.nameZh}`,
     durationMin,
+    airline,
+    flightNumber: flightNumberFor(airline.iata, from.iata, to.iata, optionSalt + legIndex),
+  };
+}
+
+function finalizeOption(
+  option: Omit<FlightOption, "priceCny" | "priceLabel">,
+  dep: Airport,
+  dest: Airport
+): FlightOption {
+  const dist = option.legs.reduce((sum, leg, i) => {
+    const fromAp = getAirportByIata(leg.from);
+    const toAp = getAirportByIata(leg.to);
+    if (!fromAp || !toAp) return sum;
+    return sum + haversineKm(fromAp.latitude, fromAp.longitude, toAp.latitude, toAp.longitude);
+  }, 0);
+  const priceCny = estimateEconomyPriceCny(dist, option.stops, option.totalDurationMin);
+  return {
+    ...option,
+    priceCny,
+    priceLabel: `¥${priceCny.toLocaleString("zh-CN")} 起`,
   };
 }
 
@@ -142,21 +180,33 @@ function findFlightOptions(dep: Airport, dest: Airport): FlightOption[] {
 
   const directMin = getDirectMinutes(dep.iata, dest.iata);
   if (directMin != null) {
-    options.push({
-      type: "direct",
-      legs: [buildLeg(dep, dest, directMin)],
-      totalDurationMin: directMin,
-      stops: 0,
-    });
+    options.push(
+      finalizeOption(
+        {
+          type: "direct",
+          legs: [buildLeg(dep, dest, directMin, 0, 0)],
+          totalDurationMin: directMin,
+          stops: 0,
+        },
+        dep,
+        dest
+      )
+    );
   } else {
     const estDirect = estimateFlightMinutes(dep, dest);
     if (haversineKm(dep.latitude, dep.longitude, dest.latitude, dest.longitude) < 1200) {
-      options.push({
-        type: "direct",
-        legs: [buildLeg(dep, dest, estDirect)],
-        totalDurationMin: estDirect,
-        stops: 0,
-      });
+      options.push(
+        finalizeOption(
+          {
+            type: "direct",
+            legs: [buildLeg(dep, dest, estDirect, 0, 0)],
+            totalDurationMin: estDirect,
+            stops: 0,
+          },
+          dep,
+          dest
+        )
+      );
     }
   }
 
@@ -171,15 +221,25 @@ function findFlightOptions(dep: Airport, dest: Airport): FlightOption[] {
     if (leg1 > 900 || leg2 > 900) continue;
 
     const layover = hub.isHub ? 90 : 120;
-    connecting.push({
-      type: "connecting",
-      legs: [buildLeg(dep, hub, leg1), buildLeg(hub, dest, leg2)],
-      totalDurationMin: leg1 + leg2 + layover,
-      stops: 1,
-      layoverMin: layover,
-      hubIata,
-      hubZh: hub.cityZh,
-    });
+    const salt = connecting.length;
+    connecting.push(
+      finalizeOption(
+        {
+          type: "connecting",
+          legs: [
+            buildLeg(dep, hub, leg1, 0, salt),
+            buildLeg(hub, dest, leg2, 1, salt),
+          ],
+          totalDurationMin: leg1 + leg2 + layover,
+          stops: 1,
+          layoverMin: layover,
+          hubIata,
+          hubZh: hub.cityZh,
+        },
+        dep,
+        dest
+      )
+    );
   }
 
   connecting.sort((a, b) => a.totalDurationMin - b.totalDurationMin);

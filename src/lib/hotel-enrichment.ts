@@ -3,6 +3,7 @@ import { resolveUrlCandidates } from "@/lib/hotel-url-candidates";
 import { fetchWikipediaHotelImage } from "@/lib/hotel-image-fallback";
 import {
   absolutizeImageUrl,
+  detectMarriottPropertyCode,
   filterGalleryImages,
   isBadImageUrl,
   pickBestImage,
@@ -192,8 +193,10 @@ async function fetchSupplementalImages(
   }
 
   if (MARRIOTT_BRANDS.has(brandSlug) || brandSlug === "ritz-carlton" || brandSlug === "ritz-carlton-reserve") {
-    const galleryHtml = await fetchHtml(`${base}/photos/`);
-    if (galleryHtml) extra.push(...extractImageUrls(galleryHtml, base));
+    for (const path of ["/photos/", "/photos-and-videos/", "/gallery/"]) {
+      const galleryHtml = await fetchHtml(`${base}${path}`);
+      if (galleryHtml) extra.push(...extractImageUrls(galleryHtml, base));
+    }
   }
 
   if (ACCOR_BRANDS.has(brandSlug)) {
@@ -219,7 +222,11 @@ async function fetchSupplementalImages(
   return extra;
 }
 
-function parseHtml(html: string, baseUrl: string): Omit<HotelEnrichment, "websiteUrl"> & { scrapedBasePrice?: number } {
+function parseHtml(
+  html: string,
+  baseUrl: string,
+  propertyCode?: string
+): Omit<HotelEnrichment, "websiteUrl"> & { scrapedBasePrice?: number; propertyCode?: string } {
   const jsonLd = extractJsonLd(html);
   const metaDesc = extractMeta(html, "description") ?? extractMeta(html, "og:description");
   const masthead = extractMastheadDescription(html);
@@ -247,7 +254,8 @@ function parseHtml(html: string, baseUrl: string): Omit<HotelEnrichment, "websit
   const ogImage = extractMeta(html, "og:image") ?? extractMeta(html, "twitter:image");
   if (ogImage && !isBadImageUrl(ogImage)) heroCandidates.unshift(ogImage);
 
-  const heroImage = pickBestImage(heroCandidates);
+  const code = propertyCode ?? detectMarriottPropertyCode(html);
+  const heroImage = pickBestImage(heroCandidates, code);
   const gallery = filterGalleryImages(
     heroImage ? [heroImage, ...galleryImages] : galleryImages
   );
@@ -259,6 +267,7 @@ function parseHtml(html: string, baseUrl: string): Omit<HotelEnrichment, "websit
     heroImage,
     galleryImages: gallery.slice(0, 8),
     scrapedBasePrice,
+    propertyCode: code,
   };
 }
 
@@ -269,12 +278,14 @@ async function enrichFromUrl(
   parsed: ReturnType<typeof parseHtml>;
   supplemental: string[];
   websiteUrl: string;
+  propertyCode?: string;
 } | null> {
   const html = await fetchHtml(websiteUrl);
   if (!html) return null;
-  const parsed = parseHtml(html, websiteUrl);
+  const propertyCode = detectMarriottPropertyCode(html);
+  const parsed = parseHtml(html, websiteUrl, propertyCode);
   const supplemental = await fetchSupplementalImages(hotel.brandSlug, websiteUrl);
-  return { parsed, supplemental, websiteUrl };
+  return { parsed, supplemental, websiteUrl, propertyCode: parsed.propertyCode ?? propertyCode };
 }
 
 /** Fetch official site content for a hotel entry */
@@ -295,6 +306,7 @@ export async function enrichHotelFromWeb(
     parsed: ReturnType<typeof parseHtml>;
     supplemental: string[];
     imageCount: number;
+    propertyCode?: string;
   } | null = null;
 
   for (const url of candidates.slice(0, 4)) {
@@ -307,21 +319,27 @@ export async function enrichHotelFromWeb(
     ]);
     const score = imgs.length + (result.parsed.description ? 1 : 0) + (result.parsed.scrapedBasePrice ? 2 : 0);
     if (!best || score > best.imageCount) {
-      best = { websiteUrl: url, parsed: result.parsed, supplemental: result.supplemental, imageCount: score };
+      best = {
+        websiteUrl: url,
+        parsed: result.parsed,
+        supplemental: result.supplemental,
+        imageCount: score,
+        propertyCode: result.propertyCode,
+      };
     }
     if (imgs.length >= 2) break;
   }
 
   if (!best) return null;
 
-  const { websiteUrl, parsed, supplemental } = best;
+  const { websiteUrl, parsed, supplemental, propertyCode } = best;
   const allImages = filterGalleryImages([
     ...(parsed.heroImage ? [parsed.heroImage] : []),
     ...parsed.galleryImages,
     ...supplemental,
   ]);
 
-  let heroImage = pickBestImage(allImages) ?? allImages[0];
+  let heroImage = pickBestImage(allImages, propertyCode) ?? allImages[0];
   if (!heroImage) {
     const wikiImage = await fetchWikipediaHotelImage(hotel.name, hotel.city);
     if (wikiImage) heroImage = wikiImage;

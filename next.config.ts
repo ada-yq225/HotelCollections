@@ -37,6 +37,8 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "**.stregis.com" },
       { protocol: "https", hostname: "**.joali.com" },
       { protocol: "https", hostname: "**.soneva.com" },
+      { protocol: "https", hostname: "images.kiwi.com" },
+      { protocol: "https", hostname: "upload.wikimedia.org" },
     ],
   },
 };

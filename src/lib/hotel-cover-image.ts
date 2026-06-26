@@ -26,6 +26,14 @@ const BAD_IMAGE_MARKERS = [
   ":1by1",
   "met_p_a112-79",
   "niccolo-logo",
+  "rc-club-ap-lifestyle",
+  "rz-gvarz-rc-geneva",
+  "rc-geneva-social",
+  "marriott-renditions/rc/",
+  "/rz/rc-",
+  "lifestyle-25-32041",
+  "default-hotel-image",
+  "social-sharing",
 ];
 
 const GOOD_IMAGE_MARKERS = [
@@ -72,12 +80,51 @@ function scoreImageUrl(url: string): number {
   return score;
 }
 
-export function pickBestImage(candidates: string[]): string | undefined {
+/** Marriott / Ritz property code e.g. sinrz, beirz — prefer images containing this */
+export function pickBestImage(candidates: string[], propertyCode?: string): string | undefined {
+  const code = propertyCode?.toLowerCase();
   const ranked = candidates
-    .map((url) => ({ url, score: scoreImageUrl(url) }))
+    .map((url) => {
+      let score = scoreImageUrl(url);
+      if (code && score >= 0) {
+        const lower = url.toLowerCase();
+        if (lower.includes(code)) score += 12;
+        else if (lower.includes(code.slice(0, 3))) score += 2;
+        else score -= 4;
+      }
+      return { url, score };
+    })
     .filter((x) => x.score >= 0)
     .sort((a, b) => b.score - a.score);
   return ranked[0]?.url;
+}
+
+/** Detect dominant Marriott property code from page HTML */
+export function detectMarriottPropertyCode(html: string): string | undefined {
+  const counts = new Map<string, number>();
+  const patterns = [
+    /\/hws\/[a-z]\/([a-z0-9]{4,6})\//gi,
+    /marriott-renditions\/([A-Z0-9]{4,6})\//gi,
+    /rz-([a-z0-9]{4,6})-/gi,
+    /prod\/rz-([a-z0-9]{4,6})-/gi,
+  ];
+  for (const re of patterns) {
+    for (const m of html.matchAll(re)) {
+      const code = (m[1] ?? "").toLowerCase();
+      if (code.length >= 4 && code !== "gvarz" && !code.startsWith("rc")) {
+        counts.set(code, (counts.get(code) ?? 0) + 1);
+      }
+    }
+  }
+  let best: string | undefined;
+  let bestN = 0;
+  for (const [code, n] of counts) {
+    if (n > bestN) {
+      bestN = n;
+      best = code;
+    }
+  }
+  return bestN >= 2 ? best : undefined;
 }
 
 export function filterGalleryImages(urls: string[]): string[] {

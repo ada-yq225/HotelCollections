@@ -289,6 +289,47 @@ const ROSEWOOD_PATHS: Record<string, string> = {
   "rosewood-phuket": "phuket",
 };
 
+/** ritzcarlton.com path segment (slug suffix often 404 without this) */
+const RITZ_CARLTON_PATHS: Record<string, string> = {
+  "ritz-carlton-new-york-central-park": "new-york-central-park",
+  "ritz-carlton-half-moon-bay": "half-moon-bay",
+  "ritz-carlton-south-beach": "south-beach",
+  "ritz-carlton-kapalua": "kapalua",
+  "ritz-carlton-lake-tahoe": "lake-tahoe",
+  "ritz-carlton-pentagon-city": "pentagon-city",
+  "ritz-carlton-san-francisco": "san-francisco",
+  "ritz-carlton-los-angeles": "los-angeles",
+  "ritz-carlton-shanghai-pudong": "shanghai",
+  "ritz-carlton-beijing-financial-street": "beijing",
+  "ritz-carlton-hong-kong": "hong-kong",
+  "ritz-carlton-singapore": "singapore",
+  "ritz-carlton-tokyo": "tokyo",
+  "ritz-carlton-osaka": "osaka",
+  "ritz-carlton-bali": "bali",
+  "ritz-carlton-cairo": "cairo",
+  "ritz-carlton-istanbul": "istanbul",
+  "ritz-carlton-dubai": "dubai",
+  "ritz-carlton-abu-dhabi": "abu-dhabi",
+  "ritz-carlton-washington-dc": "washington-dc",
+  "ritz-carlton-boston": "boston",
+  "ritz-carlton-chicago": "chicago",
+  "ritz-carlton-miami": "miami",
+  "ritz-carlton-cancun": "cancun",
+  "ritz-carlton-vienna": "vienna",
+  "ritz-carlton-berlin": "berlin",
+  "ritz-carlton-moscow": "moscow",
+  "ritz-carlton-madrid": "madrid",
+  "ritz-carlton-london": "london",
+  "ritz-carlton-paris": "paris",
+  "ritz-carlton-sydney": "sydney",
+  "ritz-carlton-melbourne": "melbourne",
+  "ritz-carlton-perth": "perth",
+  "ritz-carlton-bangalore": "bangalore",
+  "ritz-carlton-reserve-dorado-beach": "dorado-beach",
+  "ritz-carlton-aspen": "aspen",
+  "ritz-carlton-st-thomas": "st-thomas",
+};
+
 function slugify(text: string): string {
   return text
     .toLowerCase()
@@ -412,6 +453,12 @@ export function resolveOfficialUrl(
   if (hotel.brandSlug === "como") {
     const loc = hotel.slug.replace(/^(como-|trisara-)/, "");
     return `https://www.comohotels.com/${loc.replace(/-/g, "/")}`;
+  }
+  if (hotel.brandSlug === "ritz-carlton" || hotel.brandSlug === "ritz-carlton-reserve") {
+    const path =
+      RITZ_CARLTON_PATHS[hotel.slug] ??
+      hotel.slug.replace(/^ritz-carlton-/, "").replace(/-reserve$/, "");
+    return `https://www.ritzcarlton.com/en/hotels/${path}`;
   }
 
   if (hotel.brandSlug === "st-regis" || hotel.brandSlug === "jw-marriott" || hotel.brandSlug === "w-hotels" || hotel.brandSlug === "edition" || hotel.brandSlug === "luxury-collection") {

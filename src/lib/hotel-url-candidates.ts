@@ -28,7 +28,9 @@ export function resolveUrlCandidates(
   if (hotel.brandSlug === "ritz-carlton" || hotel.brandSlug === "ritz-carlton-reserve") {
     const property = hotel.slug.replace(/^ritz-carlton-/, "").replace(/-reserve$/, "");
     add(`https://www.ritzcarlton.com/en/hotels/${property}`);
-    add(`https://www.ritzcarlton.com/en/hotels/${property}/overview`);
+    add(`https://www.ritzcarlton.com/en/hotels/${property}/photos/`);
+    const city = slugify(hotel.city);
+    if (city !== property) add(`https://www.ritzcarlton.com/en/hotels/${city}`);
   }
 
   if (hotel.brandSlug === "fairmont") {
