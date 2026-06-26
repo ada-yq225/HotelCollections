@@ -4,6 +4,8 @@ import { resolveHotelCoverImage } from "@/lib/hotel-cover-image";
 import { hotelDisplayImageUrl, hotelGalleryDisplayUrls } from "@/lib/hotel-display-image";
 import { resolveHotelPrices } from "@/lib/hotel-pricing";
 import { resolveOfficialUrl } from "@/lib/hotel-official-url";
+import { HOTEL_ENRICHMENT } from "@/data/hotel-enrichment";
+import { inferExperienceTags } from "@/lib/hotel-experience-tags";
 
 export const hotelInclude = {
   brand: {
@@ -101,18 +103,38 @@ export async function ensureHotelEnriched(hotel: HotelWithBrand): Promise<HotelW
   });
 }
 
-/** Serialize hotel for list cards with resolved cover image */
-export function serializeHotelForList<T extends {
-  slug: string;
-  heroImage: string | null;
-  galleryImages: string;
-}>(hotel: T) {
+/** Serialize hotel for list cards with resolved cover image + list metadata */
+export function serializeHotelForList<
+  T extends {
+    slug: string;
+    heroImage: string | null;
+    galleryImages: string;
+    region?: string;
+    countryCode?: string;
+    city?: string;
+    cityZh?: string;
+    brand?: { slug: string };
+  },
+>(hotel: T) {
   const gallery = parseGalleryImages(hotel.galleryImages);
   const cover = resolveHotelCoverImage(hotel.heroImage, gallery);
+  const enrichment = HOTEL_ENRICHMENT[hotel.slug];
+  const experienceTags =
+    hotel.region && hotel.brand
+      ? inferExperienceTags({
+          region: hotel.region,
+          countryCode: hotel.countryCode ?? "",
+          brandSlug: hotel.brand.slug,
+          city: hotel.city,
+          cityZh: hotel.cityZh,
+        }).slice(0, 2)
+      : [];
   return {
     ...hotel,
     heroImage: hotelDisplayImageUrl(hotel.slug, cover),
     galleryImages: hotelGalleryDisplayUrls(hotel.slug, gallery),
+    experienceTags,
+    priceVerified: enrichment?.priceSource === "scraped" && enrichment.avgBasePrice != null,
   };
 }
 

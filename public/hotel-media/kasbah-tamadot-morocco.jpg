@@ -1,0 +1,1128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+    
+<title>Virgin Limited Edition | Luxury Retreats Across The Globe</title>
+
+<meta name="description" content="Virgin Limited Edition is Sir Richard Branson&#x27;s collection of unique, luxury retreats located in the most breathtaking settings in the world." />
+
+<link rel="canonical" href="https://www.virginlimitededition.com/" />
+
+
+<meta property="og:image" content="https://www.virginlimitededition.com/" />
+<meta property="og:title" content="Virgin Limited Edition | Luxury Retreats Across The Globe" />
+<meta property="og:description" content="Virgin Limited Edition is Sir Richard Branson&#x27;s collection of unique, luxury retreats located in the most breathtaking settings in the world." />
+<meta property="og:url" content="https://www.virginlimitededition.com/" />
+<meta property="og:type" content="website" />
+
+
+
+            <link rel="alternate" hreflang="en" href="https://www.virginlimitededition.com/" />
+
+
+    <link type="text/css" rel="stylesheet" href="https://use.typekit.net/lih7vef.css" />
+    <link type="text/css" rel="stylesheet" href="/assets/css/priority-8ba0bea907f53d5c8c36.css" />
+
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="49ff9637-6f20-4f62-96b2-2078425d55c1" data-blockingmode="auto" type="text/javascript"></script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P7BDQQV');</script>
+<!-- End Google Tag Manager -->
+
+
+<style type="text/css">
+.contact__form .form__submit { margin-top: 0 !important; }
+</style>
+
+<link rel="apple-touch-icon" sizes="76x76" href="/media/yyjhx33n/apple-icon-76x76.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/media/xcibbu5i/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/media/51rlrfts/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/media/cnrnnlqr/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/media/qbrp55ir/favicon-16x16.png">
+
+<script type="text/JavaScript" src="https://africam.com/widget/tool/main.js" ></script>
+<script type="text/javascript" src="https://africam.com/widget/tool/mahalifinal.js" ></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script type="text/javascript">!function(T,l,y){var S=T.location,k="script",D="instrumentationKey",C="ingestionendpoint",I="disableExceptionTracking",E="ai.device.",b="toLowerCase",w="crossOrigin",N="POST",e="appInsightsSDK",t=y.name||"appInsights";(y.name||T[e])&&(T[e]=t);var n=T[t]||function(d){var g=!1,f=!1,m={initialize:!0,queue:[],sv:"5",version:2,config:d};function v(e,t){var n={},a="Browser";return n[E+"id"]=a[b](),n[E+"type"]=a,n["ai.operation.name"]=S&&S.pathname||"_unknown_",n["ai.internal.sdkVersion"]="javascript:snippet_"+(m.sv||m.version),{time:function(){var e=new Date;function t(e){var t=""+e;return 1===t.length&&(t="0"+t),t}return e.getUTCFullYear()+"-"+t(1+e.getUTCMonth())+"-"+t(e.getUTCDate())+"T"+t(e.getUTCHours())+":"+t(e.getUTCMinutes())+":"+t(e.getUTCSeconds())+"."+((e.getUTCMilliseconds()/1e3).toFixed(3)+"").slice(2,5)+"Z"}(),iKey:e,name:"Microsoft.ApplicationInsights."+e.replace(/-/g,"")+"."+t,sampleRate:100,tags:n,data:{baseData:{ver:2}}}}var h=d.url||y.src;if(h){function a(e){var t,n,a,i,r,o,s,c,u,p,l;g=!0,m.queue=[],f||(f=!0,t=h,s=function(){var e={},t=d.connectionString;if(t)for(var n=t.split(";"),a=0;a<n.length;a++){var i=n[a].split("=");2===i.length&&(e[i[0][b]()]=i[1])}if(!e[C]){var r=e.endpointsuffix,o=r?e.location:null;e[C]="https://"+(o?o+".":"")+"dc."+(r||"services.visualstudio.com")}return e}(),c=s[D]||d[D]||"",u=s[C],p=u?u+"/v2/track":d.endpointUrl,(l=[]).push((n="SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)",a=t,i=p,(o=(r=v(c,"Exception")).data).baseType="ExceptionData",o.baseData.exceptions=[{typeName:"SDKLoadFailed",message:n.replace(/\./g,"-"),hasFullStack:!1,stack:n+"\nSnippet failed to load ["+a+"] -- Telemetry is disabled\nHelp Link: https://go.microsoft.com/fwlink/?linkid=2128109\nHost: "+(S&&S.pathname||"_unknown_")+"\nEndpoint: "+i,parsedStack:[]}],r)),l.push(function(e,t,n,a){var i=v(c,"Message"),r=i.data;r.baseType="MessageData";var o=r.baseData;return o.message='AI (Internal): 99 message:"'+("SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details) ("+n+")").replace(/\"/g,"")+'"',o.properties={endpoint:a},i}(0,0,t,p)),function(e,t){if(JSON){var n=T.fetch;if(n&&!y.useXhr)n(t,{method:N,body:JSON.stringify(e),mode:"cors"});else if(XMLHttpRequest){var a=new XMLHttpRequest;a.open(N,t),a.setRequestHeader("Content-type","application/json"),a.send(JSON.stringify(e))}}}(l,p))}function i(e,t){f||setTimeout(function(){!t&&m.core||a()},500)}var e=function(){var n=l.createElement(k);n.src=h;var e=y[w];return!e&&""!==e||"undefined"==n[w]||(n[w]=e),n.onload=i,n.onerror=a,n.onreadystatechange=function(e,t){"loaded"!==n.readyState&&"complete"!==n.readyState||i(0,t)},n}();y.ld<0?l.getElementsByTagName("head")[0].appendChild(e):setTimeout(function(){l.getElementsByTagName(k)[0].parentNode.appendChild(e)},y.ld||0)}try{m.cookie=l.cookie}catch(p){}function t(e){for(;e.length;)!function(t){m[t]=function(){var e=arguments;g||m.queue.push(function(){m[t].apply(m,e)})}}(e.pop())}var n="track",r="TrackPage",o="TrackEvent";t([n+"Event",n+"PageView",n+"Exception",n+"Trace",n+"DependencyData",n+"Metric",n+"PageViewPerformance","start"+r,"stop"+r,"start"+o,"stop"+o,"addTelemetryInitializer","setAuthenticatedUserContext","clearAuthenticatedUserContext","flush"]),m.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4};var s=(d.extensionConfig||{}).ApplicationInsightsAnalytics||{};if(!0!==d[I]&&!0!==s[I]){var c="onerror";t(["_"+c]);var u=T[c];T[c]=function(e,t,n,a,i){var r=u&&u(e,t,n,a,i);return!0!==r&&m["_"+c]({message:e,url:t,lineNumber:n,columnNumber:a,error:i}),r},d.autoExceptionInstrumented=!0}return m}(y.cfg);function a(){y.onInit&&y.onInit(n)}(T[t]=n).queue&&0===n.queue.length?(n.queue.push(a),n.trackPageView({})):a()}(window,document,{
+src: "https://js.monitor.azure.com/scripts/b/ai.2.min.js", // The SDK URL Source
+crossOrigin: "anonymous", 
+cfg: { // Application Insights Configuration
+    connectionString: 'InstrumentationKey=1af63100-ea25-4e23-8bcc-650cca5efd8e;IngestionEndpoint=https://uksouth-1.in.applicationinsights.azure.com/;LiveEndpoint=https://uksouth.livediagnostics.monitor.azure.com/'
+}});</script>
+</head>
+<body class="theme-group home">
+
+    <a href="#main" class="show-for-sr">Skip to main content</a>
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7BDQQV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <div class="off-canvas-wrapper">
+        
+<div class="off-canvas burger-menu position-left" id="burger-menu" data-off-canvas data-transition="slide" data-auto-focus aria-hidden="true">
+    <div class="burger-menu__wrapper">
+        <button class="close close--white" data-close></button>
+
+        <div class="burger-menu__main">
+                <nav class="burger-menu__nav-primary">
+                    <ul>
+                            <li>
+                                <a class="button button--white" href="/our-story/">Our story</a>
+                            </li>
+                            <li>
+                                <a class="button button--white" href="/our-collection/">Our collection</a>
+                            </li>
+                            <li>
+                                <a class="button button--white" href="/positive-impact/">Positive impact</a>
+                            </li>
+                            <li>
+                                <a class="button button--white" href="/celebrations/">Celebrations</a>
+                            </li>
+                            <li>
+                                <a class="button button--white" href="/inspiration/">Inspiration</a>
+                            </li>
+                            <li>
+                                <a class="button button--white" href="/gallery/">Gallery</a>
+                            </li>
+                    </ul>
+                </nav>
+
+                <nav class="burger-menu__nav-secondary">
+                    <ul>
+                            <li><a href="/contact-us/">Contact us</a></li>
+                    </ul>
+                </nav>
+
+        </div>
+    </div>
+
+        <div class="burger-menu__image hide-for-small-only">
+            <img src="/media/a0jesgoa/necker-island-flamingos-8.jpg?width=1000&amp;height=1000&amp;quality=70&amp;v=1da1d40ce155d30" alt="" loading="lazy" />
+        </div>
+</div>
+
+        
+<div class="off-canvas group-menu position-left" id="group-menu" data-off-canvas data-transition="slide" data-auto-focus aria-hidden="true">
+    <div class="group-menu__inner">
+            <div class="group-menu__logo">
+                <a href="/">
+                    <img src="/media/tzqj1z0j/logo.svg?quality=70" alt="Virgin Limited Edition" />
+                </a>
+            </div>
+
+        <div class="group-menu__home">
+            <a href="/">
+                virginlimitededition.com
+            </a>
+        </div>
+
+            <nav class="group-menu__nav">
+                <nav class="group-menu__nav-title">
+                    Our Collection
+                </nav>
+
+                <ul>
+                        <li>
+                            <a href="/necker-island/" class="button button--white">
+                                Necker Island
+
+                                    <span>- British Virgin Islands</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/the-branson-beach-estate/" class="button button--white">
+                                The Branson Beach Estate
+
+                                    <span>- British Virgin Islands</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/kasbah-tamadot/" class="button button--white">
+                                Kasbah Tamadot
+
+                                    <span>- Morocco</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/mahali-mzuri/" class="button button--white">
+                                Mahali Mzuri
+
+                                    <span>- Kenya</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/finch-hattons/" class="button button--white">
+                                Finch Hattons
+
+                                    <span>- Kenya</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/mont-rochelle/" class="button button--white">
+                                Mont Rochelle
+
+                                    <span>- South Africa</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/ulusaba/" class="button button--white">
+                                Ulusaba
+
+                                    <span>- South Africa</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/son-bunyola/" class="button button--white">
+                                Son Bunyola Hotel &amp; Villas
+
+                                    <span>- Mallorca</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/the-lodge/" class="button button--white">
+                                The Lodge
+
+                                    <span>- Switzerland</span>
+                            </a>
+                        </li>
+                </ul>
+            </nav>
+
+        <button class="close close--white" type="button" data-close></button>
+    </div>
+</div>
+
+        <div class="off-canvas-content" data-off-canvas-content data-sticky-container>
+            
+<header class="header">
+        <div class="header__group">
+            <button class="header__group-toggle" aria-hidden="true"></button>
+            <div class="header__group-contents">
+                <div class="header__group-logo">
+                    <button data-open="group-menu">
+                        <img src="/media/tzqj1z0j/logo.svg?quality=70" alt="Virgin Limited Edition" />
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    <div class="header__inner">
+            <button type="button" class="header__open-off-canvas" data-toggle="burger-menu">
+                Open
+                <svg xmlns="http://www.w3.org/2000/svg" width="53" height="28" viewBox="0 0 53 28">
+                    <line id="TOP" x1="10" y1="4.387" x2="40" y2="4.387" />
+                    <line id="MIDDLE" x1="1.5" y1="13.887" x2="51.5" y2="13.887" />
+                    <line id="BOTTOM" x1="10" y1="23.613" x2="40" y2="23.613" />
+                </svg>
+            </button>
+
+            <div class="header__property-logo">
+                <a href="/">
+                    Virgin Limited Edition
+                </a>
+            </div>
+
+
+            <div class="header__booking">
+                <div class="header__booking-inner">
+                    <div class="header__booking-cta">
+                        Book
+                    </div>
+
+                    <ul>
+                            <li>
+                                <a href="/necker-island/reservations/">
+                                    Necker Island <span> British Virgin Islands</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/the-branson-beach-estate/reservations/">
+                                    The Branson Beach Estate <span> British Virgin Islands</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/kasbah-tamadot/reservations/">
+                                    Kasbah Tamadot <span> Morocco</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/mahali-mzuri/reservations/">
+                                    Mahali Mzuri <span> Kenya</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/finch-hattons/reservations/">
+                                    Finch Hattons <span> Kenya</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/ulusaba/reservations/">
+                                    Ulusaba <span> South Africa</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/mont-rochelle/reservations/">
+                                    Mont Rochelle <span> South Africa</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/son-bunyola/reservations/">
+                                    Son Bunyola <span> Mallorca</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/the-lodge/reservations/">
+                                    The Lodge <span> Switzerland</span>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header__booking-mobile">
+                    <button class="header__booking-mobile-trigger button button--white">
+                        Book
+                    </button>
+                    <div class="header__booking-mobile-popup">
+                        <div class="header__booking-mobile-popup-inner">
+                            <ul>
+                                <li class="header__booking-mobile-popup-header">
+                                    Book
+                                </li>
+
+                                    <li>
+                                        <a href="/necker-island/reservations/">Necker Island [- British Virgin Islands]</a>
+                                    </li>
+                                    <li>
+                                        <a href="/the-branson-beach-estate/reservations/">The Branson Beach Estate [- British Virgin Islands]</a>
+                                    </li>
+                                    <li>
+                                        <a href="/kasbah-tamadot/reservations/">Kasbah Tamadot [- Morocco]</a>
+                                    </li>
+                                    <li>
+                                        <a href="/mahali-mzuri/reservations/">Mahali Mzuri [- Kenya]</a>
+                                    </li>
+                                    <li>
+                                        <a href="/finch-hattons/reservations/">Finch Hattons [- Kenya]</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ulusaba/reservations/">Ulusaba [- South Africa]</a>
+                                    </li>
+                                    <li>
+                                        <a href="/mont-rochelle/reservations/">Mont Rochelle [- South Africa]</a>
+                                    </li>
+                                    <li>
+                                        <a href="/son-bunyola/reservations/">Son Bunyola [- Mallorca]</a>
+                                    </li>
+                                    <li>
+                                        <a href="/the-lodge/reservations/">The Lodge [- Switzerland]</a>
+                                    </li>
+                            </ul>
+
+                            <button class="close close--white" data-close type="button">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+            </div>
+    </div>
+</header>
+
+            <main id="main">
+
+                
+<div class="slider">
+    <div class="slider__inner">
+                <div class="slider__inner small-video-container">
+                    <div class="slider__slide">
+                        <div class="slider__video">
+                            <iframe data-src="https://vimeo.com/1134552959?share=copy&amp;fl=sv&amp;fe=ci " width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                        </div>
+                        <div class="slider__video-small">
+                            <iframe data-src="https://vimeo.com/1134552959?share=copy&amp;fl=sv&amp;fe=ci " width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+    </div>
+
+        <div class="slider__logo">
+            <div>
+                <img src="/media/tzqj1z0j/logo.svg?quality=70" alt="" />
+            </div>
+        </div>
+</div>
+    <div class="intro intro--title-left grid-wrapper grid-x">
+            <div class="intro__title cell medium-5 medium-offset-1 large-4 large-offset-2 anim--will-fade-up anim--1500" data-animate>
+                <h1>Travel beyond luxury</h1>
+            </div>
+
+        <div class="intro__content cell medium-6 large-5">
+
+                <div class="anim--will-fade-up anim--2000" data-animate>
+                    <p><span class="NormalTextRun SCXW212444384 BCX0">Virgin Limited Edition is Sir Richard Branson's collection of unique, luxury retreats located in some of the most breathtaking settings in the world.</span><span class="NormalTextRun SCXW212444384 BCX0">&nbsp;</span></p>
+                </div>
+
+                <div class="buttons-align-left anim--will-fade-up anim--2000" data-animate>
+                    <a class="button" href="/our-story/">About us</a>
+
+                    
+                </div>
+        </div>
+    </div>
+
+<div class="tabbed-listing">
+        <div class="tabbed-listing__header anim--will-fade-up anim--1500" data-animate>
+            <h2>Our collection</h2>
+
+            <p>Discover the nine exceptional retreats in our collection.</p>
+        </div>
+
+    <div class="tabbed-listing__main grid-x">
+        <div class="tabbed-listing__nav cell large-3 anim--will-fade-up anim--1500" data-animate>
+            <h3>Search by Region</h3>
+
+            <ul class="tabs" data-tabs id="destination-tabs">
+                    <li class="tabs-title is-active">
+                        <a href="#caribbean" aria-selected="true">
+                            <div class="tabbed-listing__nav-images">
+                                    <img src="/media/me2bbace/bvi.jpg?width=200&amp;height=200&amp;quality=70&amp;v=1da1889415cadf0" alt="" class="inactive" />
+                                    <img src="/media/za4hb0qs/moskito-island-beach-house-pool-5.jpg?width=200&amp;height=200&amp;quality=70&amp;v=1dc3398e5238c70" alt="" class="active" />
+                            </div>
+
+                            Caribbean
+                        </a>
+                    </li>
+                    <li class="tabs-title">
+                        <a href="#europe">
+                            <div class="tabbed-listing__nav-images">
+                                    <img src="/media/g1pdqguv/europe.jpg?width=200&amp;height=200&amp;quality=70&amp;v=1da188941625340" alt="" class="inactive" />
+                                    <img src="/media/r4jbuxk5/son-bunyola-hotel-exterior-pool.jpg?width=200&amp;height=200&amp;quality=70&amp;v=1db473a622615e0" alt="" class="active" />
+                            </div>
+
+                            Europe
+                        </a>
+                    </li>
+                    <li class="tabs-title">
+                        <a href="#africa">
+                            <div class="tabbed-listing__nav-images">
+                                    <img src="/media/yycf0ahp/africa.jpg?width=200&amp;height=200&amp;quality=70&amp;v=1da1889414d6bb0" alt="" class="inactive" />
+                                    <img src="/media/omypdxe3/mahali-mzuri-camp-and-guides-2.jpg?width=200&amp;height=200&amp;quality=70&amp;v=1dc48eebaa39010" alt="" class="active" />
+                            </div>
+
+                            Africa
+                        </a>
+                    </li>
+            </ul>
+        </div>
+
+
+        <div class="tabs-content cell large-9" data-tabs-content="destination-tabs">
+                <div class="tabs-panel is-active" id="caribbean">
+                        <div class="tabbed-listing__item tabbed-listing__item--necker-island grid-x">
+                                <div class="tabbed-listing__item-image cell medium-6">
+                                    <a href="/necker-island/"><picture>
+                                            <source srcset="/media/nhfnxzs3/necker-island-aerial.jpg?width=640&amp;height=422&amp;quality=70&amp;v=1dc3202938bac40" media="(max-width: 640px)" />
+                                            <img src="/media/nhfnxzs3/necker-island-aerial.jpg?width=640&amp;height=555&amp;quality=70&amp;v=1dc3202938bac40" alt="" loading="lazy" />
+                                        </picture>
+</a>
+                                </div>
+
+                            <div class="tabbed-listing__item-content cell medium-6 anim--will-fade-up anim--1500" data-animate>
+<a href="/necker-island/"><h2>Necker Island</h2></a>
+<h3>British Virgin Islands</h3>
+<p><span class="NormalTextRun SCXW199420521 BCX0">Sir Richard Branson's 74-acre world-famous private island in the British Virgin Islands, known for being one of the most idyllic and exclusive places on Earth.</span></p>
+                                    <div class="buttons-align-left">
+                                        <a class="button" href="/necker-island/">Read more</a>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="tabbed-listing__item tabbed-listing__item--moskito-island grid-x">
+                                <div class="tabbed-listing__item-image cell medium-6">
+                                    <a href="/the-branson-beach-estate/"><picture>
+                                            <source srcset="/media/ctsm3d3l/the-branson-estate-overview.jpg?width=640&amp;height=422&amp;quality=70&amp;v=1db47394a392a90" media="(max-width: 640px)" />
+                                            <img src="/media/ctsm3d3l/the-branson-estate-overview.jpg?width=640&amp;height=555&amp;quality=70&amp;v=1db47394a392a90" alt="" loading="lazy" />
+                                        </picture>
+</a>
+                                </div>
+
+                            <div class="tabbed-listing__item-content cell medium-6 anim--will-fade-up anim--1500" data-animate>
+<a href="/the-branson-beach-estate/"><h2>The Branson Beach Estate</h2></a>
+<h3>British Virgin Islands</h3>
+<p>Perched on a dramatic outcrop offering elevated sea views, The Branson Beach Estate at the northeast tip of Moskito Island offers a one-of-a-kind experience in unspoiled seclusion.</p>
+                                    <div class="buttons-align-left">
+                                        <a class="button" href="/the-branson-beach-estate/">Read more</a>
+                                    </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="tabs-panel" id="europe">
+                        <div class="tabbed-listing__item tabbed-listing__item--son-bunyola grid-x">
+                                <div class="tabbed-listing__item-image cell medium-6">
+                                    <a href="/son-bunyola/"><picture>
+                                            <source srcset="/media/r4jbuxk5/son-bunyola-hotel-exterior-pool.jpg?width=640&amp;height=422&amp;quality=70&amp;v=1db473a622615e0" media="(max-width: 640px)" />
+                                            <img src="/media/r4jbuxk5/son-bunyola-hotel-exterior-pool.jpg?width=640&amp;height=555&amp;quality=70&amp;v=1db473a622615e0" alt="" loading="lazy" />
+                                        </picture>
+</a>
+                                </div>
+
+                            <div class="tabbed-listing__item-content cell medium-6 anim--will-fade-up anim--1500" data-animate>
+<a href="/son-bunyola/"><h2>Son Bunyola</h2></a>
+<h3>Mallorca</h3>
+<p><span class="NormalTextRun SCXW149133882 BCX0">Son Bunyola is located on the northwest coast of Mallorca. Guests can choose to stay at any of the estate’s three luxury villas and the Son Bunyola Hotel, which opened in June 2023.</span>&nbsp;</p>
+                                    <div class="buttons-align-left">
+                                        <a class="button" href="/son-bunyola/">Read more</a>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="tabbed-listing__item tabbed-listing__item--the-lodge grid-x">
+                                <div class="tabbed-listing__item-image cell medium-6">
+                                    <a href="/the-lodge/"><picture>
+                                            <source srcset="/media/da4p52a4/the-lodge-exterior-winter.jpg?width=640&amp;height=422&amp;quality=70&amp;v=1dc5e2b4589b690" media="(max-width: 640px)" />
+                                            <img src="/media/da4p52a4/the-lodge-exterior-winter.jpg?width=640&amp;height=555&amp;quality=70&amp;v=1dc5e2b4589b690" alt="" loading="lazy" />
+                                        </picture>
+</a>
+                                </div>
+
+                            <div class="tabbed-listing__item-content cell medium-6 anim--will-fade-up anim--1500" data-animate>
+<a href="/the-lodge/"><h2>The Lodge</h2></a>
+<h3>Verbier, Switzerland</h3>
+<p><span class="NormalTextRun SCXW225237331 BCX0">A luxury mountain chalet in Verbier offering world-class skiing in winter and superb hiking, cycling and adventure in summer against a backdrop of Switzerland’s awe-inspiring Alps.</span>&nbsp;</p>
+                                    <div class="buttons-align-left">
+                                        <a class="button" href="/the-lodge/">Read more</a>
+                                    </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="tabs-panel" id="africa">
+                        <div class="tabbed-listing__item tabbed-listing__item--kasbah-tamadot grid-x">
+                                <div class="tabbed-listing__item-image cell medium-6">
+                                    <a href="/kasbah-tamadot/"><picture>
+                                            <source srcset="/media/dybgafzs/kasbah-tamadot-entrance.jpg?width=640&amp;height=422&amp;quality=70&amp;v=1db47399b54de60" media="(max-width: 640px)" />
+                                            <img src="/media/dybgafzs/kasbah-tamadot-entrance.jpg?width=640&amp;height=555&amp;quality=70&amp;v=1db47399b54de60" alt="" loading="lazy" />
+                                        </picture>
+</a>
+                                </div>
+
+                            <div class="tabbed-listing__item-content cell medium-6 anim--will-fade-up anim--1500" data-animate>
+<a href="/kasbah-tamadot/"><h2>Kasbah Tamadot</h2></a>
+<h3>Atlas Mountains, Morocco</h3>
+<p><span class="NormalTextRun SCXW189159388 BCX0">A magical Moroccan kasbah nestled in the foothills of the Atlas Mountains, one hour from Marrakech. Stay in authentic Berber tents, luxurious rooms or suites, or one of six Riads.&nbsp;</span></p>
+                                    <div class="buttons-align-left">
+                                        <a class="button" href="/kasbah-tamadot/">Read more</a>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="tabbed-listing__item tabbed-listing__item--mahali grid-x">
+                                <div class="tabbed-listing__item-image cell medium-6">
+                                    <a href="/mahali-mzuri/"><picture>
+                                            <source srcset="/media/tfcbxcek/mahali-mzuri-lion-in-front-of-camp-low-res.jpg?width=640&amp;height=422&amp;quality=70&amp;v=1dc48eeb5e36ff0" media="(max-width: 640px)" />
+                                            <img src="/media/tfcbxcek/mahali-mzuri-lion-in-front-of-camp-low-res.jpg?width=640&amp;height=555&amp;quality=70&amp;v=1dc48eeb5e36ff0" alt="" loading="lazy" />
+                                        </picture>
+</a>
+                                </div>
+
+                            <div class="tabbed-listing__item-content cell medium-6 anim--will-fade-up anim--1500" data-animate>
+<a href="/mahali-mzuri/"><h2>Mahali Mzuri</h2></a>
+<h3>Maasai Mara, Kenya</h3>
+<p><span class="NormalTextRun SCXW255755259 BCX0">A luxury, 12-tented safari camp in the </span><span class="NormalTextRun SCXW255755259 BCX0">wider Maasai Mara ecosystem</span><span class="NormalTextRun SCXW255755259 BCX0"> with a front row seat to some of the most spectacular wildlife viewing in Africa, including the Great Migration.</span></p>
+                                    <div class="buttons-align-left">
+                                        <a class="button" href="/mahali-mzuri/">Read more</a>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="tabbed-listing__item tabbed-listing__item--finch-hattons grid-x">
+                                <div class="tabbed-listing__item-image cell medium-6">
+                                    <a href="/finch-hattons/"><picture>
+                                            <source srcset="/media/edxh5pqe/finchhattons_creditme_-soulfocus_media-286.jpg?width=640&amp;height=422&amp;quality=70&amp;v=1db4739bb1030b0" media="(max-width: 640px)" />
+                                            <img src="/media/edxh5pqe/finchhattons_creditme_-soulfocus_media-286.jpg?width=640&amp;height=555&amp;quality=70&amp;v=1db4739bb1030b0" alt="" loading="lazy" />
+                                        </picture>
+</a>
+                                </div>
+
+                            <div class="tabbed-listing__item-content cell medium-6 anim--will-fade-up anim--1500" data-animate>
+<a href="/finch-hattons/"><h2>Finch Hattons</h2></a>
+<h3>Tsavo, Kenya </h3>
+<p><span class="ui-provider a b c d e f g h i j k l m n o p q r s t u v w x y z ab ac ae af ag ah ai aj ak">A luxurious 17-tented camp set in pristine wilderness at the foot of the scenic Chyulu Hills in Kenya's Tsavo National Park, Finch Hatton promises an authentic journey into the heart of Southeast Kenya.&nbsp;</span></p>
+                                    <div class="buttons-align-left">
+                                        <a class="button" href="/finch-hattons/">Read more</a>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="tabbed-listing__item tabbed-listing__item--mont-rochelle grid-x">
+                                <div class="tabbed-listing__item-image cell medium-6">
+                                    <a href="/mont-rochelle/"><picture>
+                                            <source srcset="/media/mzjjbxnw/mont-rochelle-exterior-with-pool-miko-terrace.jpg?width=640&amp;height=422&amp;quality=70&amp;v=1db473a05106f40" media="(max-width: 640px)" />
+                                            <img src="/media/mzjjbxnw/mont-rochelle-exterior-with-pool-miko-terrace.jpg?width=640&amp;height=555&amp;quality=70&amp;v=1db473a05106f40" alt="" loading="lazy" />
+                                        </picture>
+</a>
+                                </div>
+
+                            <div class="tabbed-listing__item-content cell medium-6 anim--will-fade-up anim--1500" data-animate>
+<a href="/mont-rochelle/"><h2>Mont Rochelle</h2></a>
+<h3>Franschhoek, South Africa</h3>
+<p><span class="NormalTextRun SCXW133271187 BCX0">Mont Rochelle is a stunning 26-bedroom hotel and vineyard near Cape Town in the town of Franschhoek in South Africa – an ideal place for rest, relaxation and wine tasting.</span></p>
+                                    <div class="buttons-align-left">
+                                        <a class="button" href="/mont-rochelle/">Read more</a>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="tabbed-listing__item tabbed-listing__item--ulusaba grid-x">
+                                <div class="tabbed-listing__item-image cell medium-6">
+                                    <a href="/ulusaba/"><picture>
+                                            <source srcset="/media/k3lbz2vp/ulusaba-rock-lodge-exterior.jpg?width=640&amp;height=422&amp;quality=70&amp;v=1dc860281295b20" media="(max-width: 640px)" />
+                                            <img src="/media/k3lbz2vp/ulusaba-rock-lodge-exterior.jpg?width=640&amp;height=555&amp;quality=70&amp;v=1dc860281295b20" alt="" loading="lazy" />
+                                        </picture>
+</a>
+                                </div>
+
+                            <div class="tabbed-listing__item-content cell medium-6 anim--will-fade-up anim--1500" data-animate>
+<a href="/ulusaba/"><h2>Ulusaba</h2></a>
+<h3>Sabi Sand Reserve, South Africa</h3>
+<p>Reopening in April 2027, Ulusaba in the Sabi Sand Game Reserve is renowned for its exceptional safari experiences, expert rangers and trackers, and distinctive luxury accommodation, now thoughtfully being reimagined for an exciting new chapter.</p>
+                                    <div class="buttons-align-left">
+                                        <a class="button" href="/ulusaba/">Read more</a>
+                                    </div>
+                            </div>
+                        </div>
+                </div>
+        </div>
+    </div>
+</div>
+    <div class="double-image double-image--text-bottom grid-x">
+        <div class="double-image__left cell medium-6">
+            <div class="double-image__content">
+                <div class="double-image__content-inner anim--will-fade-up anim--1500" data-animate>
+<a href="/our-collection/marrakech/"><h2>Next up: Marrakech</h2></a>
+<div class="text-base my-auto mx-auto pb-10 [--thread-content-margin:var(--thread-content-margin-xs,calc(var(--spacing)*4))] @w-sm/main:[--thread-content-margin:var(--thread-content-margin-sm,calc(var(--spacing)*6))] @w-lg/main:[--thread-content-margin:var(--thread-content-margin-lg,calc(var(--spacing)*16))] px-(--thread-content-margin)">
+<div class="[--thread-content-max-width:40rem] @w-lg/main:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn">
+<div class="flex max-w-full flex-col gap-4 grow">
+<div class="min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal outline-none keyboard-focused:focus-ring [.text-message+&amp;]:mt-1" data-message-author-role="assistant" data-message-id="7eb18c6d-c7b3-4b18-a65f-2b370c8567c4" data-message-model-slug="gpt-5-mini" data-turn-start-message="true">
+<div class="flex w-full flex-col gap-1 empty:hidden">
+<div class="markdown prose dark:prose-invert w-full wrap-break-word light markdown-new-styling">
+<p data-start="0" data-end="244"><strong>Introducing Virgin Limited Edition's second Moroccan escape </strong></p>
+<p data-start="0" data-end="244">Just 25 minutes from Marrakech’s ancient walls, a new retreat is taking shape on a 6.5-hectare private estate. The 37-room luxury hotel will celebrate Moroccan craftsmanship and Berber tradition, blending comfort with the rhythms of the land.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+                        <div class="double-image__cta">
+                            <a class="button" href="/our-collection/marrakech/">Explore More</a>
+                        </div>
+                </div>
+            </div>
+
+            <div class="double-image__small-image">
+                    <img src="/media/5yniseub/morocco-bw.png?quality=70" alt="" class="double-image__stamp" data-animate />
+
+                <div class="double-image__small-image-wrapper" data-animate>
+                    <a href="/our-collection/marrakech/"><picture>
+                            <source srcset="/media/sbmhcfio/virgin-limited-edition-marrakech-hotel-exterior.jpg?width=640&amp;height=515&amp;quality=70&amp;v=1dcb6b6df910ac0" media="(max-width: 640px)" />
+                            <img src="/media/sbmhcfio/virgin-limited-edition-marrakech-hotel-exterior.jpg?width=800&amp;height=455&amp;quality=70&amp;v=1dcb6b6df910ac0" alt="Next up: Marrakech" loading="lazy" />
+                        </picture>
+</a>
+                </div>
+            </div>
+        </div>
+
+            <div class="double-image__right cell medium-6 hide-for-small-only" data-animate>
+                <a href="/our-collection/marrakech/"><picture>
+                        <img src="/media/c5qclfgo/virgin-limited-edition-marrakech-hotel-3.png?width=800&amp;height=850&amp;quality=70&amp;v=1dcb6b6e013cf50" alt="Next up: Marrakech" loading="lazy" />
+                    </picture>
+</a>
+            </div>
+    </div>
+
+    <div class="double-image double-image--text-bottom grid-x">
+        <div class="double-image__left cell medium-6">
+            <div class="double-image__content">
+                <div class="double-image__content-inner anim--will-fade-up anim--1500" data-animate>
+<a href="https://virginhotels.com/" rel="nofollow"><h2>From London to New York: city breaks perfected</h2></a>
+<p class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><strong>Ready to shake up your next city escape? </strong></p>
+<p data-start="77" data-end="309">From spontaneous weekends to full-throttle urban adventures, our sister brand Virgin Hotels invites you to experience the city differently. Bold design, smart comforts, and a playful spirit make every stay feel effortless and fun.</p>
+<p data-start="311" data-end="511" data-is-last-node="" data-is-only-node="">Stay in New York, Dallas, Nashville, Las Vegas, New Orleans, Edinburgh, and London, where buzzing spaces, lively rooms, and a stylish social scene make every visit unexpected, and always a good time.</p>
+                        <div class="double-image__cta">
+                            <a class="button" href="https://virginhotels.com/" rel="nofollow">Explore Virgin Hotels</a>
+                        </div>
+                </div>
+            </div>
+
+            <div class="double-image__small-image">
+
+                <div class="double-image__small-image-wrapper" data-animate>
+                    <a href="https://virginhotels.com/" rel="nofollow"><picture>
+                            <source srcset="/media/022pggoj/london-landmarks-unsplash-2-new.jpg?width=640&amp;height=515&amp;quality=70&amp;v=1dc910aec29b8d0" media="(max-width: 640px)" />
+                            <img src="/media/022pggoj/london-landmarks-unsplash-2-new.jpg?width=800&amp;height=455&amp;quality=70&amp;v=1dc910aec29b8d0" alt="From London to New York: city breaks perfected" loading="lazy" />
+                        </picture>
+</a>
+                </div>
+            </div>
+        </div>
+
+            <div class="double-image__right cell medium-6 hide-for-small-only" data-animate>
+                <a href="https://virginhotels.com/" rel="nofollow"><picture>
+                        <img src="/media/yvjpf0zv/virgin-hotel-ny-14-new.jpg?width=800&amp;height=850&amp;quality=70&amp;v=1dc910b155593f0" alt="From London to New York: city breaks perfected" loading="lazy" />
+                    </picture>
+</a>
+            </div>
+    </div>
+
+<div class="social-wall">
+    <div class="social-wall__inner grid-wrapper grid-x transform--will-fade-up transition--1500" data-animate-in-view="transform--completed-fade-up">
+            <div class="social-wall__heading cell">
+                <h3>#virginlimitededition</h3>
+            </div>
+
+        <div class="social-wall__feed cell medium-10 medium-offset-1" data-lazy-curator="&lt;link type=&#x27;text/css&#x27; rel=&#x27;stylesheet&#x27; href=&#x27;//cdn.curator.io/3.1/css/curator.css&#x27; /&gt;&#xA;&lt;script type=&#x27;text/javascript&#x27; src=&#x27;//cdn.curator.io/3.1/js/curator.js&#x27;&gt;&lt;/script&gt;&#xA;&lt;script type=&#x27;text/javascript&#x27;&gt;&#xA;    var widget = new Curator.Widgets.Grid({&#xA;        container: &#x27;.social-wall__feed&#x27;,&#xA;        feedId: &#x27;1153c6e2-e998-4f87-8fed-f9810e94784a&#x27;,&#xA;        grid: {&#xA;            rows: 1,&#xA;            minWidth: 290&#xA;        }&#xA;    });&#xA;&lt;/script&gt;"></div>
+    </div>
+</div>
+            </main>
+
+            
+<footer class="footer">
+        <div class="footer__newsletter">
+            <div class="footer__newsletter-toggle">
+                <button>
+                    Sign up to our newsletter
+                </button>
+            </div>
+
+            <div class="footer__newsletter-popup">
+                <button class="close close--white">
+                    Close
+                </button>
+
+                <div class="footer__newsletter-popup-inner">
+<h2>Let’s stay in touch</h2>
+<p>Sign up here for the news from around the collection...</p>
+                    <div class="footer__newsletter-popup-form">
+
+
+<div class="contact grid-wrapper grid-x">
+
+    <div class="contact__details cell small-12 medium-3 large-2 large-offset-1">
+
+<h2>Let’s stay in touch</h2>
+<p>Sign up here for the news from around the collection...</p>    </div>
+
+    <div class="contact__form cell small-12 medium-8 medium-offset-1 large-7">
+        <div class="transform--will-fade-up transition--2000" data-animate-in-view="transform--completed-fade-up">
+
+<form action="/" class="form grid-x" enctype="multipart/form-data" id="stayInTouchForm" method="post">    <div class="form__row cell medium-5 ">
+        <label class="show-for-sr" for="FirstName">First Name *</label>
+        <input data-val="true" data-val-required="The FirstName field is required." id="FirstName" name="FirstName" placeholder="First Name *" required="" type="text" value="" />
+        <span class="field-validation-valid" data-valmsg-for="FirstName" data-valmsg-replace="true"></span>
+    </div>
+    <div class="form__row cell medium-5 medium-offset-1">
+        <label class="show-for-sr" for="LastName">Last Name *</label>
+        <input data-val="true" data-val-required="The LastName field is required." id="LastName" name="LastName" placeholder="Last Name *" required="" type="text" value="" />
+        <span class="field-validation-valid" data-valmsg-for="LastName" data-valmsg-replace="true"></span>
+    </div>
+    <div class="form__row cell medium-5">
+        <label class="show-for-sr" for="Country">Country *</label>
+        <select data-val="true" data-val-required="The Country field is required." id="Country" name="Country" required=""><option value="">Country *</option>
+<option value="GB">United Kingdom</option>
+<option value="US">United States</option>
+<option value="ZA">South Africa</option>
+<option value="KE">Kenya</option>
+<option value="disabled">----</option>
+<option value="AF">Afghanistan</option>
+<option value="AL">Albania</option>
+<option value="DZ">Algeria</option>
+<option value="AD">Andorra</option>
+<option value="AO">Angola</option>
+<option value="AG">Antigua and Barbuda</option>
+<option value="AR">Argentina</option>
+<option value="AM">Armenia</option>
+<option value="AW">Aruba</option>
+<option value="AU">Australia</option>
+<option value="AT">Austria</option>
+<option value="AZ">Azerbaijan</option>
+<option value="BS">Bahamas, The</option>
+<option value="BH">Bahrain</option>
+<option value="BD">Bangladesh</option>
+<option value="BB">Barbados</option>
+<option value="BY">Belarus</option>
+<option value="BE">Belgium</option>
+<option value="BZ">Belize</option>
+<option value="BJ">Benin</option>
+<option value="BM">Bermuda</option>
+<option value="BT">Bhutan</option>
+<option value="BO">Bolivia</option>
+<option value="BA">Bosnia and Herzegovina</option>
+<option value="BW">Botswana</option>
+<option value="BR">Brazil</option>
+<option value="BN">Brunei</option>
+<option value="BG">Bulgaria</option>
+<option value="BF">Burkina Faso</option>
+<option value="MM">Burma</option>
+<option value="BI">Burundi</option>
+<option value="KH">Cambodia</option>
+<option value="CM">Cameroon</option>
+<option value="CA">Canada</option>
+<option value="CV">Cape Verde</option>
+<option value="CF">Central African Republic</option>
+<option value="TD">Chad</option>
+<option value="CL">Chile</option>
+<option value="CN">China</option>
+<option value="CO">Colombia</option>
+<option value="KM">Comoros</option>
+<option value="CD">Congo, Democratic Republic of the</option>
+<option value="CG">Congo, Republic of the</option>
+<option value="CR">Costa Rica</option>
+<option value="CI">Cote d&#x27;Ivoire</option>
+<option value="HR">Croatia</option>
+<option value="CU">Cuba</option>
+<option value="CW">Curacao</option>
+<option value="CY">Cyprus</option>
+<option value="CZ">Czech Republic</option>
+<option value="DK">Denmark</option>
+<option value="DJ">Djibouti</option>
+<option value="DM">Dominica</option>
+<option value="DO">Dominican Republic</option>
+<option value="EC">Ecuador</option>
+<option value="EG">Egypt</option>
+<option value="SV">El Salvador</option>
+<option value="GQ">Equatorial Guinea</option>
+<option value="ER">Eritrea</option>
+<option value="EE">Estonia</option>
+<option value="ET">Ethiopia</option>
+<option value="FJ">Fiji</option>
+<option value="FI">Finland</option>
+<option value="FR">France</option>
+<option value="GA">Gabon</option>
+<option value="GM">Gambia</option>
+<option value="GE">Georgia</option>
+<option value="DE">Germany</option>
+<option value="GH">Ghana</option>
+<option value="GR">Greece</option>
+<option value="GD">Grenada</option>
+<option value="GT">Guatemala</option>
+<option value="GN">Guinea</option>
+<option value="GW">Guinea-Bissau</option>
+<option value="GY">Guyana</option>
+<option value="HT">Haiti</option>
+<option value="VA">Holy See</option>
+<option value="HN">Honduras</option>
+<option value="HK">Hong Kong</option>
+<option value="HU">Hungary</option>
+<option value="IS">Iceland</option>
+<option value="IN">India</option>
+<option value="ID">Indonesia</option>
+<option value="IR">Iran</option>
+<option value="IQ">Iraq</option>
+<option value="IE">Ireland</option>
+<option value="IL">Israel</option>
+<option value="IT">Italy</option>
+<option value="JM">Jamaica</option>
+<option value="JP">Japan</option>
+<option value="JO">Jordan</option>
+<option value="KZ">Kazakhstan</option>
+<option value="KI">Kiribati</option>
+<option value="XK">Kosovo</option>
+<option value="KW">Kuwait</option>
+<option value="KG">Kyrgyzstan</option>
+<option value="LA">Laos</option>
+<option value="LV">Latvia</option>
+<option value="LB">Lebanon</option>
+<option value="LS">Lesotho</option>
+<option value="LR">Liberia</option>
+<option value="LY">Libya</option>
+<option value="LI">Liechtenstein</option>
+<option value="LT">Lithuania</option>
+<option value="LU">Luxembourg</option>
+<option value="MO">Macau</option>
+<option value="MK">Macedonia</option>
+<option value="MG">Madagascar</option>
+<option value="MW">Malawi</option>
+<option value="MY">Malaysia</option>
+<option value="MV">Maldives</option>
+<option value="ML">Mali</option>
+<option value="MT">Malta</option>
+<option value="MH">Marshall Islands</option>
+<option value="MR">Mauritania</option>
+<option value="MU">Mauritius</option>
+<option value="MX">Mexico</option>
+<option value="FM">Micronesia</option>
+<option value="MD">Moldova</option>
+<option value="MC">Monaco</option>
+<option value="MN">Mongolia</option>
+<option value="ME">Montenegro</option>
+<option value="MA">Morocco</option>
+<option value="MZ">Mozambique</option>
+<option value="NA">Namibia</option>
+<option value="NR">Nauru</option>
+<option value="NP">Nepal</option>
+<option value="NL">Netherlands</option>
+<option value="AN">Netherlands Antilles</option>
+<option value="NZ">New Zealand</option>
+<option value="NI">Nicaragua</option>
+<option value="NE">Niger</option>
+<option value="NG">Nigeria</option>
+<option value="KP">North Korea</option>
+<option value="NO">Norway</option>
+<option value="OM">Oman</option>
+<option value="PK">Pakistan</option>
+<option value="PW">Palau</option>
+<option value="PS">Palestinian Territories</option>
+<option value="PA">Panama</option>
+<option value="PG">Papua New Guinea</option>
+<option value="PY">Paraguay</option>
+<option value="PE">Peru</option>
+<option value="PH">Philippines</option>
+<option value="PL">Poland</option>
+<option value="PT">Portugal</option>
+<option value="QA">Qatar</option>
+<option value="RO">Romania</option>
+<option value="RU">Russia</option>
+<option value="RW">Rwanda</option>
+<option value="KN">Saint Kitts and Nevis</option>
+<option value="LC">Saint Lucia</option>
+<option value="VC">Saint Vincent and the Grenadines</option>
+<option value="WS">Samoa</option>
+<option value="SM">San Marino</option>
+<option value="ST">Sao Tome and Principe</option>
+<option value="SA">Saudi Arabia</option>
+<option value="SN">Senegal</option>
+<option value="RS">Serbia</option>
+<option value="SC">Seychelles</option>
+<option value="SL">Sierra Leone</option>
+<option value="SG">Singapore</option>
+<option value="SX">Sint Maarten</option>
+<option value="SK">Slovakia</option>
+<option value="SI">Slovenia</option>
+<option value="SB">Solomon Islands</option>
+<option value="SO">Somalia</option>
+<option value="KR">South Korea</option>
+<option value="SS">South Sudan</option>
+<option value="ES">Spain</option>
+<option value="LK">Sri Lanka</option>
+<option value="SD">Sudan</option>
+<option value="SR">Suriname</option>
+<option value="SZ">Swaziland</option>
+<option value="SE">Sweden</option>
+<option value="CH">Switzerland</option>
+<option value="SY">Syria</option>
+<option value="TW">Taiwan</option>
+<option value="TJ">Tajikistan</option>
+<option value="TZ">Tanzania</option>
+<option value="TH">Thailand</option>
+<option value="TL">Timor-Leste</option>
+<option value="TG">Togo</option>
+<option value="TO">Tonga</option>
+<option value="TT">Trinidad and Tobago</option>
+<option value="TN">Tunisia</option>
+<option value="TR">Turkey</option>
+<option value="TM">Turkmenistan</option>
+<option value="TV">Tuvalu</option>
+<option value="UG">Uganda</option>
+<option value="UA">Ukraine</option>
+<option value="AE">United Arab Emirates</option>
+<option value="UY">Uruguay</option>
+<option value="UZ">Uzbekistan</option>
+<option value="VU">Vanuatu</option>
+<option value="VE">Venezuela</option>
+<option value="VN">Vietnam</option>
+<option value="YE">Yemen</option>
+<option value="ZM">Zambia</option>
+<option value="ZW">Zimbabwe</option>
+</select>
+        <span class="field-validation-valid" data-valmsg-for="Country" data-valmsg-replace="true"></span>
+    </div>
+    <div class="form__row cell medium-5 medium-offset-1">
+        <label class="show-for-sr" for="Email">Email *</label>
+        <input data-val="true" data-val-email="The Email field is not a valid e-mail address." data-val-required="The Email field is required." id="Email" name="Email" placeholder="Email *" required="" type="email" value="" />
+        <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+    </div>
+        <div class="form__row cell medium-5">
+            <div class="form__row form__checkbox cell">
+                <input class="consent required" data-val="true" data-val-required="The Consent field is required." id="Consent" name="Consent" required="" type="checkbox" value="true" />
+
+                <label for="Consent" style="display:inline">
+                    I agree to the&nbsp;<a href="https://www.virginlimitededition.com/privacy-policy/">privacy policy</a>
+                </label>
+            </div>
+        </div>
+<input data-g-recaptcha data-g-recaptcha-action="stay_in_touch_form_submission" data-g-recaptcha-key="6LfgGUMsAAAAAGubTf8vHZIjL-ITG68ChpZpBjvF" name="g-recaptcha-response" type="hidden" value="" />
+<script src="https://www.google.com/recaptcha/api.js?render=6LfgGUMsAAAAAGubTf8vHZIjL-ITG68ChpZpBjvF" defer></script>
+<input name="g-recaptcha-version" type="hidden" value="V3" />
+<input data-val="true" data-val-required="The FormId field is required." id="FormId" name="FormId" type="hidden" value="362c1ac7-0c0b-4802-aaab-b6d96e57383f" />    <div class="form__row cell form__submit align-left text-left">
+        <button type="submit" class="button">
+            Submit
+        </button>
+    </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8N4XcWz7baVPkXY_c_zqSJ5kzdST96YjeQWgKdplMLkM2P4NxnwpCO2XljBR1XDnIUeT7Zk6GzApg8ZwloRzHZ55xNt0wSjQnmt86-fwjpwV52XBvD8S1dlEtjmCjFVPWwFxxv1wgRA5ikSMW9S4pss" /><input name="ufprt" type="hidden" value="CfDJ8N4XcWz7baVPkXY_c_zqSJ68-vLprNAIP1-fUezZ41236NFHReZVjd3y7D62AVVPuMkOr5on397vLXgE62Kcj8YKd5MwrRvhpCnZa7vEBLuCmq7T3Uci25frMNcs-AqixDhehM4eV7iTZY3sOvj83w8" /><input name="Consent" type="hidden" value="false" /></form>        </div>
+    </div>
+</div>                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="footer__main">
+        <div class="footer__main-inner grid-wrapper grid-x">
+                    <nav class="footer__nav cell medium-6 large-3">
+                            <div class="footer__nav-heading">
+                                Reservations
+                            </div>
+
+                        <ul>
+                                <li>
+                                    <a href="mailto:enquiries@virginlimitededition.com" rel="nofollow" target="_blank">enquiries@virginlimitededition.com</a>
+                                </li>
+                                <li>
+                                    <a href="mailto:enquiriesusa@virginlimitededition.com" rel="nofollow" target="_blank">enquiriesusa@virginlimitededition.com (USA office)</a>
+                                </li>
+                                <li>
+                                    <a href="/contact-us/">Contact us</a>
+                                </li>
+                        </ul>
+                    </nav>
+                    <nav class="footer__nav cell medium-3">
+                            <div class="footer__nav-heading">
+                                About us
+                            </div>
+
+                        <ul>
+                                <li>
+                                    <a href="/positive-impact/">Our commitment</a>
+                                </li>
+                                <li>
+                                    <a href="/trade-and-press/">Trade and press</a>
+                                </li>
+                                <li>
+                                    <a href="/careers/">Careers</a>
+                                </li>
+                                <li>
+                                    <a href="https://virginhotels.com/vhc-development/" rel="nofollow" target="_blank">Virgin Hotels Collection</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.virgin.com/" rel="nofollow" target="_blank">Virgin Group</a>
+                                </li>
+                                <li>
+                                    <a href="/earn-and-spend-with-virgin/">Unlock points with Virgin</a>
+                                </li>
+                        </ul>
+                    </nav>
+                    <nav class="footer__nav cell medium-3 large-3">
+                            <div class="footer__nav-heading">
+                                The legal bits
+                            </div>
+
+                        <ul>
+                                <li>
+                                    <a href="/terms-and-conditions/">Terms and conditions</a>
+                                </li>
+                                <li>
+                                    <a href="/privacy-policy/">Privacy policy</a>
+                                </li>
+                                <li>
+                                    <a href="/cookie-policy/">Cookie policy</a>
+                                </li>
+                                <li>
+                                    <a href="/accessibility-statement/">Accessibility Statement</a>
+                                </li>
+                                <li>
+                                    <a href="/modern-slavery-act/">Modern slavery act</a>
+                                </li>
+                        </ul>
+                    </nav>
+
+                <div class="footer__social cell large-3">
+                    <div class="footer__social-heading">
+                        Follow us
+                    </div>
+
+                    <ul>
+                            <li>
+                                <a href="https://twitter.com/VirginLimitedEd" target="_blank">
+                                    <img src="/assets/img/social-twitter.svg" alt="Twitter" loading="lazy" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/VirginLimitedEdition/" target="_blank">
+                                    <img src="/assets/img/social-facebook.svg" alt="Facebook" loading="lazy" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/virginlimitededition/" target="_blank">
+                                    <img src="/assets/img/social-instagram.svg" alt="Instagram" loading="lazy" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/channel/UCW7lsC91UIss4vzntsg81rA" target="_blank">
+                                    <img src="/assets/img/social-youtube.svg" alt="YouTube" loading="lazy" />
+                                </a>
+                            </li>
+                    </ul>
+
+                    <div class="footer__copyright cell">
+<p>2026 virginlimitededition.com All Rights Reserved</p>
+                        <div class="footer__credit">
+                            <p>
+                                <a href="https://www.eighty-days.com/?utm_source=websiteby&utm_medium=credit&utm_campaign=virginlimitededition" target="_blank">
+                                    Website by 80 DAYS
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="footer__le-logo cell small-6 large-4">
+
+                        <a href="https://virginhotels.com/" rel="nofollow"><img alt="" class="" src="/media/4eybtmd2/footer-virgin-hotels-logo.svg?quality=70" /></a>
+                        
+                    </div>
+                    <div class="footer__hotels-logo cell small-6 large-4">
+
+                        <a href="/"><img alt="" class="" src="/media/tzqj1z0j/logo.svg?quality=70" /></a>
+                        
+                    </div>
+                    <div class="footer__legend-logo cell small-6 large-4">
+
+                        <a href="https://preferredhotels.com/spotlight/virgin-limited-edition-luxury-hotels" rel="nofollow"><img alt="" class="" src="/media/f1sknbxb/legend.svg?quality=70" /></a>
+                        
+                    </div>
+
+
+        </div>
+    </div>
+</footer>
+        </div>
+    </div>
+
+    
+
+
+    <link type="text/css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/assets/css/main-8ba0bea907f53d5c8c36.css" />
+
+    <noscript>
+        <link type="text/css" rel="stylesheet" href="/assets/css/main-8ba0bea907f53d5c8c36.css" />
+    </noscript>
+
+    <script type="text/javascript" data-cookieconsent="ignore" src="/assets/js/priority-8ba0bea907f53d5c8c36.js"></script>
+
+    <script type="text/javascript" defer data-cookieconsent="ignore" src="/assets/js/main-8ba0bea907f53d5c8c36.js"></script>
+
+    
+
+    
+
+    <!-- Hidden link for booking engine to load on /reservations/ pages -->
+<a href="#/booking/step-1" style="display: none;">Book Now</a>
+
+</body>
+</html>

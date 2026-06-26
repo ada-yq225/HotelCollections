@@ -1,4 +1,5 @@
 import type { HotelEntry } from "./types";
+import { isHotelListed } from "@/lib/hotel-visibility";
 import { CHINA_HOTELS } from "./china";
 import { MARRIOTT_CHINA_HOTELS } from "./marriott-china";
 import { MARRIOTT_GLOBAL_HOTELS } from "./marriott-global";
@@ -63,10 +64,8 @@ const ALL_HOTELS_RAW: HotelEntry[] = [
 
 export const ALL_HOTELS: HotelEntry[] = dedupeBySlug(ALL_HOTELS_RAW);
 
-/** Hotels currently open and bookable — excludes closed/rebranded entries */
-export const ACTIVE_HOTELS: HotelEntry[] = ALL_HOTELS.filter(
-  (h) => h.isActive !== false && h.status !== "closed"
-);
+/** Hotels currently open and bookable — excludes closed, phantom & pipeline entries */
+export const ACTIVE_HOTELS: HotelEntry[] = ALL_HOTELS.filter(isHotelListed);
 
 export {
   CHINA_HOTELS,

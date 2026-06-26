@@ -9,7 +9,8 @@
  */
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { join } from "path";
-import { ALL_HOTELS } from "../src/data/hotels";
+import { ACTIVE_HOTELS } from "../src/data/hotels";
+import { scrapeOtaPriceCny } from "../src/lib/hotel-ota-price";
 import { resolveOfficialUrl } from "../src/lib/hotel-official-url";
 import { resolveUrlCandidates } from "../src/lib/hotel-url-candidates";
 import {
@@ -53,16 +54,17 @@ async function fetchHtml(url: string): Promise<string | null> {
   }
 }
 
-function suiteFromBase(hotel: (typeof ALL_HOTELS)[0], base: number): number {
+function suiteFromBase(hotel: (typeof ACTIVE_HOTELS)[0], base: number): number {
   const isMaldives =
     hotel.region === "maldives" || hotel.slug.includes("maldives");
   return Math.round(base * (isMaldives ? 3.5 : 2.2));
 }
 
-async function scrapePriceForHotel(hotel: (typeof ALL_HOTELS)[0]): Promise<{
+async function scrapePriceForHotel(hotel: (typeof ACTIVE_HOTELS)[0]): Promise<{
   avgBasePrice?: number;
   avgSuitePrice?: number;
   priceSource?: "scraped";
+  priceScrapeSource?: "official" | "ota-trip" | "ota-ctrip";
   websiteUrl?: string;
 } | null> {
   const cachedUrl = existsSync(OUT_PATH)
@@ -92,7 +94,21 @@ async function scrapePriceForHotel(hotel: (typeof ALL_HOTELS)[0]): Promise<{
       avgBasePrice: validated,
       avgSuitePrice: suiteFromBase(hotel, validated),
       priceSource: "scraped",
+      priceScrapeSource: "official",
     };
+  }
+
+  const ota = await scrapeOtaPriceCny(hotel);
+  if (ota) {
+    const validated = validateScrapedPriceCny(ota.priceCny, hotel.brandSlug, hotel.countryCode);
+    if (validated != null) {
+      return {
+        avgBasePrice: validated,
+        avgSuitePrice: suiteFromBase(hotel, validated),
+        priceSource: "scraped",
+        priceScrapeSource: ota.source === "ctrip" ? "ota-ctrip" : "ota-trip",
+      };
+    }
   }
 
   return null;
@@ -110,7 +126,7 @@ async function main() {
   const revalidate = args.includes("--revalidate");
 
   const cache = loadCache();
-  let hotels = ALL_HOTELS.filter((h) => h.isActive !== false);
+  let hotels = ACTIVE_HOTELS;
   if (slugFilter) hotels = hotels.filter((h) => h.slug === slugFilter);
 
   if (missingOnly) {
@@ -141,10 +157,20 @@ async function main() {
     }
 
     const result = await scrapePriceForHotel(hotel);
-    if (result?.priceSource === "scraped") {
-      cache[hotel.slug] = { ...prev, ...result };
+    if (result?.priceSource === "scraped" && result.avgBasePrice != null) {
+      const finalCheck = validateScrapedPriceCny(
+        result.avgBasePrice,
+        hotel.brandSlug,
+        hotel.countryCode
+      );
+      if (finalCheck == null) {
+        failed++;
+        console.log(`  [reject] ${hotel.slug}: bogus ¥${result.avgBasePrice}`);
+      } else {
+      cache[hotel.slug] = { ...prev, ...result, avgBasePrice: finalCheck };
       updated++;
-      console.log(`  [${i + 1}/${hotels.length}] ${hotel.slug}: ¥${result.avgBasePrice}`);
+      console.log(`  [${i + 1}/${hotels.length}] ${hotel.slug}: ¥${finalCheck}`);
+      }
     } else {
       if (prev?.priceSource === "scraped" && !revalidate) {
         const fixed = prev.avgBasePrice

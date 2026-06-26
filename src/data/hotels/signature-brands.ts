@@ -626,6 +626,9 @@ export const SIGNATURE_BRAND_HOTELS: HotelEntry[] = [
     latitude: 52.3585,
     longitude: 4.8782,
     openedYear: 2026,
+    isActive: false,
+    status: "closed",
+    notes: "尚未开业，待官方确认后上架",
   },
   {
     slug: "mandarin-oriental-istanbul",
@@ -682,6 +685,9 @@ export const SIGNATURE_BRAND_HOTELS: HotelEntry[] = [
     latitude: 46.5385,
     longitude: 12.1382,
     openedYear: 2026,
+    isActive: false,
+    status: "closed",
+    notes: "尚未开业，待官方确认后上架",
   },
   {
     slug: "mandarin-oriental-mallorca",
@@ -696,6 +702,9 @@ export const SIGNATURE_BRAND_HOTELS: HotelEntry[] = [
     latitude: 39.5685,
     longitude: 2.6282,
     openedYear: 2026,
+    isActive: false,
+    status: "closed",
+    notes: "尚未开业，待官方确认后上架",
   },
   {
     slug: "mandarin-oriental-costa-navarino",

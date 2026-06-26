@@ -7,6 +7,7 @@ import { useDepartureAirport } from "@/hooks/useDepartureAirport";
 import { formatDistanceKm } from "@/lib/travel";
 import type { TravelPlanResult } from "@/lib/travel";
 import { FlightOptionCard } from "./FlightOptionCard";
+import { getSeasonInfo, getVisaInfo } from "@/data/travel/season-visa";
 
 type HotelTravelPlannerProps = {
   open: boolean;
@@ -16,6 +17,7 @@ type HotelTravelPlannerProps = {
     name: string;
     cityZh: string;
     countryCode: string;
+    region: string;
     latitude: number;
     longitude: number;
   };
@@ -109,6 +111,8 @@ export function HotelTravelPlanner({ open, onClose, hotel }: HotelTravelPlannerP
 
   const directFlights = plan?.flights.filter((f) => f.type === "direct") ?? [];
   const connectingFlights = plan?.flights.filter((f) => f.type === "connecting") ?? [];
+  const season = getSeasonInfo(hotel.region, hotel.countryCode);
+  const visa = getVisaInfo(hotel.countryCode);
 
   return (
     <>
@@ -213,6 +217,11 @@ export function HotelTravelPlanner({ open, onClose, hotel }: HotelTravelPlannerP
                     {formatDistanceKm(plan.airportToHotelKm)}
                   </p>
                 </div>
+              </div>
+
+              <div className="rounded-xl border border-[#e8e8e8] bg-[#fafafa] p-3 text-xs">
+                <p className="font-medium text-[#374151]">最佳出行：{season.best.slice(0, 4).join("、")}</p>
+                <p className="mt-1 text-[#6b7280]">签证：{visa.policy} · {visa.stay}</p>
               </div>
 
               <div className="flex items-center gap-2 rounded-xl border border-[#e8e8e8] p-3 text-sm">

@@ -10,7 +10,10 @@
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/cgQHJy2x5kZHt9TQ324s.jpg"
-    ]
+    ],
+    "avgBasePrice": 9081,
+    "avgSuitePrice": 19978,
+    "priceSource": "scraped"
   },
   "mandarin-oriental-shanghai": {
     "websiteUrl": "https://www.mandarinoriental.com/en/shanghai/pudong",
@@ -23,7 +26,10 @@
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg"
-    ]
+    ],
+    "avgBasePrice": 4081,
+    "avgSuitePrice": 8978,
+    "priceSource": "scraped"
   },
   "mandarin-oriental-guangzhou": {
     "websiteUrl": "https://www.mandarinoriental.com/en/guangzhou/tianhe",
@@ -36,7 +42,10 @@
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg"
-    ]
+    ],
+    "avgBasePrice": 4314,
+    "avgSuitePrice": 9491,
+    "priceSource": "scraped"
   },
   "mandarin-oriental-shenzhen": {
     "websiteUrl": "https://www.mandarinoriental.com/en/shenzhen/futian",
@@ -49,7 +58,10 @@
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg"
-    ]
+    ],
+    "avgBasePrice": 5200,
+    "avgSuitePrice": 11440,
+    "priceSource": "scraped"
   },
   "mandarin-oriental-chengdu": {
     "websiteUrl": "https://www.mandarinoriental.com/en/chengdu/taikoo-li",
@@ -66,7 +78,7 @@
     ]
   },
   "mandarin-oriental-sanya": {
-    "websiteUrl": "https://www.mandarinoriental.com/en/sanya/sanya",
+    "websiteUrl": "https://www.mandarinoriental.com/en/sanya",
     "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
     "galleryImages": [
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
@@ -77,7 +89,10 @@
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/BE9nDVxSr1AimkcQPstC.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jC6JRdgmvuxLqhKedvmy.png",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/sSRRuX5HHYLBGmTdtFFj.jpg"
-    ]
+    ],
+    "avgBasePrice": 3322,
+    "avgSuitePrice": 7308,
+    "priceSource": "scraped"
   },
   "mandarin-oriental-hong-kong": {
     "websiteUrl": "https://www.mandarinoriental.com/en/hong-kong/victoria-harbour",
@@ -90,7 +105,10 @@
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg"
-    ]
+    ],
+    "avgBasePrice": 8096,
+    "avgSuitePrice": 17811,
+    "priceSource": "scraped"
   },
   "mandarin-oriental-macau": {
     "websiteUrl": "https://www.mandarinoriental.com/en/macau/one-central",
@@ -103,10 +121,13 @@
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg"
-    ]
+    ],
+    "avgBasePrice": 3914,
+    "avgSuitePrice": 8611,
+    "priceSource": "scraped"
   },
   "mandarin-oriental-taipei": {
-    "websiteUrl": "https://www.mandarinoriental.com/en/taipei/taipei",
+    "websiteUrl": "https://www.mandarinoriental.com/en/taipei",
     "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
     "galleryImages": [
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
@@ -143,7 +164,10 @@
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg"
-    ]
+    ],
+    "avgBasePrice": 9184,
+    "avgSuitePrice": 20205,
+    "priceSource": "scraped"
   },
   "mandarin-oriental-bangkok": {
     "websiteUrl": "https://www.mandarinoriental.com/en/bangkok/chao-phraya-river",
@@ -183,7 +207,10 @@
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg"
-    ]
+    ],
+    "avgBasePrice": 46482,
+    "avgSuitePrice": 102260,
+    "priceSource": "scraped"
   },
   "mandarin-oriental-paris": {
     "websiteUrl": "https://www.mandarinoriental.com/en/paris/place-vendome",
@@ -196,7 +223,10 @@
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg"
-    ]
+    ],
+    "avgBasePrice": 26729,
+    "avgSuitePrice": 58804,
+    "priceSource": "scraped"
   },
   "mandarin-oriental-milan": {
     "websiteUrl": "https://www.mandarinoriental.com/en/milan/la-scala",
@@ -209,7 +239,10 @@
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg"
-    ]
+    ],
+    "avgBasePrice": 32291,
+    "avgSuitePrice": 71040,
+    "priceSource": "scraped"
   },
   "mandarin-oriental-lucerne": {
     "websiteUrl": "https://www.mandarinoriental.com/en/luzern/palace",
@@ -238,7 +271,7 @@
     ]
   },
   "mandarin-oriental-madrid": {
-    "websiteUrl": "https://www.mandarinoriental.com/en/madrid/hotel-ritz-madrid",
+    "websiteUrl": "https://www.mandarinoriental.com/en/madrid",
     "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
     "galleryImages": [
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
@@ -262,10 +295,13 @@
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg"
-    ]
+    ],
+    "avgBasePrice": 32185,
+    "avgSuitePrice": 70807,
+    "priceSource": "scraped"
   },
   "mandarin-oriental-bodrum": {
-    "websiteUrl": "https://www.mandarinoriental.com/en/bodrum/bodrum",
+    "websiteUrl": "https://www.mandarinoriental.com/en/bodrum",
     "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
     "galleryImages": [
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
@@ -276,10 +312,13 @@
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/BE9nDVxSr1AimkcQPstC.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jC6JRdgmvuxLqhKedvmy.png",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/sSRRuX5HHYLBGmTdtFFj.jpg"
-    ]
+    ],
+    "avgBasePrice": 22598,
+    "avgSuitePrice": 49716,
+    "priceSource": "scraped"
   },
   "mandarin-oriental-prague": {
-    "websiteUrl": "https://www.mandarinoriental.com/en/prague/prague",
+    "websiteUrl": "https://www.mandarinoriental.com/en/prague",
     "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
     "galleryImages": [
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
@@ -290,7 +329,10 @@
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/BE9nDVxSr1AimkcQPstC.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jC6JRdgmvuxLqhKedvmy.png",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/sSRRuX5HHYLBGmTdtFFj.jpg"
-    ]
+    ],
+    "avgBasePrice": 6816,
+    "avgSuitePrice": 14995,
+    "priceSource": "scraped"
   },
   "mandarin-oriental-new-york": {
     "websiteUrl": "https://www.mandarinoriental.com/en/new-york/manhattan",
@@ -303,10 +345,13 @@
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg"
-    ]
+    ],
+    "avgBasePrice": 32893,
+    "avgSuitePrice": 72365,
+    "priceSource": "scraped"
   },
   "mandarin-oriental-boston": {
-    "websiteUrl": "https://www.mandarinoriental.com/en/boston/boston",
+    "websiteUrl": "https://www.mandarinoriental.com/en/boston",
     "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
     "galleryImages": [
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
@@ -317,7 +362,10 @@
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/BE9nDVxSr1AimkcQPstC.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jC6JRdgmvuxLqhKedvmy.png",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/sSRRuX5HHYLBGmTdtFFj.jpg"
-    ]
+    ],
+    "avgBasePrice": 7050,
+    "avgSuitePrice": 15510,
+    "priceSource": "scraped"
   },
   "mandarin-oriental-mexico-city": {
     "websiteUrl": "https://www.mandarinoriental.com/en/mexico-city/polanco",
@@ -344,7 +392,10 @@
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg"
-    ]
+    ],
+    "avgBasePrice": 15078,
+    "avgSuitePrice": 33172,
+    "priceSource": "scraped"
   },
   "mandarin-oriental-abu-dhabi": {
     "websiteUrl": "https://www.mandarinoriental.com/en/abu-dhabi/emirates-palace",
@@ -357,7 +408,10 @@
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/cgQHJy2x5kZHt9TQ324s.jpg"
-    ]
+    ],
+    "avgBasePrice": 10625,
+    "avgSuitePrice": 23375,
+    "priceSource": "scraped"
   },
   "mandarin-oriental-doha": {
     "websiteUrl": "https://www.mandarinoriental.com/en/doha/msheireb",
@@ -373,7 +427,7 @@
     ]
   },
   "mandarin-oriental-marrakech": {
-    "websiteUrl": "https://www.mandarinoriental.com/en/marrakech/marrakech",
+    "websiteUrl": "https://www.mandarinoriental.com/en/marrakech",
     "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
     "galleryImages": [
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
@@ -384,7 +438,10 @@
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/BE9nDVxSr1AimkcQPstC.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jC6JRdgmvuxLqhKedvmy.png",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/sSRRuX5HHYLBGmTdtFFj.jpg"
-    ]
+    ],
+    "avgBasePrice": 15735,
+    "avgSuitePrice": 34617,
+    "priceSource": "scraped"
   },
   "mandarin-oriental-maldives": {
     "websiteUrl": "https://www.mandarinoriental.com/en/maldives/fari-islands",
@@ -415,7 +472,7 @@
     ]
   },
   "mandarin-oriental-jakarta": {
-    "websiteUrl": "https://www.mandarinoriental.com/en/jakarta/jakarta",
+    "websiteUrl": "https://www.mandarinoriental.com/en/jakarta",
     "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
     "galleryImages": [
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
@@ -429,7 +486,7 @@
     ]
   },
   "mandarin-oriental-geneva": {
-    "websiteUrl": "https://www.mandarinoriental.com/en/geneva/geneva",
+    "websiteUrl": "https://www.mandarinoriental.com/en/geneva",
     "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
     "galleryImages": [
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
@@ -456,7 +513,7 @@
     ]
   },
   "mandarin-oriental-vienna": {
-    "websiteUrl": "https://www.mandarinoriental.com/en/vienna/vienna",
+    "websiteUrl": "https://www.mandarinoriental.com/en/vienna",
     "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
     "galleryImages": [
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
@@ -480,7 +537,10 @@
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/cgQHJy2x5kZHt9TQ324s.jpg"
-    ]
+    ],
+    "avgBasePrice": 10244,
+    "avgSuitePrice": 22537,
+    "priceSource": "scraped"
   },
   "mandarin-oriental-istanbul": {
     "websiteUrl": "https://www.mandarinoriental.com/en/istanbul/bosphorus",
@@ -493,7 +553,10 @@
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg"
-    ]
+    ],
+    "avgBasePrice": 35742,
+    "avgSuitePrice": 78632,
+    "priceSource": "scraped"
   },
   "mandarin-oriental-london-mayfair": {
     "websiteUrl": "https://www.mandarinoriental.com/en/london/mayfair",
@@ -532,7 +595,10 @@
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg"
-    ]
+    ],
+    "avgBasePrice": 10244,
+    "avgSuitePrice": 22537,
+    "priceSource": "scraped"
   },
   "mandarin-oriental-mallorca": {
     "websiteUrl": "https://www.mandarinoriental.com/en/mallorca/punta-negra",
@@ -545,7 +611,10 @@
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg"
-    ]
+    ],
+    "avgBasePrice": 10244,
+    "avgSuitePrice": 22537,
+    "priceSource": "scraped"
   },
   "mandarin-oriental-costa-navarino": {
     "websiteUrl": "https://www.mandarinoriental.com/en/costa-navarino/costa-navarino",
@@ -572,7 +641,10 @@
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/cgQHJy2x5kZHt9TQ324s.jpg"
-    ]
+    ],
+    "avgBasePrice": 9081,
+    "avgSuitePrice": 19978,
+    "priceSource": "scraped"
   },
   "mandarin-oriental-landmark-hong-kong": {
     "websiteUrl": "https://www.mandarinoriental.com/en/hong-kong/the-landmark",
@@ -585,7 +657,10 @@
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg"
-    ]
+    ],
+    "avgBasePrice": 7185,
+    "avgSuitePrice": 15807,
+    "priceSource": "scraped"
   },
   "mandarin-oriental-desaru-coast": {
     "websiteUrl": "https://www.mandarinoriental.com/en/desaru-coast/desaru-coast",
@@ -602,7 +677,7 @@
     ]
   },
   "mandarin-oriental-canouan": {
-    "websiteUrl": "https://www.mandarinoriental.com/en/canouan/canouan",
+    "websiteUrl": "https://www.mandarinoriental.com/en/canouan",
     "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
     "galleryImages": [
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
@@ -616,7 +691,7 @@
     ]
   },
   "mandarin-oriental-santiago": {
-    "websiteUrl": "https://www.mandarinoriental.com/en/santiago/santiago",
+    "websiteUrl": "https://www.mandarinoriental.com/en/santiago",
     "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
     "galleryImages": [
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
@@ -627,7 +702,10 @@
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/BE9nDVxSr1AimkcQPstC.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jC6JRdgmvuxLqhKedvmy.png",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/sSRRuX5HHYLBGmTdtFFj.jpg"
-    ]
+    ],
+    "avgBasePrice": 6117,
+    "avgSuitePrice": 13457,
+    "priceSource": "scraped"
   },
   "mandarin-oriental-dubai-downtown": {
     "websiteUrl": "https://www.mandarinoriental.com/en/dubai/downtown",
@@ -640,10 +718,13 @@
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg"
-    ]
+    ],
+    "avgBasePrice": 17476,
+    "avgSuitePrice": 38447,
+    "priceSource": "scraped"
   },
   "mandarin-oriental-muscat": {
-    "websiteUrl": "https://www.mandarinoriental.com/en/muscat/muscat",
+    "websiteUrl": "https://www.mandarinoriental.com/en/muscat",
     "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
     "galleryImages": [
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
@@ -657,7 +738,7 @@
     ]
   },
   "mandarin-oriental-riyadh": {
-    "websiteUrl": "https://www.mandarinoriental.com/en/riyadh/al-faisaliah",
+    "websiteUrl": "https://www.mandarinoriental.com/en/riyadh",
     "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
     "galleryImages": [
       "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
@@ -2023,7 +2104,11 @@
     "galleryImages": [
       "https://www.aman.com/sites/default/files/2021-02/210204_AmanHero_Landscape_Amanpuri.jpg",
       "https://www.aman.com/sites/default/files/styles/masonry_extra_large/public/2021-03/Amanpuri_Gallery_1.jpg"
-    ]
+    ],
+    "avgBasePrice": 15805,
+    "avgSuitePrice": 34771,
+    "priceSource": "scraped",
+    "priceScrapeSource": "official"
   },
   "amankila-bali": {
     "websiteUrl": "https://www.aman.com/resorts/amankila",
@@ -2153,7 +2238,11 @@
     "galleryImages": [
       "https://www.aman.com/sites/default/files/2021-08/amanjiwo.jpg",
       "https://en.wikipedia.org/wiki/File:Vladislav-doronin-una-residences.jpg"
-    ]
+    ],
+    "avgBasePrice": 11760,
+    "avgSuitePrice": 25872,
+    "priceSource": "scraped",
+    "priceScrapeSource": "official"
   },
   "amankora-bhutan": {
     "websiteUrl": "https://www.aman.com/resorts/amankorabhutan",
@@ -2163,7 +2252,11 @@
     "galleryImages": [
       "https://www.aman.com/sites/default/files/2021-08/amanjiwo.jpg",
       "https://en.wikipedia.org/wiki/File:Vladislav-doronin-una-residences.jpg"
-    ]
+    ],
+    "avgBasePrice": 11760,
+    "avgSuitePrice": 25872,
+    "priceSource": "scraped",
+    "priceScrapeSource": "official"
   },
   "amanruya-bodrum": {
     "websiteUrl": "https://www.aman.com/resorts/amanruya",
@@ -2176,35 +2269,19 @@
   },
   "peninsula-beijing": {
     "websiteUrl": "https://www.peninsula.com/en/beijing",
-    "galleryImages": [
-      "/hotel-media/peninsula-beijing.jpg"
-    ],
-    "heroImage": "/hotel-media/peninsula-beijing.jpg",
-    "imageSource": "bing:youimg1.c-ctrip.com"
+    "galleryImages": []
   },
   "rosewood-beijing": {
     "websiteUrl": "https://www.rosewoodhotels.com/en/beijing",
-    "galleryImages": [
-      "/hotel-media/rosewood-beijing.jpg"
-    ],
-    "heroImage": "/hotel-media/rosewood-beijing.jpg",
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "galleryImages": []
   },
   "peninsula-shanghai": {
     "websiteUrl": "https://www.peninsula.com/en/shanghai",
-    "galleryImages": [
-      "/hotel-media/peninsula-shanghai.jpg"
-    ],
-    "heroImage": "/hotel-media/peninsula-shanghai.jpg",
-    "imageSource": "bing:userimg.qunarzz.com"
+    "galleryImages": []
   },
   "capella-shanghai": {
     "websiteUrl": "https://capellahotels.com/en/capella-hotels-and-resorts/shanghai",
-    "galleryImages": [
-      "/hotel-media/capella-shanghai.jpg"
-    ],
-    "heroImage": "/hotel-media/capella-shanghai.jpg",
-    "imageSource": "bing:res.klook.com"
+    "galleryImages": []
   },
   "rosewood-shanghai": {
     "websiteUrl": "https://www.rosewoodhotels.com/en/shanghai",
@@ -2216,11 +2293,7 @@
   },
   "rosewood-guangzhou": {
     "websiteUrl": "https://www.rosewoodhotels.com/en/guangzhou",
-    "galleryImages": [
-      "/hotel-media/rosewood-guangzhou.jpg"
-    ],
-    "heroImage": "/hotel-media/rosewood-guangzhou.jpg",
-    "imageSource": "bing:images.rosewoodhotels.com"
+    "galleryImages": []
   },
   "rosewood-sanya": {
     "websiteUrl": "https://www.rosewoodhotels.com/en/sanya",
@@ -2232,54 +2305,43 @@
   },
   "peninsula-hong-kong": {
     "websiteUrl": "https://www.peninsula.com/en/hong-kong",
-    "galleryImages": [
-      "/hotel-media/peninsula-hong-kong.jpg"
-    ],
-    "heroImage": "/hotel-media/peninsula-hong-kong.jpg",
-    "imageSource": "bing:youimg1.c-ctrip.com"
+    "galleryImages": []
   },
   "rosewood-hong-kong": {
     "websiteUrl": "https://www.rosewoodhotels.com/en/hong-kong",
-    "galleryImages": [
-      "/hotel-media/rosewood-hong-kong.jpg"
-    ],
-    "heroImage": "/hotel-media/rosewood-hong-kong.jpg",
-    "imageSource": "bing:res.klook.com"
+    "galleryImages": [],
+    "avgBasePrice": 7888,
+    "avgSuitePrice": 17354,
+    "priceSource": "scraped"
   },
   "bulgari-beijing": {
     "websiteUrl": "https://www.bulgarihotels.com/en_US/beijing",
     "description": "The Bvlgari Hotel Beijing, as Luxury Hotels in Beijing China, is an intimate oasis where the discerning traveller and the Beijing’s sophisticated elite may encounter nature and art.",
-    "heroImage": "/hotel-media/bulgari-beijing.jpg",
+    "heroImage": "https://www.bulgarihotels.com/.imaging/bhr-960-jpg/dam/BEIJING/Archivio/Beijingloop.mp4/jcr%3Acontent",
     "galleryImages": [
-      "/hotel-media/bulgari-beijing.jpg"
-    ],
-    "imageSource": "bing:img1.qunarzz.com"
+      "https://www.bulgarihotels.com/.imaging/bhr-960-jpg/dam/BEIJING/Archivio/Beijingloop.mp4/jcr%3Acontent"
+    ]
   },
   "bulgari-shanghai": {
     "websiteUrl": "https://www.bulgarihotels.com/en_US/shanghai",
     "description": "Experience timeless glamour at the Bvlgari Hotel Shanghai in a stunning riverside location, just a few minutes from the iconic Bund and Shanghai City Centre. Featuring some of the most extensive facilities in the city, the hotel includes 82 rooms and suites, a 2,000-square-metre Bvlgari SPA, fitness centre, and state-of-the-art meeting facilities. As well, the rooftop Italian restaurant and bar.<br/>",
-    "heroImage": "/hotel-media/bulgari-shanghai.jpg",
+    "heroImage": "https://www.bulgarihotels.com/.imaging/bhr-960-jpg/dam/SHANGHAI/HOMEPAGE/Bvlgari-Hotel-Shanghai---Loop.mp4/jcr%3Acontent",
     "galleryImages": [
-      "/hotel-media/bulgari-shanghai.jpg"
-    ],
-    "imageSource": "bing:tr-osdcp.qunarzz.com"
+      "https://www.bulgarihotels.com/.imaging/bhr-960-jpg/dam/SHANGHAI/HOMEPAGE/Bvlgari-Hotel-Shanghai---Loop.mp4/jcr%3Acontent"
+    ]
   },
   "middle-house-shanghai": {
     "websiteUrl": "https://www.thehousecollective.com/en/shanghai/the-middle-house/",
-    "galleryImages": [
-      "/hotel-media/middle-house-shanghai.jpg"
-    ],
-    "heroImage": "/hotel-media/middle-house-shanghai.jpg",
-    "imageSource": "bing:tr-osdcp.qunarzz.com"
+    "galleryImages": []
   },
   "niccolo-chengdu": {
     "websiteUrl": "https://www.niccolohotels.com/en/chengdu",
     "description": "Niccolo Hotels is a collection of contemporary chic hotels that are the perfect backdrop to all of life's memorable moments. Choose from our hotels in Hong Kong and in Mainland China to enjoy our best rate guarantee when you book directly with us.",
-    "heroImage": "/hotel-media/niccolo-chengdu.jpg",
+    "heroImage": "https://www.niccolohotels.cn:443/getmedia/ef523e35-fc0c-4f0a-adc8-72bd2e5dfc91/Niccolo-Logo.png?width=1200&height=1200&ext=.png",
     "galleryImages": [
-      "/hotel-media/niccolo-chengdu.jpg"
-    ],
-    "imageSource": "bing:dimg04.c-ctrip.com"
+      "https://www.niccolohotels.cn:443/getmedia/ef523e35-fc0c-4f0a-adc8-72bd2e5dfc91/Niccolo-Logo.png?width=1200&height=1200&ext=.png",
+      "https://www.niccolohotels.cn:443/getmedia/ef523e35-fc0c-4f0a-adc8-72bd2e5dfc91/Niccolo-Logo.png"
+    ]
   },
   "upper-house-hong-kong": {
     "websiteUrl": "https://www.upperhouse.com/en/",
@@ -2295,29 +2357,29 @@
   },
   "regent-hong-kong": {
     "websiteUrl": "https://www.ihg.com/regent/hotels/us/en/hong-kong/regent-hong-kong",
-    "galleryImages": [
-      "/hotel-media/regent-hong-kong.jpg"
-    ],
-    "heroImage": "/hotel-media/regent-hong-kong.jpg",
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "galleryImages": []
   },
   "murray-hong-kong": {
     "websiteUrl": "https://www.niccolohotels.com/en/hongkong/themurray",
     "description": "Niccolo Hotels is a collection of contemporary chic hotels that are the perfect backdrop to all of life's memorable moments. Choose from our hotels in Hong Kong and in Mainland China to enjoy our best rate guarantee when you book directly with us.",
-    "heroImage": "/hotel-media/murray-hong-kong.jpg",
+    "heroImage": "https://www.niccolohotels.cn:443/getmedia/ef523e35-fc0c-4f0a-adc8-72bd2e5dfc91/Niccolo-Logo.png?width=1200&height=1200&ext=.png",
     "galleryImages": [
-      "/hotel-media/murray-hong-kong.jpg"
-    ],
-    "imageSource": "bing:ptf.flyertrip.com"
+      "https://www.niccolohotels.cn:443/getmedia/ef523e35-fc0c-4f0a-adc8-72bd2e5dfc91/Niccolo-Logo.png?width=1200&height=1200&ext=.png",
+      "https://www.niccolohotels.cn:443/getmedia/ef523e35-fc0c-4f0a-adc8-72bd2e5dfc91/Niccolo-Logo.png"
+    ]
   },
   "ritz-carlton-beijing": {
     "websiteUrl": "https://www.ritzcarlton.com/en/hotels/beijing",
     "description": "Explore Our Collection of Luxury hotels and resorts from The Ritz-Carlton.",
-    "heroImage": "/hotel-media/ritz-carlton-beijing.jpg",
+    "heroImage": "https://cache.marriott.com/content/dam/marriott-renditions/SBARZ/sbarz-bluff-7465-hor-feat.jpg",
     "galleryImages": [
-      "/hotel-media/ritz-carlton-beijing.jpg"
-    ],
-    "imageSource": "bing:images4.c-ctrip.com"
+      "https://cache.marriott.com/content/dam/marriott-renditions/SBARZ/sbarz-bluff-7465-hor-feat.jpg",
+      "https://cache.marriott.com/content/dam/marriott-renditions/SBARZ/sbarz-bluff-7465-hor-wide.jpg",
+      "https://cache.marriott.com/content/dam/marriott-renditions/SJUDO/sjudo-pool-0046-hor-wide.jpg",
+      "https://cache.marriott.com/content/dam/marriott-digital/rz/cala/hws/s/sjudo/en_us/photo/under-review/assets/sjudo-pool-0046.jpg",
+      "https://cache.marriott.com/content/dam/marriott-renditions/CTSRZ/ctsrz-onsen-9797-hor-wide.jpg",
+      "https://cache.marriott.com/content/dam/marriott-digital/rz/apec/hws/c/ctsrz/en_us/photo/unlimited/assets/ctsrz-onsen-9797.jpg"
+    ]
   },
   "ritz-carlton-beijing-financial-street": {
     "websiteUrl": "https://www.ritzcarlton.com/en/hotels/beijing",
@@ -2336,227 +2398,199 @@
   },
   "ritz-carlton-shanghai-pudong": {
     "websiteUrl": "https://www.ritzcarlton.com/en/hotels/shanghai-pudong",
-    "heroImage": "/hotel-media/ritz-carlton-shanghai-pudong.jpg",
+    "heroImage": "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
     "galleryImages": [
-      "/hotel-media/ritz-carlton-shanghai-pudong.jpg"
-    ],
-    "imageSource": "bing:tr-osdcp.qunarzz.com"
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854"
+    ]
   },
   "ritz-carlton-guangzhou": {
     "websiteUrl": "https://www.ritzcarlton.com/en/hotels/guangzhou",
-    "heroImage": "/hotel-media/ritz-carlton-guangzhou.jpg",
+    "heroImage": "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
     "galleryImages": [
-      "/hotel-media/ritz-carlton-guangzhou.jpg"
-    ],
-    "imageSource": "bing:res.klook.com"
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854"
+    ]
   },
   "ritz-carlton-shenzhen": {
     "websiteUrl": "https://www.ritzcarlton.com/en/hotels/shenzhen",
-    "heroImage": "/hotel-media/ritz-carlton-shenzhen.jpg",
+    "heroImage": "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
     "galleryImages": [
-      "/hotel-media/ritz-carlton-shenzhen.jpg"
-    ],
-    "imageSource": "bing:ptf.flyertrip.com"
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854"
+    ]
   },
   "ritz-carlton-chengdu": {
     "websiteUrl": "https://www.ritzcarlton.com/en/hotels/chengdu",
-    "heroImage": "/hotel-media/ritz-carlton-chengdu.jpg",
+    "heroImage": "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
     "galleryImages": [
-      "/hotel-media/ritz-carlton-chengdu.jpg"
-    ],
-    "imageSource": "bing:dimg04.c-ctrip.com"
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854"
+    ]
   },
   "ritz-carlton-nanjing": {
     "websiteUrl": "https://www.ritzcarlton.com/en/hotels/nanjing",
-    "heroImage": "/hotel-media/ritz-carlton-nanjing.jpg",
+    "heroImage": "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
     "galleryImages": [
-      "/hotel-media/ritz-carlton-nanjing.jpg"
-    ],
-    "imageSource": "bing:ptf.flyertrip.com"
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854"
+    ]
   },
   "ritz-carlton-xian": {
     "websiteUrl": "https://www.ritzcarlton.com/en/hotels/xian",
-    "heroImage": "/hotel-media/ritz-carlton-xian.jpg",
+    "heroImage": "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
     "galleryImages": [
-      "/hotel-media/ritz-carlton-xian.jpg"
-    ],
-    "imageSource": "bing:ptf.flyertrip.com"
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854"
+    ]
   },
   "ritz-carlton-tianjin": {
     "websiteUrl": "https://www.ritzcarlton.com/en/hotels/tianjin",
-    "heroImage": "/hotel-media/ritz-carlton-tianjin.jpg",
+    "heroImage": "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
     "galleryImages": [
-      "/hotel-media/ritz-carlton-tianjin.jpg"
-    ],
-    "imageSource": "bing:dimg04.c-ctrip.com"
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854"
+    ]
   },
   "ritz-carlton-sanya": {
     "websiteUrl": "https://www.ritzcarlton.com/en/hotels/sanya",
-    "heroImage": "/hotel-media/ritz-carlton-sanya.jpg",
+    "heroImage": "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
     "galleryImages": [
-      "/hotel-media/ritz-carlton-sanya.jpg"
-    ],
-    "imageSource": "bing:dimg04.c-ctrip.com"
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854"
+    ]
   },
   "ritz-carlton-changsha": {
     "websiteUrl": "https://www.ritzcarlton.com/en/hotels/changsha",
-    "heroImage": "/hotel-media/ritz-carlton-changsha.jpg",
+    "heroImage": "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
     "galleryImages": [
-      "/hotel-media/ritz-carlton-changsha.jpg"
-    ],
-    "imageSource": "bing:youimg1.c-ctrip.com"
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854"
+    ]
   },
   "ritz-carlton-haikou": {
     "websiteUrl": "https://www.ritzcarlton.com/en/hotels/haikou",
-    "heroImage": "/hotel-media/ritz-carlton-haikou.jpg",
+    "heroImage": "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
     "galleryImages": [
-      "/hotel-media/ritz-carlton-haikou.jpg"
-    ],
-    "imageSource": "bing:dimg04.c-ctrip.com"
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854"
+    ]
   },
   "ritz-carlton-shenyang": {
     "websiteUrl": "https://www.ritzcarlton.com/en/hotels/shenyang",
-    "heroImage": "/hotel-media/ritz-carlton-shenyang.jpg",
+    "heroImage": "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
     "galleryImages": [
-      "/hotel-media/ritz-carlton-shenyang.jpg"
-    ],
-    "imageSource": "bing:ptf.flyertrip.com"
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854"
+    ]
   },
   "ritz-carlton-suzhou": {
     "websiteUrl": "https://www.ritzcarlton.com/en/hotels/suzhou",
-    "heroImage": "/hotel-media/ritz-carlton-suzhou.jpg",
+    "heroImage": "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
     "galleryImages": [
-      "/hotel-media/ritz-carlton-suzhou.jpg"
-    ],
-    "imageSource": "bing:tr-osdcp.qunarzz.com"
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854"
+    ]
   },
   "ritz-carlton-hong-kong": {
     "websiteUrl": "https://www.ritzcarlton.com/en/hotels/hong-kong",
-    "heroImage": "/hotel-media/ritz-carlton-hong-kong.jpg",
+    "heroImage": "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
     "galleryImages": [
-      "/hotel-media/ritz-carlton-hong-kong.jpg"
-    ],
-    "imageSource": "bing:youimg1.c-ctrip.com"
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854"
+    ]
   },
   "ritz-carlton-macau": {
     "websiteUrl": "https://www.ritzcarlton.com/en/hotels/macau",
-    "heroImage": "/hotel-media/ritz-carlton-macau.jpg",
+    "heroImage": "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
     "galleryImages": [
-      "/hotel-media/ritz-carlton-macau.jpg"
-    ],
-    "imageSource": "bing:ptf.flyertrip.com"
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854"
+    ]
   },
   "st-regis-beijing": {
     "websiteUrl": "https://www.marriott.com/en-us/hotels/search?query=The%20St.%20Regis%20Beijing",
-    "galleryImages": [
-      "/hotel-media/st-regis-beijing.jpg"
-    ],
-    "heroImage": "/hotel-media/st-regis-beijing.jpg",
-    "imageSource": "bing:ptf.flyertrip.com"
+    "galleryImages": []
   },
   "st-regis-shanghai-jingan": {
     "websiteUrl": "https://www.marriott.com/en-us/hotels/search?query=The%20St.%20Regis%20Shanghai%20Jingan",
-    "galleryImages": [
-      "/hotel-media/st-regis-shanghai-jingan.jpg"
-    ],
-    "heroImage": "/hotel-media/st-regis-shanghai-jingan.jpg",
-    "imageSource": "bing:tr-osdcp.qunarzz.com"
+    "galleryImages": []
   },
   "st-regis-guangzhou": {
     "websiteUrl": "https://www.marriott.com/en-us/hotels/search?query=The%20St.%20Regis%20Guangzhou",
-    "galleryImages": [
-      "/hotel-media/st-regis-guangzhou.jpg"
-    ],
-    "heroImage": "/hotel-media/st-regis-guangzhou.jpg",
-    "imageSource": "bing:youimg1.c-ctrip.com"
+    "galleryImages": []
   },
   "st-regis-shenzhen": {
     "websiteUrl": "https://www.marriott.com/en-us/hotels/search?query=The%20St.%20Regis%20Shenzhen",
-    "galleryImages": [
-      "/hotel-media/st-regis-shenzhen.jpg"
-    ],
-    "heroImage": "/hotel-media/st-regis-shenzhen.jpg",
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "galleryImages": []
   },
   "st-regis-chengdu": {
     "websiteUrl": "https://www.marriott.com/en-us/hotels/search?query=The%20St.%20Regis%20Chengdu",
-    "galleryImages": [
-      "/hotel-media/st-regis-chengdu.jpg"
-    ],
-    "heroImage": "/hotel-media/st-regis-chengdu.jpg",
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "galleryImages": []
   },
   "st-regis-sanya": {
     "websiteUrl": "https://www.marriott.com/en-us/hotels/search?query=The%20St.%20Regis%20Sanya%20Yalong%20Bay%20Resort",
-    "galleryImages": [
-      "/hotel-media/st-regis-sanya.jpg"
-    ],
-    "heroImage": "/hotel-media/st-regis-sanya.jpg",
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "galleryImages": []
   },
   "st-regis-qingdao": {
     "websiteUrl": "https://www.marriott.com/en-us/hotels/search?query=The%20St.%20Regis%20Qingdao",
-    "galleryImages": [
-      "/hotel-media/st-regis-qingdao.jpg"
-    ],
-    "heroImage": "/hotel-media/st-regis-qingdao.jpg",
-    "imageSource": "bing:ptf.flyertrip.com"
+    "galleryImages": []
   },
   "st-regis-hong-kong": {
     "websiteUrl": "https://www.marriott.com/en-us/hotels/search?query=The%20St.%20Regis%20Hong%20Kong",
-    "galleryImages": [
-      "/hotel-media/st-regis-hong-kong.jpg"
-    ],
-    "heroImage": "/hotel-media/st-regis-hong-kong.jpg",
-    "imageSource": "bing:ptf.flyertrip.com"
+    "galleryImages": []
   },
   "st-regis-macau": {
     "websiteUrl": "https://www.marriott.com/en-us/hotels/search?query=The%20St.%20Regis%20Macau",
-    "galleryImages": [
-      "/hotel-media/st-regis-macau.jpg"
-    ],
-    "heroImage": "/hotel-media/st-regis-macau.jpg",
-    "imageSource": "bing:res.klook.com"
+    "galleryImages": []
   },
   "st-regis-tianjin": {
     "websiteUrl": "https://www.marriott.com/en-us/hotels/search?query=The%20St.%20Regis%20Tianjin",
-    "galleryImages": [
-      "/hotel-media/st-regis-tianjin.jpg"
-    ],
-    "heroImage": "/hotel-media/st-regis-tianjin.jpg",
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "galleryImages": []
   },
   "ritz-carlton-reserve-jiuzhaigou": {
     "websiteUrl": "https://www.ritzcarlton.com/en/hotels/reserve-jiuzhaigou",
-    "galleryImages": [
-      "/hotel-media/ritz-carlton-reserve-jiuzhaigou.jpg"
-    ],
-    "heroImage": "/hotel-media/ritz-carlton-reserve-jiuzhaigou.jpg",
-    "imageSource": "bing:abztrip.com"
+    "galleryImages": []
   },
   "regent-beijing": {
     "websiteUrl": "https://www.ihg.com/regent/hotels/us/en/beijing/regent-beijing",
-    "galleryImages": [
-      "/hotel-media/regent-beijing.jpg"
-    ],
-    "heroImage": "/hotel-media/regent-beijing.jpg",
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "galleryImages": []
   },
   "regent-shanghai-pudong": {
     "websiteUrl": "https://www.ihg.com/regent/hotels/us/en/shanghai/regent-shanghai-pudong",
-    "galleryImages": [
-      "/hotel-media/regent-shanghai-pudong.jpg"
-    ],
-    "heroImage": "/hotel-media/regent-shanghai-pudong.jpg",
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "galleryImages": []
   },
   "regent-taipei": {
     "websiteUrl": "https://www.ihg.com/regent/hotels/us/en/taipei/regent-taipei",
-    "galleryImages": [
-      "/hotel-media/regent-taipei.jpg"
-    ],
-    "heroImage": "/hotel-media/regent-taipei.jpg",
-    "imageSource": "bing:img1.qunarzz.com"
+    "galleryImages": []
   },
   "six-senses-qing-cheng-mountain": {
     "websiteUrl": "https://www.sixsenses.com/en/hotels/qing/cheng/mountain",
@@ -2568,51 +2602,27 @@
   },
   "banyan-tree-hangzhou": {
     "websiteUrl": "https://www.banyantree.com/en/thailand/hangzhou",
-    "galleryImages": [
-      "/hotel-media/banyan-tree-hangzhou.jpg"
-    ],
-    "heroImage": "/hotel-media/banyan-tree-hangzhou.jpg",
-    "imageSource": "bing:youimg1.c-ctrip.com"
+    "galleryImages": []
   },
   "banyan-tree-sanya": {
     "websiteUrl": "https://www.banyantree.com/en/thailand/sanya",
-    "galleryImages": [
-      "/hotel-media/banyan-tree-sanya.jpg"
-    ],
-    "heroImage": "/hotel-media/banyan-tree-sanya.jpg",
-    "imageSource": "bing:images4.c-ctrip.com"
+    "galleryImages": []
   },
   "banyan-tree-lijiang": {
     "websiteUrl": "https://www.banyantree.com/en/thailand/lijiang",
-    "galleryImages": [
-      "/hotel-media/banyan-tree-lijiang.jpg"
-    ],
-    "heroImage": "/hotel-media/banyan-tree-lijiang.jpg",
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "galleryImages": []
   },
   "banyan-tree-macau": {
     "websiteUrl": "https://www.banyantree.com/en/thailand/macau",
-    "galleryImages": [
-      "/hotel-media/banyan-tree-macau.jpg"
-    ],
-    "heroImage": "/hotel-media/banyan-tree-macau.jpg",
-    "imageSource": "bing:ptf.flyertrip.com"
+    "galleryImages": []
   },
   "banyan-tree-shanghai": {
     "websiteUrl": "https://www.banyantree.com/en/thailand/shanghai",
-    "galleryImages": [
-      "/hotel-media/banyan-tree-shanghai.jpg"
-    ],
-    "heroImage": "/hotel-media/banyan-tree-shanghai.jpg",
-    "imageSource": "bing:ptf.flyertrip.com"
+    "galleryImages": []
   },
   "banyan-tree-chongqing": {
     "websiteUrl": "https://www.banyantree.com/en/thailand/chongqing",
-    "galleryImages": [
-      "/hotel-media/banyan-tree-chongqing.jpg"
-    ],
-    "heroImage": "/hotel-media/banyan-tree-chongqing.jpg",
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "galleryImages": []
   },
   "ritz-carlton-tokyo": {
     "websiteUrl": "https://www.ritzcarlton.com/en/hotels/tokyo",
@@ -3053,7 +3063,10 @@
       "https://cache.marriott.com/content/dam/marriott-digital/rz/us-canada/hws/b/bosrt/en_us/photo/under-review/assets/bosrt-attraction-garden-0047.jpg",
       "https://cache.marriott.com/content/dam/marriott-renditions/BOSRT/bosrt-attraction-state-0049-hor-wide.jpg",
       "https://cache.marriott.com/content/dam/marriott-digital/rz/us-canada/hws/b/bosrt/en_us/photo/under-review/assets/bosrt-attraction-state-0049.jpg"
-    ]
+    ],
+    "avgBasePrice": 6569,
+    "avgSuitePrice": 14452,
+    "priceSource": "scraped"
   },
   "ritz-carlton-pentagon-city": {
     "websiteUrl": "https://www.ritzcarlton.com/en/hotels/pentagon-city",
@@ -3184,7 +3197,11 @@
       "https://www.fourseasons.com/content/dam/content/dam/fourseasons/images/web/BOC/BOC_789_original.jpg",
       "https://www.fourseasons.com/content/dam/content/dam/fourseasons/images/web/BOC/BOC_277_original.jpg",
       "https://www.fourseasons.com/content/dam/content/dam/fourseasons/images/web/BOC/BOC_786_original.jpg"
-    ]
+    ],
+    "avgBasePrice": 4785,
+    "avgSuitePrice": 10527,
+    "priceSource": "scraped",
+    "priceScrapeSource": "official"
   },
   "rosewood-mayakoba": {
     "websiteUrl": "https://www.rosewoodhotels.com/en/mayakoba",
@@ -3655,7 +3672,10 @@
       "https://www.banyantree.com/assets/2024-06/BTD_ROOMS_HP_Harmony Oceanfront (1).jpg",
       "https://www.banyantree.com/assets/2024-01/{BTD}_{2bhk-presidential-suite}_{Accommodation7}.jpg",
       "https://www.banyantree.com/assets/2021-11/BG 2.jpg"
-    ]
+    ],
+    "avgBasePrice": 4307,
+    "avgSuitePrice": 9475,
+    "priceSource": "scraped"
   },
   "banyan-tree-mayakoba": {
     "websiteUrl": "https://www.banyantree.com/en/mexico/mayakoba",
@@ -4024,7 +4044,11 @@
   },
   "tswalu-kalahari": {
     "websiteUrl": "https://www.tswalu.com/",
-    "galleryImages": []
+    "galleryImages": [],
+    "avgBasePrice": 6300,
+    "avgSuitePrice": 13860,
+    "priceSource": "scraped",
+    "priceScrapeSource": "official"
   },
   "angama-mara": {
     "websiteUrl": "https://angama.com/",
@@ -4581,27 +4605,15 @@
   },
   "opposite-house-beijing": {
     "websiteUrl": "https://www.thehousecollective.com/en/beijing/the-opposite-house/",
-    "galleryImages": [
-      "/hotel-media/opposite-house-beijing.jpg"
-    ],
-    "heroImage": "/hotel-media/opposite-house-beijing.jpg",
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "galleryImages": []
   },
   "east-beijing": {
     "websiteUrl": "https://www.thehousecollective.com/en/beijing/east-beijing/",
-    "galleryImages": [
-      "/hotel-media/east-beijing.jpg"
-    ],
-    "heroImage": "/hotel-media/east-beijing.jpg",
-    "imageSource": "bing:youimg1.c-ctrip.com"
+    "galleryImages": []
   },
   "grand-hyatt-beijing": {
     "websiteUrl": "https://www.hyatt.com/grand-hyatt/en-US/pekgh-grand-hyatt-beijing",
-    "galleryImages": [
-      "/hotel-media/grand-hyatt-beijing.jpg"
-    ],
-    "heroImage": "/hotel-media/grand-hyatt-beijing.jpg",
-    "imageSource": "bing:images.rosewoodhotels.com"
+    "galleryImages": []
   },
   "kempinski-beijing": {
     "websiteUrl": "https://www.kempinski.com/en/beijing/kempinski-hotel-beijing-yansha-center",
@@ -4635,11 +4647,7 @@
   },
   "grand-hyatt-shanghai": {
     "websiteUrl": "https://www.hyatt.com/grand-hyatt/en-US/shagh-grand-hyatt-shanghai",
-    "galleryImages": [
-      "/hotel-media/grand-hyatt-shanghai.jpg"
-    ],
-    "heroImage": "/hotel-media/grand-hyatt-shanghai.jpg",
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "galleryImages": []
   },
   "kempinski-shanghai": {
     "websiteUrl": "https://www.kempinski.com/en/shanghai/kempinski-the-one-suites-hotel-shanghai-downtown",
@@ -4668,19 +4676,11 @@
   },
   "grand-hyatt-guangzhou": {
     "websiteUrl": "https://www.hyatt.com/grand-hyatt/en-US/cangh-grand-hyatt-guangzhou",
-    "galleryImages": [
-      "/hotel-media/grand-hyatt-guangzhou.jpg"
-    ],
-    "heroImage": "/hotel-media/grand-hyatt-guangzhou.jpg",
-    "imageSource": "bing:ptf.flyertrip.com"
+    "galleryImages": []
   },
   "grand-hyatt-shenzhen": {
     "websiteUrl": "https://www.hyatt.com/grand-hyatt/en-US/szxgh-grand-hyatt-shenzhen",
-    "galleryImages": [
-      "/hotel-media/grand-hyatt-shenzhen.jpg"
-    ],
-    "heroImage": "/hotel-media/grand-hyatt-shenzhen.jpg",
-    "imageSource": "bing:res.klook.com"
+    "galleryImages": []
   },
   "kempinski-shenzhen": {
     "websiteUrl": "https://www.kempinski.com/en/shenzhen/kempinski-hotel-shenzhen",
@@ -4699,11 +4699,7 @@
   },
   "grand-hyatt-chengdu": {
     "websiteUrl": "https://www.hyatt.com/grand-hyatt/en-US/ctugh-grand-hyatt-chengdu",
-    "galleryImages": [
-      "/hotel-media/grand-hyatt-chengdu.jpg"
-    ],
-    "heroImage": "/hotel-media/grand-hyatt-chengdu.jpg",
-    "imageSource": "bing:youimg1.c-ctrip.com"
+    "galleryImages": []
   },
   "kempinski-chengdu": {
     "websiteUrl": "https://www.kempinski.com/en/chengdu/kempinski-hotel-chengdu",
@@ -4722,27 +4718,15 @@
   },
   "grand-hyatt-chongqing": {
     "websiteUrl": "https://www.hyatt.com/grand-hyatt/en-US/ckggh-grand-hyatt-chongqing",
-    "galleryImages": [
-      "/hotel-media/grand-hyatt-chongqing.jpg"
-    ],
-    "heroImage": "/hotel-media/grand-hyatt-chongqing.jpg",
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "galleryImages": []
   },
   "wanda-reign-wuhan": {
     "websiteUrl": "https://www.wandareignwuhan.com/",
-    "galleryImages": [
-      "/hotel-media/wanda-reign-wuhan.jpg"
-    ],
-    "heroImage": "/hotel-media/wanda-reign-wuhan.jpg",
-    "imageSource": "bing:youimg1.c-ctrip.com"
+    "galleryImages": []
   },
   "grand-hyatt-xian": {
     "websiteUrl": "https://www.hyatt.com/grand-hyatt/en-US/xiygh-grand-hyatt-xian",
-    "galleryImages": [
-      "/hotel-media/grand-hyatt-xian.jpg"
-    ],
-    "heroImage": "/hotel-media/grand-hyatt-xian.jpg",
-    "imageSource": "bing:ptf.flyertrip.com"
+    "galleryImages": []
   },
   "kempinski-hangzhou": {
     "websiteUrl": "https://www.kempinski.com/en/hangzhou/kempinski-hotel-hangzhou",
@@ -4809,43 +4793,23 @@
   },
   "atlantis-sanya": {
     "websiteUrl": "https://www.atlantissanya.com/",
-    "galleryImages": [
-      "/hotel-media/atlantis-sanya.jpg"
-    ],
-    "heroImage": "/hotel-media/atlantis-sanya.jpg",
-    "imageSource": "bing:tr-osdcp.qunarzz.com"
+    "galleryImages": []
   },
   "grand-hyatt-qingdao": {
     "websiteUrl": "https://www.hyatt.com/grand-hyatt/en-US/taogh-grand-hyatt-qingdao",
-    "galleryImages": [
-      "/hotel-media/grand-hyatt-qingdao.jpg"
-    ],
-    "heroImage": "/hotel-media/grand-hyatt-qingdao.jpg",
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "galleryImages": []
   },
   "grand-hyatt-dalian": {
     "websiteUrl": "https://www.hyatt.com/grand-hyatt/en-US/dlcfh-grand-hyatt-dalian",
-    "galleryImages": [
-      "/hotel-media/grand-hyatt-dalian.jpg"
-    ],
-    "heroImage": "/hotel-media/grand-hyatt-dalian.jpg",
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "galleryImages": []
   },
   "island-shangri-la-hong-kong": {
     "websiteUrl": "https://www.shangri-la.com/en/hongkong/islandshangrila/",
-    "galleryImages": [
-      "/hotel-media/island-shangri-la-hong-kong.jpg"
-    ],
-    "heroImage": "/hotel-media/island-shangri-la-hong-kong.jpg",
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "galleryImages": []
   },
   "k11-artus-hong-kong": {
     "websiteUrl": "https://www.k11artus.com/",
-    "galleryImages": [
-      "/hotel-media/k11-artus-hong-kong.jpg"
-    ],
-    "heroImage": "/hotel-media/k11-artus-hong-kong.jpg",
-    "imageSource": "bing:pic3.zhimg.com"
+    "galleryImages": []
   },
   "langham-hong-kong": {
     "websiteUrl": "https://www.langhamhotels.com/en/the-langham/hong-kong/",
@@ -4873,67 +4837,28 @@
   },
   "mgm-cotai-macau": {
     "websiteUrl": "https://www.mgm.mo/en/macau/mgm-cotai",
-    "galleryImages": [
-      "/hotel-media/mgm-cotai-macau.jpg"
-    ],
-    "heroImage": "/hotel-media/mgm-cotai-macau.jpg",
-    "imageSource": "bing:youimg1.c-ctrip.com"
+    "galleryImages": []
   },
   "shangri-la-suzhou": {
-    "websiteUrl": "https://www.shangri-la.com/suzhou/suzhou/",
-    "heroImage": "/hotel-media/shangri-la-suzhou.jpg",
-    "galleryImages": [
-      "/hotel-media/shangri-la-suzhou.jpg"
-    ],
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "websiteUrl": "https://www.shangri-la.com/suzhou/suzhou/"
   },
   "shangri-la-guilin": {
-    "websiteUrl": "https://www.shangri-la.com/guilin/guilin/",
-    "heroImage": "/hotel-media/shangri-la-guilin.jpg",
-    "galleryImages": [
-      "/hotel-media/shangri-la-guilin.jpg"
-    ],
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "websiteUrl": "https://www.shangri-la.com/guilin/guilin/"
   },
   "shangri-la-fuzhou": {
-    "websiteUrl": "https://www.shangri-la.com/fuzhou/fuzhou/",
-    "heroImage": "/hotel-media/shangri-la-fuzhou.jpg",
-    "galleryImages": [
-      "/hotel-media/shangri-la-fuzhou.jpg"
-    ],
-    "imageSource": "bing:userimg.qunarzz.com"
+    "websiteUrl": "https://www.shangri-la.com/fuzhou/fuzhou/"
   },
   "shangri-la-ningbo": {
-    "websiteUrl": "https://www.shangri-la.com/ningbo/ningbo/",
-    "heroImage": "/hotel-media/shangri-la-ningbo.jpg",
-    "galleryImages": [
-      "/hotel-media/shangri-la-ningbo.jpg"
-    ],
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "websiteUrl": "https://www.shangri-la.com/ningbo/ningbo/"
   },
   "shangri-la-beijing": {
-    "websiteUrl": "https://www.shangri-la.com/beijing/shangrila/",
-    "heroImage": "/hotel-media/shangri-la-beijing.jpg",
-    "galleryImages": [
-      "/hotel-media/shangri-la-beijing.jpg"
-    ],
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "websiteUrl": "https://www.shangri-la.com/beijing/shangrila/"
   },
   "shangri-la-chengdu": {
-    "websiteUrl": "https://www.shangri-la.com/chengdu/shangrila/",
-    "heroImage": "/hotel-media/shangri-la-chengdu.jpg",
-    "galleryImages": [
-      "/hotel-media/shangri-la-chengdu.jpg"
-    ],
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "websiteUrl": "https://www.shangri-la.com/chengdu/shangrila/"
   },
   "kerry-beijing": {
-    "websiteUrl": "https://www.shangri-la.com/beijing/kerry-beijing/",
-    "heroImage": "/hotel-media/kerry-beijing.jpg",
-    "galleryImages": [
-      "/hotel-media/kerry-beijing.jpg"
-    ],
-    "imageSource": "bing:ptf.flyertrip.com"
+    "websiteUrl": "https://www.shangri-la.com/beijing/kerry-beijing/"
   },
   "j-hotel-shanghai": {
     "websiteUrl": "https://www.jhotel-shanghai.com/en/",
@@ -4945,28 +4870,13 @@
   },
   "niccolo-changsha": {
     "websiteUrl": "https://www.niccolohotels.com/en/changsha",
-    "description": "Niccolo Hotels is a collection of contemporary chic hotels that are the perfect backdrop to all of life's memorable moments. Choose from our hotels in Hong Kong and in Mainland China to enjoy our best rate guarantee when you book directly with us.",
-    "heroImage": "/hotel-media/niccolo-changsha.jpg",
-    "galleryImages": [
-      "/hotel-media/niccolo-changsha.jpg"
-    ],
-    "imageSource": "bing:tr-osdcp.qunarzz.com"
+    "description": "Niccolo Hotels is a collection of contemporary chic hotels that are the perfect backdrop to all of life's memorable moments. Choose from our hotels in Hong Kong and in Mainland China to enjoy our best rate guarantee when you book directly with us."
   },
   "intercontinental-nanjing": {
-    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/nanjing/intercontinental-nanjing?brandCode=IC",
-    "heroImage": "/hotel-media/intercontinental-nanjing.jpg",
-    "galleryImages": [
-      "/hotel-media/intercontinental-nanjing.jpg"
-    ],
-    "imageSource": "bing:youimg1.c-ctrip.com"
+    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/nanjing/intercontinental-nanjing?brandCode=IC"
   },
   "sofitel-xian": {
-    "websiteUrl": "https://www.sofitel-legend.com/en/china/xian/sofitel-xian/",
-    "heroImage": "/hotel-media/sofitel-xian.jpg",
-    "galleryImages": [
-      "/hotel-media/sofitel-xian.jpg"
-    ],
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "websiteUrl": "https://www.sofitel-legend.com/en/china/xian/sofitel-xian/"
   },
   "fairmont-wuhan": {
     "websiteUrl": "https://www.fairmont.com/wuhan/",
@@ -4985,565 +4895,223 @@
   },
   "niccolo-chongqing": {
     "websiteUrl": "https://www.niccolohotels.com/en/chongqing",
-    "description": "Niccolo Hotels is a collection of contemporary chic hotels that are the perfect backdrop to all of life's memorable moments. Choose from our hotels in Hong Kong and in Mainland China to enjoy our best rate guarantee when you book directly with us.",
-    "heroImage": "/hotel-media/niccolo-chongqing.jpg",
-    "galleryImages": [
-      "/hotel-media/niccolo-chongqing.jpg"
-    ],
-    "imageSource": "bing:www.senn.com.cn"
+    "description": "Niccolo Hotels is a collection of contemporary chic hotels that are the perfect backdrop to all of life's memorable moments. Choose from our hotels in Hong Kong and in Mainland China to enjoy our best rate guarantee when you book directly with us."
   },
   "jw-marriott-beijing": {
-    "websiteUrl": "https://www.marriott.com/en-us/hotels/jw-marriott-beijing/overview/",
-    "heroImage": "/hotel-media/jw-marriott-beijing.jpg",
-    "galleryImages": [
-      "/hotel-media/jw-marriott-beijing.jpg"
-    ],
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "websiteUrl": "https://www.marriott.com/en-us/hotels/jw-marriott-beijing/overview/"
   },
   "jw-marriott-shanghai-tomorrow-square": {
-    "websiteUrl": "https://www.marriott.com/en-us/hotels/jw-marriott-shanghai-tomorrow-square/overview/",
-    "heroImage": "/hotel-media/jw-marriott-shanghai-tomorrow-square.jpg",
-    "galleryImages": [
-      "/hotel-media/jw-marriott-shanghai-tomorrow-square.jpg"
-    ],
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "websiteUrl": "https://www.marriott.com/en-us/hotels/jw-marriott-shanghai-tomorrow-square/overview/"
   },
   "jw-marriott-shanghai-centre": {
-    "websiteUrl": "https://www.marriott.com/en-us/hotels/jw-marriott-shanghai-centre/overview/",
-    "heroImage": "/hotel-media/jw-marriott-shanghai-centre.jpg",
-    "galleryImages": [
-      "/hotel-media/jw-marriott-shanghai-centre.jpg"
-    ],
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "websiteUrl": "https://www.marriott.com/en-us/hotels/jw-marriott-shanghai-centre/overview/"
   },
   "jw-marriott-hong-kong": {
-    "websiteUrl": "https://www.marriott.com/en-us/hotels/jw-marriott-hong-kong/overview/",
-    "heroImage": "/hotel-media/jw-marriott-hong-kong.jpg",
-    "galleryImages": [
-      "/hotel-media/jw-marriott-hong-kong.jpg"
-    ],
-    "imageSource": "bing:res.klook.com"
+    "websiteUrl": "https://www.marriott.com/en-us/hotels/jw-marriott-hong-kong/overview/"
   },
   "jw-marriott-taipei": {
-    "websiteUrl": "https://www.marriott.com/en-us/hotels/jw-marriott-taipei/overview/",
-    "heroImage": "/hotel-media/jw-marriott-taipei.jpg",
-    "galleryImages": [
-      "/hotel-media/jw-marriott-taipei.jpg"
-    ],
-    "imageSource": "bing:ptf.flyertrip.com"
+    "websiteUrl": "https://www.marriott.com/en-us/hotels/jw-marriott-taipei/overview/"
   },
   "jw-marriott-shenzhen": {
-    "websiteUrl": "https://www.marriott.com/en-us/hotels/jw-marriott-shenzhen/overview/",
-    "heroImage": "/hotel-media/jw-marriott-shenzhen.jpg",
-    "galleryImages": [
-      "/hotel-media/jw-marriott-shenzhen.jpg"
-    ],
-    "imageSource": "bing:himg1.qunarzz.com"
+    "websiteUrl": "https://www.marriott.com/en-us/hotels/jw-marriott-shenzhen/overview/"
   },
   "w-shanghai-the-bund": {
-    "websiteUrl": "https://www.marriott.com/en-us/hotels/w-shanghai-the-bund/overview/",
-    "heroImage": "/hotel-media/w-shanghai-the-bund.jpg",
-    "galleryImages": [
-      "/hotel-media/w-shanghai-the-bund.jpg"
-    ],
-    "imageSource": "bing:ptf.flyertrip.com"
+    "websiteUrl": "https://www.marriott.com/en-us/hotels/w-shanghai-the-bund/overview/"
   },
   "w-guangzhou": {
-    "websiteUrl": "https://www.marriott.com/en-us/hotels/w-guangzhou/overview/",
-    "heroImage": "/hotel-media/w-guangzhou.jpg",
-    "galleryImages": [
-      "/hotel-media/w-guangzhou.jpg"
-    ],
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "websiteUrl": "https://www.marriott.com/en-us/hotels/w-guangzhou/overview/"
   },
   "w-shenzhen": {
-    "websiteUrl": "https://www.marriott.com/en-us/hotels/w-shenzhen/overview/",
-    "heroImage": "/hotel-media/w-shenzhen.jpg",
-    "galleryImages": [
-      "/hotel-media/w-shenzhen.jpg"
-    ],
-    "imageSource": "bing:himg1.qunarzz.com"
+    "websiteUrl": "https://www.marriott.com/en-us/hotels/w-shenzhen/overview/"
   },
   "w-hong-kong": {
-    "websiteUrl": "https://www.marriott.com/en-us/hotels/w-hong-kong/overview/",
-    "heroImage": "/hotel-media/w-hong-kong.jpg",
-    "galleryImages": [
-      "/hotel-media/w-hong-kong.jpg"
-    ],
-    "imageSource": "bing:images4.c-ctrip.com"
+    "websiteUrl": "https://www.marriott.com/en-us/hotels/w-hong-kong/overview/"
   },
   "w-taipei": {
-    "websiteUrl": "https://www.marriott.com/en-us/hotels/w-taipei/overview/",
-    "heroImage": "/hotel-media/w-taipei.jpg",
-    "galleryImages": [
-      "/hotel-media/w-taipei.jpg"
-    ],
-    "imageSource": "bing:res.klook.com"
+    "websiteUrl": "https://www.marriott.com/en-us/hotels/w-taipei/overview/"
   },
   "w-xian": {
-    "websiteUrl": "https://www.marriott.com/en-us/hotels/w-xian/overview/",
-    "heroImage": "/hotel-media/w-xian.jpg",
-    "galleryImages": [
-      "/hotel-media/w-xian.jpg"
-    ],
-    "imageSource": "bing:res.klook.com"
+    "websiteUrl": "https://www.marriott.com/en-us/hotels/w-xian/overview/"
   },
   "w-macau": {
-    "websiteUrl": "https://www.marriott.com/en-us/hotels/w-macau/overview/",
-    "heroImage": "/hotel-media/w-macau.jpg",
-    "galleryImages": [
-      "/hotel-media/w-macau.jpg"
-    ],
-    "imageSource": "bing:res.klook.com"
+    "websiteUrl": "https://www.marriott.com/en-us/hotels/w-macau/overview/"
   },
   "edition-shanghai": {
-    "websiteUrl": "https://www.marriott.com/en-us/hotels/edition-shanghai/overview/",
-    "heroImage": "/hotel-media/edition-shanghai.jpg",
-    "galleryImages": [
-      "/hotel-media/edition-shanghai.jpg"
-    ],
-    "imageSource": "bing:ptf.flyertrip.com"
+    "websiteUrl": "https://www.marriott.com/en-us/hotels/edition-shanghai/overview/"
   },
   "edition-sanya": {
-    "websiteUrl": "https://www.marriott.com/en-us/hotels/edition-sanya/overview/",
-    "heroImage": "/hotel-media/edition-sanya.jpg",
-    "galleryImages": [
-      "/hotel-media/edition-sanya.jpg"
-    ],
-    "imageSource": "bing:youimg1.c-ctrip.com"
+    "websiteUrl": "https://www.marriott.com/en-us/hotels/edition-sanya/overview/"
   },
   "the-puli-shanghai": {
-    "websiteUrl": "https://www.marriott.com/en-us/hotels/the-puli-shanghai/overview/",
-    "heroImage": "/hotel-media/the-puli-shanghai.jpg",
-    "galleryImages": [
-      "/hotel-media/the-puli-shanghai.jpg"
-    ],
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "websiteUrl": "https://www.marriott.com/en-us/hotels/the-puli-shanghai/overview/"
   },
   "hotel-eclat-beijing": {
-    "websiteUrl": "https://www.marriott.com/en-us/hotels/hotel-eclat-beijing/overview/",
-    "heroImage": "/hotel-media/hotel-eclat-beijing.jpg",
-    "galleryImages": [
-      "/hotel-media/hotel-eclat-beijing.jpg"
-    ],
-    "imageSource": "bing:ptf.flyertrip.com"
+    "websiteUrl": "https://www.marriott.com/en-us/hotels/hotel-eclat-beijing/overview/"
   },
   "the-temple-house-chengdu": {
-    "websiteUrl": "https://www.marriott.com/en-us/hotels/the-temple-house-chengdu/overview/",
-    "heroImage": "/hotel-media/the-temple-house-chengdu.jpg",
-    "galleryImages": [
-      "/hotel-media/the-temple-house-chengdu.jpg"
-    ],
-    "imageSource": "bing:img1.qunarzz.com"
+    "websiteUrl": "https://www.marriott.com/en-us/hotels/the-temple-house-chengdu/overview/"
   },
   "laguna-ningxia": {
-    "websiteUrl": "https://www.marriott.com/en-us/hotels/laguna-ningxia/overview/",
-    "heroImage": "/hotel-media/laguna-ningxia.jpg",
-    "galleryImages": [
-      "/hotel-media/laguna-ningxia.jpg"
-    ],
-    "imageSource": "bing:ptf.flyertrip.com"
+    "websiteUrl": "https://www.marriott.com/en-us/hotels/laguna-ningxia/overview/"
   },
   "park-hyatt-beijing": {
-    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/beijing/park-hyatt-beijing",
-    "heroImage": "/hotel-media/park-hyatt-beijing.jpg",
-    "galleryImages": [
-      "/hotel-media/park-hyatt-beijing.jpg"
-    ],
-    "imageSource": "bing:youimg1.c-ctrip.com"
+    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/beijing/park-hyatt-beijing"
   },
   "park-hyatt-shanghai": {
-    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/shanghai/park-hyatt-shanghai",
-    "heroImage": "/hotel-media/park-hyatt-shanghai.jpg",
-    "galleryImages": [
-      "/hotel-media/park-hyatt-shanghai.jpg"
-    ],
-    "imageSource": "bing:ptf.flyertrip.com"
+    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/shanghai/park-hyatt-shanghai"
   },
   "park-hyatt-guangzhou": {
-    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/guangzhou/park-hyatt-guangzhou",
-    "heroImage": "/hotel-media/park-hyatt-guangzhou.jpg",
-    "galleryImages": [
-      "/hotel-media/park-hyatt-guangzhou.jpg"
-    ],
-    "imageSource": "bing:assets.hyatt.com"
+    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/guangzhou/park-hyatt-guangzhou"
   },
   "park-hyatt-shenzhen": {
-    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/shenzhen/park-hyatt-shenzhen",
-    "heroImage": "/hotel-media/park-hyatt-shenzhen.jpg",
-    "galleryImages": [
-      "/hotel-media/park-hyatt-shenzhen.jpg"
-    ],
-    "imageSource": "bing:ptf.flyertrip.com"
+    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/shenzhen/park-hyatt-shenzhen"
   },
   "park-hyatt-hangzhou": {
-    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/hangzhou/park-hyatt-hangzhou",
-    "heroImage": "/hotel-media/park-hyatt-hangzhou.jpg",
-    "galleryImages": [
-      "/hotel-media/park-hyatt-hangzhou.jpg"
-    ],
-    "imageSource": "bing:youimg1.c-ctrip.com"
+    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/hangzhou/park-hyatt-hangzhou"
   },
   "park-hyatt-sanya": {
-    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/sanya/park-hyatt-sanya",
-    "heroImage": "/hotel-media/park-hyatt-sanya.jpg",
-    "galleryImages": [
-      "/hotel-media/park-hyatt-sanya.jpg"
-    ],
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/sanya/park-hyatt-sanya"
   },
   "park-hyatt-suzhou": {
-    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/suzhou/park-hyatt-suzhou",
-    "heroImage": "/hotel-media/park-hyatt-suzhou.jpg",
-    "galleryImages": [
-      "/hotel-media/park-hyatt-suzhou.jpg"
-    ],
-    "imageSource": "bing:ptf.flyertrip.com"
+    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/suzhou/park-hyatt-suzhou"
   },
   "park-hyatt-hong-kong": {
-    "websiteUrl": "https://www.hyatt.com/en-US/hotel/hong-kong/hong-kong/park-hyatt-hong-kong",
-    "heroImage": "/hotel-media/park-hyatt-hong-kong.jpg",
-    "galleryImages": [
-      "/hotel-media/park-hyatt-hong-kong.jpg"
-    ],
-    "imageSource": "bing:res.klook.com"
+    "websiteUrl": "https://www.hyatt.com/en-US/hotel/hong-kong/hong-kong/park-hyatt-hong-kong"
   },
   "park-hyatt-taipei": {
-    "websiteUrl": "https://www.hyatt.com/en-US/hotel/taiwan/taipei/park-hyatt-taipei",
-    "heroImage": "/hotel-media/park-hyatt-taipei.jpg",
-    "galleryImages": [
-      "/hotel-media/park-hyatt-taipei.jpg"
-    ],
-    "imageSource": "bing:res.klook.com"
+    "websiteUrl": "https://www.hyatt.com/en-US/hotel/taiwan/taipei/park-hyatt-taipei"
   },
   "park-hyatt-ningbo": {
-    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/ningbo/park-hyatt-ningbo",
-    "heroImage": "/hotel-media/park-hyatt-ningbo.jpg",
-    "galleryImages": [
-      "/hotel-media/park-hyatt-ningbo.jpg"
-    ],
-    "imageSource": "bing:youimg1.c-ctrip.com"
+    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/ningbo/park-hyatt-ningbo"
   },
   "andaz-shanghai": {
-    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/shanghai/andaz-shanghai",
-    "heroImage": "/hotel-media/andaz-shanghai.jpg",
-    "galleryImages": [
-      "/hotel-media/andaz-shanghai.jpg"
-    ],
-    "imageSource": "bing:res.klook.com"
+    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/shanghai/andaz-shanghai"
   },
   "andaz-guangzhou": {
-    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/guangzhou/andaz-guangzhou",
-    "heroImage": "/hotel-media/andaz-guangzhou.jpg",
-    "galleryImages": [
-      "/hotel-media/andaz-guangzhou.jpg"
-    ],
-    "imageSource": "bing:youimg1.c-ctrip.com"
+    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/guangzhou/andaz-guangzhou"
   },
   "andaz-shenzhen": {
-    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/shenzhen/andaz-shenzhen",
-    "heroImage": "/hotel-media/andaz-shenzhen.jpg",
-    "galleryImages": [
-      "/hotel-media/andaz-shenzhen.jpg"
-    ],
-    "imageSource": "bing:res.klook.com"
+    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/shenzhen/andaz-shenzhen"
   },
   "andaz-xiamen": {
-    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/xiamen/andaz-xiamen",
-    "heroImage": "/hotel-media/andaz-xiamen.jpg",
-    "galleryImages": [
-      "/hotel-media/andaz-xiamen.jpg"
-    ],
-    "imageSource": "bing:res.klook.com"
+    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/xiamen/andaz-xiamen"
   },
   "andaz-hong-kong": {
-    "websiteUrl": "https://www.hyatt.com/en-US/hotel/hong-kong/hong-kong/andaz-hong-kong",
-    "heroImage": "/hotel-media/andaz-hong-kong.jpg",
-    "galleryImages": [
-      "/hotel-media/andaz-hong-kong.jpg"
-    ],
-    "imageSource": "bing:ptf.flyertrip.com"
+    "websiteUrl": "https://www.hyatt.com/en-US/hotel/hong-kong/hong-kong/andaz-hong-kong"
   },
   "alila-wuzhen": {
-    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/wuzhen/alila-wuzhen",
-    "heroImage": "/hotel-media/alila-wuzhen.jpg",
-    "galleryImages": [
-      "/hotel-media/alila-wuzhen.jpg"
-    ],
-    "imageSource": "bing:youimg1.c-ctrip.com"
+    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/wuzhen/alila-wuzhen"
   },
   "alila-anji": {
-    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/anji/alila-anji",
-    "heroImage": "/hotel-media/alila-anji.jpg",
-    "galleryImages": [
-      "/hotel-media/alila-anji.jpg"
-    ],
-    "imageSource": "bing:pic3.zhimg.com"
+    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/anji/alila-anji"
   },
   "alila-yangshuo": {
-    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/yangshuo/alila-yangshuo",
-    "heroImage": "/hotel-media/alila-yangshuo.jpg",
-    "galleryImages": [
-      "/hotel-media/alila-yangshuo.jpg"
-    ],
-    "imageSource": "bing:youimg1.c-ctrip.com"
+    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/yangshuo/alila-yangshuo"
   },
   "alila-shanghai": {
-    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/shanghai/alila-shanghai",
-    "heroImage": "/hotel-media/alila-shanghai.jpg",
-    "galleryImages": [
-      "/hotel-media/alila-shanghai.jpg"
-    ],
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "websiteUrl": "https://www.hyatt.com/en-US/hotel/china/shanghai/alila-shanghai"
   },
   "intercontinental-beijing-sanlitun": {
-    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/beijing/intercontinental-beijing-sanlitun?brandCode=IC",
-    "heroImage": "/hotel-media/intercontinental-beijing-sanlitun.jpg",
-    "galleryImages": [
-      "/hotel-media/intercontinental-beijing-sanlitun.jpg"
-    ],
-    "imageSource": "bing:tr-osdcp.qunarzz.com"
+    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/beijing/intercontinental-beijing-sanlitun?brandCode=IC"
   },
   "intercontinental-shanghai-wonderland": {
-    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/shanghai/intercontinental-shanghai-wonderland?brandCode=IC",
-    "heroImage": "/hotel-media/intercontinental-shanghai-wonderland.jpg",
-    "galleryImages": [
-      "/hotel-media/intercontinental-shanghai-wonderland.jpg"
-    ],
-    "imageSource": "bing:tr-osdcp.qunarzz.com"
+    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/shanghai/intercontinental-shanghai-wonderland?brandCode=IC"
   },
   "intercontinental-shanghai-ruijin": {
-    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/shanghai/intercontinental-shanghai-ruijin?brandCode=IC",
-    "heroImage": "/hotel-media/intercontinental-shanghai-ruijin.jpg",
-    "galleryImages": [
-      "/hotel-media/intercontinental-shanghai-ruijin.jpg"
-    ],
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/shanghai/intercontinental-shanghai-ruijin?brandCode=IC"
   },
   "intercontinental-chongqing": {
-    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/chongqing/intercontinental-chongqing?brandCode=IC",
-    "heroImage": "/hotel-media/intercontinental-chongqing.jpg",
-    "galleryImages": [
-      "/hotel-media/intercontinental-chongqing.jpg"
-    ],
-    "imageSource": "bing:digital.ihg.com"
+    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/chongqing/intercontinental-chongqing?brandCode=IC"
   },
   "intercontinental-sanya": {
-    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/sanya/intercontinental-sanya?brandCode=IC",
-    "heroImage": "/hotel-media/intercontinental-sanya.jpg",
-    "galleryImages": [
-      "/hotel-media/intercontinental-sanya.jpg"
-    ],
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/sanya/intercontinental-sanya?brandCode=IC"
   },
   "intercontinental-lijiang": {
-    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/lijiang/intercontinental-lijiang?brandCode=IC",
-    "heroImage": "/hotel-media/intercontinental-lijiang.jpg",
-    "galleryImages": [
-      "/hotel-media/intercontinental-lijiang.jpg"
-    ],
-    "imageSource": "bing:youimg1.c-ctrip.com"
+    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/lijiang/intercontinental-lijiang?brandCode=IC"
   },
   "intercontinental-kunming": {
-    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/kunming/intercontinental-kunming?brandCode=IC",
-    "heroImage": "/hotel-media/intercontinental-kunming.jpg",
-    "galleryImages": [
-      "/hotel-media/intercontinental-kunming.jpg"
-    ],
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/kunming/intercontinental-kunming?brandCode=IC"
   },
   "intercontinental-hefei": {
-    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/hefei/intercontinental-hefei?brandCode=IC",
-    "heroImage": "/hotel-media/intercontinental-hefei.jpg",
-    "galleryImages": [
-      "/hotel-media/intercontinental-hefei.jpg"
-    ],
-    "imageSource": "bing:img1.qunarzz.com"
+    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/hefei/intercontinental-hefei?brandCode=IC"
   },
   "intercontinental-chengdu-global-center": {
-    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/chengdu/intercontinental-chengdu-global-center?brandCode=IC",
-    "heroImage": "/hotel-media/intercontinental-chengdu-global-center.jpg",
-    "galleryImages": [
-      "/hotel-media/intercontinental-chengdu-global-center.jpg"
-    ],
-    "imageSource": "bing:images4.c-ctrip.com"
+    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/chengdu/intercontinental-chengdu-global-center?brandCode=IC"
   },
   "intercontinental-dalian": {
-    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/dalian/intercontinental-dalian?brandCode=IC",
-    "heroImage": "/hotel-media/intercontinental-dalian.jpg",
-    "galleryImages": [
-      "/hotel-media/intercontinental-dalian.jpg"
-    ],
-    "imageSource": "bing:ptf.flyertrip.com"
+    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/dalian/intercontinental-dalian?brandCode=IC"
   },
   "intercontinental-fuzhou": {
-    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/fuzhou/intercontinental-fuzhou?brandCode=IC",
-    "heroImage": "/hotel-media/intercontinental-fuzhou.jpg",
-    "galleryImages": [
-      "/hotel-media/intercontinental-fuzhou.jpg"
-    ],
-    "imageSource": "bing:youimg1.c-ctrip.com"
+    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/fuzhou/intercontinental-fuzhou?brandCode=IC"
   },
   "intercontinental-xiamen": {
-    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/xiamen/intercontinental-xiamen?brandCode=IC",
-    "heroImage": "/hotel-media/intercontinental-xiamen.jpg",
-    "galleryImages": [
-      "/hotel-media/intercontinental-xiamen.jpg"
-    ],
-    "imageSource": "bing:ptf.flyertrip.com"
+    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/xiamen/intercontinental-xiamen?brandCode=IC"
   },
   "intercontinental-hangzhou": {
-    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/hangzhou/intercontinental-hangzhou?brandCode=IC",
-    "heroImage": "/hotel-media/intercontinental-hangzhou.jpg",
-    "galleryImages": [
-      "/hotel-media/intercontinental-hangzhou.jpg"
-    ],
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/hangzhou/intercontinental-hangzhou?brandCode=IC"
   },
   "intercontinental-wuhan": {
-    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/wuhan/intercontinental-wuhan?brandCode=IC",
-    "heroImage": "/hotel-media/intercontinental-wuhan.jpg",
-    "galleryImages": [
-      "/hotel-media/intercontinental-wuhan.jpg"
-    ],
-    "imageSource": "bing:ptf.flyertrip.com"
+    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/wuhan/intercontinental-wuhan?brandCode=IC"
   },
   "intercontinental-taipei": {
-    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/taipei/intercontinental-taipei?brandCode=IC",
-    "heroImage": "/hotel-media/intercontinental-taipei.jpg",
-    "galleryImages": [
-      "/hotel-media/intercontinental-taipei.jpg"
-    ],
-    "imageSource": "bing:youimg1.c-ctrip.com"
+    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/taipei/intercontinental-taipei?brandCode=IC"
   },
   "waldorf-astoria-beijing": {
-    "websiteUrl": "https://www.hilton.com/en/hotels/waldorf-astoria-beijing/",
-    "heroImage": "/hotel-media/waldorf-astoria-beijing.jpg",
-    "galleryImages": [
-      "/hotel-media/waldorf-astoria-beijing.jpg"
-    ],
-    "imageSource": "bing:img1.qunarzz.com"
+    "websiteUrl": "https://www.hilton.com/zh-cn/hotels/waldorf-astoria-beijing/"
   },
   "waldorf-astoria-shanghai": {
-    "websiteUrl": "https://www.hilton.com/en/hotels/waldorf-astoria-shanghai/",
-    "heroImage": "/hotel-media/waldorf-astoria-shanghai.jpg",
-    "galleryImages": [
-      "/hotel-media/waldorf-astoria-shanghai.jpg"
-    ],
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "websiteUrl": "https://www.hilton.com/zh-cn/hotels/waldorf-astoria-shanghai/"
   },
   "waldorf-astoria-chengdu": {
-    "websiteUrl": "https://www.hilton.com/en/hotels/waldorf-astoria-chengdu/",
-    "heroImage": "/hotel-media/waldorf-astoria-chengdu.jpg",
-    "galleryImages": [
-      "/hotel-media/waldorf-astoria-chengdu.jpg"
-    ],
-    "imageSource": "bing:img1.qunarzz.com"
+    "websiteUrl": "https://www.hilton.com/zh-cn/hotels/waldorf-astoria-chengdu/"
   },
   "waldorf-astoria-hangzhou": {
-    "websiteUrl": "https://www.hilton.com/en/hotels/waldorf-astoria-hangzhou/",
-    "heroImage": "/hotel-media/waldorf-astoria-hangzhou.jpg",
-    "galleryImages": [
-      "/hotel-media/waldorf-astoria-hangzhou.jpg"
-    ],
-    "imageSource": "bing:ptf.flyertrip.com"
+    "websiteUrl": "https://www.hilton.com/zh-cn/hotels/waldorf-astoria-hangzhou/"
   },
   "waldorf-astoria-sanya": {
-    "websiteUrl": "https://www.hilton.com/en/hotels/waldorf-astoria-sanya/",
-    "heroImage": "/hotel-media/waldorf-astoria-sanya.jpg",
-    "galleryImages": [
-      "/hotel-media/waldorf-astoria-sanya.jpg"
-    ],
-    "imageSource": "bing:ptf.flyertrip.com"
+    "websiteUrl": "https://www.hilton.com/zh-cn/hotels/waldorf-astoria-sanya/"
   },
   "waldorf-astoria-xiamen": {
-    "websiteUrl": "https://www.hilton.com/en/hotels/waldorf-astoria-xiamen/",
-    "heroImage": "/hotel-media/waldorf-astoria-xiamen.jpg",
-    "galleryImages": [
-      "/hotel-media/waldorf-astoria-xiamen.jpg"
-    ],
-    "imageSource": "bing:youimg1.c-ctrip.com"
+    "websiteUrl": "https://www.hilton.com/zh-cn/hotels/waldorf-astoria-xiamen/"
   },
   "conrad-guangzhou": {
-    "websiteUrl": "https://www.hilton.com/en/hotels/conrad-guangzhou/",
-    "heroImage": "/hotel-media/conrad-guangzhou.jpg",
-    "galleryImages": [
-      "/hotel-media/conrad-guangzhou.jpg"
-    ],
-    "imageSource": "bing:youimg1.c-ctrip.com"
+    "websiteUrl": "https://www.hilton.com/en/hotels/conrad-guangzhou/"
   },
   "conrad-shenzhen": {
-    "websiteUrl": "https://www.hilton.com/en/hotels/conrad-shenzhen/",
-    "heroImage": "/hotel-media/conrad-shenzhen.jpg",
-    "galleryImages": [
-      "/hotel-media/conrad-shenzhen.jpg"
-    ],
-    "imageSource": "bing:www.archina.com"
+    "websiteUrl": "https://www.hilton.com/en/hotels/conrad-shenzhen/"
   },
   "conrad-hangzhou": {
-    "websiteUrl": "https://www.hilton.com/en/hotels/conrad-hangzhou/",
-    "heroImage": "/hotel-media/conrad-hangzhou.jpg",
-    "galleryImages": [
-      "/hotel-media/conrad-hangzhou.jpg"
-    ],
-    "imageSource": "bing:product-ssl-qiniu.bmtrip.com"
+    "websiteUrl": "https://www.hilton.com/en/hotels/conrad-hangzhou/"
   },
   "conrad-sanya": {
-    "websiteUrl": "https://www.hilton.com/en/hotels/conrad-sanya/",
-    "heroImage": "/hotel-media/conrad-sanya.jpg",
-    "galleryImages": [
-      "/hotel-media/conrad-sanya.jpg"
-    ],
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "websiteUrl": "https://www.hilton.com/en/hotels/conrad-sanya/"
   },
   "conrad-xiamen": {
-    "websiteUrl": "https://www.hilton.com/en/hotels/conrad-xiamen/",
-    "heroImage": "/hotel-media/conrad-xiamen.jpg",
-    "galleryImages": [
-      "/hotel-media/conrad-xiamen.jpg"
-    ],
-    "imageSource": "bing:youimg1.c-ctrip.com"
+    "websiteUrl": "https://www.hilton.com/en/hotels/conrad-xiamen/"
   },
   "conrad-dalian": {
-    "websiteUrl": "https://www.hilton.com/en/hotels/conrad-dalian/",
-    "heroImage": "/hotel-media/conrad-dalian.jpg",
-    "galleryImages": [
-      "/hotel-media/conrad-dalian.jpg"
-    ],
-    "imageSource": "bing:img1.qunarzz.com"
+    "websiteUrl": "https://www.hilton.com/en/hotels/conrad-dalian/"
   },
   "conrad-hong-kong": {
-    "websiteUrl": "https://www.hilton.com/en/hotels/conrad-hong-kong/",
-    "heroImage": "/hotel-media/conrad-hong-kong.jpg",
-    "galleryImages": [
-      "/hotel-media/conrad-hong-kong.jpg"
-    ],
-    "imageSource": "bing:images4.c-ctrip.com"
+    "websiteUrl": "https://www.hilton.com/en/hotels/conrad-hong-kong/"
   },
   "conrad-macau": {
-    "websiteUrl": "https://www.hilton.com/en/hotels/conrad-macau/",
-    "heroImage": "/hotel-media/conrad-macau.jpg",
-    "galleryImages": [
-      "/hotel-media/conrad-macau.jpg"
-    ],
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "websiteUrl": "https://www.hilton.com/en/hotels/conrad-macau/"
   },
   "conrad-taipei": {
-    "websiteUrl": "https://www.hilton.com/en/hotels/conrad-taipei/",
-    "heroImage": "/hotel-media/conrad-taipei.jpg",
-    "galleryImages": [
-      "/hotel-media/conrad-taipei.jpg"
-    ],
-    "imageSource": "bing:ptf.flyertrip.com"
+    "websiteUrl": "https://www.hilton.com/en/hotels/conrad-taipei/"
   },
   "raffles-chengdu": {
     "websiteUrl": "https://www.raffles.com/chengdu/",
     "description": "404 Page - Discover Raffles Hotels and enjoy the hotel's spacious, comfortable rooms. Feel welcome to our elegant and luxurious hotel",
-    "heroImage": "/hotel-media/raffles-chengdu.jpg",
+    "heroImage": "https://www.raffles.com/content/dam/raffles-aem/default-social-media-image.jpg/_jcr_content/renditions/cq5dam.zoom.2048.2048.jpeg",
     "galleryImages": [
-      "/hotel-media/raffles-chengdu.jpg"
-    ],
-    "imageSource": "bing:img1.qunarzz.com"
+      "https://www.raffles.com/content/dam/raffles-aem/default-social-media-image.jpg/_jcr_content/renditions/cq5dam.zoom.2048.2048.jpeg",
+      "https://login.accor.com/as/authorization.oauth2",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5484-68",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6549-22",
+      "https://www.raffles.com/content/dam/raffles-aem/default-social-media-image.jpg"
+    ]
   },
   "raffles-macau": {
     "websiteUrl": "https://www.raffles.com/macau/",
@@ -5635,20 +5203,10 @@
     ]
   },
   "sofitel-legend-nanjing": {
-    "websiteUrl": "https://www.sofitel-legend.com/en/china/nanjing/nanjing/",
-    "heroImage": "/hotel-media/sofitel-legend-nanjing.jpg",
-    "galleryImages": [
-      "/hotel-media/sofitel-legend-nanjing.jpg"
-    ],
-    "imageSource": "bing:ptf.flyertrip.com"
+    "websiteUrl": "https://www.sofitel-legend.com/en/china/nanjing/nanjing/"
   },
   "sofitel-legend-xian": {
-    "websiteUrl": "https://www.sofitel-legend.com/en/china/xian/xian/",
-    "heroImage": "/hotel-media/sofitel-legend-xian.jpg",
-    "galleryImages": [
-      "/hotel-media/sofitel-legend-xian.jpg"
-    ],
-    "imageSource": "bing:dimg04.c-ctrip.com"
+    "websiteUrl": "https://www.sofitel-legend.com/en/china/xian/xian/"
   },
   "park-hyatt-tokyo": {
     "websiteUrl": "https://www.hyatt.com/en-US/hotel/japan/tokyo/park-hyatt-tokyo"
@@ -5681,7 +5239,11 @@
     "websiteUrl": "https://www.hyatt.com/en-US/hotel/south-korea/busan/park-hyatt-busan"
   },
   "intercontinental-seoul-parnas": {
-    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/seoul/intercontinental-seoul-parnas?brandCode=IC"
+    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/seoul/intercontinental-seoul-parnas?brandCode=IC",
+    "avgBasePrice": 3118,
+    "avgSuitePrice": 6860,
+    "priceSource": "scraped",
+    "priceScrapeSource": "ota-ctrip"
   },
   "raffles-singapore": {
     "websiteUrl": "https://www.raffles.com/singapore/",
@@ -5699,7 +5261,7 @@
     ]
   },
   "waldorf-astoria-singapore": {
-    "websiteUrl": "https://www.hilton.com/en/hotels/waldorf-astoria-singapore/"
+    "websiteUrl": "https://www.hilton.com/en/hotels/sinwawa-waldorf-astoria-singapore/"
   },
   "conrad-singapore": {
     "websiteUrl": "https://www.hilton.com/en/hotels/conrad-singapore/"
@@ -5711,7 +5273,7 @@
     "websiteUrl": "https://www.hyatt.com/en-US/hotel/singapore/singapore/andaz-singapore"
   },
   "waldorf-astoria-bangkok": {
-    "websiteUrl": "https://www.hilton.com/en/hotels/waldorf-astoria-bangkok/"
+    "websiteUrl": "https://www.hilton.com/en/hotels/bkkwald-waldorf-astoria-bangkok/"
   },
   "conrad-bangkok": {
     "websiteUrl": "https://www.hilton.com/en/hotels/conrad-bangkok/"
@@ -5884,7 +5446,7 @@
     ]
   },
   "waldorf-astoria-amsterdam": {
-    "websiteUrl": "https://www.hilton.com/en/hotels/waldorf-astoria-amsterdam/"
+    "websiteUrl": "https://www.hilton.com/en/hotels/amswawa-waldorf-astoria-amsterdam/"
   },
   "intercontinental-amsterdam": {
     "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/amsterdam/intercontinental-amsterdam?brandCode=IC"
@@ -6365,7 +5927,10 @@
   },
   "one-and-only-le-saint-geran": {
     "websiteUrl": "https://www.oneandonlyresorts.com/le-saint-geran",
-    "description": "Escape to One&Only Le Saint Géran, a luxury Mauritius resort with beachfront accommodations, Spa, fine dining and unforgettable island adventures. Book now."
+    "description": "Escape to One&Only Le Saint Géran, a luxury Mauritius resort with beachfront accommodations, Spa, fine dining and unforgettable island adventures. Book now.",
+    "avgBasePrice": 11383,
+    "avgSuitePrice": 25043,
+    "priceSource": "scraped"
   },
   "conrad-mauritius": {
     "websiteUrl": "https://www.hilton.com/en/hotels/conrad-mauritius/"
@@ -6506,7 +6071,7 @@
     "websiteUrl": "https://www.hilton.com/en/hotels/waldorf-astoria-istanbul/"
   },
   "waldorf-astoria-dubai": {
-    "websiteUrl": "https://www.hilton.com/en/hotels/waldorf-astoria-dubai/"
+    "websiteUrl": "https://www.hilton.com/en/hotels/dxbwawa-waldorf-astoria-dubai-palm-jumeirah/"
   },
   "conrad-washington-dc": {
     "websiteUrl": "https://www.hilton.com/en/hotels/conrad-washington-dc/"
@@ -7094,7 +6659,10 @@
   },
   "one-and-only-aesthesis": {
     "websiteUrl": "https://www.oneandonlyresorts.com/aesthesis",
-    "description": "Stay at One&Only Aesthesis, a luxury beach resort in Athens, Greece, with elegant bungalows, fine dining, & curated Athenian Riviera experiences. Book now."
+    "description": "Stay at One&Only Aesthesis, a luxury beach resort in Athens, Greece, with elegant bungalows, fine dining, & curated Athenian Riviera experiences. Book now.",
+    "avgBasePrice": 12521,
+    "avgSuitePrice": 27546,
+    "priceSource": "scraped"
   },
   "park-hyatt-st-moritz": {
     "websiteUrl": "https://www.hyatt.com/en-US/hotel/switzerland/st-moritz/park-hyatt-st-moritz"
@@ -7121,7 +6689,11 @@
     "websiteUrl": "https://www.shangri-la.com/trou-deau-douce/le-touessrok/"
   },
   "vomo-island-fiji": {
-    "websiteUrl": "https://www.vomo.com/"
+    "websiteUrl": "https://www.vomo.com/",
+    "avgBasePrice": 19238,
+    "avgSuitePrice": 42324,
+    "priceSource": "scraped",
+    "priceScrapeSource": "official"
   },
   "likuliku-lagoon-fiji": {
     "websiteUrl": "https://www.likulikulagoon.com/",

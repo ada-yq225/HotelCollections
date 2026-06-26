@@ -17,6 +17,11 @@
     "hotels:scrape-prices-all": "tsx scripts/scrape-hotel-prices.ts --missing-only",
     "hotels:enrich-china-images": "tsx scripts/enrich-china-images.ts",
     "hotels:enrich-all-images": "tsx scripts/enrich-all-images.ts",
+    "hotels:scrape-user-urls": "tsx scripts/scrape-user-urls.ts",
+    "hotels:translate-descriptions": "tsx scripts/translate-descriptions.ts",
+    "flights:fetch-cabin-images": "tsx scripts/fetch-flight-cabin-images.ts",
+    "flights:scrape-prices": "tsx scripts/scrape-flight-prices.ts",
+    "hotels:clean-prices": "tsx scripts/clean-invalid-prices.ts",
     "hotels:clean-cache": "node scripts/clean-enrichment-cache.mjs",
     "logos:manifest": "node scripts/generate-brand-logo-manifest.mjs",
     "postinstall": "prisma generate"

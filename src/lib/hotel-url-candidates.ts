@@ -1,7 +1,8 @@
 import type { HotelEntry } from "@/data/hotels/types";
 import { resolveOfficialUrl, resolveOfficialUrlZh } from "@/lib/hotel-official-url";
 import { MARRIOTT_CHINA_HOTEL_URLS } from "@/data/marriott-china-urls";
-import { isGreaterChinaHotel } from "@/lib/hotel-media-cache";
+import { isGreaterChinaHotel } from "@/lib/hotel-media-paths";
+import { getUserOfficialUrlCandidates } from "@/lib/hotel-official-urls-user";
 
 function slugify(text: string): string {
   return text
@@ -23,6 +24,7 @@ export function resolveUrlCandidates(
   };
 
   const candidates: string[] = [];
+  for (const u of getUserOfficialUrlCandidates(hotel.slug)) add(u);
   const primary = resolveOfficialUrl(hotel);
   add(primary);
   if (primary) {

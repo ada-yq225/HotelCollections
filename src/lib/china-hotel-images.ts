@@ -1,18 +1,13 @@
 import type { HotelEntry } from "@/data/hotels/types";
+import { isGreaterChinaHotel, localHotelMediaPath } from "@/lib/hotel-media-paths";
 import {
   cacheHotelImageLocally,
-  isGreaterChinaHotel,
   localHotelMediaFile,
-  localHotelMediaPath,
   resolveHotelMediaBundle,
 } from "@/lib/hotel-media-cache";
 
-export {
-  cacheHotelImageLocally,
-  isGreaterChinaHotel,
-  localHotelMediaFile,
-  localHotelMediaPath,
-} from "@/lib/hotel-media-cache";
+export { isGreaterChinaHotel, localHotelMediaPath } from "@/lib/hotel-media-paths";
+export { cacheHotelImageLocally, localHotelMediaFile } from "@/lib/hotel-media-cache";
 
 export async function resolveChinaHotelImage(
   hotel: Pick<HotelEntry, "slug" | "cityZh" | "name" | "city" | "countryCode" | "brandSlug"> & {

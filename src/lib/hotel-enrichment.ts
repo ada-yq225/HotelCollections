@@ -1,5 +1,7 @@
+import { isChineseLocaleUrl, toChineseLocaleUrl } from "@/lib/china-official-url";
 import { resolveOfficialUrl, resolveOfficialUrlZh } from "@/lib/hotel-official-url";
 import { resolveUrlCandidates } from "@/lib/hotel-url-candidates";
+import { translateEnToZh } from "@/lib/translate-text";
 import { fetchWikipediaHotelImage } from "@/lib/hotel-image-fallback";
 import {
   absolutizeImageUrl,
@@ -12,10 +14,7 @@ import {
   extractScrapedBasePriceCny,
   validateScrapedPriceCny,
 } from "@/lib/hotel-price-scrape";
-import {
-  isGreaterChinaHotel,
-  resolveChinaHotelImage,
-} from "@/lib/china-hotel-images";
+import { isGreaterChinaHotel } from "@/lib/china-hotel-images";
 import type { HotelEntry } from "@/data/hotels/types";
 
 export type HotelEnrichment = {
@@ -34,6 +33,16 @@ const FETCH_HEADERS = {
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
   Accept: "text/html,application/xhtml+xml",
   "Accept-Language": "en-US,en;q=0.9,zh-CN;q=0.8",
+};
+
+/** Headers optimised for Chinese hotel websites */
+const FETCH_HEADERS_CN = {
+  "User-Agent":
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+  Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+  "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.5",
+  "Cache-Control": "no-cache",
+  Pragma: "no-cache",
 };
 
 const MARRIOTT_BRANDS = new Set([
@@ -150,16 +159,25 @@ function extractImageUrls(html: string, baseUrl: string): string[] {
   return Array.from(urls);
 }
 
-async function fetchHtml(url: string, attempt = 0): Promise<string | null> {
+async function fetchHtml(url: string, attempt = 0, useChineseHeaders = false): Promise<string | null> {
   try {
+    const isZhUrl = /zh-cn|zh-CN|\/cn\//.test(url);
+    const headers = (useChineseHeaders || isZhUrl) ? FETCH_HEADERS_CN : FETCH_HEADERS;
     const res = await fetch(url, {
-      headers: FETCH_HEADERS,
+      headers,
       signal: AbortSignal.timeout(18000),
       next: { revalidate: 0 },
     });
     if (res.status === 429 && attempt < 3) {
       await new Promise((r) => setTimeout(r, 2500 * (attempt + 1)));
-      return fetchHtml(url, attempt + 1);
+      return fetchHtml(url, attempt + 1, useChineseHeaders);
+    }
+    if (res.status === 403 && attempt < 2) {
+      // Retry with Chinese headers — many CN sites block non-Chinese requests
+      if (!useChineseHeaders && !isZhUrl) {
+        await new Promise((r) => setTimeout(r, 1200));
+        return fetchHtml(url, attempt + 1, true);
+      }
     }
     if (res.status >= 500) return null;
     const ct = res.headers.get("content-type") ?? "";
@@ -309,9 +327,28 @@ export async function enrichHotelFromWeb(
     | "websiteUrl"
   > & { nameZh?: string | null }
 ): Promise<HotelEnrichment | null> {
-  const candidates = hotel.websiteUrl
+  const isChina = isGreaterChinaHotel(hotel.countryCode);
+  let candidates = hotel.websiteUrl
     ? [hotel.websiteUrl, ...resolveUrlCandidates(hotel).filter((u) => u !== hotel.websiteUrl)]
     : resolveUrlCandidates(hotel);
+
+  if (isChina) {
+    const zhFirst: string[] = [];
+    const rest: string[] = [];
+    const seen = new Set<string>();
+    for (const url of candidates) {
+      if (seen.has(url)) continue;
+      seen.add(url);
+      const zh = toChineseLocaleUrl(url);
+      if (zh && !seen.has(zh)) {
+        seen.add(zh);
+        zhFirst.push(zh);
+      }
+      if (isChineseLocaleUrl(url)) zhFirst.push(url);
+      else rest.push(url);
+    }
+    candidates = [...zhFirst, ...rest];
+  }
 
   if (candidates.length === 0) return null;
 
@@ -360,26 +397,52 @@ export async function enrichHotelFromWeb(
   }
 
   let galleryImages = allImages.slice(0, 8);
-  if (
-    (!heroImage || isBadImageUrl(heroImage) || galleryImages.length < 4) &&
-    isGreaterChinaHotel(hotel.countryCode)
-  ) {
-    const chinaImg = await resolveChinaHotelImage(hotel);
-    if (chinaImg) {
-      heroImage = chinaImg.heroImage;
-      const extra = chinaImg.galleryImages ?? [chinaImg.heroImage];
-      galleryImages = [...new Set([...extra, ...galleryImages])].slice(0, 8);
+  // REMOVED: Bing/Baidu search engine fallback for Chinese hotels.
+  // Search engine results are unreliable and often return unrelated images.
+  // Only official website scraping and Wikipedia are used as image sources.
+
+  let description = parsed.description;
+  let descriptionZh: string | undefined;
+
+  if (isChina) {
+    const zhCandidates = [
+      ...(isChineseLocaleUrl(websiteUrl) ? [websiteUrl] : []),
+      resolveOfficialUrlZh(websiteUrl),
+      ...candidates.filter((u) => isChineseLocaleUrl(u)),
+    ].filter((u): u is string => Boolean(u));
+
+    const seenZh = new Set<string>();
+    for (const zhUrl of zhCandidates) {
+      if (seenZh.has(zhUrl)) continue;
+      seenZh.add(zhUrl);
+      const zhHtml = await fetchHtml(zhUrl);
+      if (!zhHtml) continue;
+      const zhDesc = parseHtml(zhHtml, zhUrl).description;
+      if (zhDesc && /[\u4e00-\u9fff]/.test(zhDesc)) {
+        descriptionZh = zhDesc;
+        break;
+      }
+    }
+
+    if (!description || !/[\u4e00-\u9fff]/.test(description)) {
+      const enUrl = candidates.find((u) => !isChineseLocaleUrl(u));
+      if (enUrl) {
+        const enHtml = await fetchHtml(enUrl);
+        if (enHtml) description = parseHtml(enHtml, enUrl).description ?? description;
+      }
+    }
+  } else {
+    const zhUrl = resolveOfficialUrlZh(websiteUrl);
+    if (zhUrl) {
+      const zhHtml = await fetchHtml(zhUrl);
+      if (zhHtml) descriptionZh = parseHtml(zhHtml, zhUrl).description;
+    }
+    if (description && !descriptionZh) {
+      descriptionZh = (await translateEnToZh(description)) ?? undefined;
     }
   }
 
-  let descriptionZh: string | undefined;
-  const zhUrl = resolveOfficialUrlZh(websiteUrl);
-  if (zhUrl) {
-    const zhHtml = await fetchHtml(zhUrl);
-    if (zhHtml) descriptionZh = parseHtml(zhHtml, zhUrl).description;
-  }
-
-  if (!parsed.description && !heroImage && allImages.length === 0 && !parsed.scrapedBasePrice) {
+  if (!description && !descriptionZh && !heroImage && allImages.length === 0 && !parsed.scrapedBasePrice) {
     return null;
   }
 
@@ -393,8 +456,8 @@ export async function enrichHotelFromWeb(
     : undefined;
 
   return {
-    websiteUrl,
-    description: parsed.description,
+    websiteUrl: isChina && candidates[0] ? candidates[0] : websiteUrl,
+    description,
     descriptionZh,
     heroImage,
     galleryImages,

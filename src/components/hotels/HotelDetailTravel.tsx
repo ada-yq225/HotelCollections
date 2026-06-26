@@ -11,6 +11,7 @@ type HotelTravelTarget = {
   name: string;
   cityZh: string;
   countryCode: string;
+  region: string;
   latitude: number;
   longitude: number;
 };

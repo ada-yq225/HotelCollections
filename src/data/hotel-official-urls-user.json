@@ -1,0 +1,22 @@
+{
+  "_meta": {
+    "说明": "在下方填写酒店 slug 与官网地址，保存后运行 npm run hotels:scrape-user-urls 自动抓取图片",
+    "slug": "与详情页 URL 一致，例如 /hotels/ritz-carlton-beijing → slug 为 ritz-carlton-beijing",
+    "格式1": "直接写官网 URL 字符串",
+    "格式2": "对象 { \"url\": \"主页\", \"galleryUrl\": \"图集页(可选)\", \"note\": \"备注(可选)\" }",
+    "命令": "npm run hotels:scrape-user-urls  或  npm run hotels:scrape-user-urls -- --slug=酒店slug",
+    "注意": "以 _ 开头的键（如 _meta、_examples）会被忽略；复制示例到根级即可生效"
+  },
+  "_examples": {
+    "ritz-carlton-beijing": "https://www.marriott.com/zh-cn/hotels/beirz-the-ritz-carlton-beijing/overview/",
+    "four-seasons-beijing": {
+      "url": "https://www.fourseasons.com/beijing/",
+      "galleryUrl": "https://www.fourseasons.com/beijing/photos-and-videos/"
+    }
+  },
+
+  "four-seasons-beijing": {
+    "url": "https://www.fourseasons.com/beijing/",
+    "galleryUrl": "https://www.fourseasons.com/beijing/photos-and-videos/"
+  }
+}

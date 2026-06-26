@@ -1,13 +1,13 @@
 import { existsSync, mkdirSync, writeFileSync } from "fs";
 import { join } from "path";
 import { isBadImageUrl } from "@/lib/hotel-cover-image";
+import {
+  isGreaterChinaHotel,
+  localHotelMediaPath,
+} from "@/lib/hotel-media-paths";
 import type { HotelEntry } from "@/data/hotels/types";
 
-const GREATER_CHINA = new Set(["CN", "HK", "MO", "TW"]);
-
-export function isGreaterChinaHotel(countryCode: string): boolean {
-  return GREATER_CHINA.has(countryCode);
-}
+export { isGreaterChinaHotel, localHotelMediaPath } from "@/lib/hotel-media-paths";
 
 const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36";
@@ -31,8 +31,12 @@ const PREFERRED_HOSTS = [
   "c-ctrip.com",
   "ctrip.com",
   "trip.com",
-  "booking.com",
+  "fliggy.com",
+  "meituan.com",
   "qunarzz.com",
+  "qyer.com",
+  "mafengwo.net",
+  "booking.com",
   "klook.com",
   "cache.marriott.com",
   "media.ffycdn.net",
@@ -56,10 +60,6 @@ const PREFERRED_HOSTS = [
   "tripadvisor.com",
   "agoda.net",
 ];
-
-export function localHotelMediaPath(slug: string, index = 0): string {
-  return index === 0 ? `/hotel-media/${slug}.jpg` : `/hotel-media/${slug}-${index + 1}.jpg`;
-}
 
 export function localHotelMediaFile(slug: string, index = 0): string {
   const name = index === 0 ? `${slug}.jpg` : `${slug}-${index + 1}.jpg`;
@@ -138,17 +138,56 @@ export async function cacheHotelImageLocally(
   }
 }
 
+async function baiduImageSearch(query: string): Promise<string[]> {
+  try {
+    const res = await fetch(
+      `https://image.baidu.com/search/acjson?tn=resultjson_com&word=${encodeURIComponent(query)}&pn=0&rn=30`,
+      {
+        headers: {
+          "User-Agent": UA,
+          Accept: "application/json",
+          "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+          Referer: "https://image.baidu.com/",
+        },
+        signal: AbortSignal.timeout(20000),
+      }
+    );
+    if (!res.ok) return [];
+    const text = await res.text();
+    const urls: string[] = [];
+    // Baidu image API returns JSON with thumbURL / middleURL / hoverURL fields
+    for (const m of text.matchAll(/"thumbURL":"(https?:\\\/\\\/[^"]+)"/g)) {
+      urls.push(m[1].replace(/\\\//g, "/"));
+    }
+    for (const m of text.matchAll(/"middleURL":"(https?:\\\/\\\/[^"]+)"/g)) {
+      urls.push(m[1].replace(/\\\//g, "/"));
+    }
+    for (const m of text.matchAll(/"hoverURL":"(https?:\\\/\\\/[^"]+)"/g)) {
+      urls.push(m[1].replace(/\\\//g, "/"));
+    }
+    return rankImageUrls([...new Set(urls)]);
+  } catch {
+    return [];
+  }
+}
+
 export async function fetchHotelImageCandidates(
   hotel: Pick<HotelEntry, "name" | "city" | "cityZh" | "brandSlug" | "countryCode"> & {
     nameZh?: string | null;
   }
 ): Promise<string[]> {
   const label = hotel.nameZh || hotel.name;
-  const queries = isGreaterChinaHotel(hotel.countryCode)
+  const isChina = isGreaterChinaHotel(hotel.countryCode);
+
+  const queries = isChina
     ? [
+        `site:ctrip.com ${label} 酒店`,
         `${label} 酒店 套房 泳池`,
-        `${label} 酒店 外观`,
-        `site:ctrip.com ${label}`,
+        `${label} 酒店 外观 大堂`,
+        `${label} 酒店 豪华 体验`,
+        `${label} 酒店 推荐 攻略`,
+        `${label} 网红 打卡 拍照`,
+        `${label} 酒店 小红书`,
         `${hotel.name} ${hotel.city} luxury hotel`,
       ]
     : [
@@ -159,10 +198,18 @@ export async function fetchHotelImageCandidates(
       ];
 
   const merged: string[] = [];
+
   for (const q of queries) {
     try {
-      const found = await bingImageSearch(q);
-      merged.push(...found);
+      // For Chinese hotels, also try Baidu image search alongside Bing
+      const [bingResults, baiduResults] = await Promise.all([
+        bingImageSearch(q),
+        isChina ? baiduImageSearch(q) : Promise.resolve([] as string[]),
+      ]);
+      merged.push(...bingResults);
+      if (baiduResults.length > 0) {
+        merged.push(...baiduResults);
+      }
       if (merged.filter((u) => hostScore(u) >= 20).length >= 8) break;
     } catch {
       /* next */

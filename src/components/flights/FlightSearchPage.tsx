@@ -15,6 +15,9 @@ import { ALL_AIRPORTS, DEPARTURE_AIRPORTS } from "@/data/airports";
 import { useDepartureAirport } from "@/hooks/useDepartureAirport";
 import { DepartureAirportPicker } from "@/components/hotels/DepartureAirportPicker";
 import { FlightOptionCard } from "@/components/hotels/FlightOptionCard";
+import { PremiumCabinHighlights } from "@/components/flights/PremiumCabinHighlights";
+import { FlightHotelPairingClient } from "@/components/flights/FlightHotelPairingClient";
+import type { PremiumCabinProduct } from "@/data/flight-cabin-products";
 import { formatDuration } from "@/lib/travel";
 import type { FlightOption } from "@/lib/travel";
 import type { Airport } from "@/data/airports";
@@ -41,6 +44,7 @@ export function FlightSearchPage() {
   const [destSearch, setDestSearch] = useState("");
   const [loading, setLoading] = useState(false);
   const [flights, setFlights] = useState<FlightOption[]>([]);
+  const [premiumHighlights, setPremiumHighlights] = useState<PremiumCabinProduct[]>([]);
   const [destination, setDestination] = useState<Airport | null>(null);
   const [searched, setSearched] = useState(false);
 
@@ -67,9 +71,11 @@ export function FlightSearchPage() {
         if (data.flights) {
           setFlights(data.flights);
           setDestination(data.destination);
+          setPremiumHighlights(data.premiumHighlights ?? []);
         } else {
           setFlights([]);
           setDestination(null);
+          setPremiumHighlights([]);
         }
       } finally {
         setLoading(false);
@@ -111,7 +117,7 @@ export function FlightSearchPage() {
       <div>
         <h1 className="font-serif text-3xl font-semibold">机票查询</h1>
         <p className="mt-2 text-sm text-[#6b7280]">
-          基于常见航线估算 · 直飞优先 · 支持全球出发地与度假目的地
+          2026 市场参考价 · 经济舱 / 商务舱 / 特色头等 · 直飞优先
         </p>
       </div>
 
@@ -246,6 +252,10 @@ export function FlightSearchPage() {
             </span>
           </div>
 
+          {premiumHighlights.length > 0 && (
+            <PremiumCabinHighlights products={premiumHighlights} />
+          )}
+
           {directFlights.length > 0 && (
             <div>
               <h2 className="mb-3 text-sm font-medium">直飞航班</h2>
@@ -272,8 +282,10 @@ export function FlightSearchPage() {
             <p className="py-8 text-center text-sm text-[#6b7280]">暂无该航线数据，请尝试其他目的地</p>
           )}
 
+          <FlightHotelPairingClient destinationIata={destination.iata} />
+
           <p className="text-[10px] leading-relaxed text-[#9ca3af]">
-            航班时长基于常见航线与航司历史班次估算，仅供参考。实际票价、时刻与舱位请以航空公司及 OTA 为准。
+            价格为 2026 年单程市场参考价（含常见促销区间），特色舱位（如阿提哈德空中官邸）附官方产品介绍。实际票价与舱位库存请以航司及 OTA 为准。
           </p>
         </div>
       )}

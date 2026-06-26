@@ -6,6 +6,7 @@ import { buildMapPoints } from "@/lib/map";
 import { prisma } from "@/lib/prisma";
 import { MapSection } from "@/components/map/MapSection";
 import { JourneyGroups } from "./JourneyGroups";
+import { JourneyExportButton } from "@/components/journey/JourneyExportButton";
 
 export default async function JourneyPage() {
   const user = await getCurrentUser();
@@ -47,9 +48,12 @@ export default async function JourneyPage() {
           <h1 className="font-serif text-4xl">入住足迹</h1>
           <p className="mt-2 text-[#6b7280]">全球点亮地图 · 按集团与城市分类浏览</p>
         </div>
-        <Link href="/map" className="text-sm text-[#b8956b] hover:underline">
-          全屏地图 →
-        </Link>
+        <div className="flex flex-wrap items-center gap-4">
+          <JourneyExportButton />
+          <Link href="/map" className="text-sm text-[#b8956b] hover:underline">
+            全屏地图 →
+          </Link>
+        </div>
       </div>
 
       <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">

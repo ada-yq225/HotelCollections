@@ -2,7 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { BookingForm } from "./BookingForm";
-import { BookingPerksCard } from "@/components/booking/BookingPerksCard";
+import { HotelBenefitsSection } from "@/components/loyalty/HotelBenefitsSection";
 
 export default async function BookPage({
   searchParams,
@@ -40,16 +40,14 @@ export default async function BookPage({
       </p>
 
       <div className="mt-8 grid gap-8 lg:grid-cols-2">
-        <BookingPerksCard
-          hotel={{
-            id: hotel.id,
-            name: hotel.name,
-            nameZh: hotel.nameZh,
-            cityZh: hotel.cityZh,
-            brand: { nameZh: hotel.brand.nameZh },
-          }}
-          source={params.source ?? "book-page"}
-          showCTA={false}
+        <HotelBenefitsSection
+          hotelId={hotel.id}
+          hotelName={hotel.nameZh || hotel.name}
+          groupSlug={hotel.brand.group.slug}
+          groupNameZh={hotel.brand.group.nameZh}
+          brandSlug={hotel.brand.slug}
+          region={hotel.region}
+          countryCode={hotel.countryCode}
         />
         <BookingForm
           hotelId={hotel.id}

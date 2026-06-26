@@ -17,7 +17,9 @@ export function AirlineBadge({ airline, flightNumber }: { airline: AirlineInfo; 
       <div className="min-w-0">
         <p className="truncate text-sm font-medium text-[#1a1a1a]">{airline.nameZh}</p>
         <div className="flex flex-wrap items-center gap-1.5">
-          <span className="font-mono text-xs text-[#b8956b]">{flightNumber}</span>
+          {flightNumber ? (
+            <span className="font-mono text-xs text-[#b8956b]">{flightNumber}</span>
+          ) : null}
           {airline.alliance && (
             <span className="rounded-full bg-[#f0f0f0] px-1.5 py-0.5 text-[10px] text-[#6b7280]">
               {ALLIANCE_LABELS[airline.alliance]}

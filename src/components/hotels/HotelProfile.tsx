@@ -29,6 +29,8 @@ type HotelProfileProps = {
   scoreDining?: number | null;
   scoreHardware?: number | null;
   hotelId?: string;
+  brandSlug?: string;
+  cityZh?: string;
   communityReviews?: {
     id: string;
     title: string;
@@ -63,6 +65,8 @@ export function HotelProfile({
   scoreDining,
   scoreHardware,
   hotelId,
+  brandSlug,
+  cityZh,
   communityReviews = [],
 }: HotelProfileProps) {
   const rawImages = galleryImages.length > 0 ? galleryImages : heroImage ? [heroImage] : [];
@@ -171,6 +175,8 @@ export function HotelProfile({
             avgBasePrice={avgBasePrice}
             avgSuitePrice={avgSuitePrice}
             suiteLabel={suiteLabel}
+            brandSlug={brandSlug}
+            cityZh={cityZh}
           />
         </section>
       )}

@@ -4,6 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { ChevronDown, X, SlidersHorizontal } from "lucide-react";
 import { BrandLogo } from "./BrandLogo";
+import { ALL_EXPERIENCE_TAGS } from "@/lib/hotel-experience-tags";
+import { GROUP_TOPIC_SLUGS } from "@/data/loyalty/group-guides";
 
 type Group = {
   slug: string;
@@ -27,6 +29,7 @@ type FilterState = {
   group: string;
   brand: string;
   alliance: string;
+  experience: string;
 };
 
 type HotelFiltersPanelProps = {
@@ -250,6 +253,31 @@ export function HotelFiltersPanel({
             )}
           </FilterSection>
 
+          <FilterSection title="体验标签" defaultOpen={false}>
+            <div className="flex flex-wrap gap-2">
+              <Chip
+                active={!filters.experience}
+                onClick={() => onChange({ experience: "" })}
+              >
+                全部
+              </Chip>
+              {ALL_EXPERIENCE_TAGS.map((t) => (
+                <Chip
+                  key={t.slug}
+                  active={filters.experience === t.slug}
+                  color={t.color}
+                  onClick={() =>
+                    onChange({
+                      experience: filters.experience === t.slug ? "" : t.slug,
+                    })
+                  }
+                >
+                  {t.label}
+                </Chip>
+              ))}
+            </div>
+          </FilterSection>
+
           {alliances.length > 0 && (
             <FilterSection title="联盟" defaultOpen={false}>
               <div className="flex flex-wrap gap-2">
@@ -276,11 +304,12 @@ export function HotelFiltersPanel({
             </FilterSection>
           )}
 
-          {signatureGroups.length > 0 && (
-            <div className="mt-4 rounded-xl bg-[#faf6f0] p-4">
-              <p className="mb-2 text-xs font-medium text-[#b8956b]">独立集团专题</p>
-              <div className="flex flex-wrap gap-2">
-                {signatureGroups.map((g) => (
+          <div className="mt-4 rounded-xl bg-[#faf6f0] p-4">
+            <p className="mb-2 text-xs font-medium text-[#b8956b]">集团专题 · 会籍对照</p>
+            <div className="flex flex-wrap gap-2">
+              {groups
+                .filter((g) => (GROUP_TOPIC_SLUGS as readonly string[]).includes(g.slug))
+                .map((g) => (
                   <Link
                     key={g.slug}
                     href={`/groups/${g.slug}`}
@@ -290,9 +319,8 @@ export function HotelFiltersPanel({
                     {g.nameZh} →
                   </Link>
                 ))}
-              </div>
             </div>
-          )}
+          </div>
         </div>
 
         <div className="flex gap-3 border-t border-[#f0f0f0] px-5 py-4">

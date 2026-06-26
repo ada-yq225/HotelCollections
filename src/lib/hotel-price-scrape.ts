@@ -37,9 +37,83 @@ const BRAND_MIN_CNY: Record<string, number> = {
   intercontinental: 600,
   kempinski: 600,
   "shangri-la": 550,
+  waldorf: 2500,
+  bulgari: 4500,
+  "bulgari-hotel": 4500,
+  amanresorts: 4500,
+  "the-house-collective": 2000,
 };
 
 const DEFAULT_MIN_CNY = 650;
+
+/**
+ * Market reference hotel prices (CNY per night, base room) for popular Chinese traveler destinations.
+ * Based on Ctrip/Fliggy observable price ranges as of 2026.
+ * Used for validation and estimation fallback.
+ */
+export const HOTEL_PRICE_REFERENCE: Record<string, { low: number; high: number }> = {
+  // ---- China domestic luxury ----
+  "beijing-bulgari": { low: 4500, high: 6000 },
+  "shanghai-bulgari": { low: 4800, high: 6500 },
+  "beijing-peninsula": { low: 3500, high: 5000 },
+  "shanghai-peninsula": { low: 3800, high: 5500 },
+  "beijing-rosewood": { low: 2800, high: 4500 },
+  "guangzhou-rosewood": { low: 2200, high: 3800 },
+  "sanya-mandarin-oriental": { low: 2500, high: 4500 },
+  "sanya-rosewood": { low: 2000, high: 4000 },
+  "hangzhou-four-seasons": { low: 3500, high: 5500 },
+  "hong-kong-four-seasons": { low: 5000, high: 8000 },
+  "hong-kong-peninsula": { low: 4500, high: 7500 },
+  "hong-kong-rosewood": { low: 4000, high: 7000 },
+  "macau-four-seasons": { low: 2500, high: 4500 },
+  "beijing-waldorf-astoria": { low: 2500, high: 4000 },
+  "shanghai-waldorf-astoria": { low: 2800, high: 4500 },
+  "chengdu-the-temple-house": { low: 2000, high: 3500 },
+  "beijing-aman-summer-palace": { low: 4500, high: 7000 },
+  "shanghai-amanyangyun": { low: 6000, high: 9000 },
+  "hangzhou-amanfayun": { low: 5000, high: 7500 },
+
+  // ---- Maldives ----
+  "maldives-four-seasons-kuda-huraa": { low: 8000, high: 15000 },
+  "maldives-st-regis": { low: 10000, high: 20000 },
+  "maldives-cheval-blanc": { low: 15000, high: 30000 },
+
+  // ---- Bali ----
+  "bali-four-seasons-jimbaran": { low: 3000, high: 6000 },
+  "bali-bulgari": { low: 5000, high: 10000 },
+
+  // ---- Phuket ----
+  "phuket-amanpuri": { low: 5000, high: 8000 },
+
+  // ---- Tokyo ----
+  "tokyo-aman": { low: 8000, high: 12000 },
+  "tokyo-peninsula": { low: 5000, high: 8000 },
+
+  // ---- Singapore ----
+  "singapore-marina-bay-sands": { low: 3500, high: 6000 },
+
+  // ---- Dubai ----
+  "dubai-burj-al-arab": { low: 8000, high: 15000 },
+
+  // ---- Paris ----
+  "paris-four-seasons-george-v": { low: 12000, high: 25000 },
+
+  // ---- Tahiti / Bora Bora ----
+  "bora-bora-four-seasons": { low: 10000, high: 20000 },
+};
+
+/**
+ * Get a market-validated price range for a known hotel.
+ * Returns null if the hotel is not in the reference table.
+ */
+export function getHotelPriceReference(key: string): { low: number; high: number } | null {
+  return HOTEL_PRICE_REFERENCE[key] ?? null;
+}
+
+/** Known bogus cluster prices from mis-parsed Marriott/MO widgets */
+const REJECT_EXACT_CNY = new Set([
+  10040, 10240, 10244, 10245, 10248, 336, 750, 1088, 1717, 3171, 3676, 3925, 4821,
+]);
 
 function toCny(amount: number, currency: string): number {
   const rate = FX_TO_CNY[currency.toUpperCase()] ?? 7.25;
@@ -151,6 +225,7 @@ export function validateScrapedPriceCny(
     if (asUsd >= min && cny < min * 2) return asUsd;
   }
 
+  if (REJECT_EXACT_CNY.has(cny)) return null;
   if (cny < min * 0.85) return null;
   if (cny > 120000) return null;
 

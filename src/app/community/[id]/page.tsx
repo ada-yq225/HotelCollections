@@ -5,7 +5,7 @@ import { parseImages, avgScore } from "@/lib/posts";
 import { ReviewScoresDisplay } from "@/components/community/ReviewScores";
 import { formatDate } from "@/lib/utils";
 import { Crown, ArrowLeft, Star } from "lucide-react";
-import { BookingPerksCard } from "@/components/booking/BookingPerksCard";
+import { HotelBenefitsSection } from "@/components/loyalty/HotelBenefitsSection";
 
 export default async function PostDetailPage({
   params,
@@ -99,16 +99,14 @@ export default async function PostDetailPage({
         )}
 
         <div className="mt-10">
-          <BookingPerksCard
-            hotel={{
-              id: post.hotel.id,
-              name: post.hotel.name,
-              nameZh: post.hotel.nameZh,
-              cityZh: post.hotel.cityZh,
-              brand: { nameZh: post.hotel.brand.nameZh },
-            }}
-            source="post"
-            compact
+          <HotelBenefitsSection
+            hotelId={post.hotel.id}
+            hotelName={post.hotel.nameZh || post.hotel.name}
+            groupSlug={post.hotel.brand.group.slug}
+            groupNameZh={post.hotel.brand.group.nameZh}
+            brandSlug={post.hotel.brand.slug}
+            region={post.hotel.region}
+            countryCode={post.hotel.countryCode}
           />
         </div>
 

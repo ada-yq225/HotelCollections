@@ -4,7 +4,7 @@
  */
 import { writeFileSync, readFileSync, existsSync } from "fs";
 import { join } from "path";
-import { ALL_HOTELS } from "../src/data/hotels";
+import { ACTIVE_HOTELS } from "../src/data/hotels";
 import { resolveOfficialUrl } from "../src/lib/hotel-official-url";
 import { enrichHotelFromWeb } from "../src/lib/hotel-enrichment";
 import { isBadImageUrl } from "../src/lib/hotel-cover-image";
@@ -38,12 +38,25 @@ function mergeEnrichment(
   result: CachedEnrichment | null,
   websiteUrl: string
 ): CachedEnrichment {
-  if (!result) return prev ?? { websiteUrl };
+  if (!result) {
+    if (prev && (isBadImageUrl(prev.heroImage) || !hasValidImage(prev))) {
+      const cleanGallery = (prev.galleryImages ?? []).filter((u) => !isBadImageUrl(u));
+      return {
+        ...prev,
+        websiteUrl,
+        heroImage: undefined,
+        galleryImages: cleanGallery.length > 0 ? cleanGallery : undefined,
+      };
+    }
+    return prev ?? { websiteUrl };
+  }
   return {
     websiteUrl: result.websiteUrl || websiteUrl,
     description: result.description ?? prev?.description,
     descriptionZh: result.descriptionZh ?? prev?.descriptionZh,
-    heroImage: result.heroImage ?? prev?.heroImage,
+    heroImage:
+      result.heroImage ??
+      (prev?.heroImage && !isBadImageUrl(prev.heroImage) ? prev.heroImage : undefined),
     galleryImages:
       result.galleryImages && result.galleryImages.length > 0
         ? result.galleryImages
@@ -68,7 +81,7 @@ async function main() {
     existing = JSON.parse(readFileSync(OUT_PATH, "utf-8")) as Record<string, CachedEnrichment>;
   }
 
-  let hotels = ALL_HOTELS.filter((h) => h.isActive !== false);
+  let hotels = ACTIVE_HOTELS;
   if (brandFilter) hotels = hotels.filter((h) => h.brandSlug === brandFilter);
 
   let processed = 0;

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
-import { CreditCard, Users, Crown, ArrowRight } from "lucide-react";
+import { CreditCard, Users, Crown, ArrowRight, Award } from "lucide-react";
 
 export default async function ClubPage() {
   const [keycardCount, discussionCount, inquiryCount] = await Promise.all([
@@ -10,6 +10,14 @@ export default async function ClubPage() {
   ]);
 
   const sections = [
+    {
+      href: "/club/status",
+      icon: Award,
+      title: "会籍中心",
+      desc: "五大集团等级档案、保级进度、Virtuoso/STARS/FHR 渠道礼遇对照与酒店待遇匹配",
+      stat: "核心功能",
+      color: "#b8956b",
+    },
     {
       href: "/club/keycards",
       icon: CreditCard,
@@ -41,7 +49,7 @@ export default async function ClubPage() {
       <h1 className="font-serif text-4xl">精英俱乐部</h1>
       <p className="mt-2 text-[#6b7280]">深度社交与交易衍生 — 第三阶段核心功能</p>
 
-      <div className="mt-10 grid gap-6 md:grid-cols-3">
+      <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {sections.map(({ href, icon: Icon, title, desc, stat, color }) => (
           <Link key={href} href={href} className="hc-card group p-8 transition hover:ring-1 hover:ring-[#b8956b]">
             <div

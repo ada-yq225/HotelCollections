@@ -8,6 +8,7 @@ import {
   ActiveFilterPills,
 } from "@/components/hotels/HotelFiltersPanel";
 import { DepartureBar } from "@/components/hotels/DepartureBar";
+import { ALL_EXPERIENCE_TAGS } from "@/lib/hotel-experience-tags";
 
 type Hotel = Parameters<typeof HotelCard>[0]["hotel"];
 
@@ -56,6 +57,7 @@ type FilterState = {
   group: string;
   brand: string;
   alliance: string;
+  experience: string;
 };
 
 export function HotelsExplorer({
@@ -78,6 +80,7 @@ export function HotelsExplorer({
     group: "",
     brand: "",
     alliance: "",
+    experience: "",
   });
 
   const updateFilter = useCallback((patch: Partial<FilterState>) => {
@@ -85,7 +88,7 @@ export function HotelsExplorer({
   }, []);
 
   const clearFilters = useCallback(() => {
-    setFilters({ destination: "", group: "", brand: "", alliance: "" });
+    setFilters({ destination: "", group: "", brand: "", alliance: "", experience: "" });
   }, []);
 
   const fetchHotels = useCallback(async () => {
@@ -96,6 +99,7 @@ export function HotelsExplorer({
     if (filters.brand) params.set("brand", filters.brand);
     if (filters.alliance) params.set("alliance", filters.alliance);
     if (filters.destination) params.set("destination", filters.destination);
+    if (filters.experience) params.set("experience", filters.experience);
 
     const res = await fetch(`/api/hotels?${params}`);
     const data = await res.json();
@@ -118,6 +122,7 @@ export function HotelsExplorer({
     for (const g of groups) map[g.slug] = g.nameZh;
     for (const b of brands) map[b.slug] = b.nameZh;
     for (const a of alliances) map[a.slug] = a.nameZh;
+    for (const t of ALL_EXPERIENCE_TAGS) map[t.slug] = t.label;
     return map;
   }, [destinations, groups, brands, alliances]);
 

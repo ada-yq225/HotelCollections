@@ -33,6 +33,8 @@ type HotelCardProps = {
       slug: string;
       group: { nameZh: string; logoColor: string };
     };
+    experienceTags?: { slug: string; label: string; color: string }[];
+    priceVerified?: boolean;
   };
 };
 
@@ -116,10 +118,26 @@ export function HotelCard({ hotel: h }: HotelCardProps) {
             />
           </div>
 
+          {h.experienceTags && h.experienceTags.length > 0 && (
+            <div className="mt-2 flex flex-wrap gap-1">
+              {h.experienceTags.map((t) => (
+                <span
+                  key={t.slug}
+                  className="rounded-full px-2 py-0.5 text-[10px] font-medium text-white"
+                  style={{ backgroundColor: t.color }}
+                >
+                  {t.label}
+                </span>
+              ))}
+            </div>
+          )}
+
           <div className="mt-3 flex items-center justify-between gap-2 border-t border-[#f3f0eb] pt-3">
             {h.avgBasePrice != null ? (
               <div>
-                <p className="text-[10px] text-[#9ca3af]">官网起价</p>
+                <p className="text-[10px] text-[#9ca3af]">
+                  {h.priceVerified ? "官网实价" : "官网起价"}
+                </p>
                 <p className="text-sm font-semibold text-[#b8956b]">
                   {formatHotelPrice(h.avgBasePrice)}
                   <span className="ml-0.5 text-[10px] font-normal text-[#9ca3af]">/晚</span>
@@ -148,6 +166,7 @@ export function HotelCard({ hotel: h }: HotelCardProps) {
           name: h.name,
           cityZh: h.cityZh,
           countryCode: h.countryCode,
+          region: h.region,
           latitude: h.latitude,
           longitude: h.longitude,
         }}

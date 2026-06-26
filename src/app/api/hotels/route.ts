@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getDestinationWhere } from "@/data/destinations";
 import { serializeHotelForList } from "@/lib/hotels";
+import { hotelMatchesExperienceTag } from "@/lib/hotel-experience-tags";
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
@@ -13,6 +14,7 @@ export async function GET(req: Request) {
   const country = searchParams.get("country");
   const destination = searchParams.get("destination");
   const q = searchParams.get("q");
+  const experience = searchParams.get("experience");
 
   const destinationWhere = destination ? getDestinationWhere(destination) : null;
 
@@ -50,7 +52,23 @@ export async function GET(req: Request) {
     orderBy: [{ country: "asc" }, { city: "asc" }, { name: "asc" }],
   });
 
-  const serialized = hotels.map(serializeHotelForList);
+  let filtered = hotels;
+  if (experience) {
+    filtered = hotels.filter((h) =>
+      hotelMatchesExperienceTag(
+        {
+          region: h.region,
+          countryCode: h.countryCode,
+          brandSlug: h.brand.slug,
+          city: h.city,
+          cityZh: h.cityZh,
+        },
+        experience
+      )
+    );
+  }
+
+  const serialized = filtered.map(serializeHotelForList);
 
   return NextResponse.json({ hotels: serialized, total: serialized.length });
 }

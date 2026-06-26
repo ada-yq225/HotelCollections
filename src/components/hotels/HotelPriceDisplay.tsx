@@ -1,4 +1,5 @@
 import { formatHotelPrice } from "@/lib/hotel-pricing";
+import { estimateOtaPrices, formatOtaPriceRange } from "@/lib/china-ota-prices";
 
 type HotelPriceDisplayProps = {
   avgBasePrice: number;
@@ -8,6 +9,10 @@ type HotelPriceDisplayProps = {
   compact?: boolean;
   className?: string;
   fromOfficial?: boolean;
+  /** 酒店品牌slug，用于OTA价格估算 */
+  brandSlug?: string;
+  /** 酒店城市中文名，用于OTA价格估算 */
+  cityZh?: string;
 };
 
 export function HotelPriceDisplay({
@@ -17,6 +22,8 @@ export function HotelPriceDisplay({
   compact = false,
   className = "",
   fromOfficial = true,
+  brandSlug,
+  cityZh,
 }: HotelPriceDisplayProps) {
   if (compact) {
     return (
@@ -53,6 +60,49 @@ export function HotelPriceDisplay({
       </div>
       <p className="col-span-full text-[11px] leading-relaxed text-[#9ca3af]">
         价格取自酒店官网公开起价（人民币/晚），不含税费与服务费；实际以预订时房态为准。
+      </p>
+
+      {/* 中国OTA平台价格参考 */}
+      {brandSlug && cityZh && (
+        <OtaPriceSection
+          brandSlug={brandSlug}
+          cityZh={cityZh}
+          officialBasePrice={avgBasePrice}
+        />
+      )}
+    </div>
+  );
+}
+
+/** 中国OTA平台价格参考子组件 */
+function OtaPriceSection({
+  brandSlug,
+  cityZh,
+  officialBasePrice,
+}: {
+  brandSlug: string;
+  cityZh: string;
+  officialBasePrice: number;
+}) {
+  const otaPrices = estimateOtaPrices(brandSlug, cityZh, officialBasePrice);
+
+  return (
+    <div className="col-span-full mt-3 border-t border-[#f0ece6] pt-3">
+      <p className="mb-2 text-xs font-medium text-[#6b7280]">
+        中国OTA平台参考价（估算）
+      </p>
+      <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 sm:grid-cols-4">
+        {otaPrices.entries.map((entry) => (
+          <div key={entry.platform} className="text-xs">
+            <span className="text-[#9ca3af]">{entry.labelZh}</span>
+            <p className="font-medium text-[#374151]">
+              {formatOtaPriceRange(entry.minPrice, entry.maxPrice)}
+            </p>
+          </div>
+        ))}
+      </div>
+      <p className="mt-2 text-[10px] leading-relaxed text-[#b0b0b0]">
+        以上为中国主流OTA平台估算参考价格，实际价格以各平台实时查询为准。携程(Ctrip)、飞猪(Fliggy)、美团酒店、去哪儿提供不同渠道的预订价格。
       </p>
     </div>
   );

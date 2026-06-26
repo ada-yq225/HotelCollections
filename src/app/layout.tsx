@@ -13,8 +13,47 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "H&C · Hotel Collection",
-  description: "高端酒店垂直社区 — 专属记录、分享与社交平台",
+  title: "H&C · Hotel Collection — 高端酒店垂直社区",
+  description:
+    "H&C Hotel Collection 是专为中国高端酒店爱好者打造的垂直社区平台。收录全球奢华酒店白名单，提供携程、飞猪、美团、去哪儿等OTA价格参考，支持酒店打卡、入住点评、房卡收藏。覆盖三亚、马尔代夫、巴厘岛、普吉岛、日本、迪拜等热门目的地。",
+  keywords: [
+    "高端酒店",
+    "奢华酒店",
+    "酒店社区",
+    "酒店打卡",
+    "酒店点评",
+    "酒店价格对比",
+    "携程酒店",
+    "飞猪酒店",
+    "三亚酒店",
+    "马尔代夫酒店",
+    "巴厘岛酒店",
+    "迪拜酒店",
+    "日本酒店",
+    "五星级酒店",
+    "度假酒店",
+    "Hotel Collection",
+    "H&C",
+  ],
+  robots: {
+    index: true,
+    follow: true,
+    "max-image-preview": "large",
+    "max-snippet": -1,
+  },
+  openGraph: {
+    title: "H&C · Hotel Collection — 高端酒店垂直社区",
+    description:
+      "专为中国高端酒店爱好者打造，收录全球奢华酒店白名单，支持OTA价格对比与社区点评。",
+    type: "website",
+    locale: "zh_CN",
+    siteName: "H&C Hotel Collection",
+  },
+  other: {
+    "baidu-site-verification": "请替换为您的百度站点验证码",
+    "sogou_site_verification": "请替换为您的搜狗站点验证码",
+    "360-site-verification": "请替换为您的360站点验证码",
+  },
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {

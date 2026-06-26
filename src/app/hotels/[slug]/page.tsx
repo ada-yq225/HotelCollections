@@ -6,14 +6,30 @@ import { prisma } from "@/lib/prisma";
 import { HotelTravelerRating } from "@/components/hotels/HotelTravelerRating";
 
 import { parseGalleryImages } from "@/lib/hotel-enrichment";
-import { SIGNATURE_GROUPS } from "@/data/destinations";
+import { isGroupTopicSlug } from "@/data/loyalty/group-guides";
 import { HotelProfile } from "@/components/hotels/HotelProfile";
 import { getSuiteLabel } from "@/lib/hotel-pricing";
 import { BrandLogo } from "@/components/hotels/BrandLogo";
+import { ShareButton } from "@/components/hotels/ShareButton";
 import {
   HotelDetailTravel,
   HotelDetailActions,
 } from "@/components/hotels/HotelDetailTravel";
+import { HotelBenefitsSection } from "@/components/loyalty/HotelBenefitsSection";
+import { HotelCredibilityBadges } from "@/components/hotels/HotelCredibilityBadges";
+import { ExperienceTags } from "@/components/hotels/ExperienceTags";
+import { PriceCredibilityPanel } from "@/components/hotels/PriceCredibilityPanel";
+import { HotelPriceComparison } from "@/components/hotels/HotelPriceComparison";
+import { SimilarHotels } from "@/components/hotels/SimilarHotels";
+import { SeasonVisaPanel } from "@/components/hotels/SeasonVisaPanel";
+import { inferExperienceTags } from "@/lib/hotel-experience-tags";
+import { getHotelCredibilityBadges } from "@/lib/hotel-credibility";
+import { getSimilarHotels } from "@/lib/similar-hotels";
+import { HOTEL_ENRICHMENT } from "@/data/hotel-enrichment";
+import { resolveHotelPrices } from "@/lib/hotel-pricing";
+import { FlightHotelNarrative } from "@/components/hotels/FlightHotelNarrative";
+import { HotelBenefitPolicy } from "@/components/loyalty/HotelBenefitPolicy";
+import { HotelPriceAlertButton } from "@/components/hotels/HotelPriceAlertButton";
 
 export default async function HotelDetailPage({
   params,
@@ -24,7 +40,7 @@ export default async function HotelDetailPage({
   const raw = await getHotelBySlug(slug);
   if (!raw || !raw.isActive) notFound();
 
-  const [hotel, communityReviews] = await Promise.all([
+  const [hotel, communityReviews, verifiedStayCount, similarHotels] = await Promise.all([
     ensureHotelEnriched(raw),
     prisma.post.findMany({
       where: { hotelId: raw.id, isPublished: true },
@@ -41,13 +57,44 @@ export default async function HotelDetailPage({
         user: { select: { name: true, isPlus: true } },
       },
     }),
+    prisma.stay.count({ where: { hotelId: raw.id, status: "verified" } }),
+    getSimilarHotels(raw),
   ]);
+
+  const enrichment = HOTEL_ENRICHMENT[hotel.slug];
+  const prices = resolveHotelPrices({
+    slug: hotel.slug,
+    brandSlug: hotel.brand.slug,
+    region: hotel.region,
+    countryCode: hotel.countryCode,
+    cityZh: hotel.cityZh,
+    avgBasePrice: hotel.avgBasePrice ?? undefined,
+    avgSuitePrice: hotel.avgSuitePrice ?? undefined,
+    scrapedBasePrice: enrichment?.avgBasePrice,
+    scrapedSuitePrice: enrichment?.avgSuitePrice,
+    priceSource: enrichment?.priceSource,
+  });
+  const experienceTags = inferExperienceTags({
+    region: hotel.region,
+    countryCode: hotel.countryCode,
+    brandSlug: hotel.brand.slug,
+    city: hotel.city,
+    cityZh: hotel.cityZh,
+  });
+  const credibilityBadges = getHotelCredibilityBadges({
+    slug: hotel.slug,
+    openedYear: hotel.openedYear,
+    enrichedAt: hotel.enrichedAt,
+    heroImage: hotel.heroImage,
+    description: hotel.description,
+    avgBasePrice: prices.avgBasePrice ?? hotel.avgBasePrice,
+    travelerRatingCount: hotel.travelerRatingCount,
+    staysVerified: verifiedStayCount,
+  });
   const galleryImages = parseGalleryImages(hotel.galleryImages);
 
   const groupSlug = hotel.brand.group.slug;
-  const isSignature = SIGNATURE_GROUPS.includes(
-    groupSlug as (typeof SIGNATURE_GROUPS)[number]
-  );
+  const hasGroupTopic = isGroupTopicSlug(groupSlug);
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-10">
@@ -69,12 +116,12 @@ export default async function HotelDetailPage({
               size="md"
             />
             <div className="min-w-0 flex-1">
-              {isSignature ? (
+              {hasGroupTopic ? (
                 <Link
                   href={`/groups/${groupSlug}`}
                   className="text-xs font-medium tracking-wide text-[#b8956b] hover:underline uppercase"
                 >
-                  {hotel.brand.group.nameZh}
+                  {hotel.brand.group.nameZh} · 会籍对照 →
                 </Link>
               ) : (
                 <p className="text-xs font-medium tracking-wide text-[#9ca3af] uppercase">
@@ -85,12 +132,23 @@ export default async function HotelDetailPage({
             </div>
           </div>
 
-          <h1 className="font-serif text-3xl font-semibold leading-tight md:text-4xl">
-            {hotel.nameZh || hotel.name}
-          </h1>
-          {hotel.nameZh && (
-            <p className="mt-2 text-[#6b7280]">{hotel.name}</p>
-          )}
+          <div className="flex items-start justify-between gap-4">
+            <div className="min-w-0 flex-1">
+              <h1 className="font-serif text-3xl font-semibold leading-tight md:text-4xl">
+                {hotel.nameZh || hotel.name}
+              </h1>
+              {hotel.nameZh && (
+                <p className="mt-2 text-[#6b7280]">{hotel.name}</p>
+              )}
+            </div>
+            <ShareButton
+              hotelName={hotel.name}
+              hotelNameZh={hotel.nameZh}
+              hotelCity={hotel.cityZh || hotel.city}
+              hotelSlug={hotel.slug}
+              className="shrink-0"
+            />
+          </div>
 
           <div className="mt-6 flex flex-wrap gap-4 text-sm text-[#6b7280]">
             <span className="flex items-center gap-1.5">
@@ -121,14 +179,21 @@ export default async function HotelDetailPage({
                 name: hotel.name,
                 cityZh: hotel.cityZh,
                 countryCode: hotel.countryCode,
+                region: hotel.region,
                 latitude: hotel.latitude,
                 longitude: hotel.longitude,
               }}
             />
           </div>
+
+          <div className="mt-4 space-y-3">
+            <HotelCredibilityBadges badges={credibilityBadges} />
+            <ExperienceTags tags={experienceTags} />
+          </div>
         </div>
 
-        <div className="p-8">
+        <div className="grid gap-8 p-8 lg:grid-cols-5">
+          <div className="lg:col-span-3">
           <HotelProfile
             slug={hotel.slug}
             nameZh={hotel.nameZh || hotel.name}
@@ -151,8 +216,69 @@ export default async function HotelDetailPage({
             scoreDining={hotel.scoreDining}
             scoreHardware={hotel.scoreHardware}
             hotelId={hotel.id}
+            brandSlug={hotel.brand.slug}
+            cityZh={hotel.cityZh || hotel.city}
             communityReviews={communityReviews}
           />
+
+          <section className="mt-10">
+            <HotelBenefitPolicy
+              brandSlug={hotel.brand.slug}
+              groupSlug={hotel.brand.group.slug}
+              brandNameZh={hotel.brand.nameZh}
+            />
+          </section>
+
+          <section className="mt-10">
+            <FlightHotelNarrative
+              region={hotel.region}
+              hotelName={hotel.nameZh || hotel.name}
+              cityZh={hotel.cityZh || hotel.city}
+            />
+          </section>
+
+          <section className="mt-10">
+            <h2 className="mb-4 font-serif text-xl font-semibold">季节与签证</h2>
+            <SeasonVisaPanel
+              region={hotel.region}
+              countryCode={hotel.countryCode}
+              country={hotel.country}
+            />
+          </section>
+
+          <section className="mt-10">
+            <SimilarHotels hotels={similarHotels} />
+          </section>
+          </div>
+
+          <aside className="space-y-6 lg:col-span-2">
+            <HotelBenefitsSection
+              hotelId={hotel.id}
+              hotelName={hotel.nameZh || hotel.name}
+              groupSlug={hotel.brand.group.slug}
+              groupNameZh={hotel.brand.group.nameZh}
+              brandSlug={hotel.brand.slug}
+              region={hotel.region}
+              countryCode={hotel.countryCode}
+            />
+            <PriceCredibilityPanel
+              slug={hotel.slug}
+              avgBasePrice={prices.avgBasePrice ?? hotel.avgBasePrice}
+              enrichedAt={hotel.enrichedAt}
+            />
+            <HotelPriceComparison
+              slug={hotel.slug}
+              brandSlug={hotel.brand.slug}
+              cityZh={hotel.cityZh || hotel.city}
+              avgBasePrice={prices.avgBasePrice ?? hotel.avgBasePrice}
+              avgSuitePrice={prices.avgSuitePrice ?? hotel.avgSuitePrice}
+            />
+            <HotelPriceAlertButton
+              hotelSlug={hotel.slug}
+              hotelName={hotel.nameZh || hotel.name}
+              currentPrice={prices.avgBasePrice ?? hotel.avgBasePrice}
+            />
+          </aside>
         </div>
 
         <div className="border-t border-[#e8e8e8] px-8 py-6">
@@ -163,6 +289,7 @@ export default async function HotelDetailPage({
               name: hotel.name,
               cityZh: hotel.cityZh,
               countryCode: hotel.countryCode,
+              region: hotel.region,
               latitude: hotel.latitude,
               longitude: hotel.longitude,
             }}

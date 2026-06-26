@@ -39,6 +39,13 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "**.soneva.com" },
       { protocol: "https", hostname: "images.kiwi.com" },
       { protocol: "https", hostname: "upload.wikimedia.org" },
+      { protocol: "https", hostname: "**.etihad.com" },
+      { protocol: "https", hostname: "**.singaporeair.com" },
+      { protocol: "https", hostname: "**.cathaypacific.com" },
+      { protocol: "https", hostname: "**.qatarairways.com" },
+      { protocol: "https", hostname: "**.ana.co.jp" },
+      { protocol: "https", hostname: "**.airfrance.fr" },
+      { protocol: "https", hostname: "c.ekstatic.net" },
     ],
   },
 };

@@ -1,14 +1,11 @@
-import { existsSync } from "fs";
-import { localHotelMediaFile, localHotelMediaPath } from "@/lib/hotel-media-cache";
+/** Client-safe image URL resolution — no Node.js fs */
 
-/** Prefer locally cached same-origin images; proxy other remotes for firewall resilience */
 export function hotelDisplayImageUrl(
   slug: string,
   heroImage: string | null | undefined
 ): string | null {
   if (!heroImage) return null;
-  if (heroImage.startsWith("/hotel-media/")) return heroImage;
-  if (existsSync(localHotelMediaFile(slug))) return localHotelMediaPath(slug);
+  if (heroImage.startsWith("/")) return heroImage;
   return `/api/hotel-image?slug=${encodeURIComponent(slug)}&url=${encodeURIComponent(heroImage)}`;
 }
 

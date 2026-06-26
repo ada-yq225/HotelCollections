@@ -4,15 +4,20 @@ import {
   getAirportByIata,
   type Airport,
 } from "@/data/airports";
-import { getDirectMinutes, ROUTING_HUBS } from "@/data/flight-routes";
+import { getDirectMinutes, getRoutingHubs } from "@/data/flight-routes";
 import {
   flightNumberFor,
   pickCarrierForLeg,
   type AirlineInfo,
 } from "@/data/airlines";
 import {
+  getRoutePremiumHighlights,
+  type PremiumCabinProduct,
+} from "@/data/flight-cabin-products";
+import {
   formatFlightPriceLabel,
-  getFlightOptionPriceCny,
+  getFlightCabinFares,
+  type CabinFareTier,
 } from "@/data/flight-prices";
 
 export type FlightLeg = {
@@ -33,8 +38,11 @@ export type FlightOption = {
   layoverMin?: number;
   hubIata?: string;
   hubZh?: string;
-  priceCny: number;
+  priceCny: number | null;
   priceLabel: string;
+  businessPriceCny: number | null;
+  businessPriceLabel: string;
+  cabinTiers: CabinFareTier[];
 };
 
 export type TravelPlanResult = {
@@ -104,17 +112,24 @@ function buildLeg(
 }
 
 function finalizeOption(
-  option: Omit<FlightOption, "priceCny" | "priceLabel">,
-  dep: Airport,
-  dest: Airport
+  option: Omit<
+    FlightOption,
+    | "priceCny"
+    | "priceLabel"
+    | "businessPriceCny"
+    | "businessPriceLabel"
+    | "cabinTiers"
+  >,
+  _dep: Airport,
+  _dest: Airport
 ): FlightOption {
-  const dist = option.legs.reduce((sum, leg, i) => {
+  const dist = option.legs.reduce((sum, leg) => {
     const fromAp = getAirportByIata(leg.from);
     const toAp = getAirportByIata(leg.to);
     if (!fromAp || !toAp) return sum;
     return sum + haversineKm(fromAp.latitude, fromAp.longitude, toAp.latitude, toAp.longitude);
   }, 0);
-  const priceCny = getFlightOptionPriceCny(
+  const fares = getFlightCabinFares(
     option.legs.map((l) => ({ from: l.from, to: l.to })),
     option.stops,
     dist,
@@ -122,8 +137,11 @@ function finalizeOption(
   );
   return {
     ...option,
-    priceCny,
-    priceLabel: formatFlightPriceLabel(priceCny),
+    priceCny: fares.economy,
+    priceLabel: formatFlightPriceLabel(fares.economy),
+    businessPriceCny: fares.business,
+    businessPriceLabel: formatFlightPriceLabel(fares.business),
+    cabinTiers: fares.tiers,
   };
 }
 
@@ -171,7 +189,12 @@ export function findNearestDepartureAirport(lat: number, lng: number): Airport {
 export function searchFlightsBetweenAirports(
   departureIata: string,
   destinationIata: string
-): { departure: Airport; destination: Airport; flights: FlightOption[] } | null {
+): {
+  departure: Airport;
+  destination: Airport;
+  flights: FlightOption[];
+  premiumHighlights: PremiumCabinProduct[];
+} | null {
   const departure = getAirportByIata(departureIata);
   const destination = getAirportByIata(destinationIata);
   if (!departure || !destination) return null;
@@ -180,6 +203,12 @@ export function searchFlightsBetweenAirports(
     departure,
     destination,
     flights: findFlightOptions(departure, destination),
+    premiumHighlights: getRoutePremiumHighlights(
+      departure.iata,
+      destination.iata,
+      departure.countryCode,
+      destination.countryCode
+    ),
   };
 }
 
@@ -219,7 +248,8 @@ function findFlightOptions(dep: Airport, dest: Airport): FlightOption[] {
   }
 
   const connecting: FlightOption[] = [];
-  for (const hubIata of ROUTING_HUBS) {
+  const routingHubs = getRoutingHubs(dep.countryCode, dest.countryCode);
+  for (const hubIata of routingHubs) {
     if (hubIata === dep.iata || hubIata === dest.iata) continue;
     const hub = getAirportByIata(hubIata);
     if (!hub) continue;

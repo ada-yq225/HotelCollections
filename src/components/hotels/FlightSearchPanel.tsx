@@ -6,6 +6,8 @@ import { ALL_AIRPORTS } from "@/data/airports";
 import { useDepartureAirport } from "@/hooks/useDepartureAirport";
 import { DepartureAirportPicker } from "./DepartureAirportPicker";
 import { FlightOptionCard } from "./FlightOptionCard";
+import { PremiumCabinHighlights } from "@/components/flights/PremiumCabinHighlights";
+import type { PremiumCabinProduct } from "@/data/flight-cabin-products";
 import type { FlightOption } from "@/lib/travel";
 import type { Airport } from "@/data/airports";
 
@@ -34,6 +36,7 @@ export function FlightSearchPanel({ open, onClose }: FlightSearchPanelProps) {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
   const [flights, setFlights] = useState<FlightOption[]>([]);
+  const [premiumHighlights, setPremiumHighlights] = useState<PremiumCabinProduct[]>([]);
   const [destination, setDestination] = useState<Airport | null>(null);
   const [searched, setSearched] = useState(false);
 
@@ -43,6 +46,7 @@ export function FlightSearchPanel({ open, onClose }: FlightSearchPanelProps) {
       setSearched(false);
       setFlights([]);
       setDestination(null);
+      setPremiumHighlights([]);
     }
   }, [open]);
 
@@ -65,9 +69,11 @@ export function FlightSearchPanel({ open, onClose }: FlightSearchPanelProps) {
         if (data.flights) {
           setFlights(data.flights);
           setDestination(data.destination);
+          setPremiumHighlights(data.premiumHighlights ?? []);
         } else {
           setFlights([]);
           setDestination(null);
+          setPremiumHighlights([]);
         }
       } finally {
         setLoading(false);
@@ -199,6 +205,10 @@ export function FlightSearchPanel({ open, onClose }: FlightSearchPanelProps) {
                         {departure.iata} → {destination.iata}
                       </span>
                     </div>
+
+                    {premiumHighlights.length > 0 && (
+                      <PremiumCabinHighlights products={premiumHighlights} />
+                    )}
 
                     {directFlights.length > 0 && (
                       <div>

@@ -90,6 +90,11 @@ export const DIRECT_ROUTE_MINUTES: Record<string, number> = {
   "PVG-JFK": 840,
   "MIA-SXM": 150,
   "JFK-MIA": 165,
+  "PEK-AUH": 540,
+  "PVG-AUH": 570,
+  "HKG-AUH": 510,
+  "AUH-LHR": 420,
+  "AUH-MLE": 270,
   "DXB-PPT": 1020,
   "SIN-PPT": 780,
   // Direct to destinations (less common)
@@ -104,7 +109,25 @@ export const DIRECT_ROUTE_MINUTES: Record<string, number> = {
 };
 
 /** Primary transfer hubs for routing */
-export const ROUTING_HUBS = ["SIN", "HKG", "DXB", "DOH", "BKK", "IST", "NRT", "ICN", "LHR", "CDG"] as const;
+export const ROUTING_HUBS = ["SIN", "HKG", "DXB", "DOH", "AUH", "BKK", "IST", "NRT", "ICN", "LHR", "CDG"] as const;
+
+/** Hubs that make geographic sense for routes involving China */
+export const CHINA_RELEVANT_HUBS: readonly string[] = ["HKG", "SIN", "BKK", "NRT", "ICN"] as const;
+
+/** Pure domestic China routes — no international hubs needed */
+export const CHINA_DOMESTIC_HUBS: readonly string[] = ["HKG"] as const;
+
+/** Check if both airports are in mainland China (domestic route) */
+export function isChinaDomesticRoute(depCountry: string, destCountry: string): boolean {
+  return depCountry === "CN" && destCountry === "CN";
+}
+
+/** Get appropriate hubs for a given route */
+export function getRoutingHubs(depCountry: string, destCountry: string): readonly string[] {
+  if (isChinaDomesticRoute(depCountry, destCountry)) return CHINA_DOMESTIC_HUBS;
+  if (depCountry === "CN" || destCountry === "CN") return CHINA_RELEVANT_HUBS;
+  return ROUTING_HUBS;
+}
 
 export function routeKey(a: string, b: string): string {
   return `${a}-${b}`;

@@ -4,7 +4,7 @@
  */
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { join } from "path";
-import { ALL_HOTELS } from "../src/data/hotels";
+import { ACTIVE_HOTELS } from "../src/data/hotels";
 import { isBadImageUrl } from "../src/lib/hotel-cover-image";
 import { resolveHotelMediaBundle } from "../src/lib/hotel-media-cache";
 
@@ -50,7 +50,7 @@ async function main() {
     ? (JSON.parse(readFileSync(OUT, "utf-8")) as Cache)
     : {};
 
-  let hotels = ALL_HOTELS.filter((h) => h.isActive !== false);
+  let hotels = ACTIVE_HOTELS;
   if (slugFilter) hotels = hotels.filter((h) => h.slug === slugFilter);
   else hotels = hotels.filter((h) => needsEnrich(cache[h.slug], force));
 

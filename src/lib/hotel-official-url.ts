@@ -1,6 +1,8 @@
 import type { HotelEntry } from "@/data/hotels/types";
 import discoveredUrlsData from "@/data/hotel-url-discovered.json";
 import { MARRIOTT_CHINA_HOTEL_URLS } from "@/data/marriott-china-urls";
+import { resolveChinaPrimaryUrl, toChineseLocaleUrl } from "@/lib/china-official-url";
+import { getUserOfficialUrl } from "@/lib/hotel-official-urls-user";
 
 const discoveredUrls = discoveredUrlsData as Record<string, string>;
 
@@ -376,12 +378,31 @@ function ihgBrandUrl(
   hotel: Pick<HotelEntry, "slug" | "name" | "city">
 ): string {
   const city = slugify(hotel.city);
-  return `https://www.ihg.com/${brand}/hotels/us/en/${city}/${hotel.slug}?brandCode=${brand === "intercontinental" ? "IC" : brand === "regent" ? "REG" : "SX"}`;
+  // Use /hoteldetail path — ?brandCode= query param causes redirects/404
+  return `https://www.ihg.com/${brand}/hotels/us/en/${city}/${hotel.slug}/hoteldetail`;
 }
 
 function hiltonPropertyUrl(hotel: Pick<HotelEntry, "slug" | "name">): string {
-  return `https://www.hilton.com/en/hotels/${hotel.slug}/`;
+  const code = HILTON_PROPERTY_CODES[hotel.slug] ?? hotel.slug;
+  return `https://www.hilton.com/en/hotels/${code}/`;
 }
+
+const HILTON_PROPERTY_CODES: Record<string, string> = {
+  "waldorf-astoria-beijing": "bjswawa-waldorf-astoria-beijing",
+  "waldorf-astoria-shanghai": "shawawa-waldorf-astoria-shanghai",
+  "waldorf-astoria-chengdu": "ctuwawa-waldorf-astoria-chengdu",
+  "waldorf-astoria-hangzhou": "hghwawa-waldorf-astoria-hangzhou",
+  "waldorf-astoria-sanya": "syxwawa-waldorf-astoria-sanya",
+  "waldorf-astoria-xiamen": "xmnwawa-waldorf-astoria-xiamen",
+  "conrad-guangzhou": "cancici-conrad-guangzhou",
+  "conrad-shenzhen": "szxcici-conrad-shenzhen",
+  "conrad-hangzhou": "hghcici-conrad-hangzhou",
+  "conrad-sanya": "syxcici-conrad-sanya",
+  "conrad-xiamen": "xmncici-conrad-xiamen",
+  "conrad-hong-kong": "hkgcici-conrad-hong-kong",
+  "conrad-macau": "mfmcici-conrad-macau",
+  "conrad-taipei": "tpecici-conrad-taipei",
+};
 
 function marriottPropertyUrl(hotel: Pick<HotelEntry, "slug" | "name">): string {
   return `https://www.marriott.com/en-us/hotels/${hotel.slug}/overview/`;
@@ -416,13 +437,11 @@ function oberoiUrl(hotel: Pick<HotelEntry, "slug" | "city">): string {
   return `https://www.oberoihotels.com/hotels-in-${slugify(hotel.city)}/${property}/`;
 }
 
-/** Resolve the best-guess official property URL for a hotel */
-export function resolveOfficialUrl(
+function resolveOfficialUrlEn(
   hotel: Pick<HotelEntry, "slug" | "brandSlug" | "name" | "city" | "countryCode" | "country">
 ): string | null {
   if (discoveredUrls[hotel.slug]) return discoveredUrls[hotel.slug];
   if (HOTEL_URL_OVERRIDES[hotel.slug]) return HOTEL_URL_OVERRIDES[hotel.slug];
-  if (MARRIOTT_CHINA_HOTEL_URLS[hotel.slug]) return MARRIOTT_CHINA_HOTEL_URLS[hotel.slug];
 
   if (hotel.slug.startsWith("four-seasons-")) {
     return `https://www.fourseasons.com/${fourSeasonsPath(hotel.slug)}/`;
@@ -537,34 +556,18 @@ export function resolveOfficialUrl(
   return null;
 }
 
+/** Resolve the best-guess official property URL for a hotel */
+export function resolveOfficialUrl(
+  hotel: Pick<HotelEntry, "slug" | "brandSlug" | "name" | "city" | "countryCode" | "country">
+): string | null {
+  const userUrl = getUserOfficialUrl(hotel.slug);
+  if (userUrl) return userUrl;
+  if (MARRIOTT_CHINA_HOTEL_URLS[hotel.slug]) return MARRIOTT_CHINA_HOTEL_URLS[hotel.slug];
+  const enUrl = resolveOfficialUrlEn(hotel);
+  return resolveChinaPrimaryUrl(hotel, enUrl);
+}
+
 /** Chinese locale URL when the brand supports it */
 export function resolveOfficialUrlZh(websiteUrl: string): string | null {
-  if (websiteUrl.includes("mandarinoriental.com/en/")) {
-    return websiteUrl.replace("/en/", "/zh-cn/");
-  }
-  if (websiteUrl.includes("fourseasons.com")) {
-    return websiteUrl.replace("www.fourseasons.com", "www.fourseasons.com/zh/hotels");
-  }
-  if (websiteUrl.includes("aman.com/resorts/")) {
-    return websiteUrl.replace("aman.com/resorts/", "aman.com/zh-cn/resorts/");
-  }
-  if (websiteUrl.includes("hyatt.com")) {
-    return websiteUrl.replace("/en-US/", "/zh-CN/");
-  }
-  if (websiteUrl.includes("shangri-la.com") && !websiteUrl.includes("/cn/")) {
-    return websiteUrl.replace("www.shangri-la.com/", "www.shangri-la.com/cn/");
-  }
-  if (websiteUrl.includes("marriott.com/en-us/")) {
-    return websiteUrl.replace("/en-us/", "/zh-cn/");
-  }
-  if (websiteUrl.includes("ritzcarlton.com")) {
-    return null;
-  }
-  if (websiteUrl.includes("peninsula.com/en/")) {
-    return websiteUrl.replace("/en/", "/zh-cn/");
-  }
-  if (websiteUrl.includes("rosewoodhotels.com/en/")) {
-    return websiteUrl.replace("/en/", "/zh-hans/");
-  }
-  return null;
+  return toChineseLocaleUrl(websiteUrl);
 }

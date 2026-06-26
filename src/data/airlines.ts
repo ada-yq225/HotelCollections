@@ -50,6 +50,7 @@ const ROUTE_CARRIER_HINTS: Record<string, string[]> = {
   SG: ["SQ", "CX"],
   TH: ["TG", "SQ"],
   AE: ["EK", "EY"],
+  AUH: ["EY", "EK"],
   QA: ["QR"],
   JP: ["NH", "JL"],
   KR: ["KE", "OZ"],

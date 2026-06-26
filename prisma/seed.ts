@@ -2,6 +2,7 @@ import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcryptjs";
 import { GROUPS, ALLIANCES, BRANDS } from "../src/data/meta";
 import { ALL_HOTELS } from "../src/data/hotels";
+import { isHotelListed } from "../src/lib/hotel-visibility";
 import { BADGES } from "../src/data/badges";
 import { HOTEL_ENRICHMENT } from "../src/data/hotel-enrichment";
 import { resolveOfficialUrl } from "../src/lib/hotel-official-url";
@@ -17,6 +18,8 @@ const PLACEHOLDER_KEYCARD =
 async function main() {
   console.log("Seeding Hotel Collection database...");
 
+  await prisma.priceAlert.deleteMany();
+  await prisma.userLoyaltyStatus.deleteMany();
   await prisma.bookingInquiry.deleteMany();
   await prisma.keycardOffer.deleteMany();
   await prisma.keycard.deleteMany();
@@ -143,7 +146,7 @@ async function main() {
         scoreService: ratings.scoreService,
         scoreDining: ratings.scoreDining,
         scoreHardware: ratings.scoreHardware,
-        isActive: h.isActive !== false,
+        isActive: isHotelListed(h),
       },
     });
     hotelIdBySlug.set(h.slug, created.id);
@@ -290,6 +293,27 @@ $200 买 4 张大使周末礼券是否值？
     keycardCount++;
   }
   console.log(`  Keycards: ${keycardCount}`);
+
+  await prisma.userLoyaltyStatus.createMany({
+    data: [
+      {
+        userId: demoUser.id,
+        programSlug: "marriott-bonvoy",
+        tierSlug: "platinum",
+        nightsYTD: 32,
+        channelSlugs: JSON.stringify(["luminous", "virtuoso"]),
+      },
+      {
+        userId: demoUser.id,
+        programSlug: "world-of-hyatt",
+        tierSlug: "globalist",
+        nightsYTD: 18,
+        channelSlugs: JSON.stringify(["stars"]),
+      },
+    ],
+  });
+  console.log("  Loyalty statuses: 2");
+
   console.log(`  Demo user: demo@hc.com / demo123`);
   console.log("Seed complete.");
 }
