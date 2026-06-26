@@ -44,29 +44,48 @@ function hasImage(slug: string, cache: Record<string, { heroImage?: string; gall
   return (e.galleryImages ?? []).some((u) => !isBadImageUrl(u));
 }
 
-async function ddgSearch(query: string): Promise<string[]> {
-  const body = new URLSearchParams({ q: query });
-  const res = await fetch("https://html.duckduckgo.com/html/", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/122",
-    },
-    body: body.toString(),
-    signal: AbortSignal.timeout(15000),
-  });
-  if (!res.ok) return [];
-  const html = await res.text();
-  const urls: string[] = [];
-  for (const m of html.matchAll(/uddg=([^&"']+)/g)) {
+async function ddgSearch(query: string, retries = 3): Promise<string[]> {
+  for (let attempt = 1; attempt <= retries; attempt++) {
     try {
-      const decoded = decodeURIComponent(m[1]);
-      if (decoded.startsWith("http")) urls.push(decoded.split("&")[0]);
-    } catch {
-      /* skip */
+      const body = new URLSearchParams({ q: query });
+      const res = await fetch("https://html.duckduckgo.com/html/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/122",
+        },
+        body: body.toString(),
+        signal: AbortSignal.timeout(20000),
+      });
+      if (!res.ok) {
+        if (attempt < retries) {
+          await sleep(2000 * attempt);
+          continue;
+        }
+        return [];
+      }
+      const html = await res.text();
+      const urls: string[] = [];
+      for (const m of html.matchAll(/uddg=([^&"']+)/g)) {
+        try {
+          const decoded = decodeURIComponent(m[1]);
+          if (decoded.startsWith("http")) urls.push(decoded.split("&")[0]);
+        } catch {
+          /* skip */
+        }
+      }
+      return [...new Set(urls)];
+    } catch (err) {
+      if (attempt < retries) {
+        await sleep(2000 * attempt);
+        continue;
+      }
+      const msg = err instanceof Error ? err.message : String(err);
+      console.log(`[ddg error: ${msg}]`);
+      return [];
     }
   }
-  return [...new Set(urls)];
+  return [];
 }
 
 function pickUrl(urls: string[], domain: string, slug: string): string | null {
@@ -86,6 +105,9 @@ function pickUrl(urls: string[], domain: string, slug: string): string | null {
 }
 
 async function main() {
+  const limitArg = process.argv.find((a) => a.startsWith("--limit="));
+  const limit = limitArg ? parseInt(limitArg.split("=")[1], 10) : Infinity;
+
   const cache = existsSync(CACHE)
     ? (JSON.parse(readFileSync(CACHE, "utf8")) as Record<string, { heroImage?: string; galleryImages?: string[] }>)
     : {};
@@ -95,7 +117,7 @@ async function main() {
 
   const targets = ALL_HOTELS.filter(
     (h) => h.isActive !== false && !hasImage(h.slug, cache) && DOMAIN_HINTS[h.brandSlug]
-  );
+  ).slice(0, Number.isFinite(limit) ? limit : undefined);
 
   console.log(`Discovering URLs for ${targets.length} hotels without images...`);
 
@@ -119,4 +141,7 @@ async function main() {
   console.log(`\nSaved ${Object.keys(discovered).length} discovered URLs`);
 }
 
-main().catch(console.error);
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

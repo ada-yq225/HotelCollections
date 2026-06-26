@@ -1,4 +1,6 @@
 import { resolveOfficialUrl, resolveOfficialUrlZh } from "@/lib/hotel-official-url";
+import { resolveUrlCandidates } from "@/lib/hotel-url-candidates";
+import { fetchWikipediaHotelImage } from "@/lib/hotel-image-fallback";
 import {
   absolutizeImageUrl,
   filterGalleryImages,
@@ -260,6 +262,21 @@ function parseHtml(html: string, baseUrl: string): Omit<HotelEnrichment, "websit
   };
 }
 
+async function enrichFromUrl(
+  hotel: Pick<HotelEntry, "slug" | "brandSlug" | "name" | "city" | "country" | "countryCode">,
+  websiteUrl: string
+): Promise<{
+  parsed: ReturnType<typeof parseHtml>;
+  supplemental: string[];
+  websiteUrl: string;
+} | null> {
+  const html = await fetchHtml(websiteUrl);
+  if (!html) return null;
+  const parsed = parseHtml(html, websiteUrl);
+  const supplemental = await fetchSupplementalImages(hotel.brandSlug, websiteUrl);
+  return { parsed, supplemental, websiteUrl };
+}
+
 /** Fetch official site content for a hotel entry */
 export async function enrichHotelFromWeb(
   hotel: Pick<
@@ -267,21 +284,48 @@ export async function enrichHotelFromWeb(
     "slug" | "brandSlug" | "name" | "city" | "country" | "countryCode" | "websiteUrl"
   >
 ): Promise<HotelEnrichment | null> {
-  const websiteUrl = hotel.websiteUrl ?? resolveOfficialUrl(hotel);
-  if (!websiteUrl) return null;
+  const candidates = hotel.websiteUrl
+    ? [hotel.websiteUrl, ...resolveUrlCandidates(hotel).filter((u) => u !== hotel.websiteUrl)]
+    : resolveUrlCandidates(hotel);
 
-  const html = await fetchHtml(websiteUrl);
-  if (!html) return null;
+  if (candidates.length === 0) return null;
 
-  const parsed = parseHtml(html, websiteUrl);
-  const supplemental = await fetchSupplementalImages(hotel.brandSlug, websiteUrl);
+  let best: {
+    websiteUrl: string;
+    parsed: ReturnType<typeof parseHtml>;
+    supplemental: string[];
+    imageCount: number;
+  } | null = null;
 
+  for (const url of candidates.slice(0, 4)) {
+    const result = await enrichFromUrl(hotel, url);
+    if (!result) continue;
+    const imgs = filterGalleryImages([
+      ...(result.parsed.heroImage ? [result.parsed.heroImage] : []),
+      ...result.parsed.galleryImages,
+      ...result.supplemental,
+    ]);
+    const score = imgs.length + (result.parsed.description ? 1 : 0) + (result.parsed.scrapedBasePrice ? 2 : 0);
+    if (!best || score > best.imageCount) {
+      best = { websiteUrl: url, parsed: result.parsed, supplemental: result.supplemental, imageCount: score };
+    }
+    if (imgs.length >= 2) break;
+  }
+
+  if (!best) return null;
+
+  const { websiteUrl, parsed, supplemental } = best;
   const allImages = filterGalleryImages([
     ...(parsed.heroImage ? [parsed.heroImage] : []),
     ...parsed.galleryImages,
     ...supplemental,
   ]);
-  const heroImage = pickBestImage(allImages) ?? allImages[0];
+
+  let heroImage = pickBestImage(allImages) ?? allImages[0];
+  if (!heroImage) {
+    const wikiImage = await fetchWikipediaHotelImage(hotel.name, hotel.city);
+    if (wikiImage) heroImage = wikiImage;
+  }
 
   let descriptionZh: string | undefined;
   const zhUrl = resolveOfficialUrlZh(websiteUrl);

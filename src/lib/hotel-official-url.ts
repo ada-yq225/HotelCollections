@@ -312,13 +312,12 @@ function hyattHotelUrl(
 
 function fairmontUrl(hotel: Pick<HotelEntry, "slug" | "city">): string {
   const property = hotel.slug.replace(/^fairmont-/, "");
-  const region = slugify(hotel.city);
-  return `https://www.fairmont.com/en/hotels/${region}/${property}.html`;
+  return `https://www.fairmont.com/${property}/`;
 }
 
 function rafflesUrl(hotel: Pick<HotelEntry, "slug" | "city">): string {
-  const city = slugify(hotel.city);
-  return `https://www.raffles.com/${city}/`;
+  const property = hotel.slug.replace(/^raffles-/, "");
+  return `https://www.raffles.com/${property}/`;
 }
 
 function sofitelLegendUrl(
@@ -414,10 +413,7 @@ export function resolveOfficialUrl(
     const loc = hotel.slug.replace(/^(como-|trisara-)/, "");
     return `https://www.comohotels.com/${loc.replace(/-/g, "/")}`;
   }
-  if (hotel.brandSlug === "ritz-carlton" || hotel.brandSlug === "ritz-carlton-reserve") {
-    const loc = hotel.slug.replace(/^ritz-carlton-/, "").replace(/-reserve$/, "");
-    return `https://www.ritzcarlton.com/en/hotels/${loc}`;
-  }
+
   if (hotel.brandSlug === "st-regis" || hotel.brandSlug === "jw-marriott" || hotel.brandSlug === "w-hotels" || hotel.brandSlug === "edition" || hotel.brandSlug === "luxury-collection") {
     return marriottPropertyUrl(hotel);
   }

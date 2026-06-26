@@ -53,11 +53,31 @@
   },
   "mandarin-oriental-chengdu": {
     "websiteUrl": "https://www.mandarinoriental.com/en/chengdu/taikoo-li",
-    "galleryImages": []
+    "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+    "galleryImages": [
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/cgQHJy2x5kZHt9TQ324s.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/BE9nDVxSr1AimkcQPstC.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jC6JRdgmvuxLqhKedvmy.png",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/sSRRuX5HHYLBGmTdtFFj.jpg"
+    ]
   },
   "mandarin-oriental-sanya": {
     "websiteUrl": "https://www.mandarinoriental.com/en/sanya/sanya",
-    "galleryImages": []
+    "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+    "galleryImages": [
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/cgQHJy2x5kZHt9TQ324s.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/BE9nDVxSr1AimkcQPstC.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jC6JRdgmvuxLqhKedvmy.png",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/sSRRuX5HHYLBGmTdtFFj.jpg"
+    ]
   },
   "mandarin-oriental-hong-kong": {
     "websiteUrl": "https://www.mandarinoriental.com/en/hong-kong/victoria-harbour",
@@ -87,7 +107,17 @@
   },
   "mandarin-oriental-taipei": {
     "websiteUrl": "https://www.mandarinoriental.com/en/taipei/taipei",
-    "galleryImages": []
+    "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+    "galleryImages": [
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/cgQHJy2x5kZHt9TQ324s.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/BE9nDVxSr1AimkcQPstC.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jC6JRdgmvuxLqhKedvmy.png",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/sSRRuX5HHYLBGmTdtFFj.jpg"
+    ]
   },
   "mandarin-oriental-tokyo": {
     "websiteUrl": "https://www.mandarinoriental.com/en/tokyo/nihonbashi",
@@ -130,7 +160,17 @@
   },
   "mandarin-oriental-kuala-lumpur": {
     "websiteUrl": "https://www.mandarinoriental.com/en/kuala-lumpur/kuala-lumpur",
-    "galleryImages": []
+    "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+    "galleryImages": [
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/cgQHJy2x5kZHt9TQ324s.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/BE9nDVxSr1AimkcQPstC.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jC6JRdgmvuxLqhKedvmy.png",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/sSRRuX5HHYLBGmTdtFFj.jpg"
+    ]
   },
   "mandarin-oriental-london": {
     "websiteUrl": "https://www.mandarinoriental.com/en/london/hyde-park",
@@ -199,7 +239,17 @@
   },
   "mandarin-oriental-madrid": {
     "websiteUrl": "https://www.mandarinoriental.com/en/madrid/hotel-ritz-madrid",
-    "galleryImages": []
+    "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+    "galleryImages": [
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/cgQHJy2x5kZHt9TQ324s.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/BE9nDVxSr1AimkcQPstC.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jC6JRdgmvuxLqhKedvmy.png",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/sSRRuX5HHYLBGmTdtFFj.jpg"
+    ]
   },
   "mandarin-oriental-munich": {
     "websiteUrl": "https://www.mandarinoriental.com/en/munich/altstadt",
@@ -216,11 +266,31 @@
   },
   "mandarin-oriental-bodrum": {
     "websiteUrl": "https://www.mandarinoriental.com/en/bodrum/bodrum",
-    "galleryImages": []
+    "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+    "galleryImages": [
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/cgQHJy2x5kZHt9TQ324s.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/BE9nDVxSr1AimkcQPstC.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jC6JRdgmvuxLqhKedvmy.png",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/sSRRuX5HHYLBGmTdtFFj.jpg"
+    ]
   },
   "mandarin-oriental-prague": {
     "websiteUrl": "https://www.mandarinoriental.com/en/prague/prague",
-    "galleryImages": []
+    "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+    "galleryImages": [
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/cgQHJy2x5kZHt9TQ324s.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/BE9nDVxSr1AimkcQPstC.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jC6JRdgmvuxLqhKedvmy.png",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/sSRRuX5HHYLBGmTdtFFj.jpg"
+    ]
   },
   "mandarin-oriental-new-york": {
     "websiteUrl": "https://www.mandarinoriental.com/en/new-york/manhattan",
@@ -237,11 +307,31 @@
   },
   "mandarin-oriental-boston": {
     "websiteUrl": "https://www.mandarinoriental.com/en/boston/boston",
-    "galleryImages": []
+    "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+    "galleryImages": [
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/cgQHJy2x5kZHt9TQ324s.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/BE9nDVxSr1AimkcQPstC.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jC6JRdgmvuxLqhKedvmy.png",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/sSRRuX5HHYLBGmTdtFFj.jpg"
+    ]
   },
   "mandarin-oriental-mexico-city": {
     "websiteUrl": "https://www.mandarinoriental.com/en/mexico-city/polanco",
-    "galleryImages": []
+    "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+    "galleryImages": [
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/cgQHJy2x5kZHt9TQ324s.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/BE9nDVxSr1AimkcQPstC.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jC6JRdgmvuxLqhKedvmy.png",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/sSRRuX5HHYLBGmTdtFFj.jpg"
+    ]
   },
   "mandarin-oriental-dubai": {
     "websiteUrl": "https://www.mandarinoriental.com/en/dubai/jumeira",
@@ -284,23 +374,73 @@
   },
   "mandarin-oriental-marrakech": {
     "websiteUrl": "https://www.mandarinoriental.com/en/marrakech/marrakech",
-    "galleryImages": []
+    "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+    "galleryImages": [
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/cgQHJy2x5kZHt9TQ324s.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/BE9nDVxSr1AimkcQPstC.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jC6JRdgmvuxLqhKedvmy.png",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/sSRRuX5HHYLBGmTdtFFj.jpg"
+    ]
   },
   "mandarin-oriental-maldives": {
     "websiteUrl": "https://www.mandarinoriental.com/en/maldives/fari-islands",
-    "galleryImages": []
+    "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+    "galleryImages": [
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/cgQHJy2x5kZHt9TQ324s.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/BE9nDVxSr1AimkcQPstC.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jC6JRdgmvuxLqhKedvmy.png",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/sSRRuX5HHYLBGmTdtFFj.jpg"
+    ]
   },
   "mandarin-oriental-lake-como": {
     "websiteUrl": "https://www.mandarinoriental.com/en/lake-como/lake-como",
-    "galleryImages": []
+    "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+    "galleryImages": [
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/cgQHJy2x5kZHt9TQ324s.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/BE9nDVxSr1AimkcQPstC.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jC6JRdgmvuxLqhKedvmy.png",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/sSRRuX5HHYLBGmTdtFFj.jpg"
+    ]
   },
   "mandarin-oriental-jakarta": {
     "websiteUrl": "https://www.mandarinoriental.com/en/jakarta/jakarta",
-    "galleryImages": []
+    "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+    "galleryImages": [
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/cgQHJy2x5kZHt9TQ324s.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/BE9nDVxSr1AimkcQPstC.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jC6JRdgmvuxLqhKedvmy.png",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/sSRRuX5HHYLBGmTdtFFj.jpg"
+    ]
   },
   "mandarin-oriental-geneva": {
     "websiteUrl": "https://www.mandarinoriental.com/en/geneva/geneva",
-    "galleryImages": []
+    "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+    "galleryImages": [
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/cgQHJy2x5kZHt9TQ324s.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/BE9nDVxSr1AimkcQPstC.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jC6JRdgmvuxLqhKedvmy.png",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/sSRRuX5HHYLBGmTdtFFj.jpg"
+    ]
   },
   "mandarin-oriental-zurich": {
     "websiteUrl": "https://www.mandarinoriental.com/en/zurich/savoy",
@@ -317,7 +457,17 @@
   },
   "mandarin-oriental-vienna": {
     "websiteUrl": "https://www.mandarinoriental.com/en/vienna/vienna",
-    "galleryImages": []
+    "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+    "galleryImages": [
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/cgQHJy2x5kZHt9TQ324s.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/BE9nDVxSr1AimkcQPstC.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jC6JRdgmvuxLqhKedvmy.png",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/sSRRuX5HHYLBGmTdtFFj.jpg"
+    ]
   },
   "mandarin-oriental-amsterdam": {
     "websiteUrl": "https://www.mandarinoriental.com/en/amsterdam/conservatorium",
@@ -399,7 +549,17 @@
   },
   "mandarin-oriental-costa-navarino": {
     "websiteUrl": "https://www.mandarinoriental.com/en/costa-navarino/costa-navarino",
-    "galleryImages": []
+    "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+    "galleryImages": [
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/cgQHJy2x5kZHt9TQ324s.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/BE9nDVxSr1AimkcQPstC.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jC6JRdgmvuxLqhKedvmy.png",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/sSRRuX5HHYLBGmTdtFFj.jpg"
+    ]
   },
   "mandarin-oriental-beijing-qianmen": {
     "websiteUrl": "https://www.mandarinoriental.com/en/beijing/qianmen",
@@ -429,15 +589,45 @@
   },
   "mandarin-oriental-desaru-coast": {
     "websiteUrl": "https://www.mandarinoriental.com/en/desaru-coast/desaru-coast",
-    "galleryImages": []
+    "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+    "galleryImages": [
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/cgQHJy2x5kZHt9TQ324s.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/BE9nDVxSr1AimkcQPstC.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jC6JRdgmvuxLqhKedvmy.png",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/sSRRuX5HHYLBGmTdtFFj.jpg"
+    ]
   },
   "mandarin-oriental-canouan": {
     "websiteUrl": "https://www.mandarinoriental.com/en/canouan/canouan",
-    "galleryImages": []
+    "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+    "galleryImages": [
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/cgQHJy2x5kZHt9TQ324s.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/BE9nDVxSr1AimkcQPstC.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jC6JRdgmvuxLqhKedvmy.png",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/sSRRuX5HHYLBGmTdtFFj.jpg"
+    ]
   },
   "mandarin-oriental-santiago": {
     "websiteUrl": "https://www.mandarinoriental.com/en/santiago/santiago",
-    "galleryImages": []
+    "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+    "galleryImages": [
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/cgQHJy2x5kZHt9TQ324s.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/BE9nDVxSr1AimkcQPstC.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jC6JRdgmvuxLqhKedvmy.png",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/sSRRuX5HHYLBGmTdtFFj.jpg"
+    ]
   },
   "mandarin-oriental-dubai-downtown": {
     "websiteUrl": "https://www.mandarinoriental.com/en/dubai/downtown",
@@ -454,11 +644,31 @@
   },
   "mandarin-oriental-muscat": {
     "websiteUrl": "https://www.mandarinoriental.com/en/muscat/muscat",
-    "galleryImages": []
+    "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+    "galleryImages": [
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/cgQHJy2x5kZHt9TQ324s.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/BE9nDVxSr1AimkcQPstC.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jC6JRdgmvuxLqhKedvmy.png",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/sSRRuX5HHYLBGmTdtFFj.jpg"
+    ]
   },
   "mandarin-oriental-riyadh": {
     "websiteUrl": "https://www.mandarinoriental.com/en/riyadh/al-faisaliah",
-    "galleryImages": []
+    "heroImage": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+    "galleryImages": [
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Szq8MMmpoLyEYsaL5xyL.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jEfHfvZ8R8EzFXUDwQG1.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/kU3FVVpZkr2EKDiGY7f6.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/WbuCMWKD3UGZ6mfVyXh3.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/cgQHJy2x5kZHt9TQ324s.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/BE9nDVxSr1AimkcQPstC.jpg",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/jC6JRdgmvuxLqhKedvmy.png",
+      "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/sSRRuX5HHYLBGmTdtFFj.jpg"
+    ]
   },
   "cheval-blanc-randheli": {
     "websiteUrl": "https://www.chevalblanc.com/en/maison/randheli",
@@ -3647,16 +3857,16 @@
   },
   "cape-grace-cape-town": {
     "websiteUrl": "https://www.fairmont.com/cape-grace-cape-town/",
-    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
+    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a113-39:16by9",
     "galleryImages": [
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5918-26:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7105-51:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_5572268:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a106-39:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6986-46:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a058-62:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5982-02:1by1"
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a113-39:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/2511_acf_609-1:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_1833747:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a110-57:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a018-86:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a006-80:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5984-59:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6011-53:16by9"
     ]
   },
   "belmond-mount-nelson-cape-town": {
@@ -4549,17 +4759,18 @@
     "websiteUrl": "https://www.sofitel-legend.com/en/china/xian/sofitel-xian/"
   },
   "fairmont-wuhan": {
-    "websiteUrl": "https://www.fairmont.com/en/hotels/wuhan/wuhan.html",
-    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
+    "websiteUrl": "https://www.fairmont.com/wuhan/",
+    "description": "Ideally situated in the CBD area, Fairmont Wuhan is within easy access to the city’s business, cultural, entertainment, and shopping districts, just five minutes’ drive from Hankou Train Station. Enjoy an extraordinary experience right in the city center with an offering of 318 luxurious guest rooms and suites, three distinctive restaurants and one bar, 2,008 m² of prime meeting space and award winning Fairmont Spa.",
+    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/aja_p_5715-51:16by9",
     "galleryImages": [
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5918-26:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7105-51:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_5572268:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a106-39:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6986-46:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a058-62:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5982-02:1by1"
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5715-51:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5715-54:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5715-59:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5555-22:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5715-30:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5715-48:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5715-46:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5715-37:16by9"
     ]
   },
   "niccolo-chongqing": {
@@ -4798,73 +5009,77 @@
     ]
   },
   "fairmont-peace-hotel-shanghai": {
-    "websiteUrl": "https://www.fairmont.com/en/hotels/shanghai/peace-hotel-shanghai.html",
-    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
+    "websiteUrl": "https://www.fairmont.com/peace-hotel-shanghai/",
+    "description": "The Fairmont Peace Hotel is a historic hotel on the Bund. It is a short walk from Nanjing Road for shopping and close to metro stations. Hongqiao and Pudong airports and the high-speed train station are 30 to 45 minutes away. Guests can enjoy French food at The Cathay Room or Shanghainese delights at Dragon Phoenix. Nightly performances by our historic jazz band. Take advantage of Fairmont Gold Lounge privileges and relax at the Willow Stream SPA. The perfect fusion of heritage and modern elegance.",
+    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/HCM_P_9247335",
     "galleryImages": [
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5918-26:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7105-51:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_5572268:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a106-39:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6986-46:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a058-62:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5982-02:1by1"
+      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_9247335",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6134-25:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6132-01:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6132-78:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_9671706:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_2510062:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_3716781:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_2779738:16by9"
     ]
   },
   "fairmont-beijing": {
-    "websiteUrl": "https://www.fairmont.com/en/hotels/beijing/beijing.html",
-    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
+    "websiteUrl": "https://www.fairmont.com/beijing/",
+    "description": "Fairmont Beijing is located in the heart of Beijing Central Business District (CBD), featuring 220 exquisitely designed guest rooms and suites, only 10 mins by car to the Forbidden City, 3 mins walk to subway station. Customized Fairmont Gold benefits and multi-function rooms create an immersive luxury experience. Savor a gourmet feast at award-winning specialty restaurants, unwind in the art-infused fitness center or take in sweeping city views from the panoramic indoor pool - your urban retreat awaits.",
+    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/aja_p_5804-75:16by9",
     "galleryImages": [
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5918-26:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7105-51:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_5572268:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a106-39:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6986-46:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a058-62:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5982-02:1by1"
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5804-75:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5804-78:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5804-87:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5804-65:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5804-70:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5804-73:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5827-08:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5827-12:16by9"
     ]
   },
   "fairmont-chengdu": {
-    "websiteUrl": "https://www.fairmont.com/en/hotels/chengdu/chengdu.html",
-    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
+    "websiteUrl": "https://www.fairmont.com/chengdu/",
+    "description": "Fairmont Chengdu, with a legacy of luxury that endures to this day, is rooted in modern design with the flowing landscape and Shu embroidery. The hotel is ideally situated in the core of Chengdu South, emerging world-class shopping and leisure district including SKP and Global Center, both are settled just one metro stop away. It only takes 37 minutes to Chengdu Tianfu International Airport by metro line No.18 starting from the doorstep of the hotel.",
+    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/aja_p_6119-29:16by9",
     "galleryImages": [
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5918-26:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7105-51:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_5572268:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a106-39:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6986-46:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a058-62:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5982-02:1by1"
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6119-29:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6119-34:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5351-10:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5711-61:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5711-33:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6138-90:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6119-08:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6119-06:16by9"
     ]
   },
   "fairmont-nanjing": {
-    "websiteUrl": "https://www.fairmont.com/en/hotels/nanjing/nanjing.html",
-    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
+    "websiteUrl": "https://www.fairmont.com/nanjing/",
+    "description": "Snow-capped mountains and star-studded skies. Sweeping beaches with infinite views. Urban escapes that spark adventure. Wherever you travel with us across the globe, you'll experience awe-inspiring settings and memorable moments. At Fairmont, true luxury is inclusive.",
+    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a113-39:16by9",
     "galleryImages": [
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5918-26:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7105-51:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_5572268:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a106-39:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6986-46:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a058-62:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5982-02:1by1"
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a113-39:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/2511_acf_609-1:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_1833747:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a110-57:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a018-86:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a006-80:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5984-59:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6011-53:16by9"
     ]
   },
   "fairmont-sanya": {
-    "websiteUrl": "https://www.fairmont.com/en/hotels/sanya/sanya.html",
-    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
+    "websiteUrl": "https://www.fairmont.com/sanya/",
+    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a113-39:16by9",
     "galleryImages": [
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5918-26:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7105-51:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_5572268:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a106-39:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6986-46:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a058-62:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5982-02:1by1"
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a113-39:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/2511_acf_609-1:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_1833747:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a110-57:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a018-86:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a006-80:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5984-59:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6011-53:16by9"
     ]
   },
   "sofitel-legend-nanjing": {
@@ -5210,18 +5425,22 @@
     "websiteUrl": "https://www.hilton.com/en/hotels/montage-laguna-beach/"
   },
   "fairmont-san-francisco": {
-    "websiteUrl": "https://www.fairmont.com/en/hotels/san-francisco/san-francisco.html",
-    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
+    "websiteUrl": "https://www.fairmont.com/san-francisco/",
+    "description": "Fairmont San Francisco is one of the city's most legendary luxury hotels, renowned for its exceptional elegance and impeccable, heartfelt service for over a century. Panoramic views of the city and the bay from atop Nob Hill, two iconic restaurants and 606 elegantly furnished guest rooms, including 62 lavish suites, combine to offer an unforgettable experience. The hotel has hosted countless historic functions over the decades, and its 22 stately event rooms are an opulent setting for any occasion.",
+    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/aja_p_5705-81:16by9",
     "galleryImages": [
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5918-26:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7105-51:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_5572268:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a106-39:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6986-46:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a058-62:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5982-02:1by1"
-    ]
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5705-81:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a018-16:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6975-66:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a018-28:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5704-04:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5705-96:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5704-87:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a018-65:16by9"
+    ],
+    "avgBasePrice": 606,
+    "avgSuitePrice": 1333,
+    "priceSource": "scraped"
   },
   "proper-san-francisco": {
     "websiteUrl": "https://www.properhotel.com/san-francisco/",
@@ -5280,18 +5499,22 @@
     "websiteUrl": "https://www.hyatt.com/en-US/hotel/united-states/chicago/park-hyatt-chicago"
   },
   "fairmont-copley-plaza": {
-    "websiteUrl": "https://www.fairmont.com/en/hotels/boston/copley-plaza.html",
-    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
+    "websiteUrl": "https://www.fairmont.com/copley-plaza/",
+    "description": "Fairmont Copley Plaza is a luxury downtown Boston landmark hotel that has been a symbol of the city's rich history and elegance since its gala opening in 1912. Centrally located the hotel is just steps away from area attractions, restaurants and shops. Savor fine seasonal cuisine and signature craft cocktails at our award-winning American brasserie, OAK Long Bar + Kitchen, host an event for 1,100 guests in the Grand Ballroom or be inspired by city panoramas in the rooftop fitness center.",
+    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/aja_p_7105-52",
     "galleryImages": [
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5918-26:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7105-51:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_5572268:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a106-39:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6986-46:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a058-62:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5982-02:1by1"
-    ]
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7105-52",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6189-43:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6189-42:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6189-47:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5935-67:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7105-52:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5935-72:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7105-68:16by9"
+    ],
+    "avgBasePrice": 750,
+    "avgSuitePrice": 1650,
+    "priceSource": "scraped"
   },
   "jefferson-washington-dc": {
     "websiteUrl": "https://www.jeffersondc.com/",
@@ -5347,45 +5570,46 @@
     ]
   },
   "fairmont-banff-springs": {
-    "websiteUrl": "https://www.fairmont.com/en/hotels/banff/banff-springs.html",
-    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
+    "websiteUrl": "https://www.fairmont.com/banff-springs/",
+    "description": "Located in the heart of Banff National Park, a UNESCO World Heritage Site, the historic Fairmont Banff Springs stands as landmark in the picturesque alpine town of Banff, Alberta. Canada's - Castle in the Rockies - has been providing legendary hospitality for more than 125 years. This year-round luxury mountain resort offers a championship golf course during the summer, unparalleled skiing in the winter, the European-style Fairmont Spa, authentically local dining experiences and breathtaking views.",
+    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/aja_p_6630-31:16by9",
     "galleryImages": [
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5918-26:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7105-51:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_5572268:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a106-39:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6986-46:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a058-62:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5982-02:1by1"
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6630-31:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6630-34:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6630-19:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6630-16:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/4829-05:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5726-07:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6630-01:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_7841877:16by9"
     ]
   },
   "fairmont-chateau-lake-louise": {
-    "websiteUrl": "https://www.fairmont.com/en/hotels/lake-louise/chateau-lake-louise.html",
-    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
+    "websiteUrl": "https://www.fairmont.com/chateau-lake-louise/",
+    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a113-39:16by9",
     "galleryImages": [
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5918-26:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7105-51:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_5572268:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a106-39:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6986-46:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a058-62:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5982-02:1by1"
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a113-39:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/2511_acf_609-1:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_1833747:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a110-57:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a018-86:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a006-80:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5984-59:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6011-53:16by9"
     ]
   },
   "fairmont-pacific-rim": {
-    "websiteUrl": "https://www.fairmont.com/en/hotels/vancouver/pacific-rim.html",
-    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
+    "websiteUrl": "https://www.fairmont.com/pacific-rim/",
+    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a113-39:16by9",
     "galleryImages": [
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5918-26:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7105-51:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_5572268:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a106-39:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6986-46:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a058-62:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5982-02:1by1"
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a113-39:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/2511_acf_609-1:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_1833747:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a110-57:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a018-86:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a006-80:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5984-59:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6011-53:16by9"
     ]
   },
   "alvear-palace-buenos-aires": {
@@ -5545,17 +5769,17 @@
     "websiteUrl": "https://www.oberoihotels.com/hotels-in-marrakech/marrakech/"
   },
   "fairmont-la-marina-rabat": {
-    "websiteUrl": "https://www.fairmont.com/en/hotels/rabat/la-marina-rabat.html",
-    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
+    "websiteUrl": "https://www.fairmont.com/la-marina-rabat/",
+    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a113-39:16by9",
     "galleryImages": [
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5918-26:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7105-51:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_5572268:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a106-39:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6986-46:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a058-62:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5982-02:1by1"
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a113-39:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/2511_acf_609-1:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_1833747:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a110-57:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a018-86:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a006-80:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5984-59:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6011-53:16by9"
     ]
   },
   "sofitel-legend-old-cataract": {
@@ -5693,7 +5917,19 @@
     "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/phuket/intercontinental-phuket?brandCode=IC"
   },
   "intercontinental-bali": {
-    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/jimbaran/intercontinental-bali?brandCode=IC"
+    "websiteUrl": "https://bali.intercontinental.com/",
+    "description": "Located on a pristine white sand beach overlooking Jimbaran Bay, InterContinental Bali Resort offers 425 premium rooms, suites, and villas.",
+    "heroImage": "https://storage.guirez.com/ic-balijimbaran/classic-room-garden-view-1.webp 1x, https://storage.guirez.com/ic-balijimbaran/classic-room-garden-view-1.webp 2x",
+    "galleryImages": [
+      "https://storage.guirez.com/ic-balijimbaran/classic-room-garden-view-1.webp 1x, https://storage.guirez.com/ic-balijimbaran/classic-room-garden-view-1.webp 2x",
+      "https://intercontbali-cms.mindimedia.net/storage/media/homepage/icjimbaran-logo-fpd.webp",
+      "https://storage.guirez.com/ic-balijimbaran/ic-osaka-icon.png",
+      "https://storage.guirez.com/ic-balijimbaran/icjimbaran-logo-fpd.webp",
+      "https://storage.guirez.com/ic-balijimbaran/slide-1-poq-1.webp 1x, https://storage.guirez.com/ic-balijimbaran/slide-1-poq-1.webp 2x",
+      "https://storage.guirez.com/ic-balijimbaran/slide-1-poq-1.webp",
+      "https://storage.guirez.com/ic-balijimbaran/slide-2-bui-1.webp 1x, https://storage.guirez.com/ic-balijimbaran/slide-2-bui-1.webp 2x",
+      "https://storage.guirez.com/ic-balijimbaran/slide-2-bui-1.webp"
+    ]
   },
   "waldorf-astoria-orlando": {
     "websiteUrl": "https://www.hilton.com/en/hotels/waldorf-astoria-orlando/"
@@ -5834,87 +6070,95 @@
     ]
   },
   "fairmont-le-chateau-frontenac": {
-    "websiteUrl": "https://www.fairmont.com/en/hotels/quebec-city/le-chateau-frontenac.html",
-    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
+    "websiteUrl": "https://www.fairmont.com/le-chateau-frontenac/",
+    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a113-39:16by9",
     "galleryImages": [
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5918-26:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7105-51:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_5572268:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a106-39:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6986-46:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a058-62:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5982-02:1by1"
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a113-39:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/2511_acf_609-1:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_1833747:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a110-57:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a018-86:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a006-80:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5984-59:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6011-53:16by9"
     ]
   },
   "fairmont-singapore": {
-    "websiteUrl": "https://www.fairmont.com/en/hotels/singapore/singapore.html",
-    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
+    "websiteUrl": "https://www.fairmont.com/singapore/",
+    "description": "Occupying a gleaming tower above City Hall MRT station, Fairmont Singapore is a beacon of luxury in the Lion City's Downtown Core. Each of our stylish accommodations offers a private balcony and awe-inspiring skyline views. Distinctive restaurants and bars tempt with cuisines spanning the globe from Singapore to Italy and Britain. Restorative treatments at the lavish Willow Stream Spa soothe, relax and energize. A host of elegant, functional spaces are a peerless setting for any event.",
+    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/aja_p_7175-02",
     "galleryImages": [
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5918-26:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7105-51:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_5572268:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a106-39:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6986-46:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a058-62:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5982-02:1by1"
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7175-02",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7175-24:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7175-28:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_7148359:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/a5g8-1:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7210-81:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_7329318:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_3897402:16by9"
     ]
   },
   "fairmont-jakarta": {
-    "websiteUrl": "https://www.fairmont.com/en/hotels/jakarta/jakarta.html",
-    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
+    "websiteUrl": "https://www.fairmont.com/jakarta/",
+    "description": "In the heart of the Senayan district, across the road from the exquisite golf course, Fairmont Jakarta is a luxurious home base from which to explore all the city has to offer. Whether you re here for business, culture or shopping, this 5-star Jakarta hotel puts the city at your fingertips. Enjoy a weekend getaway or a family holiday in one of our 488 fabulous rooms and suites. Stay a little longer in a Sky Suite. Dine and socialize in outstanding restaurants and bars. Relax in the luxury spa.",
+    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a108-66:16by9",
     "galleryImages": [
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5918-26:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7105-51:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_5572268:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a106-39:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6986-46:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a058-62:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5982-02:1by1"
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a108-66:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a108-77:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a108-76:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5348-59:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5348-49:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5348-41:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5348-01:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5808-67:16by9"
     ]
   },
   "fairmont-dubai": {
-    "websiteUrl": "https://www.fairmont.com/en/hotels/dubai/dubai.html",
-    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
+    "websiteUrl": "https://www.fairmont.com/dubai/",
+    "description": "Fairmont Dubai is located opposite Dubai World Trade Centre, minutes from Dubai International Airport, DIFC, The Dubai Mall and Burj Khalifa, with direct access to the Dubai Metro. The hotel features 394 spacious guestrooms and suites, daylight-filled meeting spaces on the 33rd floor, a curated collection of dining venues, and over 40,000 square feet of spa, fitness and pool facilities-ideal for business travel, exhibitions and city stays.",
+    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/aja_p_6302-41",
     "galleryImages": [
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5918-26:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7105-51:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_5572268:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a106-39:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6986-46:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a058-62:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5982-02:1by1"
-    ]
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6302-41",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6302-58:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6302-54:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6302-64:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5817-35:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5023-14:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6302-68:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_1604442:16by9"
+    ],
+    "avgBasePrice": 394,
+    "avgSuitePrice": 867,
+    "priceSource": "scraped"
   },
   "fairmont-monte-carlo": {
-    "websiteUrl": "https://www.fairmont.com/en/hotels/monte-carlo/monte-carlo.html",
-    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
+    "websiteUrl": "https://www.fairmont.com/monte-carlo/",
+    "description": "Immerse yourself in beauty at Fairmont Monte Carlo and discover for yourself why we're regarded as one of the best hotels in Monte Carlo. Ideally located on the French Riviera, overlooking the stunning Mediterranean Sea, offering renovated rooms and suites and close to the legendary Monte Carlo Casino, the Fairmont Monte Carlo luxury hotel is a perfect base for relaxing in style, exploring Monaco, or holding important business meetings. Fairmont Monte Carlo is also among the best family hotels in Monaco.",
+    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/aja_p_7062-38:16by9",
     "galleryImages": [
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5918-26:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7105-51:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_5572268:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a106-39:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6986-46:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a058-62:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5982-02:1by1"
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7062-38:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7062-07:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7062-41:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/a598-1:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7208-81:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7208-71:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7208-67:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7208-63:16by9"
     ]
   },
   "fairmont-jaipur": {
-    "websiteUrl": "https://www.fairmont.com/en/hotels/jaipur/jaipur.html",
-    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
+    "websiteUrl": "https://www.fairmont.com/jaipur/",
+    "description": "A royal elegance in a historic setting. Nestled amongst the majestic Aravalli hills, Fairmont Jaipur is an ode to the Pink City with its intricate yet splendid architecture and decor inspired by the Mughal dynasty and royal Rajputs of yore. This 5-star hotel in Rajasthan offers luxury accommodation, fine-dining, expansive event venues and a luxury spa. The hotel is a preferred destination in India for romantic, bespoke weddings; offering a range of indoor and outdoor venues for different ceremonies.",
+    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/aja_p_6913-95:16by9",
     "galleryImages": [
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5918-26:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7105-51:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_5572268:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a106-39:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6986-46:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a058-62:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5982-02:1by1"
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6913-95:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5819-36:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6546-39:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5819-35:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5819-02:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5819-32:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_1810333:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5819-34:16by9"
     ]
   },
   "sofitel-legend-old-cataract-aswan": {
@@ -5984,20 +6228,36 @@
     "websiteUrl": "https://www.marriott.com/en-us/hotels/luxury-collection-naka-island/overview/"
   },
   "intercontinental-maldives-maamunagau": {
-    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/raa-atoll/intercontinental-maldives-maamunagau?brandCode=IC"
+    "websiteUrl": "https://maldives.intercontinental.com/",
+    "description": "InterContinental Maldives Maamunagau Resort is a luxury private-island resort in the Raa Atoll of the Maldives. The resort offers sweeping Indian Ocean panoramas, soft white sands and a manta-ray sanctuary. It is the first and only all-Club InterContinental resort, providing exclusive benefits like complimentary daily refreshments, afternoon tea and evening cocktails. Accommodation ranges from overwater and beach villas to two and three bedroom residences, all featuring a private pool and direct lagoon or beach access. The resort is friendly for families with kids, and couples who seek a romantic getaway.",
+    "heroImage": "https://maldives.intercontinental.com/wp-content/uploads/sites/20/2025/03/DJI_20250202142128_0273_D-Edit-1.jpg",
+    "galleryImages": [
+      "https://maldives.intercontinental.com/wp-content/uploads/sites/20/2025/03/DJI_20250202142128_0273_D-Edit-1.jpg",
+      "https://maldives.intercontinental.com/wp-content/uploads/sites/20/2025/03/DJI_20250202142128_0273_D-Edit-1200x768.jpg",
+      "https://maldives.intercontinental.com/wp-content/uploads/sites/20/2025/03/DJI_20250202142128_0273_D-Edit-1920x1080.jpg",
+      "https://maldives.intercontinental.com/wp-content/uploads/sites/20/2026/03/InterContinental-Maldives_-The-Light-House-6-1200x768.jpg",
+      "https://maldives.intercontinental.com/wp-content/uploads/sites/20/2026/03/InterContinental-Maldives_-Water-Sports-19-1920x1080.jpg",
+      "https://maldives.intercontinental.com/wp-content/uploads/sites/20/2026/03/InterContinental-Maldives_-Island-Bicycle-Ride-1-844x768.jpg",
+      "https://maldives.intercontinental.com/wp-content/uploads/sites/20/2026/03/InterContinental-Maldives_-Water-Sports-10-1917x1080.jpg",
+      "https://maldives.intercontinental.com/wp-content/uploads/sites/20/2026/03/InterContinental-Maldives_-Water-Sports-17-1200x768.jpg"
+    ],
+    "avgBasePrice": 2755,
+    "avgSuitePrice": 9643,
+    "priceSource": "scraped"
   },
   "fairmont-maldives-sirru-fen-fushi": {
-    "websiteUrl": "https://www.fairmont.com/en/hotels/shaviyani-atoll/maldives-sirru-fen-fushi.html",
-    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
+    "websiteUrl": "https://www.fairmont.com/maldives-sirru-fen-fushi/",
+    "description": "Snow-capped mountains and star-studded skies. Sweeping beaches with infinite views. Urban escapes that spark adventure. Wherever you travel with us across the globe, you'll experience awe-inspiring settings and memorable moments. At Fairmont, true luxury is inclusive.",
+    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a113-39:16by9",
     "galleryImages": [
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5918-26:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7105-51:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_5572268:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a106-39:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6986-46:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a058-62:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5982-02:1by1"
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a113-39:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/2511_acf_609-1:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_1833747:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a110-57:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a018-86:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a006-80:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5984-59:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6011-53:16by9"
     ]
   },
   "raffles-maldives-meradhoo": {
@@ -6187,7 +6447,19 @@
     "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/papeete/intercontinental-tahiti-resort?brandCode=IC"
   },
   "intercontinental-bora-bora-thalasso": {
-    "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/bora-bora/intercontinental-bora-bora-thalasso?brandCode=IC"
+    "websiteUrl": "https://thalasso.intercontinental.com/",
+    "description": "360 o A chapter closed,and the story continues After twenty years of welcoming guests from around the world to the shoresof Bora Bora’s turquoise lagoon, the InterContinental Bora Bora Resort & Thalasso Spa closed its doors on June 1, 2026 to focus on a top to bottom renovation to upgrade your experience. We opened in [&hellip;]",
+    "heroImage": "https://thalasso.intercontinental.com/wp-content/uploads/2020/11/Emerald-Overwater-Villa.jpg",
+    "galleryImages": [
+      "https://thalasso.intercontinental.com/wp-content/uploads/2020/11/Emerald-Overwater-Villa.jpg",
+      "https://thalasso.intercontinental.com/wp-content/uploads/2026/01/Thumbnail_Combo_Offer.jpg",
+      "https://thalasso.intercontinental.com/wp-content/uploads/2023/11/Shooting-InterContinental-Bora-Bora-Resort-Thalasso-Spa-Emma-Tournier-019.jpg",
+      "https://thalasso.intercontinental.com/wp-content/uploads/2021/09/media.jpg",
+      "https://thalasso.intercontinental.com/wp-content/uploads/2021/11/BOBHB-couple-lagoonarium-chale-GOBRON-scaled.jpg",
+      "https://thalasso.intercontinental.com/wp-content/uploads/2021/11/BOBHB-Sands-dinner_-scaled.jpg",
+      "https://thalasso.intercontinental.com/wp-content/uploads/2020/11/pay-less.jpg",
+      "https://thalasso.intercontinental.com/wp-content/uploads/2020/11/Sapphire-Overwater-Villa.jpg"
+    ]
   },
   "intercontinental-bora-bora-le-moana": {
     "websiteUrl": "https://www.ihg.com/intercontinental/hotels/us/en/bora-bora/intercontinental-bora-bora-le-moana?brandCode=IC"
@@ -6223,17 +6495,17 @@
     "websiteUrl": "https://www.marriott.com/en-us/hotels/w-retreat-vieques/overview/"
   },
   "fairmont-orchid-big-island": {
-    "websiteUrl": "https://www.fairmont.com/en/hotels/kohala-coast/orchid-big-island.html",
-    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
+    "websiteUrl": "https://www.fairmont.com/orchid-big-island/",
+    "heroImage": "https://m.ahstatic.com/is/image/accorhotels/met_p_a113-39:16by9",
     "galleryImages": [
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a112-79-1:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5918-26:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_7105-51:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_5572268:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a106-39:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6986-46:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/met_p_a058-62:1by1",
-      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5982-02:1by1"
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a113-39:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/2511_acf_609-1:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/HCM_P_1833747:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a110-57:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a018-86:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/met_p_a006-80:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_5984-59:16by9",
+      "https://m.ahstatic.com/is/image/accorhotels/aja_p_6011-53:16by9"
     ]
   },
   "halekulani-waikiki": {

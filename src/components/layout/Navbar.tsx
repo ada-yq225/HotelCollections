@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Crown, Map, Hotel, Plus, User, MessageSquare, Gem } from "lucide-react";
+import { Crown, Map, Hotel, Plus, User, MessageSquare, Gem, Plane } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type UserInfo = {
@@ -12,6 +12,7 @@ type UserInfo = {
 
 const NAV = [
   { href: "/hotels", label: "酒店库", icon: Hotel },
+  { href: "/flights", label: "机票", icon: Plane },
   { href: "/community", label: "社区", icon: MessageSquare },
   { href: "/club", label: "俱乐部", icon: Gem },
   { href: "/checkin", label: "打卡", icon: Plus },

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { MapPin, ChevronRight, Navigation, Plane, Search, CheckCircle2 } from "lucide-react";
 import { getAirportByIata } from "@/data/airports";
 import { useDepartureAirport } from "@/hooks/useDepartureAirport";
@@ -73,26 +74,35 @@ export function DepartureBar() {
           <ChevronRight className="h-4 w-4 shrink-0 text-[#d4d4d4]" />
         </button>
 
-        <button
-          type="button"
-          onClick={() => {
-            if (!departure) setPickerOpen(true);
-            else setFlightSearchOpen(true);
-          }}
-          className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#b8956b]/40 bg-[#faf6f0] px-5 py-3 text-sm font-medium text-[#b8956b] transition hover:border-[#b8956b] sm:shrink-0"
-        >
-          {departure ? (
-            <>
-              <Search className="h-4 w-4" />
-              搜机票
-            </>
-          ) : (
-            <>
-              <Plane className="h-4 w-4" />
-              先选出发地
-            </>
-          )}
-        </button>
+        <div className="flex gap-2 sm:shrink-0">
+          <button
+            type="button"
+            onClick={() => {
+              if (!departure) setPickerOpen(true);
+              else setFlightSearchOpen(true);
+            }}
+            className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-[#b8956b]/40 bg-[#faf6f0] px-4 py-3 text-sm font-medium text-[#b8956b] transition hover:border-[#b8956b] sm:flex-none sm:px-5"
+          >
+            {departure ? (
+              <>
+                <Search className="h-4 w-4" />
+                快速搜
+              </>
+            ) : (
+              <>
+                <Plane className="h-4 w-4" />
+                先选出发地
+              </>
+            )}
+          </button>
+          <Link
+            href="/flights"
+            className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#e8e8e8] px-4 py-3 text-sm font-medium text-[#374151] transition hover:border-[#b8956b] sm:px-5"
+          >
+            <Plane className="h-4 w-4" />
+            机票页
+          </Link>
+        </div>
       </div>
 
       <DepartureAirportPicker
