@@ -360,11 +360,15 @@ export async function enrichHotelFromWeb(
   }
 
   let galleryImages = allImages.slice(0, 8);
-  if ((!heroImage || isBadImageUrl(heroImage)) && isGreaterChinaHotel(hotel.countryCode)) {
+  if (
+    (!heroImage || isBadImageUrl(heroImage) || galleryImages.length < 4) &&
+    isGreaterChinaHotel(hotel.countryCode)
+  ) {
     const chinaImg = await resolveChinaHotelImage(hotel);
     if (chinaImg) {
       heroImage = chinaImg.heroImage;
-      galleryImages = [chinaImg.heroImage, ...galleryImages.filter((u) => u !== chinaImg.heroImage)].slice(0, 8);
+      const extra = chinaImg.galleryImages ?? [chinaImg.heroImage];
+      galleryImages = [...new Set([...extra, ...galleryImages])].slice(0, 8);
     }
   }
 

@@ -6,7 +6,7 @@ import { readFileSync, writeFileSync, existsSync } from "fs";
 import { join } from "path";
 import { ALL_HOTELS } from "../src/data/hotels";
 import { isBadImageUrl } from "../src/lib/hotel-cover-image";
-import { resolveChinaHotelImage } from "../src/lib/china-hotel-images";
+import { resolveHotelMediaBundle } from "../src/lib/hotel-media-cache";
 
 const OUT = join(__dirname, "../src/data/hotel-enrichment.json");
 const DELAY_MS = 700;
@@ -63,12 +63,12 @@ async function main() {
 
   for (let i = 0; i < hotels.length; i++) {
     const hotel = hotels[i];
-    const result = await resolveChinaHotelImage(hotel);
+    const result = await resolveHotelMediaBundle(hotel, 6);
     if (result) {
       cache[hotel.slug] = {
         ...cache[hotel.slug],
         heroImage: result.heroImage,
-        galleryImages: [result.heroImage],
+        galleryImages: result.galleryImages,
         imageSource: result.source,
         websiteUrl: cache[hotel.slug]?.websiteUrl,
       };

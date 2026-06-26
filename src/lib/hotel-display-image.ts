@@ -1,5 +1,5 @@
 import { existsSync } from "fs";
-import { localHotelMediaFile, localHotelMediaPath } from "@/lib/china-hotel-images";
+import { localHotelMediaFile, localHotelMediaPath } from "@/lib/hotel-media-cache";
 
 /** Prefer locally cached same-origin images; proxy other remotes for firewall resilience */
 export function hotelDisplayImageUrl(

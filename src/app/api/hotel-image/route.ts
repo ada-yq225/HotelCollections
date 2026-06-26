@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { cacheHotelImageLocally, localHotelMediaFile } from "@/lib/china-hotel-images";
+import { cacheHotelImageLocally, localHotelMediaFile } from "@/lib/hotel-media-cache";
 import { existsSync, readFileSync } from "fs";
 
 export const runtime = "nodejs";

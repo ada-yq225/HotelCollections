@@ -1,7 +1,7 @@
 import type { HotelEntry } from "@/data/hotels/types";
 import { resolveOfficialUrl, resolveOfficialUrlZh } from "@/lib/hotel-official-url";
 import { MARRIOTT_CHINA_HOTEL_URLS } from "@/data/marriott-china-urls";
-import { isGreaterChinaHotel } from "@/lib/china-hotel-images";
+import { isGreaterChinaHotel } from "@/lib/hotel-media-cache";
 
 function slugify(text: string): string {
   return text
