@@ -6,7 +6,7 @@ import { FREE_STAY_LIMIT } from "@/lib/utils";
 import { BadgeGrid } from "@/components/badges/BadgeGrid";
 import { ProfileActions } from "./ProfileActions";
 import Link from "next/link";
-import { Crown, Moon, Building2, Globe, Award, ArrowRight } from "lucide-react";
+import { Crown, Moon, Building2, Globe, Award, ArrowRight, Plane } from "lucide-react";
 import {
   parseChannelSlugs,
   calcRetentionProgress,
@@ -148,6 +148,23 @@ export default async function ProfilePage() {
       <div className="mt-12">
         <h2 className="mb-6 font-serif text-3xl">荣誉称号</h2>
         <BadgeGrid badges={badgeItems} />
+      </div>
+
+      {/* Flight journey link */}
+      <div className="mt-12 border-t border-[#e8e8e8] pt-8">
+        <Link
+          href="/flights/journey"
+          className="hc-card flex items-center justify-between p-6 hover:ring-2 hover:ring-[#b8956b] transition"
+        >
+          <div className="flex items-center gap-4">
+            <Plane className="h-8 w-8 text-[#b8956b]" />
+            <div>
+              <p className="font-medium">飞行足迹</p>
+              <p className="text-sm text-[#6b7280]">航线图 · 飞行统计 · 飞行报告</p>
+            </div>
+          </div>
+          <ArrowRight className="h-5 w-5 text-[#6b7280]" />
+        </Link>
       </div>
     </div>
   );

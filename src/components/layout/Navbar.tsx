@@ -17,7 +17,7 @@ const NAV = [
   { href: "/community", label: "社区", icon: MessageSquare },
   { href: "/club", label: "俱乐部", icon: Gem },
   { href: "/checkin", label: "打卡", icon: Plus },
-  { href: "/map", label: "地图", icon: Map },
+  { href: "/journey", label: "足迹", icon: Map },
   { href: "/profile", label: "我的", icon: User },
 ];
 

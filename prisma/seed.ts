@@ -4,6 +4,7 @@ import { GROUPS, ALLIANCES, BRANDS } from "../src/data/meta";
 import { ALL_HOTELS } from "../src/data/hotels";
 import { isHotelListed } from "../src/lib/hotel-visibility";
 import { BADGES } from "../src/data/badges";
+import { FLIGHT_BADGES } from "../src/data/flight-badges";
 import { HOTEL_ENRICHMENT } from "../src/data/hotel-enrichment";
 import { resolveOfficialUrl } from "../src/lib/hotel-official-url";
 import { resolveHotelPrices } from "../src/lib/hotel-pricing";
@@ -25,8 +26,10 @@ async function main() {
   await prisma.keycard.deleteMany();
   await prisma.discussionReply.deleteMany();
   await prisma.discussion.deleteMany();
+  await prisma.flightReport.deleteMany();
   await prisma.post.deleteMany();
   await prisma.userBadge.deleteMany();
+  await prisma.flightStay.deleteMany();
   await prisma.stay.deleteMany();
   await prisma.badge.deleteMany();
   await prisma.hotel.deleteMany();
@@ -169,7 +172,23 @@ async function main() {
       },
     });
   }
-  console.log(`  Badges: ${BADGES.length}`);
+
+  for (const badge of FLIGHT_BADGES) {
+    await prisma.badge.create({
+      data: {
+        slug: badge.slug,
+        name: badge.name,
+        nameZh: badge.nameZh,
+        description: badge.description,
+        icon: badge.icon,
+        color: badge.color,
+        category: badge.category,
+        threshold: badge.threshold,
+        sortOrder: badge.sortOrder,
+      },
+    });
+  }
+  console.log(`  Badges: ${BADGES.length + FLIGHT_BADGES.length}`);
 
   const demoUser = await prisma.user.create({
     data: {

@@ -32,6 +32,11 @@ export function CheckinForm({ preselectedHotel }: { preselectedHotel: Preselecte
     roomNumber: "",
     notes: "",
     proofType: "photo" as "photo" | "receipt" | "keycard",
+    upgraded: false,
+    welcomeGift: "",
+    lateCheckout: false,
+    breakfastQuality: 0,
+    actualPrice: "",
   });
 
   const searchHotels = useCallback(async () => {
@@ -176,6 +181,73 @@ export function CheckinForm({ preselectedHotel }: { preselectedHotel: Preselecte
             placeholder="如：2806"
             className="mt-2 w-full rounded-xl border border-[#e8e8e8] px-4 py-3 text-sm outline-none focus:border-[#b8956b]"
           />
+        </div>
+      </div>
+
+      {/* Stay experience highlights */}
+      <div className="hc-card p-6">
+        <label className="text-sm font-medium">入住体验亮点</label>
+        <div className="mt-3 grid gap-4 sm:grid-cols-2">
+          <label className="flex items-center gap-3 rounded-xl border border-[#e8e8e8] p-3 cursor-pointer hover:border-[#b8956b]">
+            <input
+              type="checkbox"
+              checked={form.upgraded}
+              onChange={(e) => setForm({ ...form, upgraded: e.target.checked })}
+              className="h-4 w-4 accent-[#b8956b]"
+            />
+            <div>
+              <p className="text-sm font-medium">升级了房型</p>
+              <p className="text-xs text-[#9ca3af]">是否获得免费升房</p>
+            </div>
+          </label>
+          <label className="flex items-center gap-3 rounded-xl border border-[#e8e8e8] p-3 cursor-pointer hover:border-[#b8956b]">
+            <input
+              type="checkbox"
+              checked={form.lateCheckout}
+              onChange={(e) => setForm({ ...form, lateCheckout: e.target.checked })}
+              className="h-4 w-4 accent-[#b8956b]"
+            />
+            <div>
+              <p className="text-sm font-medium">延迟退房</p>
+              <p className="text-xs text-[#9ca3af]">是否获得延迟退房权益</p>
+            </div>
+          </label>
+        </div>
+        <div className="mt-3">
+          <label className="text-xs text-[#6b7280]">欢迎礼遇</label>
+          <input
+            value={form.welcomeGift}
+            onChange={(e) => setForm({ ...form, welcomeGift: e.target.value })}
+            placeholder="如：水果、香槟、手写欢迎信、马卡龙..."
+            className="mt-1 w-full rounded-xl border border-[#e8e8e8] px-4 py-3 text-sm outline-none focus:border-[#b8956b]"
+          />
+        </div>
+        <div className="mt-3 grid gap-4 sm:grid-cols-2">
+          <div>
+            <label className="text-xs text-[#6b7280]">早餐品质评分</label>
+            <div className="mt-1 flex gap-1">
+              {[1, 2, 3, 4, 5].map((n) => (
+                <button
+                  key={n}
+                  type="button"
+                  onClick={() => setForm({ ...form, breakfastQuality: form.breakfastQuality === n ? 0 : n })}
+                  className="text-lg transition"
+                >
+                  {n <= form.breakfastQuality ? "★" : "☆"}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div>
+            <label className="text-xs text-[#6b7280]">实际支付价格 (CNY)</label>
+            <input
+              value={form.actualPrice}
+              onChange={(e) => setForm({ ...form, actualPrice: e.target.value })}
+              placeholder="每晚均价，选填"
+              type="number"
+              className="mt-1 w-full rounded-xl border border-[#e8e8e8] px-4 py-3 text-sm outline-none focus:border-[#b8956b]"
+            />
+          </div>
         </div>
       </div>
 

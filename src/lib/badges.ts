@@ -1,4 +1,5 @@
 import { prisma } from "./prisma";
+import { evaluateFlightBadges } from "./flight-badges";
 
 type StayWithHotel = {
   nights: number;
@@ -103,7 +104,10 @@ export async function evaluateAndAwardBadges(userId: string) {
     });
   }
 
-  return toAward.length;
+  // Also evaluate flight badges
+  const flightAwarded = await evaluateFlightBadges(userId);
+
+  return toAward.length + flightAwarded;
 }
 
 function checkMilestoneBadge(

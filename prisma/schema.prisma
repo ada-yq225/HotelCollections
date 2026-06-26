@@ -19,8 +19,10 @@ model User {
   updatedAt    DateTime @updatedAt
 
   stays            Stay[]
+  flightStays      FlightStay[]
   userBadges       UserBadge[]
   posts            Post[]
+  flightReports    FlightReport[]
   keycards         Keycard[]
   keycardOffers    KeycardOffer[]
   discussions      Discussion[]
@@ -231,6 +233,47 @@ model Post {
   user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   hotel         Hotel    @relation(fields: [hotelId], references: [id])
   stay          Stay?    @relation(fields: [stayId], references: [id], onDelete: SetNull)
+}
+
+model FlightStay {
+  id              String   @id @default(cuid())
+  userId          String
+  flightNumber    String
+  airlineIata     String
+  departureIata   String
+  arrivalIata     String
+  date            DateTime
+  cabin           String   @default("economy")
+  seatNumber      String?
+  bookingRef      String?
+  boardingPassUrl String?
+  notes           String?
+  createdAt       DateTime @default(now())
+
+  user            User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  flightReport    FlightReport?
+}
+
+model FlightReport {
+  id            String   @id @default(cuid())
+  userId        String
+  flightStayId  String?  @unique
+  title         String
+  content       String
+  images        String   @default("[]")
+  seatComfort   Int?
+  catering      Int?
+  cabinService  Int?
+  entertainment Int?
+  punctuality   Int?
+  loungeRating  Int?
+  loungeNote    String?
+  isPublished   Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  user          User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  flightStay    FlightStay? @relation(fields: [flightStayId], references: [id], onDelete: SetNull)
 }
 
 model Badge {

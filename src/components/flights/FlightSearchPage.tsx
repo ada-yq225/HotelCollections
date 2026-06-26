@@ -10,6 +10,8 @@ import {
   Navigation,
   Clock,
   Route,
+  ClipboardCheck,
+  Map,
 } from "lucide-react";
 import { ALL_AIRPORTS, DEPARTURE_AIRPORTS } from "@/data/airports";
 import { useDepartureAirport } from "@/hooks/useDepartureAirport";
@@ -115,7 +117,17 @@ export function FlightSearchPage() {
   return (
     <div className="mx-auto max-w-4xl space-y-6 px-4 py-8">
       <div>
-        <h1 className="font-serif text-3xl font-semibold">机票查询</h1>
+        <div className="flex items-center justify-between">
+          <h1 className="font-serif text-3xl font-semibold">机票查询</h1>
+          <div className="flex items-center gap-2">
+            <a href="/flights/checkin" className="inline-flex items-center gap-1.5 rounded-full border border-[#e8e8e8] px-4 py-2 text-xs hover:border-[#b8956b] hover:text-[#b8956b]">
+              <ClipboardCheck className="h-3.5 w-3.5" /> 飞行打卡
+            </a>
+            <a href="/flights/journey" className="inline-flex items-center gap-1.5 rounded-full border border-[#e8e8e8] px-4 py-2 text-xs hover:border-[#b8956b] hover:text-[#b8956b]">
+              <Map className="h-3.5 w-3.5" /> 飞行足迹
+            </a>
+          </div>
+        </div>
         <p className="mt-2 text-sm text-[#6b7280]">
           2026 市场参考价 · 经济舱 / 商务舱 / 特色头等 · 直飞优先
         </p>

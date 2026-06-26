@@ -28,7 +28,7 @@ export function getAllianceBenefits(
   maxTierLevel: number;
   maxTierNameZh: string;
 }[] {
-  const allianceMap = new Map<FFPAlliance, { programs: FFPProgram[]; maxLevel: number; maxTierNameZh: string }>();
+  const allianceMap = new Map<FFPAlliance, { programs: FFPProgram[]; maxTierLevel: number; maxTierNameZh: string }>();
 
   for (const record of userPrograms) {
     const program = FFP_BY_SLUG[record.programSlug];
@@ -38,11 +38,11 @@ export function getAllianceBenefits(
 
     const existing = allianceMap.get(program.alliance);
     if (!existing) {
-      allianceMap.set(program.alliance, { programs: [program], maxLevel: tier.level, maxTierNameZh: tier.nameZh });
+      allianceMap.set(program.alliance, { programs: [program], maxTierLevel: tier.level, maxTierNameZh: tier.nameZh });
     } else {
       existing.programs.push(program);
-      if (tier.level > existing.maxLevel) {
-        existing.maxLevel = tier.level;
+      if (tier.level > existing.maxTierLevel) {
+        existing.maxTierLevel = tier.level;
         existing.maxTierNameZh = tier.nameZh;
       }
     }

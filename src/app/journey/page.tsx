@@ -7,6 +7,7 @@ import { prisma } from "@/lib/prisma";
 import { MapSection } from "@/components/map/MapSection";
 import { JourneyGroups } from "./JourneyGroups";
 import { JourneyExportButton } from "@/components/journey/JourneyExportButton";
+import { Plane } from "lucide-react";
 
 export default async function JourneyPage() {
   const user = await getCurrentUser();
@@ -102,6 +103,22 @@ export default async function JourneyPage() {
           },
         }))}
       />
+
+      {/* Flight journey teaser */}
+      <div className="mt-16 border-t border-[#e8e8e8] pt-10">
+        <div className="flex items-center justify-between">
+          <div>
+            <h2 className="font-serif text-2xl">飞行足迹</h2>
+            <p className="mt-1 text-sm text-[#6b7280]">记录航班、查看航线图、撰写飞行报告</p>
+          </div>
+          <Link
+            href="/flights/journey"
+            className="inline-flex items-center gap-2 rounded-full bg-[#1a1a1a] px-5 py-2.5 text-sm text-white hover:bg-[#333]"
+          >
+            <Plane className="h-4 w-4" /> 查看飞行足迹
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

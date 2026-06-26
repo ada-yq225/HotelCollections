@@ -194,7 +194,7 @@ export function PointsCalculator() {
               onChange={(e) => setProgramSlug(e.target.value)}
               className="mt-2 w-full rounded-lg border border-[#e8e8e8] bg-white px-3 py-2.5 text-sm outline-none focus:border-[#b8956b]"
             >
-              {[...HOTEL_EARNING_RATES, { programSlug: "cmb-centurion", nameZh: "招行运通百夫长", name: "招商银行", programSlug: "cmb-centurion" } as any].map((p: any) => (
+              {[...HOTEL_EARNING_RATES, { programSlug: "cmb-centurion", nameZh: "招行运通百夫长", name: "招商银行" } as any].map((p: any) => (
                 <option key={p.programSlug} value={p.programSlug}>{p.nameZh}</option>
               ))}
             </select>
