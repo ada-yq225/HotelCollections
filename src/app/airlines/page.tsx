@@ -1,8 +1,9 @@
 import { Search, Star, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { getEnrichedAirlines } from "@/data/airline-enrichment";
-import { AIRLINES, ALLIANCE_LABELS, type AirlineAllianceSlug } from "@/data/airlines";
+import { AIRLINES, type AirlineAllianceSlug } from "@/data/airlines";
 import { AirlineCard } from "@/components/airlines/AirlineCard";
+import { AllianceLogo } from "@/components/airlines/AllianceLogo";
 import { FFP_PROGRAMS } from "@/data/ffp-programs";
 
 export default function AirlinesPage() {
@@ -126,17 +127,16 @@ export default function AirlinesPage() {
           return (
             <section key={section.key}>
               <div className="mb-5 flex items-center gap-3">
-                <div
-                  className="flex h-8 w-8 items-center justify-center rounded-lg"
-                  style={{ backgroundColor: `${section.color}15` }}
-                >
-                  <span
-                    className="text-sm font-bold"
-                    style={{ color: section.color }}
+                {section.key !== "non-alliance" ? (
+                  <AllianceLogo alliance={section.key} size="md" showLabel={false} />
+                ) : (
+                  <div
+                    className="flex h-10 w-10 items-center justify-center rounded-lg"
+                    style={{ backgroundColor: `${section.color}15` }}
                   >
-                    {section.key === "star-alliance" ? "★" : section.key === "skyteam" ? "✦" : section.key === "oneworld" ? "◇" : "◎"}
-                  </span>
-                </div>
+                    <span className="text-sm font-bold" style={{ color: section.color }}>◎</span>
+                  </div>
+                )}
                 <h2 className="font-serif text-2xl font-semibold">
                   {section.label}
                   <span className="ml-2 text-sm font-normal text-[#9ca3af]">{airlines.length} 家</span>

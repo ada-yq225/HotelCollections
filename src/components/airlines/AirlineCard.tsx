@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { Star, MapPin, Users } from "lucide-react";
 import { getAirline } from "@/data/airlines";
-import { ALLIANCE_LABELS } from "@/data/airlines";
 import type { AirlineEnrichment } from "@/data/airline-enrichment";
+import { AllianceLogo } from "./AllianceLogo";
+import { AirlineLogo } from "./AirlineLogo";
 
 type AirlineCardProps = {
   enrichment: AirlineEnrichment;
@@ -26,16 +27,7 @@ export function AirlineCard({ enrichment }: AirlineCardProps) {
         <div className="relative flex items-start justify-between">
           {/* Airline logo */}
           <div className="flex items-center gap-3">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-[#e8e8e8]">
-              <img
-                src={airline.logoUrl}
-                alt={airline.nameZh}
-                className="h-8 w-8 object-contain"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).style.display = "none";
-                }}
-              />
-            </div>
+            <AirlineLogo iata={airline.iata} nameZh={airline.nameZh} size="lg" />
             <div>
               <p className="text-sm font-semibold text-[#1a1a1a]">{airline.nameZh}</p>
               <p className="text-[10px] text-[#9ca3af] uppercase">{enrichment.iata} · {airline.name}</p>
@@ -44,19 +36,7 @@ export function AirlineCard({ enrichment }: AirlineCardProps) {
 
           {/* Alliance badge */}
           {airline.alliance && (
-            <span
-              className="shrink-0 rounded-full px-2.5 py-1 text-[10px] font-medium text-white"
-              style={{
-                backgroundColor:
-                  airline.alliance === "star-alliance"
-                    ? "#1a1a1a"
-                    : airline.alliance === "skyteam"
-                      ? "#003580"
-                      : "#006564",
-              }}
-            >
-              {ALLIANCE_LABELS[airline.alliance]}
-            </span>
+            <AllianceLogo alliance={airline.alliance} size="sm" />
           )}
         </div>
       </div>

@@ -21,6 +21,7 @@
     "hotels:translate-descriptions": "tsx scripts/translate-descriptions.ts",
     "flights:fetch-cabin-images": "tsx scripts/fetch-flight-cabin-images.ts",
     "flights:scrape-prices": "tsx scripts/scrape-flight-prices.ts",
+    "airlines:fetch-logos": "tsx scripts/fetch-airline-logos.ts",
     "hotels:clean-prices": "tsx scripts/clean-invalid-prices.ts",
     "hotels:clean-cache": "node scripts/clean-enrichment-cache.mjs",
     "logos:manifest": "node scripts/generate-brand-logo-manifest.mjs",

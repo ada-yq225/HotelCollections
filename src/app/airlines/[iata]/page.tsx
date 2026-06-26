@@ -2,8 +2,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MapPin, Calendar, ArrowLeft, Star, ExternalLink, Plane, Users, Globe, Award, Crown, ChevronRight } from "lucide-react";
 import { getAirlineEnrichment } from "@/data/airline-enrichment";
-import { getAirline, ALLIANCE_LABELS, type AirlineAllianceSlug } from "@/data/airlines";
+import { getAirline, type AirlineAllianceSlug } from "@/data/airlines";
 import { FFP_BY_AIRLINE, ALLIANCE_DETAILS } from "@/data/ffp-programs";
+import { AllianceLogo, ALLIANCE_CONFIG } from "@/components/airlines/AllianceLogo";
+import { AirlineLogo } from "@/components/airlines/AirlineLogo";
 
 export default async function AirlineDetailPage({
   params,
@@ -54,28 +56,18 @@ export default async function AirlineDetailPage({
           <div className="relative">
             {/* Logo + Alliance + Name */}
             <div className="flex flex-wrap items-start gap-5">
-              {/* Logo */}
-              <div className="flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-[#e8e8e8]">
-                <img
-                  src={airline.logoUrl}
-                  alt={airline.nameZh}
-                  className="h-14 w-14 object-contain"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).style.display = "none";
-                  }}
-                />
-              </div>
+              <AirlineLogo
+                iata={airline.iata}
+                nameZh={airline.nameZh}
+                size="xl"
+                className="shadow-md ring-1 ring-[#e8e8e8] rounded-2xl"
+              />
 
               <div className="min-w-0 flex-1">
                 {/* Alliance badge */}
                 {allyCfg && (
                   <div className="mb-1 flex items-center gap-2">
-                    <span
-                      className="rounded-full px-2.5 py-0.5 text-[10px] font-medium text-white"
-                      style={{ backgroundColor: allyCfg.color }}
-                    >
-                      {allyCfg.nameZh}
-                    </span>
+                    <AllianceLogo alliance={airline.alliance!} size="sm" />
                     {enrichment.allianceHistory && (
                       <span className="text-[10px] text-[#9ca3af]">{enrichment.allianceHistory}</span>
                     )}
@@ -289,10 +281,8 @@ export default async function AirlineDetailPage({
                   className="rounded-xl p-4"
                   style={{ backgroundColor: `${allyCfg.color}08` }}
                 >
-                  <p className="text-lg font-semibold" style={{ color: allyCfg.color }}>
-                    {allyCfg.nameZh}
-                  </p>
-                  <p className="mt-1 text-xs leading-relaxed text-[#6b7280]">
+                  <AllianceLogo alliance={airline.alliance!} size="lg" />
+                  <p className="mt-3 text-xs leading-relaxed text-[#6b7280]">
                     {allianceInfo.desc}
                   </p>
                   <p className="mt-2 text-[10px] text-[#9ca3af]">

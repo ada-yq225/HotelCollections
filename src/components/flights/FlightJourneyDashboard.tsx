@@ -6,6 +6,7 @@ import { Plane, MapPin, Clock, Award, Building2, Star, Navigation, PenLine } fro
 import { FlightRouteMap } from "./FlightRouteMap";
 import { formatDate } from "@/lib/utils";
 import { AIRLINES } from "@/data/airlines";
+import { AirlineLogo } from "@/components/airlines/AirlineLogo";
 
 const CABIN_LABELS: Record<string, string> = {
   economy: "经济舱",
@@ -92,7 +93,11 @@ export function FlightJourneyDashboard() {
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {stats.airlinesList.map((al) => (
             <div key={al.iata} className="hc-card flex items-center gap-4 p-4">
-              <img src={al.logoUrl} alt={al.name} className="h-10 w-10 rounded-full object-contain" />
+              <AirlineLogo
+                iata={al.iata}
+                nameZh={AIRLINES[al.iata]?.nameZh ?? al.name}
+                size="md"
+              />
               <div className="flex-1 min-w-0">
                 <p className="font-medium truncate">{al.name}</p>
                 <p className="text-xs text-[#9ca3af]">{al.count} 次飞行{al.alliance ? ` · ${al.alliance}` : ""}</p>
@@ -145,10 +150,10 @@ export function FlightJourneyDashboard() {
         <div className="space-y-3">
           {stats.flights.map((f: any) => (
             <div key={f.id} className="hc-card flex items-center gap-4 p-4">
-              <img
-                src={AIRLINES[f.airlineIata]?.logoUrl ?? ""}
-                alt={f.airlineIata}
-                className="h-10 w-10 rounded-full object-contain"
+              <AirlineLogo
+                iata={f.airlineIata}
+                nameZh={AIRLINES[f.airlineIata]?.nameZh ?? f.airlineIata}
+                size="md"
               />
               <div className="flex-1 min-w-0">
                 <p className="font-medium">
