@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Crown, Map, Hotel, Plus, User, MessageSquare, Gem, Plane } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { DEMO_ACCOUNT_LABEL } from "@/lib/demo-account";
 
 type UserInfo = {
   name: string;
@@ -56,9 +57,14 @@ export function Navbar({ user }: { user: UserInfo }) {
               <span className="font-medium">{user.name}</span>
             </Link>
           ) : (
-            <Link href="/login" className="hc-btn-primary text-sm">
-              登录
-            </Link>
+            <div className="text-right">
+              <Link href="/login" className="hc-btn-primary text-sm">
+                登录
+              </Link>
+              <p className="mt-1 hidden font-mono text-[10px] text-[#9ca3af] sm:block">
+                {DEMO_ACCOUNT_LABEL}
+              </p>
+            </div>
           )}
         </div>
       </div>
