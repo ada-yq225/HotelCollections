@@ -7,6 +7,8 @@ import { FlightRouteMap } from "./FlightRouteMap";
 import { formatDate } from "@/lib/utils";
 import { AIRLINES } from "@/data/airlines";
 import { AirlineLogo } from "@/components/airlines/AirlineLogo";
+import { AllianceLogo } from "@/components/airlines/AllianceLogo";
+import type { AirlineAllianceSlug } from "@/data/airlines";
 
 const CABIN_LABELS: Record<string, string> = {
   economy: "经济舱",
@@ -100,7 +102,12 @@ export function FlightJourneyDashboard() {
               />
               <div className="flex-1 min-w-0">
                 <p className="font-medium truncate">{al.name}</p>
-                <p className="text-xs text-[#9ca3af]">{al.count} 次飞行{al.alliance ? ` · ${al.alliance}` : ""}</p>
+                <div className="flex flex-wrap items-center gap-2 text-xs text-[#9ca3af]">
+                  <span>{al.count} 次飞行</span>
+                  {al.alliance && (
+                    <AllianceLogo alliance={al.alliance as AirlineAllianceSlug} size="sm" showLabel={true} />
+                  )}
+                </div>
               </div>
             </div>
           ))}
@@ -136,11 +143,18 @@ export function FlightJourneyDashboard() {
           <p className="mt-1 font-serif text-xl">
             {stats.longestFlight.depName} → {stats.longestFlight.arrName}
           </p>
-          <p className="text-sm text-[#6b7280]">
-            {AIRLINES[stats.longestFlight.airlineIata]?.nameZh} {stats.longestFlight.flightNumber}
-            {" · "}{CABIN_LABELS[stats.longestFlight.cabin] ?? stats.longestFlight.cabin}
-            {" · "}{Math.round(stats.longestFlight.km)} km
-          </p>
+          <div className="mt-2 flex items-center gap-3">
+            <AirlineLogo
+              iata={stats.longestFlight.airlineIata}
+              nameZh={AIRLINES[stats.longestFlight.airlineIata]?.nameZh ?? stats.longestFlight.airlineIata}
+              size="sm"
+            />
+            <p className="text-sm text-[#6b7280]">
+              {AIRLINES[stats.longestFlight.airlineIata]?.nameZh} {stats.longestFlight.flightNumber}
+              {" · "}{CABIN_LABELS[stats.longestFlight.cabin] ?? stats.longestFlight.cabin}
+              {" · "}{Math.round(stats.longestFlight.km)} km
+            </p>
+          </div>
         </div>
       )}
 

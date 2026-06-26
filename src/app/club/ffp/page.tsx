@@ -12,6 +12,8 @@ import {
 } from "@/data/ffp-programs";
 import { calcFFPProgress, getAllianceBenefits } from "@/lib/ffp-loyalty";
 import { FFPStatusEditor } from "@/components/ffp/FFPStatusEditor";
+import { AirlineInline } from "@/components/airlines/AirlineInline";
+import { AllianceLogo } from "@/components/airlines/AllianceLogo";
 import type { UserFFPRecord } from "@/lib/ffp-loyalty";
 import type { AirlineAllianceSlug } from "@/data/airlines";
 
@@ -75,7 +77,7 @@ export default async function FFPPage() {
             {allianceBenefits.map(({ alliance, details, programs, maxTierNameZh }) => (
               <div key={alliance} className="hc-card p-5">
                 <div className="flex items-center gap-2">
-                  <Globe className="h-5 w-5" style={{ color: details.color }} />
+                  <AllianceLogo alliance={alliance as AirlineAllianceSlug} size="sm" showLabel={false} />
                   <h3 className="font-serif text-lg">{details.nameZh}</h3>
                 </div>
                 <p className="mt-1 text-xs text-[#9ca3af]">{details.desc.substring(0, 80)}...</p>
@@ -83,9 +85,16 @@ export default async function FFPPage() {
                   <p className="text-xs text-[#6b7280]">
                     你的最高等级：<span className="font-semibold text-[#1a1a1a]">{maxTierNameZh}</span>
                   </p>
-                  <p className="mt-1 text-[11px] text-[#9ca3af]">
-                    通过 {programs.map((p) => p.nameZh).join(" / ")} 获得
-                  </p>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {programs.map((p) => (
+                      <AirlineInline
+                        key={p.slug}
+                        iata={p.airlineIata}
+                        nameZh={p.nameZh}
+                        size="xs"
+                      />
+                    ))}
+                  </div>
                 </div>
                 <ul className="mt-2 space-y-1 text-xs text-[#6b7280]">
                   <li>✓ 全球贵宾室 + 优先服务</li>
@@ -119,11 +128,12 @@ export default async function FFPPage() {
               if (!program || !tier || !progress) return null;
               return (
                 <div key={s.programSlug} className="hc-card p-5">
-                  <div className="flex items-center gap-2">
-                    <div className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: program.color }} />
-                    <span className="font-medium">{program.nameZh}</span>
-                  </div>
-                  <p className="mt-1 text-sm text-[#6b7280]">{tier.nameZh}</p>
+                  <AirlineInline
+                    iata={program.airlineIata}
+                    nameZh={program.nameZh}
+                    subtitle={tier.nameZh}
+                    size="sm"
+                  />
                   <div className="mt-3 h-2 overflow-hidden rounded-full bg-[#e8e8e8]">
                     <div
                       className="h-full rounded-full transition-all"
@@ -170,16 +180,22 @@ export default async function FFPPage() {
                   className="border-b border-[#e8e8e8] px-5 py-4"
                   style={{ borderLeftWidth: 4, borderLeftColor: d.color }}
                 >
-                  <h3 className="font-serif text-lg">{d.nameZh}</h3>
+                  <div className="flex items-center gap-2">
+                    <AllianceLogo alliance={alliance as AirlineAllianceSlug} size="sm" showLabel={false} />
+                    <h3 className="font-serif text-lg">{d.nameZh}</h3>
+                  </div>
                   <p className="mt-1 text-xs text-[#6b7280] leading-relaxed">{d.desc}</p>
                 </div>
                 <div className="p-5">
                   <ul className="space-y-2">
                     {programs.map((p) => (
-                      <li key={p.slug} className="flex items-center gap-2 text-sm">
-                        <div className="h-2 w-2 rounded-full" style={{ backgroundColor: p.color }} />
-                        <span className="font-medium">{p.nameZh}</span>
-                        <span className="text-xs text-[#9ca3af]">({p.name})</span>
+                      <li key={p.slug}>
+                        <AirlineInline
+                          iata={p.airlineIata}
+                          nameZh={p.nameZh}
+                          subtitle={p.name}
+                          size="sm"
+                        />
                       </li>
                     ))}
                   </ul>
@@ -200,15 +216,17 @@ export default async function FFPPage() {
                 className="border-b border-[#e8e8e8] px-6 py-4"
                 style={{ borderLeftWidth: 4, borderLeftColor: program.color }}
               >
-                <div className="flex items-center gap-3">
-                  <h3 className="font-serif text-xl">{program.nameZh}</h3>
+                <div className="flex flex-wrap items-center gap-3">
+                  <AirlineInline
+                    iata={program.airlineIata}
+                    nameZh={program.nameZh}
+                    subtitle={`${program.name} · ${program.airlineIata}`}
+                    size="md"
+                  />
                   {program.alliance && (
-                    <span className="rounded-full bg-[#f0f0f0] px-2 py-0.5 text-[10px] text-[#6b7280]">
-                      {ALLIANCE_DETAILS[program.alliance].nameZh}
-                    </span>
+                    <AllianceLogo alliance={program.alliance as AirlineAllianceSlug} size="sm" />
                   )}
                 </div>
-                <p className="text-sm text-[#6b7280]">{program.name} · {program.airlineIata}</p>
               </div>
               <div className="overflow-x-auto">
                 <table className="w-full min-w-[640px] text-sm">

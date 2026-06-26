@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Search, Upload, Calendar, Plane } from "lucide-react";
-import { AIRLINES } from "@/data/airlines";
+import { AirlinePicker } from "@/components/airlines/AirlinePicker";
 
 const CABIN_OPTIONS = [
   { value: "economy", label: "经济舱" },
@@ -72,24 +72,16 @@ export function FlightCheckinForm() {
     router.refresh();
   }
 
-  const airlinesList = Object.entries(AIRLINES).sort((a, b) => a[1].nameZh.localeCompare(b[1].nameZh, "zh"));
-
   return (
     <form onSubmit={handleSubmit} className="mt-8 space-y-6">
       <div className="hc-card p-6">
         <label className="text-sm font-medium">航司 & 航班号</label>
-        <div className="mt-3 grid gap-3 sm:grid-cols-2">
-          <select
+        <div className="mt-3 grid gap-4 sm:grid-cols-2">
+          <AirlinePicker
             value={form.airlineIata}
-            onChange={(e) => setForm({ ...form, airlineIata: e.target.value })}
-            className="rounded-xl border border-[#e8e8e8] px-4 py-3 text-sm outline-none focus:border-[#b8956b]"
+            onChange={(iata) => setForm({ ...form, airlineIata: iata })}
             required
-          >
-            <option value="">选择航司</option>
-            {airlinesList.map(([iata, info]) => (
-              <option key={iata} value={iata}>{info.nameZh} ({iata})</option>
-            ))}
-          </select>
+          />
           <input
             value={form.flightNumber}
             onChange={(e) => setForm({ ...form, flightNumber: e.target.value.toUpperCase() })}

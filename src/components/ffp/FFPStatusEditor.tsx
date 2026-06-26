@@ -6,6 +6,7 @@ import type { FFPProgram } from "@/data/ffp-programs";
 import { calcFFPProgress } from "@/lib/ffp-loyalty";
 import { ALLIANCE_LABELS } from "@/data/airlines";
 import type { AirlineAllianceSlug } from "@/data/airlines";
+import { AirlineInline } from "@/components/airlines/AirlineInline";
 
 type StatusRow = {
   programSlug: string;
@@ -91,14 +92,15 @@ export function FFPStatusEditor({
         return (
           <div key={row.programSlug} className="hc-card p-6">
             <div className="flex items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <div
-                  className="h-3 w-3 rounded-full"
-                  style={{ backgroundColor: program.color }}
+              <div className="flex min-w-0 flex-1 items-center gap-3">
+                <AirlineInline
+                  iata={program.airlineIata}
+                  nameZh={program.nameZh}
+                  subtitle={program.name}
+                  size="md"
                 />
-                <h3 className="font-serif text-xl">{program.nameZh}</h3>
                 {program.alliance && (
-                  <span className="rounded-full bg-[#f0f0f0] px-2 py-0.5 text-[10px] text-[#6b7280]">
+                  <span className="shrink-0 rounded-full bg-[#f0f0f0] px-2 py-0.5 text-[10px] text-[#6b7280]">
                     {ALLIANCE_LABELS[program.alliance as AirlineAllianceSlug]}
                   </span>
                 )}

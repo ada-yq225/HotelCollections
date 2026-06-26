@@ -5,6 +5,7 @@ import { Calculator, Hotel, Plane, TrendingUp, CreditCard, ArrowRight } from "lu
 import { HOTEL_EARNING_RATES, AIRLINE_EARNING_RATES, calculatePoints, POINTS_TRANSFERS, PROGRAM_EARNING_BY_SLUG } from "@/data/loyalty/points-earning";
 import { LOYALTY_PROGRAMS } from "@/data/loyalty/programs";
 import { FFP_PROGRAMS } from "@/data/ffp-programs";
+import { AirlineInline } from "@/components/airlines/AirlineInline";
 
 export function PointsCalculator() {
   const [mode, setMode] = useState<"hotel" | "airline" | "transfer">("hotel");
@@ -24,6 +25,9 @@ export function PointsCalculator() {
 
   const programs = mode === "hotel" ? HOTEL_EARNING_RATES : AIRLINE_EARNING_RATES;
   const currentTier = tiers.find((t: any) => t.slug === eliteTier);
+  const selectedFfp = mode === "airline"
+    ? FFP_PROGRAMS.find((p) => p.slug === programSlug)
+    : null;
 
   const filteredTransfers = mode === "transfer"
     ? POINTS_TRANSFERS.filter((t) => t.fromProgram === programSlug)
@@ -57,6 +61,14 @@ export function PointsCalculator() {
         <div className="grid gap-6 lg:grid-cols-2">
           {/* Input */}
           <div className="space-y-4 rounded-xl border border-[#e8e8e8] bg-white p-6">
+            {selectedFfp && (
+              <AirlineInline
+                iata={selectedFfp.airlineIata}
+                nameZh={selectedFfp.nameZh}
+                subtitle={selectedFfp.name}
+                size="md"
+              />
+            )}
             <label className="block text-sm font-medium">常旅客计划</label>
             <select
               value={programSlug}

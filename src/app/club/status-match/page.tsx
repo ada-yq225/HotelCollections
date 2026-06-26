@@ -1,6 +1,17 @@
 import { STATUS_MATCH_POLICIES } from "@/data/loyalty/status-match";
+import { FFP_BY_SLUG } from "@/data/ffp-programs";
+import { AirlineInline } from "@/components/airlines/AirlineInline";
+import { AllianceLogo } from "@/components/airlines/AllianceLogo";
+import { getAirline } from "@/data/airlines";
 import Link from "next/link";
 import { Hotel, Plane, ExternalLink, CheckCircle2, XCircle, AlertCircle, ArrowRight, Clock, ShieldCheck } from "lucide-react";
+import type { AirlineAllianceSlug } from "@/data/airlines";
+
+const ALLIANCE_MEMBER_SAMPLES: Record<AirlineAllianceSlug, string[]> = {
+  "star-alliance": ["CA", "NH", "SQ", "UA"],
+  skyteam: ["MU", "DL", "AF", "KE"],
+  oneworld: ["CX", "BA", "JL", "QR"],
+};
 
 export default function StatusMatchPage() {
   const hotelPolicies = STATUS_MATCH_POLICIES.filter((p) => p.type === "hotel");
@@ -135,12 +146,26 @@ export default function StatusMatchPage() {
           <Plane className="h-6 w-6 text-[#b8956b]" />航空公司
         </h2>
         <div className="grid gap-4 md:grid-cols-2">
-          {airlinePolicies.map((policy) => (
+          {airlinePolicies.map((policy) => {
+            const ffp = FFP_BY_SLUG[policy.programSlug];
+            const airline = ffp ? getAirline(ffp.airlineIata) : null;
+            return (
             <div key={policy.programSlug} className="rounded-xl border border-[#e8e8e8] bg-white p-6 transition hover:border-[#b8956b]/50">
-              <div className="flex items-start justify-between mb-4">
-                <div>
-                  <h3 className="font-serif text-lg font-semibold">{policy.programNameZh}</h3>
-                  <p className="text-xs text-[#9ca3af]">{policy.programName}</p>
+              <div className="flex items-start justify-between mb-4 gap-3">
+                <div className="min-w-0">
+                  {airline ? (
+                    <AirlineInline
+                      iata={airline.iata}
+                      nameZh={policy.programNameZh}
+                      subtitle={policy.programName}
+                      size="md"
+                    />
+                  ) : (
+                    <>
+                      <h3 className="font-serif text-lg font-semibold">{policy.programNameZh}</h3>
+                      <p className="text-xs text-[#9ca3af]">{policy.programName}</p>
+                    </>
+                  )}
                 </div>
                 <div className="flex gap-1.5">
                   {policy.offersMatch ? (
@@ -207,7 +232,8 @@ export default function StatusMatchPage() {
                 </div>
               )}
             </div>
-          ))}
+          );
+          })}
         </div>
 
         {/* Alliance note */}
@@ -217,21 +243,40 @@ export default function StatusMatchPage() {
             即便无法直接 Status Match，三大联盟内的金卡/白金卡权益在所有成员航司通用：
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-4">
-            <div className="rounded-xl bg-white border border-[#e8e8e8] p-4 min-w-[200px]">
-              <p className="font-semibold">星空联盟 Star Alliance</p>
-              <p className="mt-1 text-xs text-[#6b7280]">金卡 = 优先值机/额外行李/休息室</p>
-              <p className="text-xs text-[#b8956b]">国航 · 全日空 · 新航 · 美联航</p>
-            </div>
-            <div className="rounded-xl bg-white border border-[#e8e8e8] p-4 min-w-[200px]">
-              <p className="font-semibold">天合联盟 SkyTeam</p>
-              <p className="mt-1 text-xs text-[#6b7280]">超级精英 = 所有成员航司休息室</p>
-              <p className="text-xs text-[#b8956b]">东航 · 达美 · 法航 · 大韩</p>
-            </div>
-            <div className="rounded-xl bg-white border border-[#e8e8e8] p-4 min-w-[200px]">
-              <p className="font-semibold">寰宇一家 oneworld</p>
-              <p className="mt-1 text-xs text-[#6b7280]">蓝宝石 = 商务舱休息室全球通用</p>
-              <p className="text-xs text-[#b8956b]">国泰 · 英航 · 日航 · 卡航</p>
-            </div>
+            {(["star-alliance", "skyteam", "oneworld"] as AirlineAllianceSlug[]).map((alliance) => {
+              const titles: Record<AirlineAllianceSlug, string> = {
+                "star-alliance": "星空联盟 Star Alliance",
+                skyteam: "天合联盟 SkyTeam",
+                oneworld: "寰宇一家 oneworld",
+              };
+              const descs: Record<AirlineAllianceSlug, string> = {
+                "star-alliance": "金卡 = 优先值机/额外行李/休息室",
+                skyteam: "超级精英 = 所有成员航司休息室",
+                oneworld: "蓝宝石 = 商务舱休息室全球通用",
+              };
+              return (
+                <div key={alliance} className="rounded-xl bg-white border border-[#e8e8e8] p-4 min-w-[220px]">
+                  <div className="flex items-center gap-2">
+                    <AllianceLogo alliance={alliance} size="sm" showLabel={false} />
+                    <p className="font-semibold">{titles[alliance]}</p>
+                  </div>
+                  <p className="mt-2 text-xs text-[#6b7280]">{descs[alliance]}</p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {ALLIANCE_MEMBER_SAMPLES[alliance].map((iata) => {
+                      const al = getAirline(iata);
+                      return (
+                        <AirlineInline
+                          key={iata}
+                          iata={al.iata}
+                          nameZh={al.nameZh}
+                          size="xs"
+                        />
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

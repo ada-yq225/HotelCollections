@@ -300,8 +300,13 @@ export default async function AirlineDetailPage({
                   className="rounded-xl p-4"
                   style={{ backgroundColor: `${ffp.color}12` }}
                 >
-                  <p className="font-semibold text-[#1a1a1a]">{ffp.nameZh}</p>
-                  <p className="text-[10px] text-[#9ca3af]">{ffp.name}</p>
+                  <div className="flex items-center gap-3">
+                    <AirlineLogo iata={airline.iata} nameZh={airline.nameZh} size="md" />
+                    <div>
+                      <p className="font-semibold text-[#1a1a1a]">{ffp.nameZh}</p>
+                      <p className="text-[10px] text-[#9ca3af]">{ffp.name}</p>
+                    </div>
+                  </div>
 
                   {/* Tier list */}
                   <div className="mt-3 space-y-1.5">

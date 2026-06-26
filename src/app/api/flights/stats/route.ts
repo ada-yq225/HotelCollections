@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getCurrentUser } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { AIRLINES } from "@/data/airlines";
+import { getAirlineLogoPath } from "@/lib/airline-logos";
 
 const IATA_COORDS: Record<string, { lat: number; lng: number; nameZh: string }> = {
   PEK: { lat: 40.0799, lng: 116.6031, nameZh: "北京首都" },
@@ -107,7 +108,7 @@ export async function GET() {
     iata,
     name: AIRLINES[iata]?.nameZh ?? iata,
     alliance: AIRLINES[iata]?.alliance ?? null,
-    logoUrl: AIRLINES[iata]?.logoUrl ?? "",
+    logoUrl: getAirlineLogoPath(iata),
     count: flights.filter((f) => f.airlineIata === iata).length,
   })).sort((a, b) => b.count - a.count);
 
