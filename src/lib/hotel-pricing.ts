@@ -159,6 +159,17 @@ export type HotelPriceEstimate = {
   priceCurrency: "CNY";
   suiteLabel: string;
   isResort: boolean;
+  /** True when price comes from official-site scrape, not formula */
+  fromOfficial?: boolean;
+};
+
+export type HotelPriceResult = {
+  avgBasePrice?: number;
+  avgSuitePrice?: number;
+  priceCurrency: "CNY";
+  suiteLabel: string;
+  isResort: boolean;
+  fromOfficial: boolean;
 };
 
 export function getSuiteLabel(hotel: Pick<HotelEntry, "region" | "countryCode">): string {
@@ -168,36 +179,79 @@ export function getSuiteLabel(hotel: Pick<HotelEntry, "region" | "countryCode">)
 
 export type PriceInput = Pick<
   HotelEntry,
-  "brandSlug" | "region" | "countryCode" | "cityZh" | "avgBasePrice" | "avgSuitePrice"
+  "brandSlug" | "region" | "countryCode" | "cityZh" | "avgBasePrice" | "avgSuitePrice" | "slug"
 > & {
   /** Official-site scraped reference price (CNY/night) */
   scrapedBasePrice?: number;
   scrapedSuitePrice?: number;
+  priceSource?: "scraped" | "estimated";
 };
 
-/** Estimate average nightly rates (CNY) — prefers scraped official rates */
-export function estimateHotelPrices(hotel: PriceInput): HotelPriceEstimate {
-  const brandBase = BRAND_BASE_CNY[hotel.brandSlug] ?? 2000;
-  const regionMult = getRegionMultiplier(hotel);
-  const computedBase = roundPrice(brandBase * regionMult);
+function suiteFromBase(hotel: Pick<HotelEntry, "brandSlug" | "region" | "slug">, base: number): number {
+  const isMaldives =
+    hotel.region === "maldives" ||
+    hotel.brandSlug.includes("maldives") ||
+    hotel.slug?.includes("maldives");
+  return Math.round(base * (isMaldives ? 3.5 : 2.2));
+}
 
-  const avgBasePrice =
-    hotel.avgBasePrice ??
-    hotel.scrapedBasePrice ??
-    computedBase;
+/** Resolve nightly rates — only returns prices when officially scraped */
+export function resolveHotelPrices(hotel: PriceInput): HotelPriceResult {
+  const suiteLabel = getSuiteLabel(hotel);
+  const isResort = isResortContext(hotel);
 
-  const suiteMult = getSuiteMultiplier(hotel, avgBasePrice);
-  const computedSuite = roundPrice(avgBasePrice * suiteMult);
+  const officialBase =
+    hotel.priceSource === "scraped"
+      ? hotel.scrapedBasePrice ?? hotel.avgBasePrice
+      : hotel.scrapedBasePrice;
+
+  if (officialBase == null) {
+    return { priceCurrency: "CNY", suiteLabel, isResort, fromOfficial: false };
+  }
+
+  const avgBasePrice = officialBase;
+  const avgSuitePrice =
+    hotel.scrapedSuitePrice ??
+    hotel.avgSuitePrice ??
+    suiteFromBase(hotel, avgBasePrice);
 
   return {
     avgBasePrice,
-    avgSuitePrice:
-      hotel.avgSuitePrice ??
-      hotel.scrapedSuitePrice ??
-      Math.max(computedSuite, avgBasePrice + 800),
+    avgSuitePrice,
+    priceCurrency: "CNY",
+    suiteLabel,
+    isResort,
+    fromOfficial: true,
+  };
+}
+
+/** @deprecated Internal formula estimate — not shown to users */
+export function estimateHotelPrices(hotel: PriceInput): HotelPriceEstimate {
+  const official = resolveHotelPrices(hotel);
+  if (official.fromOfficial && official.avgBasePrice != null) {
+    return {
+      avgBasePrice: official.avgBasePrice,
+      avgSuitePrice: official.avgSuitePrice!,
+      priceCurrency: "CNY",
+      suiteLabel: official.suiteLabel,
+      isResort: official.isResort,
+      fromOfficial: true,
+    };
+  }
+
+  const brandBase = BRAND_BASE_CNY[hotel.brandSlug] ?? 2000;
+  const regionMult = getRegionMultiplier(hotel);
+  const computedBase = roundPrice(brandBase * regionMult);
+  const suiteMult = getSuiteMultiplier(hotel, computedBase);
+  const computedSuite = roundPrice(computedBase * suiteMult);
+
+  return {
+    avgBasePrice: computedBase,
+    avgSuitePrice: Math.max(computedSuite, computedBase + 800),
     priceCurrency: "CNY",
     suiteLabel: getSuiteLabel(hotel),
     isResort: isResortContext(hotel),
+    fromOfficial: false,
   };
 }
 

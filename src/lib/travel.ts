@@ -6,11 +6,14 @@ import {
 } from "@/data/airports";
 import { getDirectMinutes, ROUTING_HUBS } from "@/data/flight-routes";
 import {
-  estimateEconomyPriceCny,
   flightNumberFor,
   pickCarrierForLeg,
   type AirlineInfo,
 } from "@/data/airlines";
+import {
+  formatFlightPriceLabel,
+  getFlightOptionPriceCny,
+} from "@/data/flight-prices";
 
 export type FlightLeg = {
   from: string;
@@ -111,11 +114,16 @@ function finalizeOption(
     if (!fromAp || !toAp) return sum;
     return sum + haversineKm(fromAp.latitude, fromAp.longitude, toAp.latitude, toAp.longitude);
   }, 0);
-  const priceCny = estimateEconomyPriceCny(dist, option.stops, option.totalDurationMin);
+  const priceCny = getFlightOptionPriceCny(
+    option.legs.map((l) => ({ from: l.from, to: l.to })),
+    option.stops,
+    dist,
+    option.totalDurationMin
+  );
   return {
     ...option,
     priceCny,
-    priceLabel: `¥${priceCny.toLocaleString("zh-CN")} 起`,
+    priceLabel: formatFlightPriceLabel(priceCny),
   };
 }
 

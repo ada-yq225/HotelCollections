@@ -33,7 +33,7 @@ export function FlightOptionCard({ flight, index }: { flight: FlightOption; inde
             <Ticket className="h-4 w-4" />
             {flight.priceLabel}
           </p>
-          <p className="text-[10px] text-[#9ca3af]">经济舱参考价</p>
+          <p className="text-[10px] text-[#9ca3af]">经济舱市场参考价</p>
         </div>
       </div>
 

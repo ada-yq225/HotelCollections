@@ -2286,13 +2286,18 @@
     ]
   },
   "ritz-carlton-beijing-financial-street": {
-    "websiteUrl": "https://www.ritzcarlton.com/en/hotels/beijing-financial-street",
-    "heroImage": "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
+    "websiteUrl": "https://www.ritzcarlton.com/en/hotels/beijing",
+    "description": "Explore Our Collection of Luxury hotels and resorts from The Ritz-Carlton.",
+    "heroImage": "https://cache.marriott.com/is/image/marriotts7prod/rz-lirrz-hpp3008-nekjajui-ae-11678-36854:Wide-Hor",
     "galleryImages": [
-      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
-      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041",
-      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854:Wide-Hor",
-      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854"
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-lirrz-hpp3008-nekjajui-ae-11678-36854:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-dalil-hotel-lobby-1-12405:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-dalil-hotel-lobby-1-12405:Classic-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-dalil-hotel-lobby-1-12405",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-dalil-knife-italian-entrance-42430:Square",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-dalil-knife-italian-entrance-42430",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-nbomr-one-bedroom-suite-35893:Feature-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-nbomr-one-bedroom-suite-35893:Wide-Hor"
     ]
   },
   "ritz-carlton-shanghai-pudong": {
@@ -3278,12 +3283,17 @@
   },
   "ritz-carlton-washington-dc": {
     "websiteUrl": "https://www.ritzcarlton.com/en/hotels/washington-dc",
-    "heroImage": "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
+    "description": "Explore Our Collection of Luxury hotels and resorts from The Ritz-Carlton.",
+    "heroImage": "https://cache.marriott.com/is/image/marriotts7prod/rz-lirrz-hpp3008-nekjajui-ae-11678-36854:Wide-Hor",
     "galleryImages": [
-      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041:Wide-Hor",
-      "https://cache.marriott.com/is/image/marriotts7prod/rz-rc-club-ap-lifestyle-25-32041",
-      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854:Wide-Hor",
-      "https://cache.marriott.com/is/image/marriotts7prod/rz-gvarz-rc-geneva-social-14706-67854"
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-lirrz-hpp3008-nekjajui-ae-11678-36854:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-dalil-hotel-lobby-1-12405:Wide-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-dalil-hotel-lobby-1-12405:Classic-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-dalil-hotel-lobby-1-12405",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-dalil-knife-italian-entrance-42430:Square",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-dalil-knife-italian-entrance-42430",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-nbomr-one-bedroom-suite-35893:Feature-Hor",
+      "https://cache.marriott.com/is/image/marriotts7prod/rz-nbomr-one-bedroom-suite-35893:Wide-Hor"
     ]
   },
   "ritz-carlton-punta-mita": {

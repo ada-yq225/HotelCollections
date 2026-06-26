@@ -117,14 +117,14 @@ export function HotelCard({ hotel: h }: HotelCardProps) {
           <div className="mt-3 flex items-center justify-between gap-2 border-t border-[#f3f0eb] pt-3">
             {h.avgBasePrice != null ? (
               <div>
-                <p className="text-[10px] text-[#9ca3af]">基础房型</p>
+                <p className="text-[10px] text-[#9ca3af]">官网起价</p>
                 <p className="text-sm font-semibold text-[#b8956b]">
                   {formatHotelPrice(h.avgBasePrice)}
                   <span className="ml-0.5 text-[10px] font-normal text-[#9ca3af]">/晚</span>
                 </p>
               </div>
             ) : (
-              <div />
+              <p className="text-[10px] text-[#9ca3af]">官网价格待同步</p>
             )}
             {h.avgSuitePrice != null && (
               <div className="text-right">

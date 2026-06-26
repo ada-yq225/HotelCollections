@@ -5,7 +5,7 @@ import { ALL_HOTELS } from "../src/data/hotels";
 import { BADGES } from "../src/data/badges";
 import { HOTEL_ENRICHMENT } from "../src/data/hotel-enrichment";
 import { resolveOfficialUrl } from "../src/lib/hotel-official-url";
-import { estimateHotelPrices } from "../src/lib/hotel-pricing";
+import { resolveHotelPrices } from "../src/lib/hotel-pricing";
 import { resolveHotelCoverImage } from "../src/lib/hotel-cover-image";
 import { estimateTravelerRating } from "../src/lib/hotel-ratings";
 
@@ -102,10 +102,11 @@ async function main() {
       h.heroImage ?? cached?.heroImage,
       gallery
     );
-    const prices = estimateHotelPrices({
+    const prices = resolveHotelPrices({
       ...h,
       scrapedBasePrice: cached?.avgBasePrice,
       scrapedSuitePrice: cached?.avgSuitePrice,
+      priceSource: cached?.priceSource,
     });
     const ratings = estimateTravelerRating(h);
 
@@ -131,8 +132,8 @@ async function main() {
         heroImage: coverImage ?? undefined,
         galleryImages: JSON.stringify(gallery),
         enrichedAt: cached?.description || cached?.heroImage ? new Date() : undefined,
-        avgBasePrice: prices.avgBasePrice,
-        avgSuitePrice: prices.avgSuitePrice,
+        avgBasePrice: prices.avgBasePrice ?? undefined,
+        avgSuitePrice: prices.avgSuitePrice ?? undefined,
         priceCurrency: prices.priceCurrency,
         travelerScore: ratings.travelerScore,
         travelerRatingCount: ratings.travelerRatingCount,

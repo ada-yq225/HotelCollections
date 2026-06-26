@@ -8,7 +8,10 @@ import {
   isBadImageUrl,
   pickBestImage,
 } from "@/lib/hotel-cover-image";
-import { extractScrapedBasePriceCny } from "@/lib/hotel-price-scrape";
+import {
+  extractScrapedBasePriceCny,
+  validateScrapedPriceCny,
+} from "@/lib/hotel-price-scrape";
 import type { HotelEntry } from "@/data/hotels/types";
 
 export type HotelEnrichment = {
@@ -356,7 +359,11 @@ export async function enrichHotelFromWeb(
     return null;
   }
 
-  const avgBasePrice = parsed.scrapedBasePrice;
+  const rawPrice = parsed.scrapedBasePrice;
+  const avgBasePrice =
+    rawPrice != null
+      ? validateScrapedPriceCny(rawPrice, hotel.brandSlug, hotel.countryCode) ?? undefined
+      : undefined;
   const avgSuitePrice = avgBasePrice
     ? Math.round(avgBasePrice * (hotel.brandSlug.includes("maldives") || hotel.slug.includes("maldives") ? 3.5 : 2.2))
     : undefined;

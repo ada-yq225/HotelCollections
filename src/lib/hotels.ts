@@ -1,7 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { enrichHotelFromWeb, parseGalleryImages } from "@/lib/hotel-enrichment";
 import { resolveHotelCoverImage } from "@/lib/hotel-cover-image";
-import { estimateHotelPrices } from "@/lib/hotel-pricing";
+import { resolveHotelPrices } from "@/lib/hotel-pricing";
 import { resolveOfficialUrl } from "@/lib/hotel-official-url";
 
 export const hotelInclude = {
@@ -64,14 +64,16 @@ export async function ensureHotelEnriched(hotel: HotelWithBrand): Promise<HotelW
   const cover = resolveHotelCoverImage(enriched.heroImage ?? hotel.heroImage, gallery);
 
   const pricePatch =
-    enriched.avgBasePrice != null
-      ? estimateHotelPrices({
+    enriched.avgBasePrice != null && enriched.priceSource === "scraped"
+      ? resolveHotelPrices({
+          slug: hotel.slug,
           brandSlug: hotel.brand.slug,
           region: hotel.region,
           countryCode: hotel.countryCode,
           cityZh: hotel.cityZh,
           scrapedBasePrice: enriched.avgBasePrice,
           scrapedSuitePrice: enriched.avgSuitePrice,
+          priceSource: "scraped",
         })
       : null;
 
@@ -84,7 +86,7 @@ export async function ensureHotelEnriched(hotel: HotelWithBrand): Promise<HotelW
       heroImage: cover ?? undefined,
       galleryImages: JSON.stringify(gallery),
       enrichedAt: new Date(),
-      ...(pricePatch
+      ...(pricePatch?.fromOfficial
         ? {
             avgBasePrice: pricePatch.avgBasePrice,
             avgSuitePrice: pricePatch.avgSuitePrice,

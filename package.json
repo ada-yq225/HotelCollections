@@ -13,6 +13,8 @@
     "hotels:enrich": "tsx scripts/enrich-hotels.ts",
     "hotels:enrich-images": "tsx scripts/enrich-hotels.ts --images-only",
     "hotels:enrich-all": "node scripts/clean-enrichment-cache.mjs && tsx scripts/enrich-hotels.ts --retry-bad",
+    "hotels:scrape-prices": "tsx scripts/scrape-hotel-prices.ts",
+    "hotels:scrape-prices-all": "tsx scripts/scrape-hotel-prices.ts --missing-only",
     "hotels:clean-cache": "node scripts/clean-enrichment-cache.mjs",
     "logos:manifest": "node scripts/generate-brand-logo-manifest.mjs",
     "postinstall": "prisma generate"
