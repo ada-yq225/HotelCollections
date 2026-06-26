@@ -23,12 +23,20 @@ export default async function ClubPage() {
       color: "#b8956b",
     },
     {
-      href: "/club/ffp",
+      href: "/airlines",
       icon: Plane,
-      title: "飞行会籍",
-      desc: "12 大航司常旅客计划、三大联盟互认、定级里程/航段进度追踪与跨航司累积策略",
+      title: "航空公司库",
+      desc: "全球 30+ 航司详细展示，Skytrax 排名、客舱产品、会员权益与航司特色一览",
       stat: "全新上线",
       color: "#1a1a1a",
+    },
+    {
+      href: "/club/ffp",
+      icon: Award,
+      title: "飞行会籍",
+      desc: "52 大航司常旅客计划、三大联盟互认、定级里程/航段进度追踪与跨航司累积策略",
+      stat: "已升级",
+      color: "#b8956b",
     },
     {
       href: "/club/wishlist",

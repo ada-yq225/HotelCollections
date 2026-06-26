@@ -1,0 +1,19 @@
+   ▲ Next.js 15.5.19
+   - Environments: .env
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 4.2s
+   Linting and checking validity of types ...
+Failed to compile.
+
+./src/components/airlines/AirlineCard.tsx:14:37
+Type error: 'enrichment.skytraxRank2024' is possibly 'undefined'.
+
+[0m [90m 12 |[39m   [36mconst[39m airline [33m=[39m getAirline(enrichment[33m.[39miata)[33m;[39m
+ [90m 13 |[39m   [36mconst[39m hasSkytraxRank [33m=[39m enrichment[33m.[39mskytraxRank2024 [33m!=[39m [36mnull[39m[33m;[39m
+[31m[1m>[22m[39m[90m 14 |[39m   [36mconst[39m isTop10 [33m=[39m hasSkytraxRank [33m&&[39m enrichment[33m.[39mskytraxRank2024 [33m<=[39m [35m10[39m[33m;[39m
+ [90m    |[39m                                     [31m[1m^[22m[39m
+ [90m 15 |[39m
+ [90m 16 |[39m   [36mreturn[39m (
+ [90m 17 |[39m     [33m<[39m[33mLink[39m[0m
+Next.js build worker exited with code: 1 and signal: null
