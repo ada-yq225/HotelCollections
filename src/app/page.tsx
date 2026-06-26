@@ -226,6 +226,12 @@ export default async function HomePage() {
                 href: "/flights",
               },
               {
+                icon: Plane,
+                title: "飞行会籍",
+                desc: "12 大航司常旅客计划管理，联盟互认权益、定级进度追踪",
+                href: "/club/ffp",
+              },
+              {
                 icon: Bell,
                 title: "价格提醒",
                 desc: "设置目标价，官网实价达标时个人中心高亮通知",

@@ -27,6 +27,7 @@ model User {
   discussionReplies DiscussionReply[]
   bookingInquiries BookingInquiry[]
   loyaltyStatuses  UserLoyaltyStatus[]
+  ffpStatuses      UserFFPStatus[]
   priceAlerts      PriceAlert[]
 }
 
@@ -39,6 +40,22 @@ model UserLoyaltyStatus {
   expiresAt    DateTime?
   /** JSON array of booking channel slugs, e.g. ["virtuoso","fhr"] */
   channelSlugs String    @default("[]")
+  memberNumber String?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  user         User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, programSlug])
+}
+
+model UserFFPStatus {
+  id           String    @id @default(cuid())
+  userId       String
+  programSlug  String
+  tierSlug     String
+  milesYTD     Int       @default(0)
+  segmentsYTD  Int       @default(0)
   memberNumber String?
   createdAt    DateTime  @default(now())
   updatedAt    DateTime  @updatedAt

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
-import { CreditCard, Users, Crown, ArrowRight, Award } from "lucide-react";
+import { CreditCard, Users, Crown, ArrowRight, Award, Plane } from "lucide-react";
 
 export default async function ClubPage() {
   const [keycardCount, discussionCount, inquiryCount] = await Promise.all([
@@ -17,6 +17,14 @@ export default async function ClubPage() {
       desc: "五大集团等级档案、保级进度、Virtuoso/STARS/FHR 渠道礼遇对照与酒店待遇匹配",
       stat: "核心功能",
       color: "#b8956b",
+    },
+    {
+      href: "/club/ffp",
+      icon: Plane,
+      title: "飞行会籍",
+      desc: "12 大航司常旅客计划、三大联盟互认、定级里程/航段进度追踪与跨航司累积策略",
+      stat: "全新上线",
+      color: "#1a1a1a",
     },
     {
       href: "/club/keycards",
