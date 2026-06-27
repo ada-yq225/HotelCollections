@@ -20,14 +20,26 @@ const AIRLINE_OVERRIDES: Record<string, string> = {
 /** Always re-download these — branding changes faster than Kiwi updates. */
 const FORCE_REFRESH = new Set(["OZ"]);
 
+const ALLIANCE_FORMAT: Record<string, "svg" | "png"> = {
+  "star-alliance": "svg",
+  skyteam: "png",
+  oneworld: "svg",
+};
+
+/** Bundled from skyteam.com official image library (primary blockmark). */
+const ALLIANCE_LOCAL_ONLY = new Set(["skyteam"]);
+
 const ALLIANCE_SOURCES: Record<string, string> = {
   "star-alliance":
     "https://upload.wikimedia.org/wikipedia/commons/d/d8/Star_Alliance_Logo.svg",
-  skyteam:
-    "https://upload.wikimedia.org/wikipedia/commons/9/90/Skyteam_Logo_Alliance.svg",
   oneworld:
     "https://upload.wikimedia.org/wikipedia/commons/3/31/Oneworld_logo.svg",
 };
+
+const SKYTEAM_OFFICIAL_ZIP =
+  "https://a.storyblok.com/f/271050/x/aaa0a8a49b/skyteam-primary-logo.zip";
+const SKYTEAM_BLOCKMARK_PATH =
+  "skyteam-primary-logo/Blockmark/Bug_logo_blue_transparent.png";
 
 async function fetchBuffer(url: string): Promise<Buffer | null> {
   try {
@@ -74,8 +86,49 @@ async function main() {
   }
 
   let allianceOk = 0;
+
+  async function fetchSkyTeamOfficial(): Promise<boolean> {
+    const buf = await fetchBuffer(SKYTEAM_OFFICIAL_ZIP);
+    if (!buf || buf.length < 1000) return false;
+    const tmpZip = path.join(ALLIANCE_DIR, "_skyteam.zip");
+    const tmpDir = path.join(ALLIANCE_DIR, "_skyteam-extract");
+    fs.writeFileSync(tmpZip, buf);
+    try {
+      const { execSync } = await import("child_process");
+      if (fs.existsSync(tmpDir)) fs.rmSync(tmpDir, { recursive: true, force: true });
+      fs.mkdirSync(tmpDir, { recursive: true });
+      execSync(
+        `powershell -NoProfile -Command "Expand-Archive -Path '${tmpZip.replace(/'/g, "''")}' -DestinationPath '${tmpDir.replace(/'/g, "''")}' -Force"`,
+        { stdio: "ignore" }
+      );
+      const src = path.join(tmpDir, SKYTEAM_BLOCKMARK_PATH);
+      const out = path.join(ALLIANCE_DIR, "skyteam.png");
+      if (!fs.existsSync(src)) return false;
+      fs.copyFileSync(src, out);
+      return fs.statSync(out).size > 1000;
+    } finally {
+      fs.rmSync(tmpZip, { force: true });
+      fs.rmSync(tmpDir, { recursive: true, force: true });
+    }
+  }
+
+  if (
+    ALLIANCE_LOCAL_ONLY.has("skyteam") &&
+    fs.existsSync(path.join(ALLIANCE_DIR, "skyteam.png")) &&
+    fs.statSync(path.join(ALLIANCE_DIR, "skyteam.png")).size > 1000
+  ) {
+    allianceOk++;
+    console.log("  alliance ✓ skyteam (official blockmark cached)");
+  } else if (await fetchSkyTeamOfficial()) {
+    allianceOk++;
+    console.log("  alliance ✓ skyteam (official blockmark from skyteam.com)");
+  } else {
+    console.log("  alliance ✗ skyteam");
+  }
+
   for (const [slug, url] of Object.entries(ALLIANCE_SOURCES)) {
-    const out = path.join(ALLIANCE_DIR, `${slug}.svg`);
+    const ext = ALLIANCE_FORMAT[slug] ?? "svg";
+    const out = path.join(ALLIANCE_DIR, `${slug}.${ext}`);
     if (fs.existsSync(out) && fs.statSync(out).size > 500) {
       allianceOk++;
       console.log(`  alliance ✓ ${slug} (cached)`);
@@ -109,9 +162,9 @@ async function main() {
     "};",
     "",
     "export const ALLIANCE_LOGO_FILES = {",
-    '  "star-alliance": "svg",',
-    '  skyteam: "svg",',
-    '  oneworld: "svg",',
+    ...Object.entries(ALLIANCE_FORMAT)
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([k, v]) => `  "${k === "skyteam" ? "skyteam" : k}": "${v}",`.replace('"skyteam"', "skyteam")),
     "} as const;",
     "",
     "export type AirlineAllianceSlug = keyof typeof ALLIANCE_LOGO_FILES;",

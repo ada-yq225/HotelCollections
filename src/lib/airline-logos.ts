@@ -20,8 +20,15 @@ export function getAirlineLogoUrl(iata: string, hasLocal = true): string {
   return CDN_OVERRIDES[iata] ?? `${KIWI_CDN}/${iata}.png`;
 }
 
+const ALLIANCE_LOGO_EXT: Record<AirlineAllianceSlug, "svg" | "png"> = {
+  "star-alliance": "svg",
+  skyteam: "png",
+  oneworld: "svg",
+};
+
 export function getAllianceLogoPath(alliance: AirlineAllianceSlug): string {
-  return `/alliances/${alliance}.svg`;
+  const ext = ALLIANCE_LOGO_EXT[alliance];
+  return `/alliances/${alliance}.${ext}`;
 }
 
 export const ALLIANCE_META: Record<

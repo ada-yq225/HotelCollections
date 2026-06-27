@@ -67,7 +67,7 @@ export const AIRLINE_LOGO_FILES: Record<string, boolean> = {
 
 export const ALLIANCE_LOGO_FILES = {
   "star-alliance": "svg",
-  skyteam: "svg",
+  skyteam: "png",
   oneworld: "svg",
 } as const;
 
